@@ -11,7 +11,13 @@ AWS CLF-C02 图形界面刷题系统（练习模式）
 import customtkinter as ctk
 from typing import List, Dict
 
-from data import ALL_QUESTIONS, SINGLE_CHOICE_QUESTIONS, MULTI_CHOICE_QUESTIONS
+from data import (
+    ALL_QUESTIONS,
+    SINGLE_CHOICE_QUESTIONS,
+    MULTI_CHOICE_QUESTIONS,
+    DOMAINS,
+    get_domain_question_count,
+)
 
 
 class CLFQuizApp(ctk.CTk):
@@ -44,63 +50,99 @@ class CLFQuizApp(ctk.CTk):
 
     # ==================== 菜单界面 ====================
     def _build_menu_ui(self):
-        """题库选择主菜单"""
+        """题库选择主菜单（支持传统模式 + 考试领域分类练习）"""
         self.menu_frame = ctk.CTkFrame(self, fg_color="transparent")
-        self.menu_frame.pack(fill="both", expand=True, padx=40, pady=40)
+        self.menu_frame.pack(fill="both", expand=True, padx=40, pady=30)
 
         title = ctk.CTkLabel(
             self.menu_frame,
             text="AWS CLF-C02 刷题系统",
             font=ctk.CTkFont(size=28, weight="bold")
         )
-        title.pack(pady=(20, 10))
+        title.pack(pady=(10, 5))
 
         subtitle = ctk.CTkLabel(
             self.menu_frame,
             text="请选择你要练习的题库",
             font=ctk.CTkFont(size=16)
         )
-        subtitle.pack(pady=(0, 30))
+        subtitle.pack(pady=(0, 20))
 
-        # 单选题按钮
+        # ========== 传统模式 ==========
+        traditional_label = ctk.CTkLabel(
+            self.menu_frame,
+            text="传统模式",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#888888"
+        )
+        traditional_label.pack(anchor="w", padx=60, pady=(0, 6))
+
         btn1 = ctk.CTkButton(
             self.menu_frame,
             text="单选题题库（46题）",
-            height=55,
-            font=ctk.CTkFont(size=18),
+            height=48,
+            font=ctk.CTkFont(size=16),
             command=lambda: self._start_quiz(SINGLE_CHOICE_QUESTIONS)
         )
-        btn1.pack(pady=12, fill="x", padx=60)
+        btn1.pack(pady=6, fill="x", padx=60)
 
-        # 多选题按钮（用户重点想测试）
         btn2 = ctk.CTkButton(
             self.menu_frame,
             text="多选题题库（49题）",
-            height=55,
-            font=ctk.CTkFont(size=18),
+            height=48,
+            font=ctk.CTkFont(size=16),
             fg_color="#2980b9",
             hover_color="#3498db",
             command=lambda: self._start_quiz(MULTI_CHOICE_QUESTIONS)
         )
-        btn2.pack(pady=12, fill="x", padx=60)
+        btn2.pack(pady=6, fill="x", padx=60)
 
-        # 全部题目
         btn3 = ctk.CTkButton(
             self.menu_frame,
             text="全部题目（95题）",
-            height=55,
-            font=ctk.CTkFont(size=18),
+            height=48,
+            font=ctk.CTkFont(size=16),
             command=lambda: self._start_quiz(ALL_QUESTIONS)
         )
-        btn3.pack(pady=12, fill="x", padx=60)
+        btn3.pack(pady=6, fill="x", padx=60)
+
+        # ========== 按考试领域分类练习（新增） ==========
+        domain_label = ctk.CTkLabel(
+            self.menu_frame,
+            text="按考试领域分类练习（CLF-C02 官方四大领域）",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#00b894"
+        )
+        domain_label.pack(anchor="w", padx=60, pady=(18, 6))
+
+        for domain in DOMAINS:
+            count = get_domain_question_count(domain)
+            # 将英文领域名翻译为更友好的中文显示
+            display_name = {
+                "Cloud Concepts": "云概念",
+                "Security and Compliance": "安全与合规",
+                "Technology and Services": "技术与服务",
+                "Billing, Pricing, and Support": "账单、定价与支持"
+            }.get(domain, domain)
+
+            btn = ctk.CTkButton(
+                self.menu_frame,
+                text=f"{display_name}（{count}题）",
+                height=48,
+                font=ctk.CTkFont(size=16),
+                fg_color="#00b894",
+                hover_color="#00d9a3",
+                command=lambda d=domain: self._start_domain_quiz(d)
+            )
+            btn.pack(pady=6, fill="x", padx=60)
 
         note = ctk.CTkLabel(
             self.menu_frame,
-            text="提示：多选题需要点击「提交答案」按钮后才会显示解析",
-            font=ctk.CTkFont(size=13),
+            text="提示：多选题需要点击「提交答案」按钮后才会显示解析 | 领域练习会混合单选与多选题",
+            font=ctk.CTkFont(size=12),
             text_color="#888888"
         )
-        note.pack(pady=30)
+        note.pack(pady=(20, 10))
 
     def _start_quiz(self, question_list):
         """从菜单切换到正式答题界面"""
@@ -119,6 +161,31 @@ class CLFQuizApp(ctk.CTk):
         self._load_question(0)
 
         # 绑定窗口大小变化
+        self.bind("<Configure>", self._on_window_resize)
+        self.after(150, self._update_wraplength)
+
+    def _start_domain_quiz(self, domain: str):
+        """按考试领域启动分类练习"""
+        from data import get_questions_by_domain
+
+        questions = get_questions_by_domain(domain)
+        if not questions:
+            print(f"警告：领域 '{domain}' 没有题目")
+            return
+
+        self.menu_frame.destroy()
+
+        self.questions = questions
+        self.total = len(self.questions)
+        self.user_answers = {}
+        self.current_index = 0
+        self.option_widgets = []
+        self.is_multi = False
+        self.multi_submit_btn = None
+
+        self._build_quiz_ui()
+        self._load_question(0)
+
         self.bind("<Configure>", self._on_window_resize)
         self.after(150, self._update_wraplength)
 

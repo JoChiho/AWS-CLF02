@@ -1,20 +1,7 @@
 [
   {
-    "note": "大部分 'weak explanation' 项目已在本次会话中升级为详细解析（data/multi_choice.py）。以下是仍可能需要进一步润色或确认的剩余项目（已大幅减少）。",
-    "updated_at": "本次处理后"
-  },
-  {
-    "index": 22,
-    "reason": "可能仍可进一步细化",
-    "q": "以下哪些 AWS 服务可以提供负载均衡能力？（选择两项）",
-    "correct": ["A", "D"],
-    "current_expl": "正确答案是 A 和 D。\n\nB 是错误的：Route 53 是 DNS 服务，主要提供域名解析和流量路由，不是负载均衡器。\nC 是错误的：CloudFront 是 CDN 服务，用于内容分发加速。\nE 是错误的：S3 是对象存储服务，不提供负载均衡能力。"
-  },
-  {
-    "index": 23,
-    "reason": "可能仍可进一步细化",
-    "q": "AWS Business Support 和 Enterprise Support 的主要区别是什么？（选择两项）",
-    "correct": ["A", "C"],
-    "current_expl": "正确答案是 A 和 C。\n\nB 是错误的：Business Support 的严重故障响应时间是 < 1 小时，不是 15 分钟。\nD 是错误的：Business Support 不是免费的，需要付费。\nE 是错误的：Enterprise Support 的响应时间比 Business Support 更快。"
+    "note": "2026-05-27 大规模内容升级后：绝大多数多选题已完成「正确答案 + 逐项错误分析 + **重点考点 / 关键词补充**」的完整格式。旧的 22、23 号问题已在本次会话前升级完成。剩余少量题目解析长度稍短或结构可进一步润色，但核心内容已基本达标。",
+    "updated_at": "2026-05-27 大规模升级后",
+    "status": "大部分已完成，剩余为轻度润色项"
   }
 ]

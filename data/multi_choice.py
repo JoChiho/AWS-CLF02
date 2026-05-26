@@ -339,7 +339,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. 只能用于 S3",
         ],
         "correct_answers": ["A", "C"],
-        "explanation": "正确答案是 A 和 C。\n\nB 是错误的：只有 Compute Savings Plans 可以跨区域，EC2 Instance Savings Plans 不能。\nD 是错误的：Savings Plans 的优势就是不需要指定具体实例类型和区域（相比传统 RI）。\nE 是错误的：Savings Plans 不能用于 S3，主要用于计算服务。",
+        "explanation": "正确答案是 A 和 C。\n\nB 是错误的：只有 Compute Savings Plans 可以跨区域，EC2 Instance Savings Plans 不能。\nD 是错误的：Savings Plans 的优势就是不需要指定具体实例类型和区域（相比传统 RI）。\nE 是错误的：Savings Plans 不能用于 S3，主要用于计算服务。\n\n**重点考点 / 关键词补充：**\n- **Savings Plans 两大类型对比**：\n  - Compute Savings Plans（推荐）：灵活性最强，可跨 EC2/Fargate/Lambda + 跨 Region 使用。\n  - EC2 Instance Savings Plans：最不灵活，只能锁定特定实例族和 Region。\n- **与传统 RI 的最大区别**：不需要指定具体实例类型和可用区，灵活性大幅提升。\n- **不能用于 S3**：Savings Plans 只适用于计算类服务（EC2、Fargate、Lambda）。\n- 考试常考：Compute Savings Plans 是目前大多数客户首选的承诺折扣方案。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -352,7 +352,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. 仅适用于 Spot 实例",
         ],
         "correct_answers": ["A", "B"],
-        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：短期免费试用（促销性质）虽然存在，但不是 Free Tier 的主要构成部分。\nD 是错误的：AWS Free Tier 对所有新注册用户开放，并不只对教育机构开放。\nE 是错误的：Spot 实例本身不属于 Free Tier 范畴（Spot 是独立的购买选项）。\n\nFree Tier 主要包括：新账户 12 个月免费额度 + 永久免费套餐（Always Free，例如 Lambda 每月 100 万次调用、DynamoDB 25GB 等）。",
+        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：短期免费试用（促销性质）虽然存在，但不是 Free Tier 的主要构成部分。\nD 是错误的：AWS Free Tier 对所有新注册用户开放，并不只对教育机构开放。\nE 是错误的：Spot 实例本身不属于 Free Tier 范畴（Spot 是独立的购买选项）。\n\n**重点考点 / 关键词补充：**\n- **AWS Free Tier 两种主要类型**（必须区分）：\n  - 12 个月免费额度：从首次激活账户开始计算（非注册日期），仅限新账户。\n  - 永久免费（Always Free）：无时间限制，只要账户活跃即可使用（如 DynamoDB 25GB、Lambda 每月 100 万次调用、S3 5GB 等）。\n- **常见误区**：不是所有服务都有 12 个月免费；用完后会正常收费，不会自动停止。\n- 考试常考：12 个月免费从「激活」开始算 + 哪些服务属于永久免费。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -414,7 +414,7 @@ MULTI_CHOICE_QUESTIONS = [
             "D. 把所有数据永远保存在 S3 Standard",
         ],
         "correct_answers": ["A", "B"],
-        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：开启 S3 版本控制会保留所有历史版本，显著增加存储成本（除非配合生命周期策略清理）。\nD 是错误的：把所有数据永远保存在 S3 Standard 是最贵的做法；应根据访问频率下沉到 IA 或 Glacier。\n\n降低 S3 成本的主要方式：将不常访问的数据转移到 Standard-IA / Glacier + 开启 Intelligent-Tiering 自动优化。",
+        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：开启 S3 版本控制会保留所有历史版本，显著增加存储成本（除非配合生命周期策略清理）。\nD 是错误的：把所有数据永远保存在 S3 Standard 是最贵的做法；应根据访问频率下沉到 IA 或 Glacier。\n\n**重点考点 / 关键词补充：**\n- **降低 S3 成本三大法宝**：1. 使用 Intelligent-Tiering 自动分层；2. 把冷数据转 IA/Glacier；3. 配合 Lifecycle Policy 自动转换。\n- **版本控制陷阱**：版本控制本身会增加存储费用，必须搭配生命周期规则清理旧版本。\n- **Intelligent-Tiering**：最推荐的「懒人」方案，无需手动干预，AWS 自动根据访问模式移动数据。\n- 考试常考：Standard → Standard-IA（30天最低）→ Glacier Instant/Deep Archive 的成本递减顺序。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -439,7 +439,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. S3 Buckets",
         ],
         "correct_answers": ["A", "B", "C"],
-        "explanation": "正确答案是 A、B、C。\n\nD 是错误的：Security Groups 和 NACLs 是 VPC 的安全组件，但题目重点是网络核心组件。\nE 是错误的：S3 Buckets 不属于 VPC 的组件，是独立的对象存储服务。",
+        "explanation": "正确答案是 A、B、C。\n\nD 是错误的：Security Groups 和 NACLs 是 VPC 的安全组件，但题目重点是网络核心组件。\nE 是错误的：S3 Buckets 不属于 VPC 的组件，是独立的对象存储服务。\n\n**重点考点 / 关键词补充：**\n- **VPC 核心组件**：子网（Subnet）、路由表（Route Table）、网关（IGW/NAT Gateway）是必考三件套。\n- **安全组件**：虽然 Security Group + NACL 也属于 VPC，但通常单独作为安全考点出现。\n- **常见陷阱**：不要把 S3、DynamoDB 等存储/数据库服务当成 VPC 组件。\n- 考试常考：VPC = 网络隔离 + 子网 + 路由 + 网关 + 安全组/NACL。",
         "domain": "Technology and Services",
     },
     {
@@ -452,7 +452,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. 显式允许可以覆盖显式拒绝",
         ],
         "correct_answers": ["A", "D"],
-        "explanation": "正确答案是 A 和 D。\n\nB 是错误的：如果没有匹配的允许策略，默认是拒绝，而不是允许。\nC 是错误的：只要有一个策略明确拒绝（Deny），操作就会被拒绝。\nE 是错误的：显式拒绝的优先级永远高于允许。",
+        "explanation": "正确答案是 A 和 D。\n\nB 是错误的：如果没有匹配的允许策略，默认是拒绝，而不是允许。\nC 是错误的：只要有一个策略明确拒绝（Deny），操作就会被拒绝。\nE 是错误的：显式拒绝的优先级永远高于允许。\n\n**重点考点 / 关键词补充：**\n- **IAM 策略评估逻辑**（必须死记）：1. 默认拒绝（Deny）→ 2. 显式允许（Allow）→ 3. 显式拒绝永远胜出。\n- **显式 Deny 优先级最高**：即使有 Allow，只要有 Deny 就直接拒绝。这是安全最佳实践。\n- **没有匹配策略**：不是「允许」，而是「默认拒绝」。\n- 考试高频：理解「显式拒绝 > 显式允许 > 默认拒绝」这个优先级顺序。",
         "domain": "Security and Compliance",
     },
     {
@@ -478,7 +478,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. S3 Select",
         ],
         "correct_answers": ["A", "B"],
-        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：S3 Transfer Acceleration 主要加速通过互联网上传大文件，与合规或防误删无关。\nD 是错误的：Requester Pays 是让请求者支付请求和数据传输费用，不是合规功能。\nE 是错误的：S3 Select 是按需查询特定记录的性能功能，与数据保护无关。\n\nVersioning 可恢复误删或覆盖的版本；Object Lock 提供 WORM（一次写入多次读取）保护，满足监管合规要求。",
+        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：S3 Transfer Acceleration 主要加速通过互联网上传大文件，与合规或防误删无关。\nD 是错误的：Requester Pays 是让请求者支付请求和数据传输费用，不是合规功能。\nE 是错误的：S3 Select 是按需查询特定记录的性能功能，与数据保护无关。\n\n**重点考点 / 关键词补充：**\n- **S3 数据保护与合规两大核心功能**：\n  - Versioning（版本控制）：可恢复误删、误覆盖的历史版本。\n  - Object Lock（对象锁定）：提供 WORM（一次写入多次读取）保护，满足监管和防勒索需求。\n- **常考搭配**：Versioning + Lifecycle Policy 清理旧版本，既保护数据又控制成本。\n- **Object Lock**：一旦开启，对象在保留期内无法删除或覆盖，是合规场景（如金融、医疗）的高频考点。\n- 与 S3 其他功能区别：Transfer Acceleration 是性能功能，Requester Pays 是计费模式，S3 Select 是查询优化。",
         "domain": "Technology and Services",
     },
     {
@@ -528,7 +528,7 @@ MULTI_CHOICE_QUESTIONS = [
             "D. 跨 Region 数据传输通常比 Region 内更便宜",
         ],
         "correct_answers": ["A", "B"],
-        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：同一 Region 内不同 AZ 之间的数据传输通常免费（或极低费用），但跨 AZ 的流量仍需注意。\nD 是错误的：跨 Region 数据传输通常比 Region 内更贵（尤其是到公网或跨大洲）。\n\nAWS 入方向（从互联网传入）大多免费；出方向（从 AWS 传出到互联网）通常收费，且跨 Region 传输费用更高。",
+        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：同一 Region 内不同 AZ 之间的数据传输通常免费（或极低费用），但跨 AZ 的流量仍需注意。\nD 是错误的：跨 Region 数据传输通常比 Region 内更贵（尤其是到公网或跨大洲）。\n\n**重点考点 / 关键词补充：**\n- **AWS 数据传输收费规律**（高频考点）：\n  - 入互联网 → AWS：大多免费\n  - AWS → 互联网：收费（出方向）\n  - 同 Region 内 AZ 间：通常免费\n  - 跨 Region：收费，且通常最贵\n- **成本优化建议**：尽量把资源放在同一 Region，减少跨 Region 流量；善用 CloudFront、S3 Transfer Acceleration 等。\n- **考试陷阱**：很多人误以为「同 Region 就一定免费」，实际上跨 AZ 仍有少量费用（虽然很少）。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -553,7 +553,7 @@ MULTI_CHOICE_QUESTIONS = [
             "D. 选择 Region 时需要考虑合规、延迟和成本",
         ],
         "correct_answers": ["B", "D"],
-        "explanation": "正确答案是 B 和 D。\n\nA 是错误的：不是所有 Region 都有至少 3 个 AZ，部分较新的 Region 可能只有 2 个 AZ。\nC 是错误的：并非所有 AWS 服务在所有 Region 都可用（例如某些新服务或特定合规 Region）。\n\n选择 Region 的关键因素包括：服务可用性、定价差异、合规与数据主权要求、客户地理位置（降低延迟）。",
+        "explanation": "正确答案是 B 和 D。\n\nA 是错误的：不是所有 Region 都有至少 3 个 AZ，部分较新的 Region 可能只有 2 个 AZ。\nC 是错误的：并非所有 AWS 服务在所有 Region 都可用（例如某些新服务或特定合规 Region）。\n\n**重点考点 / 关键词补充：**\n- **Region 选择四大考量因素**（必须掌握）：\n  1. 合规与数据主权（GDPR 等）\n  2. 降低延迟（靠近用户）\n  3. 服务可用性（不是所有服务在所有 Region 都有）\n  4. 价格差异（不同 Region 价格不同）\n- **新 Region 陷阱**：部分新 Region 只有 2 个 AZ，要注意高可用设计。\n- 考试常考：Region 选择不是技术团队偏好，而是业务 + 合规 + 成本的综合决策。",
         "domain": "Cloud Concepts",
     },
     {
@@ -565,7 +565,7 @@ MULTI_CHOICE_QUESTIONS = [
             "D. Enterprise Support",
         ],
         "correct_answers": ["C", "D"],
-        "explanation": "Business 和 Enterprise Support 都提供 24x7 技术支持。Developer 只提供工作时间支持。",
+        "explanation": "正确答案是 C 和 D。\n\nA 是错误的：Basic Support 仅提供账单和账户支持，不提供 24x7 技术支持。\nB 是错误的：Developer Support 只在工作时间（非全天候）提供技术支持，响应时间较慢。\n\n**重点考点 / 关键词补充：**\n- **Business Support**：最常用选择，提供 < 1 小时严重故障响应 + 24x7 技术支持，性价比最高，适合大多数生产环境。\n- **Enterprise Support**：最高级别，提供 TAM（技术客户经理）、架构审查、< 15 分钟严重故障响应、白手套支持。\n- **关键区分**：是否 24x7 + 响应时间 + 是否有 TAM。Developer 只工作时间支持；Basic 几乎没有技术支持。\n- 考试常考：Business 是「生产工作负载推荐的最低支持计划」。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -591,7 +591,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. 把所有数据放在本地硬盘",
         ],
         "correct_answers": ["B", "C"],
-        "explanation": "正确答案是 B 和 C。\n\nA 是错误的：把所有资源放在同一个 AZ 是单点故障，严重违反高可用设计。\nD 是错误的：负载均衡器（ELB）是高可用的重要组成部分，绝对不应该避免。\nE 是错误的：本地硬盘是单点故障且不可靠，生产环境应使用 EBS + 多 AZ 架构。",
+        "explanation": "正确答案是 B 和 C。\n\nA 是错误的：把所有资源放在同一个 AZ 是单点故障，严重违反高可用设计。\nD 是错误的：负载均衡器（ELB）是高可用的重要组成部分，绝对不应该避免。\nE 是错误的：本地硬盘是单点故障且不可靠，生产环境应使用 EBS + 多 AZ 架构。\n\n**重点考点 / 关键词补充：**\n- **高可用核心三要素**：消除单点故障 + 自动故障转移 + 冗余组件。\n- **多 AZ + ELB + Auto Scaling** 是 AWS 经典高可用三件套。\n- **反模式**：单 AZ 部署 + 本地 Instance Store + 没有负载均衡。\n- 考试常考：高可用 ≠ 低成本，真正的高可用通常需要一定冗余成本。",
         "domain": "Cloud Concepts",
     },
     {
@@ -603,7 +603,7 @@ MULTI_CHOICE_QUESTIONS = [
             "D. 所有 Savings Plans 都要求 1 年或 3 年承诺",
         ],
         "correct_answers": ["A", "B"],
-        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：Savings Plans 一旦购买，在承诺期内通常不可取消或全额退款。\nD 是错误的：虽然最常见的是 1 年或 3 年承诺，但 Savings Plans 本身并不强制要求购买；更重要的是灵活性差异。\n\nCompute Savings Plans 可跨实例族、区域和计算服务（EC2/Fargate/Lambda），Instance Savings Plans 则锁定特定实例族，灵活性最低。",
+        "explanation": "正确答案是 A 和 B。\n\nC 是错误的：Savings Plans 一旦购买，在承诺期内通常不可取消或全额退款。\nD 是错误的：虽然最常见的是 1 年或 3 年承诺，但 Savings Plans 本身并不强制要求购买；更重要的是灵活性差异。\n\n**重点考点 / 关键词补充：**\n- **两种 Savings Plans 对比**（高频考点）：\n  - Compute Savings Plans：灵活性最高，可跨 EC2、Fargate、Lambda，甚至跨 Region。\n  - EC2 Instance Savings Plans：灵活性最低，只能锁定特定实例族和 Region。\n- **不能随时取消**：这是和 On-Demand 最大的区别，一旦承诺就很难退出。\n- **适用场景**：有稳定基线负载、愿意做 1-3 年承诺的场景最适合。\n- 考试常考：Compute Savings Plans 是目前最推荐的承诺折扣方式。",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -616,7 +616,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. AWS Direct Connect",
         ],
         "correct_answers": ["B", "C"],
-        "explanation": "正确答案是 B 和 C。\n\nA 是错误的：CloudFront 主要用于内容缓存加速，对非 HTTP 应用或全球 TCP/UDP 加速效果有限。\nD 是错误的：仅使用单个 Region 会造成高延迟和单点故障，无法实现全球加速和容错。\nE 是错误的：Direct Connect 提供专线连接，但本身不提供 Anycast 加速或 DNS 健康检查能力。\n\nGlobal Accelerator 提供基于 Anycast 的全球加速，Route 53 健康检查 + 故障转移策略实现跨 Region 容错。",
+        "explanation": "正确答案是 B 和 C。\n\nA 是错误的：CloudFront 主要用于内容缓存加速，对非 HTTP 应用或全球 TCP/UDP 加速效果有限。\nD 是错误的：仅使用单个 Region 会造成高延迟和单点故障，无法实现全球加速和容错。\nE 是错误的：Direct Connect 提供专线连接，但本身不提供 Anycast 加速或 DNS 健康检查能力。\n\n**重点考点 / 关键词补充：**\n- **全球低延迟 + 高可用经典组合**：AWS Global Accelerator（Anycast 加速）+ Amazon Route 53（健康检查 + 故障转移路由）。\n- **Global Accelerator 优势**：基于 Anycast 的静态 IP，可跨 Region 自动路由到最近健康端点。\n- **Route 53 健康检查**：配合故障转移策略实现自动 DNS 切换。\n- 常考组合：Global Accelerator + Route 53 是实现全球加速和容错的标准做法。\n- 与 CloudFront 区别：Global Accelerator 更适合非 HTTP 应用（TCP/UDP）。",
         "domain": "Technology and Services",
     },
     {
@@ -629,7 +629,7 @@ MULTI_CHOICE_QUESTIONS = [
             "E. 仅考虑技术团队偏好",
         ],
         "correct_answers": ["A", "B", "C"],
-        "explanation": "正确答案是 A、B、C。\n\nD 是错误的：不同 Region 的价格通常不同（数据传输、存储、计算价格都有差异）。\nE 是错误的：仅考虑技术团队偏好是错误做法，Region 选择必须优先考虑合规、延迟和成本。\n\n选择 Region 时需平衡：数据主权/合规要求、客户地理位置（降低延迟）、服务可用性差异以及定价差异。",
+        "explanation": "正确答案是 A、B、C。\n\nD 是错误的：不同 Region 的价格通常不同（数据传输、存储、计算价格都有差异）。\nE 是错误的：仅考虑技术团队偏好是错误做法，Region 选择必须优先考虑合规、延迟和成本。\n\n**重点考点 / 关键词补充：**\n- **Region 选择的四个核心因素**（考试必考）：\n  1. 合规和数据主权要求（最重要）\n  2. 客户地理位置（降低延迟）\n  3. 服务可用性和定价差异\n  4. 不要只看技术团队偏好\n- **价格差异**：不同 Region 之间计算、存储、数据传输价格都有明显不同。\n- **新 Region 注意**：部分新 Region 服务不全、AZ 数量少，需谨慎。\n- 常考陷阱：认为「所有 Region 都一样」或「选离自己近的就好」。",
         "domain": "Cloud Concepts",
     },
 ]

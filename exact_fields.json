@@ -1,7 +1,0 @@
-{
-  "correct_answers": [
-    "B",
-    "C"
-  ],
-  "explanation": "正确答案是 B 和 C。AWS Well-Architected Framework 的五大支柱分别是：卓越运营、安全性、可靠性、性能效率、成本优化。A. 敏捷开发 和 D. 人工智能 并不在五大支柱之中。"
-}
