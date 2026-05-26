@@ -1,0 +1,121 @@
+[
+  {
+    "index": 3,
+    "question": "以下哪些是 AWS 全球基础设施的组成部分？（选择三项）",
+    "options": [
+      "A. Regions",
+      "B. Availability Zones",
+      "C. Edge Locations",
+      "D. Local Zones",
+      "E. Customer Data Centers"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "AWS 全球基础设施主要包括 Region、AZ、Edge Location。Local Zones 是较新的补充，客户数据中心不属于 AWS 基础设施。"
+  },
+  {
+    "index": 8,
+    "question": "S3 服务器端加密（SSE）有哪几种主要方式？（选择三项）",
+    "options": [
+      "A. SSE-S3（AWS 托管密钥）",
+      "B. SSE-KMS（KMS 密钥）",
+      "C. SSE-C（客户提供密钥）",
+      "D. SSE-IAM",
+      "E. Client-side encryption"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "S3 SSE 主要有 SSE-S3、SSE-KMS、SSE-C 三种。Client-side 是客户端加密，不属于服务器端加密。"
+  },
+  {
+    "index": 12,
+    "question": "以下哪些做法有助于保护 AWS 账户安全？（选择三项）",
+    "options": [
+      "A. 为所有 IAM 用户启用 MFA",
+      "B. 定期轮换访问密钥",
+      "C. 使用 IAM Role 代替长期 Access Key",
+      "D. 把 Access Key 硬编码在代码中",
+      "E. 给所有用户 AdministratorAccess 策略"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "D 和 E 是严重安全反模式。A、B、C 是标准安全最佳实践。"
+  },
+  {
+    "index": 29,
+    "question": "以下哪些服务可以帮助实现高可用架构？（选择三项）",
+    "options": [
+      "A. 多可用区部署",
+      "B. 跨 Region 复制",
+      "C. Auto Scaling",
+      "D. 单台 EC2 + EBS",
+      "E. Elastic Load Balancing"
+    ],
+    "correct_answers": [
+      "A",
+      "C",
+      "E"
+    ],
+    "explanation": "多 AZ、Auto Scaling、ELB 是构建高可用架构的经典组合。"
+  },
+  {
+    "index": 33,
+    "question": "Amazon VPC 的主要组件包括哪些？（选择三项）",
+    "options": [
+      "A. Subnets",
+      "B. Route Tables",
+      "C. Internet Gateway / NAT Gateway",
+      "D. Security Groups & NACLs",
+      "E. S3 Buckets"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "VPC 核心组件包括子网、路由表、网关、安全组/NACL 等。S3 是独立服务。"
+  },
+  {
+    "index": 44,
+    "question": "以下哪些是正确的关于 AWS 责任共担模型的说法？（选择三项）",
+    "options": [
+      "A. 客户始终负责客户数据的安全",
+      "B. AWS 始终负责物理基础设施的安全",
+      "C. 对于 IaaS 服务，客户负责更多操作系统和应用层安全",
+      "D. 对于 SaaS 服务，AWS 负责更多安全职责",
+      "E. 客户永远不需要加密自己的数据"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "客户永远对自己的数据负责；AWS 负责底层物理安全；IaaS 客户负责更多上层，SaaS AWS 负责更多。"
+  },
+  {
+    "index": 48,
+    "question": "以下哪些是正确的关于 AWS 区域选择的影响因素？（选择三项）",
+    "options": [
+      "A. 合规和数据主权要求",
+      "B. 客户地理位置（降低延迟）",
+      "C. 服务可用性和定价差异",
+      "D. 所有 Region 价格完全相同",
+      "E. 仅考虑技术团队偏好"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "选择 Region 需要综合考虑合规、延迟、可用服务和成本。不同 Region 定价和服务可用性存在差异。"
+  }
+]

@@ -1,0 +1,165 @@
+[
+  {
+    "index": 0,
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "options": [
+      "A. 客户始终对所有安全负责",
+      "B. 责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）",
+      "C. AWS 始终负责客户数据的加密密钥管理",
+      "D. 对于托管服务，AWS 承担更多运营责任",
+      "E. 客户永远不需要关心任何安全配置"
+    ],
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "共享责任模型中，责任划分随服务类型变化：EC2 类 IaaS 客户负责更多；Lambda/DynamoDB 等托管服务 AWS 负责更多运营和安全。"
+  },
+  {
+    "index": 1,
+    "question": "一家公司同时在多个 Availability Zone 部署应用，这主要实现了哪两项优势？（选择两项）",
+    "options": [
+      "A. 更低的存储成本",
+      "B. 更高的可用性和容错能力",
+      "C. 自动跨 Region 灾难恢复",
+      "D. 消除单点故障",
+      "E. 全球内容分发加速"
+    ],
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "多 AZ 部署可实现高可用性和消除单点故障，但 Region 级灾难恢复仍需跨 Region 架构。Edge Location 用于内容分发。"
+  },
+  {
+    "index": 2,
+    "question": "AWS Well-Architected Framework 的五大支柱包括哪些？（选择三项）",
+    "options": [
+      "A. 敏捷开发",
+      "B. 安全性 (Security)",
+      "C. 成本优化 (Cost Optimization)",
+      "D. 人工智能",
+      "E. 可靠性 (Reliability)"
+    ],
+    "correct_answers": [
+      "B",
+      "C",
+      "E"
+    ],
+    "explanation": "正确答案是 B、C、E。AWS Well-Architected Framework 的五大支柱分别是：卓越运营、安全性、可靠性、性能效率、成本优化。因此 B. 安全性、C. 成本优化、E. 可靠性 都是正确答案。\n\nA. 敏捷开发 和 D. 人工智能 并不属于 Well-Architected Framework 的五大支柱，所以是错误选项。"
+  },
+  {
+    "index": 3,
+    "question": "以下哪些是 AWS 全球基础设施的组成部分？（选择三项）",
+    "options": [
+      "A. Regions",
+      "B. Availability Zones",
+      "C. Edge Locations",
+      "D. Local Zones",
+      "E. Customer Data Centers"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "AWS 全球基础设施主要包括 Region、AZ、Edge Location。Local Zones 是较新的补充，客户数据中心不属于 AWS 基础设施。"
+  },
+  {
+    "index": 4,
+    "question": "AWS Global Accelerator 相比直接使用公网 IP 的主要优势是什么？（选择两项）",
+    "options": [
+      "A. 自动降低 S3 存储费用",
+      "B. 利用 AWS 全球骨干网络降低延迟",
+      "C. 提供静态 Anycast IP 地址",
+      "D. 自动加密所有流量",
+      "E. 完全替代 CloudFront"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 B 和 C。AWS Global Accelerator 的主要优势包括：利用 AWS 全球骨干网络降低延迟，以及提供静态 Anycast IP 地址提升全球访问的稳定性。"
+  },
+  {
+    "index": 5,
+    "question": "为什么强烈不推荐日常使用 AWS Root 用户？（选择两项）",
+    "options": [
+      "A. Root 用户权限最小",
+      "B. Root 用户拥有账户全部权限，一旦泄露后果极严重",
+      "C. Root 用户无法开启 MFA",
+      "D. 无法为 Root 用户创建访问密钥",
+      "E. 很多操作无法被 IAM 策略完全限制"
+    ],
+    "correct_answers": [
+      "B",
+      "E"
+    ],
+    "explanation": "正确答案是 B 和 E。强烈不推荐日常使用 Root 用户的主要原因是：Root 拥有账户全部权限，一旦泄露后果极其严重；并且很多高危操作无法被 IAM 策略完全限制。"
+  },
+  {
+    "index": 6,
+    "question": "Security Group 和 Network ACL 的关键区别有哪些？（选择两项）",
+    "options": [
+      "A. Security Group 是有状态的，NACL 是无状态的",
+      "B. Security Group 作用于实例级别，NACL 作用于子网级别",
+      "C. NACL 只支持允许规则，不支持拒绝",
+      "D. Security Group 支持显式拒绝规则",
+      "E. 两者都默认拒绝所有入站流量"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Security Group 有状态（自动放行响应）、实例级；NACL 无状态、子网级、支持显式拒绝。这是经典易考点。"
+  },
+  {
+    "index": 7,
+    "question": "以下哪些是实现“最小权限原则”的正确做法？（选择两项）",
+    "options": [
+      "A. 为所有用户附加 AdministratorAccess",
+      "B. 只授予用户完成工作所需的最小权限",
+      "C. 使用 IAM Role 而非长期 Access Key",
+      "D. 关闭所有 CloudTrail",
+      "E. 给 Root 用户日常操作权限"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 B 和 C。实现最小权限原则的正确做法包括：只授予用户完成工作所需的最小权限，以及优先使用 IAM Role（临时凭证）而非长期 Access Key。"
+  },
+  {
+    "index": 8,
+    "question": "S3 服务器端加密（SSE）有哪几种主要方式？（选择三项）",
+    "options": [
+      "A. SSE-S3（AWS 托管密钥）",
+      "B. SSE-KMS（KMS 密钥）",
+      "C. SSE-C（客户提供密钥）",
+      "D. SSE-IAM",
+      "E. Client-side encryption"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "S3 SSE 主要有 SSE-S3、SSE-KMS、SSE-C 三种。Client-side 是客户端加密，不属于服务器端加密。"
+  },
+  {
+    "index": 9,
+    "question": "以下哪些 AWS 服务主要用于威胁检测和防护？（选择两项）",
+    "options": [
+      "A. AWS Shield",
+      "B. AWS WAF",
+      "C. Amazon GuardDuty",
+      "D. AWS Artifact",
+      "E. AWS Cost Explorer"
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Shield 主要防 DDoS，GuardDuty 是智能威胁检测服务。WAF 是 Web 应用防火墙，Artifact 是合规文档中心。"
+  }
+]

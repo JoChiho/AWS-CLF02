@@ -1,0 +1,247 @@
+[
+  {
+    "index": 0,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 1,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 2,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 3,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 4,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 5,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 6,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 7,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 8,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 9,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 10,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 11,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 12,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 13,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 14,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 15,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 16,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 17,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 18,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 19,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 20,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 21,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 22,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 23,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 24,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 25,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 26,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 27,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 28,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 29,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 30,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 31,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 32,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 33,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 34,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 35,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 36,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 37,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 38,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 39,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 40,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 41,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 42,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 43,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 44,
+    "correct_count": 3,
+    "has_three_in_question": true
+  },
+  {
+    "index": 45,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 46,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 47,
+    "correct_count": 2,
+    "has_three_in_question": false
+  },
+  {
+    "index": 48,
+    "correct_count": 3,
+    "has_three_in_question": true
+  }
+]

@@ -1,0 +1,148 @@
+[
+  {
+    "index": 7,
+    "question": "以下哪些是实现“最小权限原则”的正确做法？（选择两项）",
+    "options": [
+      "A. 为所有用户附加 AdministratorAccess",
+      "B. 只授予用户完成工作所需的最小权限",
+      "C. 使用 IAM Role 而非长期 Access Key",
+      "D. 关闭所有 CloudTrail",
+      "E. 给 Root 用户日常操作权限"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 B 和 C。实现最小权限原则的正确做法包括：只授予用户完成工作所需的最小权限，以及优先使用 IAM Role（临时凭证）而非长期 Access Key。"
+  },
+  {
+    "index": 8,
+    "question": "S3 服务器端加密（SSE）有哪几种主要方式？（选择三项）",
+    "options": [
+      "A. SSE-S3（AWS 托管密钥）",
+      "B. SSE-KMS（KMS 密钥）",
+      "C. SSE-C（客户提供密钥）",
+      "D. SSE-IAM",
+      "E. Client-side encryption"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "S3 SSE 主要有 SSE-S3、SSE-KMS、SSE-C 三种。Client-side 是客户端加密，不属于服务器端加密。"
+  },
+  {
+    "index": 9,
+    "question": "以下哪些 AWS 服务主要用于威胁检测和防护？（选择两项）",
+    "options": [
+      "A. AWS Shield",
+      "B. AWS WAF",
+      "C. Amazon GuardDuty",
+      "D. AWS Artifact",
+      "E. AWS Cost Explorer"
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Shield 主要防 DDoS，GuardDuty 是智能威胁检测服务。WAF 是 Web 应用防火墙，Artifact 是合规文档中心。"
+  },
+  {
+    "index": 10,
+    "question": "IAM Role 相比 IAM User 的最大优势是什么？（选择两项）",
+    "options": [
+      "A. Role 可以长期保存 Access Key",
+      "B. Role 没有长期凭证，通过 AssumeRole 获取临时凭证",
+      "C. 特别适合 EC2、Lambda 等服务需要访问其他 AWS 资源",
+      "D. Role 可以直接登录 AWS 管理控制台",
+      "E. Role 权限永远大于 User"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "Role 无长期凭证 + 适合服务间访问是其最大安全优势。User 更适合人类用户日常操作。"
+  },
+  {
+    "index": 11,
+    "question": "Amazon GuardDuty 主要通过分析哪些数据来源进行威胁检测？（选择两项）",
+    "options": [
+      "A. CloudTrail 日志",
+      "B. VPC Flow Logs",
+      "C. S3 访问日志",
+      "D. EC2 系统日志",
+      "E. Route53 查询日志"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "GuardDuty 主要分析 CloudTrail、VPC Flow Logs、DNS 查询日志，使用机器学习发现异常和威胁。"
+  },
+  {
+    "index": 12,
+    "question": "以下哪些做法有助于保护 AWS 账户安全？（选择三项）",
+    "options": [
+      "A. 为所有 IAM 用户启用 MFA",
+      "B. 定期轮换访问密钥",
+      "C. 使用 IAM Role 代替长期 Access Key",
+      "D. 把 Access Key 硬编码在代码中",
+      "E. 给所有用户 AdministratorAccess 策略"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "D 和 E 是严重安全反模式。A、B、C 是标准安全最佳实践。"
+  },
+  {
+    "index": 13,
+    "question": "AWS WAF 可以帮助防护哪些类型的攻击？（选择两项）",
+    "options": [
+      "A. 基础设施层 DDoS",
+      "B. SQL 注入和跨站脚本 (XSS)",
+      "C. 恶意机器人",
+      "D. 物理数据中心入侵",
+      "E. 操作系统漏洞利用"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "WAF 工作在应用层（L7），擅长防护 SQL 注入、XSS、机器人等 Web 攻击。基础设施 DDoS 由 Shield 负责。"
+  },
+  {
+    "index": 14,
+    "question": "以下哪些数据库服务是 NoSQL 类型？（选择两项）",
+    "options": [
+      "A. Amazon RDS for MySQL",
+      "B. Amazon DynamoDB",
+      "C. Amazon Aurora",
+      "D. Amazon DocumentDB",
+      "E. Amazon Redshift"
+    ],
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "DynamoDB 是键值/文档 NoSQL；DocumentDB 是 MongoDB 兼容的 NoSQL。RDS、Aurora 是关系型；Redshift 是数据仓库。"
+  },
+  {
+    "index": 15,
+    "question": "以下哪些服务可以用于将大量数据从本地数据中心迁移到 AWS？（选择两项）",
+    "options": [
+      "A. AWS DataSync",
+      "B. AWS Snowball Edge",
+      "C. Amazon S3 Transfer Acceleration",
+      "D. AWS Database Migration Service",
+      "E. AWS Direct Connect"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "DataSync 适合在线大规模数据传输；Snowball Edge 适合离线 PB 级数据迁移。DMS 主要用于数据库。"
+  }
+]

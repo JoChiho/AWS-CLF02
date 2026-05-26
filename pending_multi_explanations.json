@@ -1,0 +1,406 @@
+[
+  {
+    "index": 0,
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "correct": [
+      "B",
+      "D"
+    ],
+    "explanation": "正确答案是 B 和 D。\n\nA 是错误的：客户并不始终对所有安全负责，责任会根据服务类型（IaaS/PaaS/SaaS）变化。\nC 是错误的：客户数据的加密密钥管理通常由客户自己负责（尤其是使用客户托管 KMS 密钥时）。\nE 是错误的：在云中客户仍然需要关心安全配置，这是共享责任模型的重要部分。"
+  },
+  {
+    "index": 1,
+    "question": "一家公司同时在多个 Availability Zone 部署应用，这主要实现了哪两项优势？（选择两项）",
+    "correct": [
+      "B",
+      "D"
+    ],
+    "explanation": "正确答案是 B 和 D。\n\nA 是错误的：多 AZ 部署并不能降低存储成本。\nC 是错误的：多 AZ 部署无法实现跨 Region 的灾难恢复（需要多 Region 架构）。\nE 是错误的：全球内容分发加速主要靠 Edge Location 和 CloudFront，与多 AZ 部署无关。"
+  },
+  {
+    "index": 2,
+    "question": "AWS Well-Architected Framework 的五大支柱包括哪些？（选择三项）",
+    "correct": [
+      "B",
+      "C",
+      "E"
+    ],
+    "explanation": "正确答案是 B、C、E。\n\nA 是错误的：敏捷开发并不在 Well-Architected Framework 的五大支柱之中。\nD 是错误的：人工智能也不是五大支柱之一。\n\n正确答案 B、C、E 分别对应安全性、成本优化、可靠性，这三者都是 AWS 推荐的核心架构支柱。"
+  },
+  {
+    "index": 3,
+    "question": "以下哪些是 AWS 全球基础设施的组成部分？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 A、B、C。\n\nD 是错误的：Local Zones 是 AWS 全球基础设施的补充形式，但题目问的是“组成部分”，通常指核心的 Region、AZ、Edge Location。\nE 是错误的：客户自己的数据中心不属于 AWS 全球基础设施。"
+  },
+  {
+    "index": 4,
+    "question": "AWS Global Accelerator 相比直接使用公网 IP 的主要优势是什么？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 B 和 C。\n\nA 是错误的：Global Accelerator 不会降低 S3 存储费用。\nD 是错误的：它本身不提供自动加密功能。\nE 是错误的：Global Accelerator 并不能完全替代 CloudFront，两者功能不同。"
+  },
+  {
+    "index": 5,
+    "question": "为什么强烈不推荐日常使用 AWS Root 用户？（选择两项）",
+    "correct": [
+      "B",
+      "E"
+    ],
+    "explanation": "正确答案是 B 和 E。\n\nA 是错误的：Root 用户权限是最大的，而不是最小。\nC 是错误的：Root 用户完全可以开启 MFA。\nD 是错误的：Root 用户可以创建访问密钥。"
+  },
+  {
+    "index": 6,
+    "question": "Security Group 和 Network ACL 的关键区别有哪些？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Security Group 有状态（自动放行响应）、实例级；NACL 无状态、子网级、支持显式拒绝。这是经典易考点。"
+  },
+  {
+    "index": 7,
+    "question": "以下哪些是实现“最小权限原则”的正确做法？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 B 和 C。\n\nA 是错误的：给所有用户附加 AdministratorAccess 策略严重违反最小权限原则。\nD 是错误的：关闭 CloudTrail 会导致无法审计账户活动，是严重的安全反模式。\nE 是错误的：日常使用 Root 用户权限是强烈不推荐的做法，会带来极大安全风险。"
+  },
+  {
+    "index": 8,
+    "question": "S3 服务器端加密（SSE）有哪几种主要方式？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 A、B、C。\n\nD 是错误的：不存在 SSE-IAM 这种加密方式。\nE 是错误的：Client-side encryption 是客户端自己加密数据，并不属于 S3 服务器端加密 (SSE) 的范畴。"
+  },
+  {
+    "index": 11,
+    "question": "Amazon GuardDuty 主要通过分析哪些数据来源进行威胁检测？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "正确答案是 A 和 B。\n\nC 是错误的：S3 访问日志不是 GuardDuty 的主要数据源。\nD 是错误的：EC2 系统日志（操作系统内日志）不是 GuardDuty 直接分析的对象。\nE 是错误的：Route53 查询日志是 GuardDuty 的数据源之一，但题目中未列出，且不是主要选项。"
+  },
+  {
+    "index": 12,
+    "question": "以下哪些做法有助于保护 AWS 账户安全？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "正确答案是 A、B、C。\n\nD 是错误的：把 Access Key 硬编码在代码中是严重的安全反模式，极易泄露。\nE 是错误的：给所有用户 AdministratorAccess 策略违反最小权限原则，是高危做法。"
+  },
+  {
+    "index": 16,
+    "question": "以下哪些是 AWS 无服务器 (Serverless) 计算服务？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "Lambda 和 Fargate（配合 ECS/EKS）都是无服务器计算，用户无需管理底层服务器或 EC2 实例。"
+  },
+  {
+    "index": 17,
+    "question": "Amazon Route 53 提供哪些功能？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Route 53 是 AWS 的 DNS 服务，同时支持域名注册和多种智能路由策略。"
+  },
+  {
+    "index": 18,
+    "question": "AWS Lambda 的核心优势包括哪些？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "Lambda 真正 serverless：按执行时间毫秒计费、自动扩展、无需管理服务器。执行最长 15 分钟（可配置）。"
+  },
+  {
+    "index": 19,
+    "question": "Amazon Aurora 与传统 MySQL 相比的最显著优势是什么？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Aurora 存储计算分离 + 高性能 + 自动高可用和故障转移，是其核心优势。"
+  },
+  {
+    "index": 20,
+    "question": "以下哪些服务属于 AWS 消息与通知类服务？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "SQS 是队列服务，SNS 是发布订阅通知服务。Kinesis 是流数据，ElastiCache 是缓存。"
+  },
+  {
+    "index": 21,
+    "question": "以下哪些因素会影响 Spot Instance 被中断的概率？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Spot 中断主要受供需关系影响。价格差距大、热门实例类型更容易被中断。"
+  },
+  {
+    "index": 22,
+    "question": "以下哪些 AWS 服务可以提供负载均衡能力？（选择两项）",
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "ELB 系列是传统负载均衡；Global Accelerator 也可提供基于 Anycast 的负载均衡和容错能力。"
+  },
+  {
+    "index": 23,
+    "question": "AWS Business Support 和 Enterprise Support 的主要区别是什么？（选择两项）",
+    "correct": [
+      "A",
+      "C"
+    ],
+    "explanation": "Enterprise 提供 TAM、白手套架构支持、更快响应时间；Business 适合大多数生产环境，已有较好支持。"
+  },
+  {
+    "index": 24,
+    "question": "以下哪些工具可以帮助控制和优化 AWS 成本？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Budgets 用于设置告警阈值；Cost Explorer 用于分析趋势和推荐。Pricing Calculator 用于预估，GuardDuty 是安全服务。"
+  },
+  {
+    "index": 25,
+    "question": "AWS Savings Plans 相比传统 Reserved Instances 的主要灵活性优势是什么？（选择两项）",
+    "correct": [
+      "A",
+      "C"
+    ],
+    "explanation": "Savings Plans 提供远高于传统 RI 的灵活性，是目前大多数客户推荐的承诺折扣方式。"
+  },
+  {
+    "index": 26,
+    "question": "AWS Free Tier 主要包含哪几种类型？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Free Tier 主要包括 12 个月免费 + 永久免费 + 短期试用，帮助新客户零成本上手。"
+  },
+  {
+    "index": 27,
+    "question": "以下哪些是 AWS 推荐的成本优化最佳实践？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "关闭闲置资源 + 使用合适购买选项 + 定期治理是成本优化的核心。"
+  },
+  {
+    "index": 28,
+    "question": "以下哪些是 Amazon RDS 的主要优势？（选择两项）",
+    "correct": [
+      "A",
+      "C"
+    ],
+    "explanation": "RDS 是托管关系型数据库，AWS 负责大量运维工作，并支持 Multi-AZ 高可用。"
+  },
+  {
+    "index": 29,
+    "question": "以下哪些服务可以帮助实现高可用架构？（选择三项）",
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "explanation": "多 AZ、Auto Scaling、ELB 是构建高可用架构的经典组合。"
+  },
+  {
+    "index": 30,
+    "question": "以下哪些是正确的 S3 存储类特性？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "One Zone-IA 存储在单 AZ，耐久性稍低；所有 S3 存储类耐久性都极高；IA 比 Standard 便宜但有最低存储时长要求。"
+  },
+  {
+    "index": 31,
+    "question": "以下哪些做法可以降低 S3 的存储成本？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "使用更便宜的存储类 + Intelligent-Tiering 是降低 S3 成本的主要方式。版本控制会增加存储量。"
+  },
+  {
+    "index": 32,
+    "question": "以下哪些是正确的 EC2 实例状态转换？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Terminated 是最终状态，无法恢复。Stopped 可以重新启动。"
+  },
+  {
+    "index": 33,
+    "question": "Amazon VPC 的主要组件包括哪些？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "VPC 核心组件包括子网、路由表、网关、安全组/NACL 等。S3 是独立服务。"
+  },
+  {
+    "index": 34,
+    "question": "以下哪些关于 IAM 策略评估的说法是正确的？（选择两项）",
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "IAM 策略评估逻辑：默认拒绝 → 显式允许 → 显式拒绝（Deny 永远胜出）。没有显式允许就默认拒绝。"
+  },
+  {
+    "index": 35,
+    "question": "以下哪些是 AWS 推荐的网络连接混合云场景的选项？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "VPN 快速部署、加密；Direct Connect 提供稳定低延迟专线，常结合 Transit Gateway 使用。"
+  },
+  {
+    "index": 36,
+    "question": "以下哪些 S3 功能可以帮助满足数据合规和恢复需求？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Versioning + Object Lock 是防止误删和满足合规（WORM）的重要功能。"
+  },
+  {
+    "index": 37,
+    "question": "以下哪些是正确的 EC2 实例购买选项特性？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "Spot 中断时数据通常保留（除非根卷是临时）；RI 可在 Marketplace 转售；Savings Plans 承诺期内通常不可取消。"
+  },
+  {
+    "index": 38,
+    "question": "以下哪些服务属于 AWS 的分析类服务？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Redshift 是数据仓库，Athena 是无服务器 SQL 查询服务。EMR 是 Hadoop/Spark，Glue 是 ETL，SageMaker 是机器学习。"
+  },
+  {
+    "index": 39,
+    "question": "以下哪些是正确的关于 AWS 免费套餐的说法？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "12 个月免费从激活开始；永久免费（如 DynamoDB 25GB、Lambda 每月免费额度）长期有效。不是所有服务都有免费额度。"
+  },
+  {
+    "index": 40,
+    "question": "以下哪些是正确的关于数据传输费用的说法？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "入方向大多免费；出方向（尤其是到公网）收费较高；同 Region AZ 间通常免费，跨 Region 收费。"
+  },
+  {
+    "index": 41,
+    "question": "以下哪些服务可以用于构建事件驱动的无服务器架构？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Lambda + EventBridge（原 CloudWatch Events）是构建事件驱动 serverless 架构的核心组合。"
+  },
+  {
+    "index": 42,
+    "question": "以下哪些是正确的关于 AWS 区域（Region）的说法？（选择两项）",
+    "correct": [
+      "B",
+      "D"
+    ],
+    "explanation": "不是所有 Region 都有 3+ AZ；服务可用性、合规要求、客户位置和数据主权都会影响 Region 选择。"
+  },
+  {
+    "index": 43,
+    "question": "以下哪些支持计划提供 24x7 全天候技术支持？（选择两项）",
+    "correct": [
+      "C",
+      "D"
+    ],
+    "explanation": "Business 和 Enterprise Support 都提供 24x7 技术支持。Developer 只提供工作时间支持。"
+  },
+  {
+    "index": 44,
+    "question": "以下哪些是正确的关于 AWS 责任共担模型的说法？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "客户永远对自己的数据负责；AWS 负责底层物理安全；IaaS 客户负责更多上层，SaaS AWS 负责更多。"
+  },
+  {
+    "index": 45,
+    "question": "以下哪些是高可用架构设计的最佳实践？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "多 AZ + 自动故障转移是高可用架构的核心。单 AZ 和本地存储是单点故障风险。"
+  },
+  {
+    "index": 46,
+    "question": "以下哪些是正确的关于 Savings Plans 的说法？（选择两项）",
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Compute Savings Plans 灵活性最高；Instance Savings Plans 针对特定实例族；承诺期内一般不可取消。"
+  },
+  {
+    "index": 47,
+    "question": "AWS 客户希望对运行在多个 Region 的应用实现全球加速和容错，最佳组合通常包括？（选择两项）",
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "Global Accelerator + Route 53 健康检查 + 多 Region 部署是实现全球低延迟和高可用的常见架构。"
+  },
+  {
+    "index": 48,
+    "question": "以下哪些是正确的关于 AWS 区域选择的影响因素？（选择三项）",
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "选择 Region 需要综合考虑合规、延迟、可用服务和成本。不同 Region 定价和服务可用性存在差异。"
+  }
+]

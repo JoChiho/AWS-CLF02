@@ -1,0 +1,320 @@
+[
+  {
+    "index": 16,
+    "question": "以下哪些是 AWS 无服务器 (Serverless) 计算服务？（选择两项）",
+    "options": [
+      "A. Amazon EC2",
+      "B. AWS Lambda",
+      "C. AWS Fargate",
+      "D. Amazon ECS on EC2",
+      "E. Amazon Lightsail"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "Lambda 和 Fargate（配合 ECS/EKS）都是无服务器计算，用户无需管理底层服务器或 EC2 实例。"
+  },
+  {
+    "index": 17,
+    "question": "Amazon Route 53 提供哪些功能？（选择两项）",
+    "options": [
+      "A. 域名注册",
+      "B. DNS 解析和流量路由策略（延迟、地理、加权等）",
+      "C. 内容缓存加速",
+      "D. 负载均衡器",
+      "E. 数据库备份"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Route 53 是 AWS 的 DNS 服务，同时支持域名注册和多种智能路由策略。"
+  },
+  {
+    "index": 18,
+    "question": "AWS Lambda 的核心优势包括哪些？（选择两项）",
+    "options": [
+      "A. 必须预先配置服务器容量",
+      "B. 按实际代码执行时间（毫秒级）计费",
+      "C. 自动高可用和弹性伸缩",
+      "D. 可以运行任意长时间的任务",
+      "E. 只能使用 Python"
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "Lambda 真正 serverless：按执行时间毫秒计费、自动扩展、无需管理服务器。执行最长 15 分钟（可配置）。"
+  },
+  {
+    "index": 19,
+    "question": "Amazon Aurora 与传统 MySQL 相比的最显著优势是什么？（选择两项）",
+    "options": [
+      "A. 存储和计算分离，存储自动扩展至 128TB",
+      "B. 性能远超标准 MySQL",
+      "C. 必须手动管理备份",
+      "D. 不兼容 MySQL 协议",
+      "E. 仅支持单可用区部署"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Aurora 存储计算分离 + 高性能 + 自动高可用和故障转移，是其核心优势。"
+  },
+  {
+    "index": 20,
+    "question": "以下哪些服务属于 AWS 消息与通知类服务？（选择两项）",
+    "options": [
+      "A. Amazon SQS",
+      "B. Amazon SNS",
+      "C. Amazon MQ",
+      "D. Amazon Kinesis Data Streams",
+      "E. Amazon ElastiCache"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "SQS 是队列服务，SNS 是发布订阅通知服务。Kinesis 是流数据，ElastiCache 是缓存。"
+  },
+  {
+    "index": 21,
+    "question": "以下哪些因素会影响 Spot Instance 被中断的概率？（选择两项）",
+    "options": [
+      "A. 当前 Spot 价格与 On-Demand 价格的差距",
+      "B. 所选实例类型和可用区的供需情况",
+      "C. 实例运行时间",
+      "D. 是否开启 CloudTrail",
+      "E. 是否附加了 IAM Role"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Spot 中断主要受供需关系影响。价格差距大、热门实例类型更容易被中断。"
+  },
+  {
+    "index": 22,
+    "question": "以下哪些 AWS 服务可以提供负载均衡能力？（选择两项）",
+    "options": [
+      "A. Amazon ELB / ALB / NLB",
+      "B. Amazon Route 53",
+      "C. Amazon CloudFront",
+      "D. AWS Global Accelerator",
+      "E. Amazon S3"
+    ],
+    "correct_answers": [
+      "A",
+      "D"
+    ],
+    "explanation": "ELB 系列是传统负载均衡；Global Accelerator 也可提供基于 Anycast 的负载均衡和容错能力。"
+  },
+  {
+    "index": 23,
+    "question": "AWS Business Support 和 Enterprise Support 的主要区别是什么？（选择两项）",
+    "options": [
+      "A. Enterprise Support 提供 Technical Account Manager (TAM)",
+      "B. Business Support 提供 < 15 分钟的严重故障响应时间",
+      "C. Enterprise Support 支持更快的响应时间和架构审查",
+      "D. Business Support 完全免费",
+      "E. 两者响应时间完全相同"
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Enterprise 提供 TAM、白手套架构支持、更快响应时间；Business 适合大多数生产环境，已有较好支持。"
+  },
+  {
+    "index": 24,
+    "question": "以下哪些工具可以帮助控制和优化 AWS 成本？（选择两项）",
+    "options": [
+      "A. AWS Budgets",
+      "B. AWS Cost Explorer",
+      "C. AWS Pricing Calculator",
+      "D. Amazon GuardDuty",
+      "E. AWS Artifact"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Budgets 用于设置告警阈值；Cost Explorer 用于分析趋势和推荐。Pricing Calculator 用于预估，GuardDuty 是安全服务。"
+  },
+  {
+    "index": 25,
+    "question": "AWS Savings Plans 相比传统 Reserved Instances 的主要灵活性优势是什么？（选择两项）",
+    "options": [
+      "A. 可跨实例系列使用",
+      "B. 可跨 AWS 区域使用（Compute Savings Plans）",
+      "C. 可同时适用于 EC2、Fargate、Lambda",
+      "D. 必须指定具体实例类型和区域",
+      "E. 只能用于 S3"
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Savings Plans 提供远高于传统 RI 的灵活性，是目前大多数客户推荐的承诺折扣方式。"
+  },
+  {
+    "index": 26,
+    "question": "AWS Free Tier 主要包含哪几种类型？（选择两项）",
+    "options": [
+      "A. 12 个月免费额度（新账户）",
+      "B. 永久免费套餐（Always Free）",
+      "C. 短期免费试用（短期促销）",
+      "D. 仅对教育机构开放",
+      "E. 仅适用于 Spot 实例"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Free Tier 主要包括 12 个月免费 + 永久免费 + 短期试用，帮助新客户零成本上手。"
+  },
+  {
+    "index": 27,
+    "question": "以下哪些是 AWS 推荐的成本优化最佳实践？（选择两项）",
+    "options": [
+      "A. 关闭未使用的资源",
+      "B. 使用 Spot 和 Savings Plans 降低计算成本",
+      "C. 始终使用最新最贵的实例类型",
+      "D. 定期审查和删除未附加的 EBS 卷和快照",
+      "E. 把所有数据永远保存在 S3 Standard"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "关闭闲置资源 + 使用合适购买选项 + 定期治理是成本优化的核心。"
+  },
+  {
+    "index": 28,
+    "question": "以下哪些是 Amazon RDS 的主要优势？（选择两项）",
+    "options": [
+      "A. 自动备份、补丁和故障转移",
+      "B. 必须自己管理操作系统和数据库软件",
+      "C. 支持多可用区部署实现高可用",
+      "D. 性能永远优于 Aurora"
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "RDS 是托管关系型数据库，AWS 负责大量运维工作，并支持 Multi-AZ 高可用。"
+  },
+  {
+    "index": 29,
+    "question": "以下哪些服务可以帮助实现高可用架构？（选择三项）",
+    "options": [
+      "A. 多可用区部署",
+      "B. 跨 Region 复制",
+      "C. Auto Scaling",
+      "D. 单台 EC2 + EBS",
+      "E. Elastic Load Balancing"
+    ],
+    "correct_answers": [
+      "A",
+      "C",
+      "E"
+    ],
+    "explanation": "多 AZ、Auto Scaling、ELB 是构建高可用架构的经典组合。"
+  },
+  {
+    "index": 30,
+    "question": "以下哪些是正确的 S3 存储类特性？（选择两项）",
+    "options": [
+      "A. S3 One Zone-IA 将数据存储在单个可用区",
+      "B. S3 Glacier Deep Archive 检索时间最长但成本最低",
+      "C. 所有 S3 存储类都提供 99.999999999% 的耐久性",
+      "D. S3 Standard-IA 支持毫秒级检索且比 Standard 更贵"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "One Zone-IA 存储在单 AZ，耐久性稍低；所有 S3 存储类耐久性都极高；IA 比 Standard 便宜但有最低存储时长要求。"
+  },
+  {
+    "index": 31,
+    "question": "以下哪些做法可以降低 S3 的存储成本？（选择两项）",
+    "options": [
+      "A. 把不常访问的数据转移到 S3 Standard-IA 或 Glacier",
+      "B. 使用 S3 Intelligent-Tiering",
+      "C. 开启 S3 版本控制并永远保留所有版本",
+      "D. 把所有数据永远保存在 S3 Standard"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "使用更便宜的存储类 + Intelligent-Tiering 是降低 S3 成本的主要方式。版本控制会增加存储量。"
+  },
+  {
+    "index": 32,
+    "question": "以下哪些是正确的 EC2 实例状态转换？（选择两项）",
+    "options": [
+      "A. Running → Stopped → Terminated",
+      "B. Stopped 可以直接变成 Running",
+      "C. Terminated 后可以恢复",
+      "D. Running 可以直接变成 Terminated"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "Terminated 是最终状态，无法恢复。Stopped 可以重新启动。"
+  },
+  {
+    "index": 33,
+    "question": "Amazon VPC 的主要组件包括哪些？（选择三项）",
+    "options": [
+      "A. Subnets",
+      "B. Route Tables",
+      "C. Internet Gateway / NAT Gateway",
+      "D. Security Groups & NACLs",
+      "E. S3 Buckets"
+    ],
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "VPC 核心组件包括子网、路由表、网关、安全组/NACL 等。S3 是独立服务。"
+  },
+  {
+    "index": 34,
+    "question": "以下哪些关于 IAM 策略评估的说法是正确的？（选择两项）",
+    "options": [
+      "A. 显式拒绝（Deny）永远优先于允许",
+      "B. 如果没有匹配的策略，默认允许所有操作",
+      "C. 多个策略中只要有一个允许即可执行操作",
+      "D. 默认情况下所有请求都被拒绝",
+      "E. 显式允许可以覆盖显式拒绝"
+    ],
+    "correct_answers": [
+      "A",
+      "D"
+    ],
+    "explanation": "IAM 策略评估逻辑：默认拒绝 → 显式允许 → 显式拒绝（Deny 永远胜出）。没有显式允许就默认拒绝。"
+  },
+  {
+    "index": 35,
+    "question": "以下哪些是 AWS 推荐的网络连接混合云场景的选项？（选择两项）",
+    "options": [
+      "A. AWS Site-to-Site VPN",
+      "B. AWS Direct Connect",
+      "C. AWS PrivateLink",
+      "D. AWS Transit Gateway",
+      "E. 以上全部"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "VPN 快速部署、加密；Direct Connect 提供稳定低延迟专线，常结合 Transit Gateway 使用。"
+  }
+]
