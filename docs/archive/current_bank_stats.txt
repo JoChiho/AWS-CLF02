@@ -1,0 +1,14 @@
+=== 当前题库统计 ===
+单选题数量: 129
+多选题数量: 87
+总题数: 216
+
+=== 各领域分布 ===
+Cloud Concepts: 45 题
+Security and Compliance: 47 题
+Technology and Services: 75 题
+Billing, Pricing, and Support: 49 题
+
+=== ID 范围 ===
+单选题 ID: M82 ~ S99
+多选题 ID: M01 ~ M89

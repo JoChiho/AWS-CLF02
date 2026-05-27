@@ -1,0 +1,599 @@
+{
+  "version": 1,
+  "last_updated": "2026-05-27T11:31:47",
+  "sessions": [
+    {
+      "timestamp": "2026-05-27T11:31:46",
+      "mode": "single",
+      "total": 65,
+      "correct": 18,
+      "accuracy": 27.7,
+      "duration_sec": 242
+    },
+    {
+      "timestamp": "2026-05-27T11:07:31",
+      "mode": "single",
+      "total": 46,
+      "correct": 36,
+      "accuracy": 78.3,
+      "duration_sec": 1497
+    },
+    {
+      "timestamp": "2026-05-27T10:22:28",
+      "mode": "wrong_book",
+      "total": 13,
+      "correct": 7,
+      "accuracy": 53.8,
+      "duration_sec": 60
+    },
+    {
+      "timestamp": "2026-05-27T10:21:23",
+      "mode": "domain:Security and Compliance",
+      "total": 21,
+      "correct": 2,
+      "accuracy": 9.5,
+      "duration_sec": 65
+    },
+    {
+      "timestamp": "2026-05-27T10:11:42",
+      "mode": "single",
+      "total": 46,
+      "correct": 3,
+      "accuracy": 6.5,
+      "duration_sec": 14
+    },
+    {
+      "timestamp": "2026-05-27T10:11:25",
+      "mode": "single",
+      "total": 46,
+      "correct": 9,
+      "accuracy": 19.6,
+      "duration_sec": 57
+    },
+    {
+      "timestamp": "2026-05-27T09:44:04",
+      "mode": "domain:Cloud Concepts",
+      "total": 14,
+      "correct": 8,
+      "accuracy": 57.1,
+      "duration_sec": 194
+    },
+    {
+      "timestamp": "2026-05-27T09:40:39",
+      "mode": "single",
+      "total": 46,
+      "correct": 5,
+      "accuracy": 10.9,
+      "duration_sec": 18
+    },
+    {
+      "timestamp": "2026-05-27T09:33:40",
+      "mode": "all",
+      "total": 95,
+      "correct": 0,
+      "accuracy": 0.0,
+      "duration_sec": 1
+    },
+    {
+      "timestamp": "2026-05-27T09:31:16",
+      "mode": "single",
+      "total": 46,
+      "correct": 14,
+      "accuracy": 30.4,
+      "duration_sec": 156
+    }
+  ],
+  "question_stats": {
+    "S01": {
+      "correct_count": 9,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S11": {
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "D"
+      ]
+    },
+    "S02": {
+      "correct_count": 9,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S03": {
+      "correct_count": 8,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S04": {
+      "correct_count": 7,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S05": {
+      "correct_count": 6,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S06": {
+      "correct_count": 5,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S07": {
+      "correct_count": 6,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S08": {
+      "correct_count": 3,
+      "wrong_count": 3,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S09": {
+      "correct_count": 4,
+      "wrong_count": 2,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S10": {
+      "correct_count": 5,
+      "wrong_count": 2,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S12": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S13": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S14": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S15": {
+      "correct_count": 2,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S16": {
+      "correct_count": 3,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S35": {
+      "correct_count": 2,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "M01": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "B",
+        "D"
+      ]
+    },
+    "M02": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "B",
+        "E"
+      ]
+    },
+    "M03": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "B",
+        "C",
+        "E"
+      ]
+    },
+    "M04": {
+      "correct_count": 1,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T10:22:28",
+      "last_answer": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "M05": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "B",
+        "D"
+      ]
+    },
+    "M30": {
+      "correct_count": 1,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T10:22:28",
+      "last_answer": [
+        "A",
+        "C",
+        "E"
+      ]
+    },
+    "M43": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "A",
+        "D"
+      ]
+    },
+    "M46": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "B",
+        "C"
+      ]
+    },
+    "M49": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T09:44:04",
+      "last_answer": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "S39": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "M06": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T10:21:23",
+      "last_answer": [
+        "B",
+        "E"
+      ]
+    },
+    "M14": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T10:21:23",
+      "last_answer": [
+        "B",
+        "D"
+      ]
+    },
+    "S42": {
+      "correct_count": 1,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S44": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S32": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S43": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S17": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S22": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S40": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "C"
+      ]
+    },
+    "S41": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S29": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S46": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S33": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S23": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S20": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S28": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S30": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "D"
+      ]
+    },
+    "S19": {
+      "correct_count": 1,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S36": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "C"
+      ]
+    },
+    "S26": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "E"
+      ]
+    },
+    "S18": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S25": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "D"
+      ]
+    },
+    "S34": {
+      "correct_count": 1,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "D"
+      ]
+    },
+    "S45": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "D"
+      ]
+    },
+    "S21": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S37": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S31": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S38": {
+      "correct_count": 2,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S24": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S27": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:07:31",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S66": {
+      "correct_count": 0,
+      "wrong_count": 1,
+      "last_attempt": "2026-05-27T11:31:46",
+      "last_answer": [
+        "A"
+      ]
+    },
+    "S63": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S65": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S58": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    },
+    "S50": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-05-27T11:31:47",
+      "last_answer": [
+        "B"
+      ]
+    }
+  }
+}

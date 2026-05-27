@@ -9,10 +9,9 @@ Quiz 引擎模块（Quiz Engine）
 - 与解析器、数据层的解耦
 """
 
-import random
 from typing import List, Dict, Any
 
-from data import ALL_QUESTIONS
+from data import ALL_QUESTIONS, shuffle_question_options, get_shuffled_questions
 from core.parser import parse_user_answers, is_quit_command
 
 
@@ -47,9 +46,8 @@ def run_single_round() -> Dict[str, Any]:
         print("题库为空，无法开始测试。")
         return {"score": 0, "total": 0, "percentage": 0, "wrong_questions": []}
 
-    # 随机打乱
-    quiz_questions = ALL_QUESTIONS.copy()
-    random.shuffle(quiz_questions)
+    # 随机打乱题目出题顺序（使用集中化工具）
+    quiz_questions = get_shuffled_questions(ALL_QUESTIONS)
 
     score = 0
     wrong_questions = []
@@ -60,7 +58,14 @@ def run_single_round() -> Dict[str, Any]:
         print("\n" + "=" * 70)
         print(_get_question_display(q, i, total))
 
-        for opt in q.get("options", []):
+        # 获取打乱后的选项视图
+        shuffle_info = shuffle_question_options(q)
+        display_opts = shuffle_info["shuffled_options"]
+        display_to_original = shuffle_info["display_to_original"]
+        original_to_display = shuffle_info["original_to_display"]
+        display_correct = shuffle_info["display_correct_answers"]
+
+        for opt in display_opts:
             print(f"   {opt}")
 
         prompt = _get_input_prompt(q)
@@ -77,8 +82,11 @@ def run_single_round() -> Dict[str, Any]:
                     "early_exit": True
                 }
 
-            user_answers = parse_user_answers(raw)
-            if user_answers:
+            # 用户输入的是「显示字母」，先解析再转回原始字母用于比较
+            display_answers = parse_user_answers(raw)
+            user_answers = sorted(display_to_original.get(d, d) for d in display_answers)
+
+            if display_answers or raw == "":  # 允许空输入（后续会判错）
                 break
             print("❗ 输入无效，请输入字母（如 A 或 A C）")
 
@@ -87,16 +95,17 @@ def run_single_round() -> Dict[str, Any]:
             print("✅ 正确！")
             score += 1
         else:
-            correct_str = "、".join(correct)
-            user_str = "、".join(user_answers) if user_answers else "未作答"
-            print(f"❌ 错误！正确答案是：{correct_str}")
-            print(f"   你输入的是：{user_str}")
+            # 给用户展示时使用「显示字母」（更友好）
+            user_display_str = "、".join(display_answers) if display_answers else "未作答"
+            correct_display_str = "、".join(display_correct)
+            print(f"❌ 错误！正确答案是：{correct_display_str}")
+            print(f"   你输入的是：{user_display_str}")
             print(f"📝 解析：{q.get('explanation', '暂无解析')}")
 
             wrong_questions.append({
                 "question": q["question"],
-                "your_answer": user_str,
-                "correct": correct_str,
+                "your_answer": user_display_str,
+                "correct": correct_display_str,
                 "explanation": q.get("explanation", "")
             })
 
