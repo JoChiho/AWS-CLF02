@@ -1,0 +1,121 @@
+======================================================================
+AWS CLF-C02 题库关键词覆盖差距审计报告
+基于 docs/AWS-CLF-C02_All_Knowledge_Points.md vs 当前题库 (210题)
+======================================================================
+
+题库语料库大小: 123,490 字符
+
+总关键词数: 202
+已覆盖: 148
+未覆盖: 54
+覆盖率: 73.3%
+
+----------------------------------------------------------------------
+按领域缺失详情
+----------------------------------------------------------------------
+
+【1. Cloud Concepts - 全球基础设施】  5/6 覆盖 (83.3%)  | 缺失 1 个
+  ✗ 未覆盖: Wavelength Zones（5G边缘）
+
+【1. Cloud Concepts - 核心云概念】  8/13 覆盖 (61.5%)  | 缺失 5 个
+  ✗ 未覆盖: Scalability（可扩展性）
+  ✗ 未覆盖: Agility（敏捷性）
+  ✗ 未覆盖: Global Reach（全球覆盖）
+  ✗ 未覆盖: Economies of Scale（规模经济）
+  ✗ 未覆盖: Microservices
+
+【1. Cloud Concepts - 云服务模型 & Well-Architected】  10/11 覆盖 (90.9%)  | 缺失 1 个
+  ✗ 未覆盖: Security（安全性）
+
+【2. Security - IAM】  7/9 覆盖 (77.8%)  | 缺失 2 个
+  ✗ 未覆盖: IAM Policy（Identity-based vs Resource-based）
+  ✗ 未覆盖: IAM Access Analyzer
+
+【2. Security - 数据保护与加密】  10/13 覆盖 (76.9%)  | 缺失 3 个
+  ✗ 未覆盖: Envelope Encryption
+  ✗ 未覆盖: AWS CloudHSM
+  ✗ 未覆盖: Systems Manager Parameter Store
+
+【2. Security - 网络安全 & 威胁检测】  13/16 覆盖 (81.2%)  | 缺失 3 个
+  ✗ 未覆盖: AWS Firewall Manager
+  ✗ 未覆盖: AWS Network Firewall
+  ✗ 未覆盖: Amazon Detective
+
+【2. Security - 合规】  8/10 覆盖 (80.0%)  | 缺失 2 个
+  ✗ 未覆盖: AWS Certificate Manager (ACM)
+  ✗ 未覆盖: AWS Signer
+
+【3. Technology - 计算服务 (EC2 & Serverless)】  14/17 覆盖 (82.4%)  | 缺失 3 个
+  ✗ 未覆盖: Placement Groups
+  ✗ 未覆盖: Nitro System
+  ✗ 未覆盖: AWS App Runner
+
+【3. Technology - 存储服务 (S3 等)】  15/20 覆盖 (75.0%)  | 缺失 5 个
+  ✗ 未覆盖: Compliance / Governance 模式
+  ✗ 未覆盖: S3 Batch Operations
+  ✗ 未覆盖: S3 Access Points
+  ✗ 未覆盖: S3 Object Ownership
+  ✗ 未覆盖: AWS Storage Gateway
+
+【3. Technology - 数据库服务】  9/13 覆盖 (69.2%)  | 缺失 4 个
+  ✗ 未覆盖: Amazon Neptune
+  ✗ 未覆盖: Amazon Timestream
+  ✗ 未覆盖: Amazon Keyspaces
+  ✗ 未覆盖: QLDB
+
+【3. Technology - 网络服务】  13/14 覆盖 (92.9%)  | 缺失 1 个
+  ✗ 未覆盖: AWS Client VPN
+
+【3. Technology - 监控、管理 & 其他服务】  13/21 覆盖 (61.9%)  | 缺失 8 个
+  ✗ 未覆盖: AWS Systems Manager (SSM)
+  ✗ 未覆盖: AWS CloudFormation
+  ✗ 未覆盖: AWS Service Catalog
+  ✗ 未覆盖: AWS Control Tower
+  ✗ 未覆盖: AWS Personal Health Dashboard
+  ✗ 未覆盖: Amazon QuickSight
+  ✗ 未覆盖: AWS Amplify
+  ✗ 未覆盖: AWS IoT Core
+
+【4. Billing - 定价模型 & 工具】  7/9 覆盖 (77.8%)  | 缺失 2 个
+  ✗ 未覆盖: Pay-as-you-go
+  ✗ 未覆盖: AWS Billing Conductor
+
+【4. Billing - 支持计划】  6/6 覆盖 (100.0%)  | 缺失 0 个
+  ✓ 该分组全部关键词均有题目覆盖
+
+【4. Billing - 数据传输费用（极高频）】  4/6 覆盖 (66.7%)  | 缺失 2 个
+  ✗ 未覆盖: Direct Connect 费用
+  ✗ 未覆盖: CloudFront / Transfer Acceleration 成本
+
+【5. 边缘/高频/易混淆考点】  6/18 覆盖 (33.3%)  | 缺失 12 个
+  ✗ 未覆盖: Local Zones vs Edge Locations vs Wavelength Zones
+  ✗ 未覆盖: 哪些服务是 Region 级 / Global 级
+  ✗ 未覆盖: IAM Role vs IAM User
+  ✗ 未覆盖: KMS Customer Managed Key vs AWS Managed Key
+  ✗ 未覆盖: Security Group vs NACL
+  ✗ 未覆盖: S3 Block Public Access
+  ✗ 未覆盖: Object Lock Compliance vs Governance
+  ✗ 未覆盖: Savings Plans vs Reserved Instances
+  ✗ 未覆盖: S3 vs EBS vs EFS vs FSx
+  ✗ 未覆盖: CloudFront vs Global Accelerator
+  ✗ 未覆盖: GuardDuty vs Inspector vs Macie vs Security Hub
+  ✗ 未覆盖: CloudWatch vs CloudTrail vs Config
+
+======================================================================
+关键缺失汇总（建议优先补充方向）
+======================================================================
+- 1. Cloud Concepts - 全球基础设施: 1 个关键词未覆盖
+- 1. Cloud Concepts - 核心云概念: 5 个关键词未覆盖
+- 1. Cloud Concepts - 云服务模型 & Well-Architected: 1 个关键词未覆盖
+- 2. Security - IAM: 2 个关键词未覆盖
+- 2. Security - 数据保护与加密: 3 个关键词未覆盖
+- 2. Security - 网络安全 & 威胁检测: 3 个关键词未覆盖
+- 2. Security - 合规: 2 个关键词未覆盖
+- 3. Technology - 计算服务 (EC2 & Serverless): 3 个关键词未覆盖
+- 3. Technology - 存储服务 (S3 等): 5 个关键词未覆盖
+- 3. Technology - 数据库服务: 4 个关键词未覆盖
+- 3. Technology - 网络服务: 1 个关键词未覆盖
+- 3. Technology - 监控、管理 & 其他服务: 8 个关键词未覆盖
+- 4. Billing - 定价模型 & 工具: 2 个关键词未覆盖
+- 4. Billing - 数据传输费用（极高频）: 2 个关键词未覆盖
+- 5. 边缘/高频/易混淆考点: 12 个关键词未覆盖

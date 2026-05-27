@@ -150,17 +150,17 @@ def get_shuffled_questions(questions: list[dict]) -> list[dict]:
 
 # 便捷包装（可选使用）
 def get_shuffled_single_choice_questions() -> list[dict]:
-    """返回打乱后的单选题题库（121题）"""
+    """返回打乱后的单选题题库（141题）"""
     return get_shuffled_questions(SINGLE_CHOICE_QUESTIONS)
 
 
 def get_shuffled_multi_choice_questions() -> list[dict]:
-    """返回打乱后的多选题题库（89题）"""
+    """返回打乱后的多选题题库（104题）"""
     return get_shuffled_questions(MULTI_CHOICE_QUESTIONS)
 
 
 def get_shuffled_all_questions() -> list[dict]:
-    """返回打乱后的完整题库（210题）"""
+    """返回打乱后的完整题库（245题）"""
     return get_shuffled_questions(ALL_QUESTIONS)
 
 

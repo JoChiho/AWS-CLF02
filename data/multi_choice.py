@@ -1476,5 +1476,278 @@ MULTI_CHOICE_QUESTIONS = [
         ],
         "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\\n\\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\\n\\n其他选项分析：\\n\\n「支持无限次的白手套架构咨询」是错误的：虽然 Enterprise 支持更深入的咨询，但并非完全无限制的白手套服务。\\n\\n「包含更全面的架构审查和优化服务」虽然描述正确，但单独这个选项不够突出最核心的差异（TAM 和响应时间）。\\n\\n**重点考点 / 关键词补充：**\\n- Business Support：< 1 小时严重故障响应，无 TAM\\n- Enterprise Support：有 TAM + <15 分钟响应 + 更深入的架构支持\\n- TAM 是 Enterprise 最显著的差异化优势",
         "domain": "Billing, Pricing, and Support"
+    },
+    {
+        "id": "M90",
+        "question": "以下哪些服务与描述的匹配是正确的？（选择三项）",
+        "options": [
+            "A. Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常",
+            "B. AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描",
+            "C. Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）",
+            "D. AWS Security Hub —— 提供对 EC2 实例的实时性能监控和告警",
+            "E. AWS WAF —— 集中收集和分析跨多个 AWS 账户的安全数据"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「Amazon GuardDuty —— 智能威胁检测」\n「AWS Inspector —— 漏洞评估与安全扫描」\n「Amazon Macie —— 发现和保护 S3 中的敏感数据」\n\n错误选项分析：\n\n「AWS Security Hub —— 提供对 EC2 实例的实时性能监控」是错误的：Security Hub 是安全态势聚合与管理平台，不是性能监控（那是 CloudWatch）。\n\n「AWS WAF —— 集中收集和分析跨多个 AWS 账户的安全数据」是错误的：WAF 是 Web 应用防火墙，负责过滤恶意 HTTP 请求；跨账户安全数据聚合是 Security Hub 的职责。\n\n**重点考点 / 关键词补充：**\n- GuardDuty：威胁检测（无代理，分析日志）\n- Inspector：漏洞扫描（EC2 + 容器镜像）\n- Macie：S3 敏感数据发现（ML）\n- Security Hub：安全态势管理 + 聚合多个安全服务发现\n- 常考陷阱：不要把 Security Hub 当成性能监控工具",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "M91",
+        "question": "关于 AWS 灾难恢复（DR）策略，以下哪些描述与策略名称匹配正确？（选择三项）",
+        "options": [
+            "A. Pilot Light：核心基础设施（如数据库）在备用 Region 持续运行，应用层在故障时才启动",
+            "B. Warm Standby：备用 Region 运行缩减版的完整生产环境，故障时快速扩容接管流量",
+            "C. Multi-Site Active/Active：多个 Region 同时处理生产流量，故障时几乎零停机切换",
+            "D. Backup and Restore：最便宜的方案，仅在故障时才从备份恢复整个环境",
+            "E. Warm Standby：在故障发生前所有 Region 都完全不运行任何资源"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "explanation": "正确答案：\n\n「Pilot Light：核心基础设施在备用 Region 持续运行」\n「Warm Standby：运行缩减版的完整生产环境」\n「Multi-Site Active/Active：多个 Region 同时处理生产流量」\n「Backup and Restore：最便宜的方案」\n\n错误选项分析：\n\n「Warm Standby：在故障发生前所有 Region 都完全不运行任何资源」是错误的：这是 Backup and Restore 的特点，Warm Standby 是有缩减版系统在运行的。\n\n**重点考点 / 关键词补充：**\n- Backup & Restore：RTO/RPO 最高，成本最低\n- Pilot Light：核心服务运行，应用层待命（中等 RTO）\n- Warm Standby：缩减版完整系统运行（较低 RTO）\n- Multi-Site Active/Active：RTO 接近 0，成本最高\n- 考试常考：根据 RTO/RPO 要求选择合适策略",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "M92",
+        "question": "以下关于 AWS 存储服务的适用场景描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
+            "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
+            "C. Amazon S3 适合存储非结构化数据、备份、静态网站和作为数据湖",
+            "D. Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持的场景",
+            "E. Amazon S3 适合作为 EC2 实例的根卷启动磁盘"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "explanation": "正确答案：\n\n「Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统」\n「Amazon EBS 适合需要低延迟块存储的单实例数据库」\n「Amazon S3 适合存储非结构化数据、备份、静态网站」\n「Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持」\n\n错误选项分析：\n\n「Amazon S3 适合作为 EC2 实例的根卷启动磁盘」是错误的：S3 是对象存储，不能作为 EC2 根卷；根卷必须使用 EBS（或实例存储）。\n\n**重点考点 / 关键词补充：**\n- S3：对象存储，海量非结构化数据、备份、数据湖、静态网站\n- EBS：块存储，单实例低延迟（数据库、OS 卷）\n- EFS：托管 NFS，跨多实例共享文件系统\n- FSx：托管 Windows 文件系统（SMB）或 Lustre（高性能计算）\n- 常考：S3 不能做 EC2 根卷或需要 POSIX 语义的共享文件系统",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "M93",
+        "question": "关于 IAM Permission Boundary 和 AWS Organizations SCP（Service Control Policies），以下哪些说法是正确的？（选择三项）",
+        "options": [
+            "A. Permission Boundary 是在单个 AWS 账户内为 IAM 用户或角色设置的权限上限（天花板）",
+            "B. SCP 是在 AWS Organizations 组织层面为成员账户或 OU 设置的权限边界，即使 IAM 策略允许也不能超过",
+            "C. 两者都只能用于限制权限，不能用于为 IAM 实体授予额外权限",
+            "D. Permission Boundary 可以扩大 IAM 实体的权限范围",
+            "E. SCP 可以针对单个 IAM 用户单独设置限制，而不影响整个账户"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「Permission Boundary 是在单个 AWS 账户内...权限上限」\n「SCP 是在 AWS Organizations 组织层面...权限边界」\n「两者都只能用于限制权限，不能用于...授予额外权限」\n\n错误选项分析：\n\n「Permission Boundary 可以扩大 IAM 实体的权限范围」是错误的：它只会设置上限（与策略取交集），绝不会扩大权限。\n\n「SCP 可以针对单个 IAM 用户单独设置限制」是错误的：SCP 是账户/OU 级别的，无法针对单个用户或角色单独生效。\n\n**重点考点 / 关键词补充：**\n- Permission Boundary：账户内，针对具体 IAM 实体（User/Role）的权限天花板\n- SCP：组织级，针对整个账户或 OU 的强制边界（Deny 优先）\n- 共同点：都只能限制、不能授予权限\n- 常考组合：两者经常一起使用实现多层权限治理",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "M94",
+        "question": "以下关于 AWS 全球基础设施补充形式的描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. Local Zones 部署在靠近大型人口中心的位置，允许运行完整的 EC2、EBS、RDS 等 AWS 服务",
+            "B. Wavelength Zones 是与电信运营商合作部署在 5G 网络边缘的基础设施，适合超低延迟的移动和实时应用",
+            "C. AWS Outposts 允许客户在自己的本地数据中心部署 AWS 硬件和服务，满足数据主权或极低延迟要求",
+            "D. Edge Locations 主要用于运行客户自定义的容器化应用和关系型数据库",
+            "E. Local Zones 和 Wavelength Zones 都属于标准 Region 的一部分，可以像普通 AZ 一样使用所有 AWS 服务"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「Local Zones 部署在靠近大型人口中心...运行完整的 EC2、EBS、RDS」\n「Wavelength Zones 是与电信运营商合作...5G 网络边缘」\n「AWS Outposts 允许客户在自己的本地数据中心部署 AWS 硬件」\n\n错误选项分析：\n\n「Edge Locations 主要用于运行客户自定义的容器化应用」是错误的：Edge Locations 主要服务 CloudFront 和 Global Accelerator，用于内容缓存和加速，不支持运行通用计算或数据库工作负载。\n\n「Local Zones 和 Wavelength Zones 都属于标准 Region 的一部分」是错误的：它们是独立于标准 Region/AZ 的补充基础设施形式，可用服务和使用方式都有差异。\n\n**重点考点 / 关键词补充：**\n- Local Zones：靠近人口中心，低延迟运行完整 AWS 服务\n- Wavelength Zones：5G 边缘，超低延迟移动/实时场景\n- Outposts：本地部署 AWS 硬件（混合云/数据主权）\n- Edge Locations：全球内容分发节点（数量最多，主要用于 CDN/加速）\n- 核心仍是 Region + AZ，这三者是重要补充",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "M95",
+        "question": "关于 AWS Savings Plans 的 Compute Savings Plans 和 EC2 Instance Savings Plans，以下哪些说法是正确的？（选择两项）",
+        "options": [
+            "A. Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用，折扣通常略低于 EC2 Instance Savings Plans",
+            "B. EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣",
+            "C. 两种 Savings Plans 购买后都可以在承诺期内随时取消且无任何费用",
+            "D. Compute Savings Plans 只能用于 EC2 实例，不能用于其他计算服务"
+        ],
+        "correct_answers": [
+            "A",
+            "B"
+        ],
+        "explanation": "正确答案：\n\n「Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用」\n「EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣」\n\n错误选项分析：\n\n「两种 Savings Plans 购买后都可以在承诺期内随时取消」是错误的：Savings Plans 承诺期内一般不可取消或退款（与 Reserved Instances 类似）。\n\n「Compute Savings Plans 只能用于 EC2 实例」是错误的：Compute Savings Plans 的最大优势就是可跨多种计算服务使用。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：最高灵活性（跨实例类型、Region、甚至 Lambda/Fargate），折扣稍低\n- EC2 Instance Savings Plans：仅限特定实例系列 + Region，折扣通常更高\n- 推荐：大多数场景优先选择 Compute Savings Plans（灵活性价值更高）\n- 与 Reserved Instances 最大区别：Savings Plans 无需指定具体实例类型",
+        "domain": "Billing, Pricing, and Support"
+    },
+    {
+        "id": "M96",
+        "question": "关于 AWS 数据传输费用，以下哪些说法是正确的？（选择三项）",
+        "options": [
+            "A. 从互联网传入 AWS 的数据（入方向）大多数情况下是免费的",
+            "B. 从 AWS 传出到互联网的数据（出方向）通常需要付费，且费用较高",
+            "C. 同一 Region 内不同 Availability Zone 之间的数据传输通常免费或费用极低",
+            "D. 跨 Region 的数据传输费用通常比同一 Region 内更高",
+            "E. 使用 Direct Connect 进行数据传输的费用总是高于通过互联网传输"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "explanation": "正确答案：\n\n「从互联网传入 AWS 的数据（入方向）大多数情况下是免费的」\n「从 AWS 传出到互联网的数据（出方向）通常需要付费」\n「同一 Region 内不同 AZ 之间的数据传输通常免费或费用极低」\n「跨 Region 的数据传输费用通常比同一 Region 内更高」\n\n错误选项分析：\n\n「使用 Direct Connect 进行数据传输的费用总是高于通过互联网传输」是错误的：Direct Connect 通常能显著降低大量数据传输（尤其是出方向或跨 Region）的成本，是降低传输费用的重要手段之一。\n\n**重点考点 / 关键词补充：**\n- 入互联网 → AWS：大多免费（关键记忆点）\n- AWS → 互联网：收费（出方向）\n- 同 Region AZ 间：通常免费或极低\n- 跨 Region：收费，且通常最贵\n- 优化策略：尽量减少跨 Region 流量，善用 CloudFront、Direct Connect、同一 Region 部署",
+        "domain": "Billing, Pricing, and Support"
+    },
+    {
+        "id": "M97",
+        "question": "以下关于 Amazon S3 高级功能的描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口，每个入口拥有独立的权限策略",
+            "B. S3 Object Ownership 主要用于控制上传对象的所有权（BucketOwnerPreferred 或 BucketOwnerEnforced）",
+            "C. S3 Batch Operations 可以对数百万对象批量执行复制、删除、标签修改等操作",
+            "D. S3 Requester Pays 模式下，请求者需要支付请求和数据传输费用，而不是存储桶拥有者支付",
+            "E. S3 Select 主要用于加速跨 Region 的数据复制"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "explanation": "正确答案：\n\n「S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口」\n「S3 Object Ownership 主要用于控制上传对象的所有权」\n「S3 Batch Operations 可以对数百万对象批量执行...操作」\n「S3 Requester Pays 模式下，请求者需要支付...」\n\n错误选项分析：\n\n「S3 Select 主要用于加速跨 Region 的数据复制」是错误的：S3 Select 是按需查询对象内部特定内容的性能功能（类似 SQL 查询），不是用于复制加速。\n\n**重点考点 / 关键词补充：**\n- Access Points：简化大型桶的权限管理\n- Object Ownership：解决上传对象所有权归属问题（重要合规点）\n- Batch Operations：大规模对象处理（S3 + Lambda 或 内置操作）\n- Requester Pays：让请求者承担费用（常用于数据共享场景）",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "M98",
+        "question": "以下关于 AWS Storage Gateway 和 AWS Snow Family 的描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. Storage Gateway 可以在本地数据中心部署虚拟设备或硬件设备，将本地存储与 S3、EBS 等云存储无缝连接",
+            "B. Snowcone、Snowball、Snowmobile 是用于离线大数据迁移和边缘计算的物理设备系列",
+            "C. Storage Gateway 的 File Gateway 模式可以将 NFS/SMB 文件共享直接映射到 S3 对象存储",
+            "D. Snow 设备主要用于实时在线数据同步，不适合离线环境",
+            "E. Storage Gateway 只能用于备份，不能用于主存储扩展"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「Storage Gateway 可以在本地...与 S3、EBS 等云存储无缝连接」\n「Snowcone、Snowball、Snowmobile 是用于离线大数据迁移和边缘计算的物理设备系列」\n「Storage Gateway 的 File Gateway 模式可以将 NFS/SMB 文件共享直接映射到 S3」\n\n错误选项分析：\n\n「Snow 设备主要用于实时在线数据同步」是错误的：Snow 系列主要用于离线/断网环境的大规模数据迁移。\n\n「Storage Gateway 只能用于备份」是错误的：它既可用于备份，也可用于扩展本地存储容量和提供云存储接口。\n\n**重点考点 / 关键词补充：**\n- Storage Gateway：混合云存储桥接（File、Volume、Tape 模式）\n- Snow Family：物理设备离线迁移（Snowcone 小型、Snowball 中型、Snowmobile 卡车级）\n- 常考：File Gateway → S3，Volume Gateway → EBS 快照",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "M99",
+        "question": "以下关于云原生核心概念的描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. Scalability（可扩展性）指系统在负载增加时能够通过增加资源来维持或提高性能",
+            "B. Elasticity（弹性）强调根据实际需求自动、快速地增减资源（Scale Out/In 或 Scale Up/Down），通常与按需付费结合",
+            "C. Microservices 架构将应用拆分成多个独立的小服务，每个服务可独立部署、扩展和故障隔离",
+            "D. Event-Driven Architecture 主要依赖同步调用和共享数据库实现组件通信",
+            "E. Serverless 意味着完全不需要管理任何服务器，AWS 完全负责底层基础设施和扩展"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "E"
+        ],
+        "explanation": "正确答案：\n\n「Scalability（可扩展性）指系统在负载增加时能够通过增加资源...」\n「Elasticity（弹性）强调根据实际需求自动、快速地增减资源」\n「Microservices 架构将应用拆分成多个独立的小服务...」\n「Serverless 意味着完全不需要管理任何服务器...」\n\n错误选项分析：\n\n「Event-Driven Architecture 主要依赖同步调用和共享数据库」是错误的：事件驱动架构强调异步、松耦合的事件发布/订阅（EventBridge、SQS、SNS 等），而不是同步调用或共享数据库。\n\n**重点考点 / 关键词补充：**\n- Scalability vs Elasticity：可扩展性 vs 自动弹性（云原生核心区别）\n- Microservices：独立部署、松耦合、故障隔离\n- Event-Driven：异步、事件驱动通信\n- Serverless：无需管理服务器（Lambda、Fargate、DynamoDB 等）\n- 常考：云原生推荐 Microservices + Serverless + Event-Driven + Elasticity",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "M100",
+        "question": "以下关于 AWS 成本管理工具和定价概念的描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. Pay-as-you-go（按需付费）是 AWS 的核心定价模型，只为实际使用的资源付费，无需前期承诺",
+            "B. AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单、创建分层定价和生成定制化账单",
+            "C. AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据，支持导入到 Athena 或 QuickSight 进行分析",
+            "D. AWS Pricing Calculator 只能计算 EC2 成本，不能计算其他服务",
+            "E. Consolidated Billing 只能在单个 AWS 账户内使用，无法跨多个账户合并"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「Pay-as-you-go（按需付费）是 AWS 的核心定价模型」\n「AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单...」\n「AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据」\n\n错误选项分析：\n\n「AWS Pricing Calculator 只能计算 EC2 成本」是错误的：Pricing Calculator 支持几乎所有 AWS 服务。\n\n「Consolidated Billing 只能在单个 AWS 账户内使用」是错误的：Consolidated Billing 需要通过 AWS Organizations 在多个账户间使用。\n\n**重点考点 / 关键词补充：**\n- Pay-as-you-go：AWS 基础定价哲学\n- Billing Conductor：高级账单定制（MSP、大型企业常用）\n- CUR：最详细的成本数据源（可用于深度分析）\n- 常考：CUR + Athena 是高级成本分析的经典组合",
+        "domain": "Billing, Pricing, and Support"
+    },
+    {
+        "id": "M101",
+        "question": "以下关于 AWS Control Tower 的核心功能描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. 提供一键部署符合 AWS 最佳实践的 Landing Zone（着陆区）",
+            "B. 自动应用 Guardrails（防护机制），包括预防性和检测性规则",
+            "C. 通过 Account Factory 实现新 AWS 账户的自动化创建和基线配置",
+            "D. 完全替代 IAM 和所有权限管理工作",
+            "E. 主要用于单个账户的资源性能优化"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「提供一键部署符合 AWS 最佳实践的 Landing Zone」\n「自动应用 Guardrails」\n「通过 Account Factory 实现新 AWS 账户的自动化创建和基线配置」\n\n错误选项分析：\n\n「完全替代 IAM 和所有权限管理工作」是错误的：Control Tower 增强治理，但 IAM、SCP 等权限管理仍需独立设计。\n\n「主要用于单个账户的资源性能优化」是错误的：Control Tower 专为多账户治理设计。\n\n**重点考点 / 关键词补充：**\n- Landing Zone：预配置的多账户环境基础\n- Guardrails：预防性（阻止） + 检测性（发现）\n- Account Factory：自动化、安全地创建新账户\n- 常考：Control Tower 大幅降低手动搭建多账户治理的复杂度和时间成本",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "M102",
+        "question": "以下关于 AWS Service Catalog 的治理价值描述，哪些是正确的？（选择三项）",
+        "options": [
+            "A. 允许管理员将 CloudFormation 模板打包成标准化“产品”，并通过 Portfolio 分发给不同团队",
+            "B. 支持设置 Launch Constraints（启动约束）和 Template Constraints（模板约束），限制用户可配置的参数和权限",
+            "C. 帮助企业在保证合规的前提下实现基础设施的自助服务部署",
+            "D. 主要用于实时监控已部署资源的运行状态",
+            "E. 可以完全替代 AWS Organizations 进行账户管理"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C"
+        ],
+        "explanation": "正确答案：\n\n「允许管理员将 CloudFormation 模板打包成标准化“产品”」\n「支持设置 Launch Constraints 和 Template Constraints」\n「帮助企业在保证合规的前提下实现基础设施的自助服务部署」\n\n错误选项分析：\n\n「主要用于实时监控已部署资源的运行状态」是错误的：监控是 CloudWatch 的职责。\n\n「可以完全替代 AWS Organizations」是错误的：Service Catalog 专注于资源自助服务治理，不负责账户层级管理。\n\n**重点考点 / 关键词补充：**\n- Product：可部署的标准化单元（通常是 CloudFormation 模板）\n- Portfolio：产品组合，用于权限和分发控制\n- Constraints：限制用户在自助部署时的选择范围（关键治理手段）\n- 常考与 CloudFormation 结合使用",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "M103",
+        "question": "以下关于 AWS Personal Health Dashboard 和 AWS Trusted Advisor 的区别与用途，哪些说法是正确的？（选择两项）",
+        "options": [
+            "A. Personal Health Dashboard 提供针对你具体账户的个性化服务健康事件和计划维护通知",
+            "B. Trusted Advisor 提供跨成本、安全、性能、容错和卓越运营五个类别的通用最佳实践检查和建议",
+            "C. Personal Health Dashboard 主要用于成本优化检查",
+            "D. Trusted Advisor 可以自动修复发现的问题",
+            "E. 两个工具的功能完全重叠，没有区别"
+        ],
+        "correct_answers": [
+            "A",
+            "B"
+        ],
+        "explanation": "正确答案：\n\n「Personal Health Dashboard 提供针对你具体账户的个性化服务健康事件和计划维护通知」\n「Trusted Advisor 提供跨成本、安全、性能、容错和卓越运营五个类别的通用最佳实践检查和建议」\n\n错误选项分析：\n\n「Personal Health Dashboard 主要用于成本优化检查」是错误的：它关注 AWS 服务本身的健康状态和计划维护。\n\n「Trusted Advisor 可以自动修复发现的问题」是错误的：它只提供建议和检查结果，不会自动修复。\n\n「两个工具的功能完全重叠」是错误的：一个是“个性化健康事件”，一个是“通用最佳实践检查”。\n\n**重点考点 / 关键词补充：**\n- Personal Health Dashboard：个性化、及时、事件驱动（免费）\n- Trusted Advisor：通用检查项（5 类），部分高级检查需付费支持计划\n- 考试高频：区分两者适用场景和检查范围",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "M104",
+        "question": "在构建企业级 AWS 治理体系时，以下哪些服务组合通常被推荐一起使用？（选择三项）",
+        "options": [
+            "A. AWS Control Tower（多账户着陆区和 Guardrails）",
+            "B. AWS Service Catalog（自助服务与标准化治理）",
+            "C. AWS Organizations + SCP（账户层级权限边界）",
+            "D. AWS Config（持续资源合规检测）",
+            "E. Amazon QuickSight（主要用于实时游戏服务器监控）"
+        ],
+        "correct_answers": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "explanation": "正确答案：\n\n「AWS Control Tower」\n「AWS Service Catalog」\n「AWS Organizations + SCP」\n「AWS Config」\n\n错误选项分析：\n\n「Amazon QuickSight」是错误的：QuickSight 是商业智能（BI）可视化服务，不是核心治理工具。\n\n**重点考点 / 关键词补充：**\n- 经典治理组合：Control Tower（编排层） + Organizations + SCP（权限边界） + Config（持续合规） + Service Catalog（自助治理）\n- 这些服务共同实现“创建即合规”和持续治理\n- 常考：理解各服务在整体治理架构中的定位",
+        "domain": "Security and Compliance"
     }
 ]

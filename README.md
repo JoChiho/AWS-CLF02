@@ -1,18 +1,19 @@
 # AWS CLF-C02 认证考试刷题系统
 
 > **高效备考 AWS Certified Cloud Practitioner (CLF-C02) 的中文练习工具**  
-> 210 道高质量题目 + 领域分类练习 + 完整持久化进度追踪
+> 245 道高质量题目（141 单选 + 104 多选） + 领域分类练习 + 完整持久化进度追踪 + 知识点覆盖审计
 
 ---
 
 ## ✨ 功能亮点
 
-- **210 道精选题目**（121 单选 + 89 多选），全部配有详细解析和「重点考点」补充
+- **245 道精选题目**（141 单选 + 104 多选），全部配有详细解析和「重点考点」补充
 - **按官方四大领域分类练习**（云概念、安全与合规、技术与服务、账单定价与支持）
-  - Cloud Concepts: 45 题
-  - Security and Compliance: 47 题
-  - Technology and Services: 75 题
-  - Billing, Pricing, and Support: 49 题
+  - Cloud Concepts（云概念）: 49 题
+  - Security and Compliance（安全与合规）: 63 题
+  - Technology and Services（技术与服务）: 85 题
+  - Billing, Pricing, and Support（账单定价与支持）: 48 题
+- **知识点覆盖审计**：基于《AWS-CLF-C02 考试完整知识点关键词清单》对题库进行系统检查，并针对高频混淆对比类和管理治理类进行了多轮针对性补充
 - **完整持久化系统**（2026-05-28 新增）：
   - 最近 10 次练习历史记录（模式、得分、正确率、用时）
   - 永久错题本（每道题累计正确/错误次数 + 错误率排序）
@@ -46,15 +47,18 @@ python main.py --cli
 
 ---
 
-## 📊 当前题库状态（2026年最新）
+## 📊 当前题库状态（最新）
 
-- **总规模**：210 题（121 单选 + 89 多选）
-- **领域分布**：
-  - Cloud Concepts：45 题
-  - Security and Compliance：47 题
-  - Technology and Services：75 题
-  - Billing, Pricing, and Support：49 题
-- **特色产出**：《AWS-CLF-C02 考试完整知识点关键词清单》（已移至 `docs/AWS-CLF-C02_All_Knowledge_Points.md`）
+- **总规模**：245 题（141 单选 + 104 多选）
+- **领域分布**（已通过知识点覆盖审计优化）：
+  - Cloud Concepts（云概念）：49 题
+  - Security and Compliance（安全与合规）：63 题
+  - Technology and Services（技术与服务）：85 题
+  - Billing, Pricing, and Support（账单定价与支持）：48 题
+- **特色产出**：
+  - 《AWS-CLF-C02 考试完整知识点关键词清单》（docs/AWS-CLF-C02_All_Knowledge_Points.md）
+  - 题库覆盖率审计报告（docs/keyword_coverage_gap_report.txt）
+  - 多轮针对性补充（高频混淆对比类 + 管理治理类 + 核心服务概念）
 
 ---
 
@@ -63,9 +67,9 @@ python main.py --cli
 ### 主菜单结构
 
 1. **传统模式**
-   - 单选题题库（46 题）
-   - 多选题题库（49 题）
-   - 全部题目（95 题）
+   - 单选题题库（141 题）
+   - 多选题题库（104 题）
+   - 全部题目（245 题）
 
 2. **按考试领域分类练习**（官方四大领域）
    - 云概念
@@ -86,18 +90,19 @@ python main.py --cli
 
 ---
 
-## 📊 题库统计
+## 📊 题库统计（最新完整版）
 
-| 领域                        | 题目数量 | 占比 |
-|-----------------------------|----------|------|
-| Cloud Concepts（云概念）    | 14       | 15%  |
-| Security and Compliance（安全与合规） | 21 | 22% |
-| Technology and Services（技术与服务） | 41 | 43% |
-| Billing, Pricing, and Support（账单定价与支持） | 19 | 20% |
-| **总计**                    | **95**   | 100% |
+| 领域                        | 单选 | 多选 | 总计 | 占比  |
+|-----------------------------|------|------|------|-------|
+| Cloud Concepts（云概念）    | 27   | 22   | 49   | 20.0% |
+| Security and Compliance（安全与合规） | 37 | 26 | 63 | 25.7% |
+| Technology and Services（技术与服务） | 52 | 33 | 85 | 34.7% |
+| Billing, Pricing, and Support（账单定价与支持） | 25 | 23 | 48 | 19.6% |
+| **总计**                    | **141** | **104** | **245** | 100% |
 
-- 单选题：46 道
-- 多选题：49 道（其中 41 道「选择两项」、8 道「选择三项」）
+- 所有题目均包含完整「重点考点 / 关键词补充」和逐项错误选项分析
+- ID 体系稳定：单选 S01-S141，多选 M01-M104
+- 经过系统知识点覆盖审计 + 多轮针对性补充（重点强化高频混淆对比类和管理治理类）
 - 所有题目均包含领域归属 + 详细解析 + 重点考点
 
 ---

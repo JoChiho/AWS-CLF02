@@ -1825,5 +1825,305 @@ SINGLE_CHOICE_QUESTIONS = [
         ],
         "explanation": "「自动转换为 On-Demand 实例计费，无需额外操作」是正确的。\n\nSavings Plans 承诺期结束后，资源会自动按照 On-Demand 价格计费，不会中断，也不需要手动操作。客户可以选择是否购买新的 Savings Plans 来继续享受折扣。\n\n其他选项分析：\n\n「自动以相同条款续订 1 年」是错误的：不会自动续订。\n\n「必须手动选择是否续订，否则资源会被停止」是错误的：资源不会被停止，会正常按 On-Demand 计费。\n\n「所有资源会自动切换到 Spot 实例」是错误的：与 Savings Plans 无关。\n\n**重点考点 / 关键词补充：**\n- 承诺期结束后自动按 On-Demand 计费\n- 资源不会中断\n- 客户可随时购买新 Savings Plans 继续享受折扣\n- 建议提前规划续订或新的承诺",
         "domain": "Billing, Pricing, and Support"
+    },
+    {
+        "id": "S122",
+        "question": "关于 AWS KMS 中的 Customer Managed Key (CMK) 与 AWS Managed Key，以下哪项说法是正确的？",
+        "options": [
+            "A. 两者都由 AWS 自动管理密钥轮换，客户无法干预",
+            "B. Customer Managed Key 允许客户控制密钥策略、轮换计划和删除操作",
+            "C. AWS Managed Key 可以被客户随时禁用或删除",
+            "D. CMK 仅用于 S3 服务，AWS Managed Key 用于所有其他服务"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Customer Managed Key 允许客户控制密钥策略、轮换计划和删除操作」是正确的。\n\nCustomer Managed Key (CMK) 由客户创建和管理，客户可以定义密钥策略、启用/禁用自动轮换（每年一次）、手动轮换、禁用或删除密钥。而 AWS Managed Key 由 AWS 创建和管理，客户对策略和轮换没有控制权。\n\n其他选项分析：\n\n「两者都由 AWS 自动管理密钥轮换」是错误的：只有 CMK 支持客户控制轮换。\n\n「AWS Managed Key 可以被客户随时禁用或删除」是错误的：AWS Managed Key 客户无法删除或永久禁用。\n\n「CMK 仅用于 S3 服务」是错误的：CMK 可用于多种 AWS 服务（S3、EBS、RDS、Lambda 等）。\n\n**重点考点 / 关键词补充：**\n- CMK（客户托管密钥）：客户完全控制策略、轮换、删除\n- AWS Managed Key：AWS 托管，客户无控制权\n- 自动轮换：CMK 支持每年自动轮换，AWS Managed Key 由 AWS 决定\n- Envelope Encryption：KMS 始终使用 envelope 加密模式",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S123",
+        "question": "在 S3 Object Lock 中，Compliance 模式和 Governance 模式的主要区别是什么？",
+        "options": [
+            "A. Compliance 模式下 Root 用户可以修改保留期，Governance 模式则完全不可修改",
+            "B. Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除",
+            "C. 两者完全相同，只是命名不同",
+            "D. Governance 模式仅用于合规审计，Compliance 模式用于日常备份"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除」是正确的。\n\n这是 S3 Object Lock 两种保留模式的经典区别：Compliance 模式极其严格（满足 SEC、FINRA 等最严监管），连 Root 用户也无法在保留期内删除或缩短保留期；Governance 模式相对灵活，拥有 s3:BypassGovernanceRetention 权限的用户可以修改保留设置或提前删除。\n\n其他选项分析：\n\n「Compliance 模式下 Root 用户可以修改保留期」是错误的：Compliance 模式下 Root 也无权修改。\n\n「两者完全相同」是错误的：两者权限控制强度差异极大。\n\n「Governance 模式仅用于合规审计」是错误的：Governance 更适合需要一定灵活性的内部合规场景。\n\n**重点考点 / 关键词补充：**\n- Object Lock 两种模式：Compliance（最严格） vs Governance（可绕过）\n- Compliance：任何人（含 Root）都无法删除/缩短保留期\n- Governance：拥有 s3:BypassGovernanceRetention 权限的用户可修改\n- 常考：Compliance 用于金融、医疗等强监管场景",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S124",
+        "question": "启用 S3 Block Public Access 后，以下哪种情况仍然可能发生？",
+        "options": [
+            "A. 存储桶策略允许公共读取某个对象",
+            "B. ACL 设置为 public-read 的对象可被匿名访问",
+            "C. 存储桶本身对互联网完全不可访问",
+            "D. 通过预签名 URL（Presigned URL）临时访问私有对象"
+        ],
+        "correct_answers": [
+            "D"
+        ],
+        "explanation": "「通过预签名 URL（Presigned URL）临时访问私有对象」是正确的。\n\nS3 Block Public Access 主要阻止通过存储桶策略、ACL 或公开 URL 的公共访问，但不影响合法的预签名 URL（使用签名凭证的临时访问）。预签名 URL 是私有对象授权访问的标准方式，不属于“公共访问”。\n\n其他选项分析：\n\n「存储桶策略允许公共读取」是错误的：Block Public Access 会阻止此类公共访问，即使策略允许。\n\n「ACL 设置为 public-read」是错误的：Block Public Access 会忽略或阻止公共 ACL。\n\n「存储桶本身对互联网完全不可访问」是错误的：Block Public Access 仅阻止公共访问，私有访问和授权访问仍然正常。\n\n**重点考点 / 关键词补充：**\n- Block Public Access：阻止公共访问（存储桶策略 + ACL + 公开 URL）\n- 不影响：预签名 URL、私有访问、授权访问\n- 推荐：对所有存储桶默认开启，尤其是生产环境\n- 四个设置：BlockPublicAcls、IgnorePublicAcls、BlockPublicPolicy、RestrictPublicBuckets",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S125",
+        "question": "CloudWatch、CloudTrail 和 AWS Config 在监控与审计方面的主要职责区别是什么？",
+        "options": [
+            "A. 三者功能完全相同，只是名称不同",
+            "B. CloudWatch 负责性能指标和告警，CloudTrail 负责记录 API 调用审计日志，Config 负责记录资源配置变更和合规评估",
+            "C. CloudTrail 负责性能监控，Config 负责安全补丁管理",
+            "D. CloudWatch 仅用于日志收集，Config 用于成本监控"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「CloudWatch 负责性能指标和告警，CloudTrail 负责记录 API 调用审计日志，Config 负责记录资源配置变更和合规评估」是正确的。\n\n这是 CLF-C02 最经典的三者对比：\n- CloudWatch：Metrics（性能数据）、Alarms（告警）、Logs（日志收集分析）\n- CloudTrail：记录所有 AWS API 调用（谁、在何时、对什么资源做了什么操作），用于审计和安全分析\n- AWS Config：持续记录资源配置变更历史，并可进行合规规则评估（如“所有 S3 桶是否开启加密”）\n\n其他选项分析：\n\n「三者功能完全相同」是错误的：职责完全不同。\n\n「CloudTrail 负责性能监控」是错误的：CloudTrail 不做性能指标。\n\n「CloudWatch 仅用于日志收集」是错误的：CloudWatch 核心是 Metrics + Alarms。\n\n**重点考点 / 关键词补充：**\n- CloudWatch：性能指标 + 告警 + 应用/系统日志\n- CloudTrail：API 调用审计日志（Who, What, When）\n- Config：资源配置变更历史 + 合规规则评估\n- 常考组合：CloudTrail + Config 一起用于安全合规审计",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S126",
+        "question": "以下哪些 AWS 服务属于 Global（全球）级别服务？（注意本题为单选，选出最准确的组合）",
+        "options": [
+            "A. Amazon S3 存储桶和 Amazon EC2 实例",
+            "B. AWS IAM、Amazon CloudFront 和 Amazon Route 53",
+            "C. Amazon RDS 数据库和 Amazon DynamoDB 表",
+            "D. AWS Lambda 函数和 Amazon EBS 卷"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「AWS IAM、Amazon CloudFront 和 Amazon Route 53」是正确的。\n\nIAM（身份与访问管理）、CloudFront（CDN）和 Route 53（DNS 服务）是典型的 Global 级别服务：其配置和资源不绑定到特定 Region，在 AWS 全球范围内生效或可用。绝大多数其他服务（S3 桶、EC2、RDS、Lambda、DynamoDB 等）都是 Region 级别的资源。\n\n其他选项分析：\n\n「Amazon S3 存储桶和 Amazon EC2 实例」是错误的：两者都是 Region 级资源（S3 桶名虽全局唯一，但实际存储位置在特定 Region）。\n\n「Amazon RDS 数据库和 Amazon DynamoDB 表」是错误的：都是 Region 级服务。\n\n「AWS Lambda 函数和 Amazon EBS 卷」是错误的：都是 Region 级资源。\n\n**重点考点 / 关键词补充：**\n- Global 服务典型代表：IAM、CloudFront、Route 53、AWS Organizations、AWS Artifact、AWS Shield (部分)\n- Region 级服务：EC2、S3、RDS、Lambda、DynamoDB、EBS、VPC 等绝大多数\n- 考试常考陷阱：IAM 是 Global 的，但 EC2 实例、S3 桶（数据）是 Region 的\n- S3 桶名全局唯一，但数据和配置位于特定 Region",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "S127",
+        "question": "当 Spot Instance 被 AWS 中断时，AWS 通常会提前多久发出中断通知？中断后 EBS 根卷的数据默认会如何处理？",
+        "options": [
+            "A. 提前 5 分钟通知，EBS 根卷数据会立即丢失",
+            "B. 提前 2 分钟通知，EBS 根卷数据默认会保留（除非显式设置删除策略）",
+            "C. 没有提前通知，实例直接被终止且所有数据丢失",
+            "D. 提前 30 分钟通知，EBS 数据会自动备份到 S3"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「提前 2 分钟通知，EBS 根卷数据默认会保留（除非显式设置删除策略）」是正确的。\n\nAWS Spot Instance 中断时通常会提前 2 分钟通过 EC2 实例元数据服务和 EventBridge 发出中断通知。EBS 根卷（以及附加 EBS 卷）数据默认会在实例终止后保留（与 On-Demand 实例行为一致），除非在启动时明确设置了 DeleteOnTermination=true。\n\n其他选项分析：\n\n「提前 5 分钟通知」是错误的：标准通知时间是 2 分钟。\n\n「没有提前通知」是错误的：AWS 会主动提供中断通知以便应用做优雅退出或 Checkpoint。\n\n「EBS 数据会自动备份到 S3」是错误的：不会自动备份，需要客户自己设计备份策略。\n\n**重点考点 / 关键词补充：**\n- Spot 中断通知：提前 2 分钟（instance metadata + EventBridge）\n- EBS 根卷：默认保留（DeleteOnTermination 默认为 false）\n- 实例存储（ephemeral）：中断时数据会永久丢失\n- 最佳实践：使用 Checkpointing、SQS 队列、Auto Scaling 组 + 生命周期钩子处理中断",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S128",
+        "question": "Local Zones、Wavelength Zones 和 Edge Locations 三者的主要区别是什么？",
+        "options": [
+            "A. 三者都是用于内容缓存的边缘节点，功能完全相同",
+            "B. Local Zones 靠近人口中心可运行完整 AWS 服务，Wavelength Zones 是 5G 边缘用于超低延迟移动应用，Edge Locations 主要用于 CloudFront/Global Accelerator 内容分发",
+            "C. Wavelength Zones 可以运行完整 EC2 和 RDS，Local Zones 仅用于 5G",
+            "D. Edge Locations 允许客户部署自定义容器应用"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Local Zones 靠近人口中心可运行完整 AWS 服务，Wavelength Zones 是 5G 边缘用于超低延迟移动应用，Edge Locations 主要用于 CloudFront/Global Accelerator 内容分发」是正确的。\n\n这是 CLF-C02 重要的三者对比：\n- Local Zones：部署在靠近大型城市的位置，可运行完整的 AWS 服务（EC2、EBS、RDS 等），解决固定用户低延迟问题。\n- Wavelength Zones：与电信运营商合作部署在 5G 网络边缘，适合 AR/VR、自动驾驶、工业 IoT 等超低延迟（<10ms）移动场景。\n- Edge Locations：全球数量最多的内容分发节点，主要服务 CloudFront 和 Global Accelerator，用于缓存和加速，不运行通用计算服务。\n\n其他选项分析：\n\n「三者都是用于内容缓存的边缘节点」是错误的：只有 Edge Locations 主要用于缓存，Local Zones 和 Wavelength 可运行计算。\n\n「Wavelength Zones 可以运行完整 EC2 和 RDS」是错误的：Wavelength 更受限，主要用于特定 5G 低延迟应用。\n\n「Edge Locations 允许客户部署自定义容器应用」是错误的：Edge Locations 不支持运行客户计算工作负载。\n\n**重点考点 / 关键词补充：**\n- Local Zones：靠近人口中心，低延迟运行完整服务\n- Wavelength Zones：5G 边缘，超低延迟移动/实时应用\n- Edge Locations：全球 CDN 节点（CloudFront + Global Accelerator）\n- 核心基础设施仍是 Region + AZ，这三者是补充形式",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "S129",
+        "question": "在设计高可用和灾难恢复架构时，Multi-AZ 和 Multi-Region 的主要适用场景区别是什么？",
+        "options": [
+            "A. Multi-AZ 主要解决跨 Region 灾难恢复，Multi-Region 主要解决单点故障",
+            "B. Multi-AZ 主要用于同一 Region 内的故障隔离和高可用（RTO 较低），Multi-Region 用于满足合规、全球低延迟或真正的灾难恢复（RTO 较高）",
+            "C. 两者完全相同，只是部署范围不同",
+            "D. Multi-Region 成本更低且更容易实现"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Multi-AZ 主要用于同一 Region 内的故障隔离和高可用（RTO 较低），Multi-Region 用于满足合规、全球低延迟或真正的灾难恢复（RTO 较高）」是正确的。\n\nMulti-AZ：在同一个 Region 内跨多个物理隔离的 AZ 部署，网络延迟低，适合大多数生产环境的高可用和消除单点故障，RTO 通常很低（秒到分钟级）。\nMulti-Region：跨地理隔离的 Region 部署，用于满足数据主权、全球用户低延迟、或防范整个 Region 级灾难，RTO/RPO 通常更高，成本和复杂度也更高。\n\n其他选项分析：\n\n「Multi-AZ 主要解决跨 Region 灾难恢复」是错误的：Multi-AZ 无法应对 Region 级故障。\n\n「两者完全相同」是错误的：延迟、成本、RTO/RPO、合规影响差异巨大。\n\n「Multi-Region 成本更低」是错误的：Multi-Region 通常成本更高（数据传输、重复基础设施）。\n\n**重点考点 / 关键词补充：**\n- Multi-AZ：同一 Region 内，RTO 低，适合大多数 HA 场景\n- Multi-Region：跨 Region，适合合规、全球分发、Region 级 DR\n- 常见组合：先做好 Multi-AZ，再根据需要加 Multi-Region\n- RTO/RPO 要求决定选择哪种架构",
+        "domain": "Cloud Concepts"
+    },
+    {
+        "id": "S130",
+        "question": "AWS IAM Permission Boundary 和 AWS Organizations 的 Service Control Policies (SCP) 主要区别是什么？",
+        "options": [
+            "A. Permission Boundary 只能限制 Root 用户，SCP 只能限制普通 IAM 用户",
+            "B. Permission Boundary 是在单个 AWS 账户内为特定 IAM 用户或角色设置的权限上限；SCP 是在组织层面为整个成员账户设置的权限边界",
+            "C. 两者功能完全相同，只是适用范围名称不同",
+            "D. SCP 可以为 IAM 实体授予额外权限，Permission Boundary 只能限制"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Permission Boundary 是在单个 AWS 账户内为特定 IAM 用户或角色设置的权限上限；SCP 是在组织层面为整个成员账户设置的权限边界」是正确的。\n\nPermission Boundary：账户内机制，作用于具体的 IAM User 或 Role，作为该实体的“权限天花板”（与策略取交集生效）。\nSCP：Organizations 组织级机制，作用于整个成员账户或 OU，即使账户内的 IAM 策略允许，SCP 也会强制 Deny。\n\n其他选项分析：\n\n「Permission Boundary 只能限制 Root 用户」是错误的：Root 用户不受 IAM 策略和 Permission Boundary 限制。\n\n「两者功能完全相同」是错误的：作用范围和生效层级完全不同。\n\n「SCP 可以为 IAM 实体授予额外权限」是错误的：SCP 只能限制（Deny 优先），不能授予权限。\n\n**重点考点 / 关键词补充：**\n- Permission Boundary：账户内，针对具体 IAM 实体（User/Role）的上限\n- SCP：组织级，针对整个账户/OU 的边界\n- 共同点：两者都只能限制权限，不能授予权限\n- 常考：SCP 影响账户内所有 IAM 实体，Permission Boundary 只影响特定实体",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S131",
+        "question": "AWS CloudFormation 的主要作用是什么？它与手动在控制台创建资源相比有什么核心优势？",
+        "options": [
+            "A. CloudFormation 主要用于监控资源性能和设置告警",
+            "B. CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施",
+            "C. CloudFormation 只能用于创建 EC2 实例，不能管理其他服务",
+            "D. CloudFormation 主要用于实时成本优化和预算告警"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施」是正确的。\n\nAWS CloudFormation 是基础设施即代码 (IaC) 服务。通过 JSON 或 YAML 模板，你可以定义整个 AWS 架构（VPC、EC2、S3、IAM、RDS 等），然后一键部署。核心优势包括：可重复部署、一致性、版本控制、回滚能力、依赖关系自动处理。\n\n其他选项分析：\n\n「主要用于监控资源性能」是错误的：这是 CloudWatch 的职责。\n\n「只能用于创建 EC2 实例」是错误的：CloudFormation 支持几乎所有 AWS 资源。\n\n「主要用于实时成本优化」是错误的：成本优化主要靠 Cost Explorer、Budgets 和 Trusted Advisor。\n\n**重点考点 / 关键词补充：**\n- CloudFormation = 基础设施即代码 (Infrastructure as Code)\n- 模板格式：JSON / YAML\n- 核心优势：可重复、一致性、版本控制、自动回滚、依赖管理\n- 常考：CloudFormation Stack = 一组相关资源的集合；Change Set 可预览变更",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S132",
+        "question": "AWS Systems Manager (SSM) 的 Parameter Store 主要用于什么场景？它与 AWS Secrets Manager 的典型区别是什么？",
+        "options": [
+            "A. Parameter Store 主要用于存储高度敏感的数据库密码和 API Key，Secrets Manager 只能存普通配置",
+            "B. Parameter Store 适合存储配置数据、数据库连接字符串和非敏感参数；Secrets Manager 专为加密存储和管理敏感凭证（自动轮换）设计",
+            "C. 两者功能完全相同，只是名称不同",
+            "D. Parameter Store 只能存储字符串，Secrets Manager 只能存储二进制数据"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Parameter Store 适合存储配置数据...；Secrets Manager 专为加密存储和管理敏感凭证（自动轮换）设计」是正确的。\n\nSSM Parameter Store：适合存放应用配置、数据库连接字符串、许可证密钥等（支持明文和加密两种类型）。\nSecrets Manager：专门用于管理敏感凭证（密码、API Key、证书），提供自动轮换、细粒度访问控制和与 KMS 的深度集成。\n\n其他选项分析：\n\n「Parameter Store 主要用于存储高度敏感的数据库密码」是错误的：虽然可以加密存储，但 Secrets Manager 是更合适的敏感凭证管理工具。\n\n「两者功能完全相同」是错误的：定位和能力差异明显。\n\n**重点考点 / 关键词补充：**\n- SSM Parameter Store：配置 + 非极敏感参数（支持分层、版本）\n- Secrets Manager：敏感凭证 + 自动轮换（与 RDS 等集成）\n- 考试常考：Parameter Store 更便宜、更轻量；Secrets Manager 功能更强但成本更高",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S133",
+        "question": "Amazon S3 Access Points 的主要作用是什么？它相比传统存储桶策略有什么优势？",
+        "options": [
+            "A. Access Points 主要用于加速 S3 数据传输",
+            "B. Access Points 允许为不同应用或团队创建独立的访问点，每个访问点可以有自己的权限策略，从而简化大型存储桶的权限管理",
+            "C. Access Points 只能用于静态网站托管",
+            "D. Access Points 可以让 S3 存储桶变成多 Region 全局存储"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Access Points 允许为不同应用或团队创建独立的访问点，每个访问点可以有自己的权限策略，从而简化大型存储桶的权限管理」是正确的。\n\nS3 Access Points 为共享存储桶提供了更细粒度、更易管理的访问入口。每个 Access Point 可以有独立的策略、VPC 限制、访问点名称，便于为不同应用、团队或客户设置隔离的访问权限，而不需要在巨大的存储桶策略中维护大量复杂的规则。\n\n其他选项分析：\n\n「主要用于加速 S3 数据传输」是错误的：加速用 Transfer Acceleration 或 CloudFront。\n\n「只能用于静态网站托管」是错误的：Access Points 是通用访问控制机制。\n\n**重点考点 / 关键词补充：**\n- S3 Access Points：为共享桶提供独立访问入口 + 独立策略\n- 优势：权限管理简化、VPC 限制、名称自定义\n- 适合：大型共享桶、多团队/多应用场景",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S134",
+        "question": "AWS Certificate Manager (ACM) 的主要功能是什么？它与手动管理 SSL/TLS 证书相比有什么优势？",
+        "options": [
+            "A. ACM 主要用于监控 EC2 实例的 CPU 使用率",
+            "B. ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销，特别适合与 CloudFront、ALB、API Gateway 集成",
+            "C. ACM 只能签发自签名证书，不能用于生产环境",
+            "D. ACM 主要用于加密 S3 对象内容"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销」是正确的。\n\nAWS Certificate Manager 让你可以轻松申请和部署受信任的公共 SSL/TLS 证书（由 Amazon 信任的 CA 签发），并与 CloudFront、Application Load Balancer、API Gateway、Elastic Beanstalk 等服务深度集成。最大优势是自动续期（无需人工干预，避免证书过期导致的服务中断）。\n\n其他选项分析：\n\n「主要用于监控 EC2 实例」是错误的：这是 CloudWatch。\n\n「只能签发自签名证书」是错误的：ACM 签发的是受信任的公共证书。\n\n「主要用于加密 S3 对象内容」是错误的：S3 加密用 KMS 或 SSE-S3。\n\n**重点考点 / 关键词补充：**\n- ACM：免费公共证书 + 自动续期\n- 主要集成：CloudFront、ALB、NLB、API Gateway\n- 优势：自动续期、集中管理、与 AWS 服务原生集成\n- 注意：证书必须在与使用服务的同一 Region（CloudFront 除外）",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S135",
+        "question": "Amazon EC2 Placement Groups 中的 Cluster、Spread 和 Partition 三种类型的核心区别和适用场景是什么？",
+        "options": [
+            "A. 三种 Placement Group 功能完全相同，只是名称不同",
+            "B. Cluster 适合需要极低延迟和高网络吞吐的紧密耦合应用；Spread 适合需要最大硬件隔离的少量关键实例；Partition 适合需要将实例分成多个隔离组的大型分布式工作负载",
+            "C. Spread 主要用于降低成本，Cluster 主要用于高可用",
+            "D. Partition Placement Group 只能用于内存优化型实例"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Cluster 适合需要极低延迟和高网络吞吐...；Spread 适合需要最大硬件隔离...；Partition 适合...大型分布式工作负载」是正确的。\n\n- Cluster：实例放在同一机架/低延迟网络，适合 HPC、紧密耦合应用（高网络性能）。\n- Spread：每个实例放在不同的物理硬件（不同机架、不同电源等），适合少量关键实例需要最高隔离（如主数据库、关键应用）。\n- Partition：将实例分成多个“分区”，每个分区有独立的硬件，适合 Hadoop、Cassandra、Kafka 等大型分布式系统（既隔离又保持组内通信）。\n\n其他选项分析：\n\n「三种功能完全相同」是错误的：三者设计目标差异很大。\n\n「Spread 主要用于降低成本」是错误的：Spread 通常用于高可用而非成本。\n\n**重点考点 / 关键词补充：**\n- Cluster：低延迟 + 高吞吐（HPC）\n- Spread：最大硬件隔离（关键少量实例）\n- Partition：大规模分布式工作负载的组级隔离\n- 考试常考：根据应用类型选择正确的 Placement Group 类型",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S136",
+        "question": "在 KMS Envelope Encryption（信封加密）模型中，数据密钥（Data Key）是如何被保护的？",
+        "options": [
+            "A. 数据密钥直接用客户主密钥 (CMK) 加密后和密文一起存储",
+            "B. 数据密钥用 CMK 加密后得到加密的数据密钥（Encrypted Data Key），只有拿到 CMK 才能解密出明文数据密钥用于加解密数据",
+            "C. 数据密钥永远不被加密，直接明文存储",
+            "D. 数据密钥由 S3 服务自动管理，与 KMS 无关"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「数据密钥用 CMK 加密后得到加密的数据密钥...只有拿到 CMK 才能解密出明文数据密钥用于加解密数据」是正确的。\n\nEnvelope Encryption（信封加密）是 KMS 的核心加密模式：先用随机生成的数据密钥加密实际数据，然后用 CMK 加密这个数据密钥（得到 Encrypted Data Key）。这样可以高效加密大量数据，同时利用 KMS 的安全性和密钥管理能力。只有拥有 CMK 解密权限的人才能拿到明文数据密钥。\n\n其他选项分析：\n\n「数据密钥直接用 CMK 加密后和密文一起存储」是错误的：描述接近但不完整，核心是先用数据密钥加密数据。\n\n「数据密钥永远不被加密」是错误的：这是不安全的做法。\n\n**重点考点 / 关键词补充：**\n- Envelope Encryption：用数据密钥加密数据 + 用 CMK 加密数据密钥\n- 优势：性能好 + 密钥管理安全\n- 几乎所有使用 KMS 的 AWS 服务（S3、EBS、RDS 等）都采用此模型",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S137",
+        "question": "AWS Control Tower 的主要作用是什么？它为多账户环境提供了哪些核心治理能力？",
+        "options": [
+            "A. Control Tower 主要用于监控单个 EC2 实例的性能",
+            "B. Control Tower 提供一键式 Landing Zone 设置、Guardrails（防护机制）和 Account Factory，帮助企业快速建立安全、合规的多账户治理架构",
+            "C. Control Tower 只能管理单个 AWS 账户的资源",
+            "D. Control Tower 主要功能是自动优化成本和购买 Reserved Instances"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Control Tower 提供一键式 Landing Zone 设置、Guardrails 和 Account Factory...」是正确的。\n\nAWS Control Tower 是用于多账户环境的治理服务。它可以一键部署符合最佳实践的 Landing Zone（着陆区），自动应用 Guardrails（预防性和检测性防护机制），并通过 Account Factory 快速创建和配置新账户，确保所有账户从一开始就遵循企业安全和合规标准。\n\n其他选项分析：\n\n「主要用于监控单个 EC2 实例」是错误的：这是 CloudWatch 的功能。\n\n「只能管理单个 AWS 账户」是错误的：Control Tower 专为多账户治理设计。\n\n「主要功能是自动优化成本」是错误的：成本优化主要使用 Cost Explorer、Budgets 等工具。\n\n**重点考点 / 关键词补充：**\n- Control Tower = 多账户治理的“着陆区”服务\n- 核心组件：Landing Zone + Guardrails + Account Factory\n- Guardrails：预防性（阻止违规操作）和检测性（发现违规）\n- 非常适合大型企业或需要强治理的多账户场景",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S138",
+        "question": "AWS Control Tower 与 AWS Organizations 的关系是什么？Control Tower 提供了 Organizations 本身没有的哪些额外治理能力？",
+        "options": [
+            "A. Control Tower 替代了 Organizations，两者不能同时使用",
+            "B. Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory，使多账户治理更加自动化和标准化",
+            "C. Organizations 只能管理账单，Control Tower 只能管理安全组",
+            "D. 两者功能完全相同，只是名称不同"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory...」是正确的。\n\nControl Tower 建立在 AWS Organizations 基础之上。它会自动为你创建并配置 Organizations（包括管理账户、日志归档账户和审计账户），并在此基础上叠加更高级的治理功能：预构建的 Guardrails（基于 SCP 和 Config 规则）、账户蓝图（Blueprint）和 Account Factory（自动化账户创建流程）。\n\n其他选项分析：\n\n「替代了 Organizations」是错误的：Control Tower 依赖并扩展了 Organizations。\n\n「两者功能完全相同」是错误的：Organizations 提供基础的多账户管理，Control Tower 提供开箱即用的高级治理层。\n\n**重点考点 / 关键词补充：**\n- Control Tower 构建于 Organizations 之上\n- 额外价值：预设 Guardrails + Account Factory + 蓝图\n- 常考：Control Tower 让多账户治理“开箱即用”，大幅降低手动配置 Organizations + SCP + Config 的工作量",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S139",
+        "question": "AWS Service Catalog 的主要作用是什么？它如何帮助企业实现自助服务与治理的平衡？",
+        "options": [
+            "A. Service Catalog 主要用于监控应用程序性能",
+            "B. Service Catalog 允许管理员创建经过批准的产品组合（Portfolios），终端用户可以在受控权限下自助式部署标准化资源，同时强制执行治理约束",
+            "C. Service Catalog 只能用于部署 EC2 实例",
+            "D. Service Catalog 主要功能是自动备份所有 AWS 资源"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Service Catalog 允许管理员创建经过批准的产品组合（Portfolios），终端用户可以在受控权限下自助式部署标准化资源，同时强制执行治理约束」是正确的。\n\nAWS Service Catalog 让企业可以在保证治理的前提下实现自助服务。管理员可以将经过审批的 CloudFormation 模板、Terraform 配置或 Marketplace 产品打包成“产品”，放入产品组合中，并设置启动约束、模板约束和权限控制。普通用户或团队可以在权限范围内自助部署，而不会违反企业标准。\n\n其他选项分析：\n\n「主要用于监控应用程序性能」是错误的：这是 CloudWatch / X-Ray。\n\n「只能用于部署 EC2 实例」是错误的：支持多种资源类型。\n\n**重点考点 / 关键词补充：**\n- Service Catalog = 治理下的自助服务 (Self-service with Governance)\n- 核心概念：Product（产品）、Portfolio（产品组合）、Constraint（约束）\n- 优势：标准化 + 合规 + 降低 IT 部门手动审批负担\n- 常考与 CloudFormation 的结合使用",
+        "domain": "Technology and Services"
+    },
+    {
+        "id": "S140",
+        "question": "AWS Personal Health Dashboard 与 AWS Trusted Advisor 的主要区别是什么？",
+        "options": [
+            "A. 两者功能完全相同，只是界面不同",
+            "B. Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议（成本、性能、安全等）",
+            "C. Personal Health Dashboard 只关注成本，Trusted Advisor 只关注安全",
+            "D. Trusted Advisor 是免费的，Personal Health Dashboard 只对 Enterprise Support 客户开放"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议」是正确的。\n\nPersonal Health Dashboard：显示 AWS 针对你具体账户的个性化事件（如特定服务在你使用区域的计划维护、已知问题影响等），非常及时和相关。\nTrusted Advisor：提供跨成本优化、性能、安全、容错、卓越运营五个类别的通用最佳实践检查和建议（部分检查需要 Business Support 及以上）。\n\n其他选项分析：\n\n「两者功能完全相同」是错误的：一个是“个性化健康事件”，一个是“通用最佳实践检查”。\n\n「Personal Health Dashboard 只关注成本」是错误的：它关注服务健康和计划维护。\n\n**重点考点 / 关键词补充：**\n- Personal Health Dashboard：个性化、及时、针对你的账户的事件通知\n- Trusted Advisor：通用、检查项驱动的优化建议（5 个类别）\n- 考试常考：不要混淆两者用途\n- Personal Health Dashboard 对所有支持计划免费开放",
+        "domain": "Security and Compliance"
+    },
+    {
+        "id": "S141",
+        "question": "使用 AWS Control Tower 后，企业通常还能从哪些其他 AWS 服务中获得额外治理价值？（本题为单选，选出最准确的描述）",
+        "options": [
+            "A. 只有 Control Tower 就足够了，不需要其他治理服务",
+            "B. 结合 AWS Config 进行持续合规监控、AWS CloudTrail 进行 API 审计、AWS Organizations 进行账户管理，形成完整的治理闭环",
+            "C. Control Tower 已经包含所有 IAM 权限管理功能",
+            "D. 主要需要搭配 AWS Marketplace 购买第三方治理工具"
+        ],
+        "correct_answers": [
+            "B"
+        ],
+        "explanation": "「结合 AWS Config 进行持续合规监控、AWS CloudTrail 进行 API 审计、AWS Organizations 进行账户管理，形成完整的治理闭环」是正确的。\n\nControl Tower 虽然强大，但通常与以下服务配合使用效果最佳：\n- AWS Organizations（基础账户管理）\n- AWS Config（资源配置合规规则 + 聚合器）\n- AWS CloudTrail（API 调用审计）\n- IAM + SCP（权限边界）\n形成从账户创建、策略执行、持续检测到审计的完整治理体系。\n\n其他选项分析：\n\n「只有 Control Tower 就足够了」是错误的：它是一个治理编排层，不是万能工具。\n\n「Control Tower 已经包含所有 IAM 权限管理」是错误的：IAM 和 SCP 仍需单独管理。\n\n**重点考点 / 关键词补充：**\n- Control Tower 是治理的“指挥中心”\n- 推荐搭配：Organizations + Config + CloudTrail + IAM\n- 常考组合题：这些服务如何共同实现企业级治理",
+        "domain": "Security and Compliance"
     }
 ]
