@@ -1,0 +1,82 @@
+[
+  {
+    "id": "M105",
+    "question": "AWS 客户在选择部署 Region 时，通常需要重点考虑以下哪些因素？（选择两项）",
+    "options": [
+      "A. 该 Region 提供的所有 AWS 服务都必须完全相同",
+      "B. 数据主权、合规要求以及与终端用户的网络延迟",
+      "C. 该 Region 的存储费用永远最低",
+      "D. 特定服务的可用性以及整体架构的成本"
+    ],
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "「数据主权、合规要求以及与终端用户的网络延迟」和「特定服务的可用性以及整体架构的成本」是正确的。\n\n选择 Region 时，客户必须综合考虑合规与数据驻留要求、与最终用户的延迟、该 Region 是否已上线所需服务，以及综合成本。\n\n其他选项分析：\n\n「该 Region 提供的所有 AWS 服务都必须完全相同」是错误的：不同 Region 的服务可用性存在差异，新服务通常不会在所有 Region 同时上线。\n\n「该 Region 的存储费用永远最低」是错误的：费用只是考量因素之一，且不同 Region 费用差异需要结合整体架构计算。\n\n**重点考点 / 关键词补充：**\n- Region 选择核心维度：合规/数据主权 + 延迟 + 服务可用性 + 成本\n- 并非所有服务在所有 Region 都可用\n- 新 Region 可能只有 2 个 AZ，影响高可用设计",
+    "domain": "Cloud Concepts"
+  },
+  {
+    "id": "M106",
+    "question": "AWS Well-Architected Framework 的 Reliability 支柱主要关注以下哪些方面？（选择两项）",
+    "options": [
+      "A. 自动从故障中恢复并满足业务连续性要求",
+      "B. 确保工作负载能够按预期正确且一致地运行",
+      "C. 优化成本以获得最大业务价值",
+      "D. 通过加密和访问控制保护数据和系统"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "「自动从故障中恢复并满足业务连续性要求」和「确保工作负载能够按预期正确且一致地运行」是正确的。\\n\\nReliability 支柱专注于工作负载按预期正确且一致地运行，以及在故障发生时快速恢复的能力。它强调分布式系统设计、故障隔离、自动恢复和满足业务连续性要求。\\n\\n其他选项分析：\\n\\n「优化成本以获得最大业务价值」是错误的：这是 Cost Optimization 支柱的核心目标。\\n\\n「通过加密和访问控制保护数据和系统」是错误的：这是 Security 支柱的主要关注点。\\n\\n**重点考点 / 关键词补充：**\\n- Reliability 支柱：故障恢复、业务连续性、一致性运行\\n- 与其他支柱区别：Cost Optimization 关注成本，Security 关注保护\\n- 关键设计原则：自动从故障中恢复、测试恢复过程、水平扩展而非垂直扩展",
+    "domain": "Cloud Concepts"
+  },
+  {
+    "id": "M107",
+    "question": "AWS Well-Architected Framework 包含以下哪些核心支柱？（选择两项）",
+    "options": [
+      "A. Operational Excellence",
+      "B. Security",
+      "C. High Performance Computing",
+      "D. Artificial Intelligence"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "「Operational Excellence」和「Security」是正确的。\n\nAWS Well-Architected Framework 包含六个核心支柱：Operational Excellence、Security、Reliability、Performance Efficiency、Cost Optimization 和 Sustainability。每个支柱都有一系列最佳实践，帮助客户构建高质量的云架构。\n\n其他选项分析：\n\n「High Performance Computing」是错误的：这不是 Well-Architected Framework 的支柱，而是特定的技术领域。\n\n「Artificial Intelligence」是错误的：AI 是 AWS 的重要服务领域，但不是 Well-Architected 的核心支柱。\n\n**重点考点 / 关键词补充：**\n- 六个支柱：Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability\n- 每个支柱都有设计原则和最佳实践\n- 常考：Reliability 关注故障恢复，Cost Optimization 关注节省成本",
+    "domain": "Cloud Concepts"
+  },
+  {
+    "id": "M108",
+    "question": "AWS Free Tier 主要包含以下哪几种类型？（选择两项）",
+    "options": [
+      "A. 新账户 12 个月免费额度",
+      "B. 永久免费套餐（Always Free）",
+      "C. 短期促销免费试用",
+      "D. 仅限教育机构使用的免费资源"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "「新账户 12 个月免费额度」和「永久免费套餐（Always Free）」是正确的。\n\nAWS Free Tier 主要由两种类型组成：从账户激活起 12 个月的免费额度，以及无时间限制的永久免费套餐（如每月一定量的 Lambda 调用、DynamoDB 存储等）。\n\n其他选项分析：\n\n「短期促销免费试用」是错误的：虽然偶尔有促销活动，但不属于 Free Tier 的标准组成部分。\n\n「仅限教育机构使用的免费资源」是错误的：Free Tier 对所有新注册用户开放。\n\n**重点考点 / 关键词补充：**\n- 12 个月免费：从「激活账户」开始计算，不是注册日期\n- Always Free：无时间限制，只要账户保持活跃即可使用\n- 用完后会正常收费，不会自动停止服务\n- 考试常考：区分两种免费类型的适用范围和时间限制",
+    "domain": "Billing, Pricing, and Support"
+  },
+  {
+    "id": "M109",
+    "question": "AWS Enterprise Support 相比 Business Support 的主要优势包括以下哪些？（选择两项）",
+    "options": [
+      "A. 提供 Technical Account Manager (TAM)",
+      "B. 严重故障响应时间可达 < 15 分钟",
+      "C. 包含免费的架构审查和优化建议",
+      "D. 支持无限次的白手套架构咨询"
+    ],
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的架构审查」是错误的：架构审查在 Enterprise 是包含的，但“免费”表述不准确（它属于 Enterprise 套餐内服务）。\n\n「支持无限次的白手套架构咨询」是错误的：虽然 Enterprise 支持更深入的咨询，但并非完全无限制的白手套服务。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
+    "domain": "Billing, Pricing, and Support"
+  }
+]

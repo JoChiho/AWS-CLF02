@@ -55,6 +55,7 @@ class CLFQuizApp(ctk.CTk):
         self.current_index = 0
 
         self.option_widgets: List[ctk.CTkRadioButton | ctk.CTkCheckBox] = []
+        self._option_text_labels: List[ctk.CTkLabel] = []   # 用于动态更新选项文字的 wraplength
         self.is_multi = False
         self.multi_submit_btn: ctk.CTkButton | None = None
 
@@ -243,6 +244,7 @@ class CLFQuizApp(ctk.CTk):
         self.user_answers = {}
         self.current_index = 0
         self.option_widgets = []
+        self._option_text_labels = []
         self.is_multi = False
         self.multi_submit_btn = None
 
@@ -259,7 +261,8 @@ class CLFQuizApp(ctk.CTk):
 
         # 绑定窗口大小变化
         self.bind("<Configure>", self._on_window_resize)
-        self.after(150, self._update_wraplength)
+        self.after(80, self._update_wraplength)
+        self.after(220, self._update_wraplength)
 
     def _start_domain_quiz(self, domain: str):
         """按考试领域启动分类练习"""
@@ -278,6 +281,7 @@ class CLFQuizApp(ctk.CTk):
         self.user_answers = {}
         self.current_index = 0
         self.option_widgets = []
+        self._option_text_labels = []
         self.is_multi = False
         self.multi_submit_btn = None
 
@@ -292,7 +296,8 @@ class CLFQuizApp(ctk.CTk):
         self._load_question(0)
 
         self.bind("<Configure>", self._on_window_resize)
-        self.after(150, self._update_wraplength)
+        self.after(80, self._update_wraplength)
+        self.after(220, self._update_wraplength)
 
     def _start_wrong_book_quiz(self, wrong_ids: List[str]):
         """从错题本启动针对性练习"""
@@ -311,6 +316,7 @@ class CLFQuizApp(ctk.CTk):
         self.user_answers = {}
         self.current_index = 0
         self.option_widgets = []
+        self._option_text_labels = []
         self.is_multi = False
         self.multi_submit_btn = None
 
@@ -324,7 +330,8 @@ class CLFQuizApp(ctk.CTk):
         self._load_question(0)
 
         self.bind("<Configure>", self._on_window_resize)
-        self.after(150, self._update_wraplength)
+        self.after(80, self._update_wraplength)
+        self.after(220, self._update_wraplength)
 
     # ==================== 答题界面（原 _build_ui 内容） ====================
     def _build_quiz_ui(self):
@@ -357,7 +364,10 @@ class CLFQuizApp(ctk.CTk):
         main_frame = ctk.CTkFrame(self)
         main_frame.grid(row=1, column=0, sticky="nsew", padx=8, pady=4)
 
-        # 题目信息区
+        # 绑定主内容区尺寸变化，进一步保障换行及时更新
+        main_frame.bind("<Configure>", lambda e: self._update_wraplength())
+
+        # 题目信息区（恢复为直接放在 main_frame 下，不使用滚动容器）
         self.info_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         self.info_frame.pack(fill="x", padx=8, pady=(8, 4))
 
@@ -376,15 +386,18 @@ class CLFQuizApp(ctk.CTk):
             self.info_frame,
             text="",
             font=ctk.CTkFont(size=16, weight="bold"),
-            wraplength=700,          # 初始值，会在 resize 时动态更新
+            wraplength=620,          # 初始值，会在 resize 时动态更新
             justify="left",
             anchor="w"               # 确保文字内容靠左对齐（而非默认居中）
         )
         self.question_label.pack(fill="x", anchor="w", pady=(6, 10))
 
-        # 选项容器（普通 Frame，配合 resize 动态调整）
+        # 选项容器（恢复为直接放在 main_frame 下）
         self.options_frame = ctk.CTkFrame(main_frame, fg_color="#2b2b2b")
         self.options_frame.pack(fill="both", expand=True, padx=8, pady=6)
+
+        # 额外绑定 options_frame 的尺寸变化，选项文字换行能更快响应
+        self.options_frame.bind("<Configure>", lambda e: self._update_wraplength())
 
         # ========== 解析面板（更灵活的响应式设计） ==========
         explain_frame = ctk.CTkFrame(main_frame, fg_color="#1f1f1f")
@@ -476,14 +489,17 @@ class CLFQuizApp(ctk.CTk):
         self.update_idletasks()
         self._update_wraplength()
 
-        # 多次保障更新，确保换行生效
-        self.after(50, self._update_wraplength)
-        self.after(150, self._update_wraplength)
+        # 多次延迟刷新，覆盖布局稳定前后的不同阶段，确保窄窗口真正换行
+        self.after(10, self._update_wraplength)
+        self.after(60, self._update_wraplength)
+        self.after(180, self._update_wraplength)
+        self.after(350, self._update_wraplength)
 
         # 清空旧选项 + 清理多选提交按钮
         for widget in self.options_frame.winfo_children():
             widget.destroy()
         self.option_widgets.clear()
+        self._option_text_labels.clear()
 
         if self.multi_submit_btn:
             self.multi_submit_btn.destroy()
@@ -506,20 +522,62 @@ class CLFQuizApp(ctk.CTk):
         scale = max(0.7, min(1.1, self.winfo_width() / 1000.0))
         opt_font_size = int(13 * scale)
 
+        # 首次创建时就给一个相对合理的 wraplength，避免第一帧完全不换行
+        try:
+            init_wrap = max(280, self.winfo_width() - 160)
+        except Exception:
+            init_wrap = 620
+
+        # ==================== 真正支持自动换行的选项行（复合控件） ====================
+        # 原因：CTkRadioButton / CTkCheckBox 内部 Label 不支持公开 wraplength，直接使用时长文本无法换行。
+        # 解决方案：每行用一个 Frame，左侧放紧凑 indicator（无文字），右侧放 CTkLabel（公开 wraplength）。
+        # 只在文字标签上绑定点击，右侧空白深色区域点击不会误选。
+
         if self.is_multi:
-            # ==================== 多选题（使用打乱后的选项） ====================
+            # 多选题
             for letter in ["A", "B", "C", "D", "E"][:len(display_options)]:
                 var = ctk.BooleanVar(value=letter in current_display_answer)
-                cb = ctk.CTkCheckBox(
-                    self.options_frame,
-                    text=display_options[ord(letter) - ord("A")],
+
+                # 先建 row，再建 indicator（parent 必须是 row）
+                row = ctk.CTkFrame(self.options_frame, fg_color="transparent")
+                row.pack(fill="x", padx=6, pady=2)
+
+                indicator = ctk.CTkCheckBox(
+                    row,
+                    text="",                    # 不显示文字，文字由旁边的 label 负责
                     variable=var,
+                    width=22,
+                    height=22,
+                    checkbox_width=16,
+                    checkbox_height=16,
                     font=ctk.CTkFont(size=opt_font_size)
                 )
-                cb.pack(anchor="w", padx=15, pady=4)
-                self.option_widgets.append(cb)
+                indicator.grid(row=0, column=0, padx=(4, 8), pady=3, sticky="n")
 
-            # 多选题专用提交按钮
+                text_label = ctk.CTkLabel(
+                    row,
+                    text=display_options[ord(letter) - ord("A")],
+                    font=ctk.CTkFont(size=opt_font_size),
+                    wraplength=init_wrap,
+                    justify="left",
+                    anchor="w"
+                )
+                # 使用 sticky="w" 而不是 "ew"，让 label 只占据文字实际需要的宽度。
+                # 这样选项文字右侧的大片空白深色区域点击就不会误触发选择了。
+                text_label.grid(row=0, column=1, sticky="w", pady=3)
+
+                row.grid_columnconfigure(1, weight=1)
+
+                # 只绑定在文字标签上（不再绑定整行 row）
+                def _toggle_this(var=var, ind=indicator, event=None):
+                    ind.toggle()
+
+                text_label.bind("<Button-1>", _toggle_this)
+
+                self.option_widgets.append(indicator)
+                self._option_text_labels.append(text_label)
+
+            # 多选题提交按钮保持不变
             btn_text = "更新答案" if index in self.user_answers else "提交答案"
             self.multi_submit_btn = ctk.CTkButton(
                 self.options_frame,
@@ -533,21 +591,52 @@ class CLFQuizApp(ctk.CTk):
             self.multi_submit_btn.pack(fill="x", padx=20, pady=(10, 4))
 
         else:
-            # ==================== 单选题（使用打乱后的选项） ====================
+            # 单选题
             self.radio_var = ctk.StringVar(value=current_display_answer[0] if current_display_answer else "")
 
             for i, opt_text in enumerate(display_options):
                 letter = chr(ord("A") + i)
-                rb = ctk.CTkRadioButton(
-                    self.options_frame,
-                    text=opt_text,
+
+                row = ctk.CTkFrame(self.options_frame, fg_color="transparent")
+                row.pack(fill="x", padx=6, pady=2)
+
+                indicator = ctk.CTkRadioButton(
+                    row,
+                    text="",
                     variable=self.radio_var,
                     value=letter,
+                    width=22,
+                    height=22,
+                    radiobutton_width=16,
+                    radiobutton_height=16,
                     font=ctk.CTkFont(size=opt_font_size),
                     command=self._on_single_change
                 )
-                rb.pack(anchor="w", padx=15, pady=4)
-                self.option_widgets.append(rb)
+                indicator.grid(row=0, column=0, padx=(4, 8), pady=3, sticky="n")
+
+                text_label = ctk.CTkLabel(
+                    row,
+                    text=opt_text,
+                    font=ctk.CTkFont(size=opt_font_size),
+                    wraplength=init_wrap,
+                    justify="left",
+                    anchor="w"
+                )
+                # 使用 sticky="w" 而不是 "ew"，让 label 只占据文字实际需要的宽度。
+                # 这样选项文字右侧的大片空白深色区域点击就不会误触发选择了。
+                text_label.grid(row=0, column=1, sticky="w", pady=3)
+
+                row.grid_columnconfigure(1, weight=1)
+
+                # 只绑定在文字标签上（不再绑定整行 row）
+                def _select_this(ltr=letter, event=None):
+                    self.radio_var.set(ltr)
+                    self._on_single_change()
+
+                text_label.bind("<Button-1>", _select_this)
+
+                self.option_widgets.append(indicator)
+                self._option_text_labels.append(text_label)
 
         # 加载题目后更新解析面板（多选题会根据是否有提交记录决定显示强度）
         self._update_explanation_panel()
@@ -658,25 +747,19 @@ class CLFQuizApp(ctk.CTk):
             btn_height = int(34 * scale)
             nav_btn_width = int(105 * scale)
 
-            # 更新题目文字：动态字体 + 靠左对齐 + 初始 wraplength（后续由 _update_wraplength 用容器实际宽度精调）
-            try:
-                if width > 200:
-                    new_wrap = max(260, width - 130)
-                else:
-                    new_wrap = 700
-            except Exception:
-                new_wrap = 700
-
+            # 更新题目文字：动态字体 + 靠左对齐
+            # wraplength 完全委托给 _update_wraplength（它会使用 options_frame 等更精确的容器宽度）
             self.question_label.configure(
                 font=ctk.CTkFont(size=question_size, weight="bold"),
-                wraplength=new_wrap,
                 justify="left",
                 anchor="w"
             )
             self.question_label.update_idletasks()
 
-            # 使用容器真实宽度再次精调 wraplength（确保窄窗口下题目自动换行且完整显示）
-            self.after(10, self._update_wraplength)
+            # 延迟刷新所有 wraplength（题目 + 选项）
+            self.after(5, self._update_wraplength)
+            self.after(40, self._update_wraplength)
+            self.after(160, self._update_wraplength)
 
             # 更新导航按钮
             self.prev_btn.configure(
@@ -706,31 +789,63 @@ class CLFQuizApp(ctk.CTk):
                     font=ctk.CTkFont(size=button_font_size)
                 )
 
+            # 同步缩放当前所有选项的文字标签 + 小型 indicator（新复合行架构）
+            opt_font = ctk.CTkFont(size=option_size)
+            for lbl in getattr(self, "_option_text_labels", []):
+                try:
+                    if lbl and lbl.winfo_exists():
+                        lbl.configure(font=opt_font)
+                except Exception:
+                    pass
+            for w in getattr(self, "option_widgets", []):
+                try:
+                    if w and w.winfo_exists():
+                        w.configure(font=opt_font)
+                except Exception:
+                    pass
+
         except Exception:
             pass
 
     def _update_wraplength(self):
-        """手动更新 wraplength（在加载题目时调用）。优先使用 info_frame 实际宽度，保证窄窗口时正确换行并靠左显示完整题目。"""
+        """强制让题目和选项文字换行。使用窗口宽度减固定安全边距的方式，最稳定可靠。"""
         self.update_idletasks()
 
         try:
-            # 优先使用题目信息容器的实际宽度（比窗口宽度更精确，自动考虑所有 padding）
-            container_width = self.info_frame.winfo_width()
-            if container_width > 60:
-                # info_frame 有 padx=8（左右16），外层 main_frame 有 padx=8，预留安全边距后计算
-                new_wraplength = max(260, container_width - 36)
+            win_width = self.winfo_width()
+            # 非常保守的安全边距，覆盖：窗口边框、main_frame padx、options_frame padx、indicator 列、label 左右留白
+            # 实测在 1000px 窗口下，留 140~160 像素是比较保险的
+            if win_width > 400:
+                q_wrap = max(320, win_width - 135)
+                opt_wrap = max(280, win_width - 155)
             else:
-                # 回退到窗口宽度
-                win_width = self.winfo_width()
-                if win_width > 200:
-                    new_wraplength = max(260, win_width - 130)
-                else:
-                    new_wraplength = 700
+                q_wrap = 320
+                opt_wrap = 280
         except Exception:
-            new_wraplength = 700
+            q_wrap = 680
+            opt_wrap = 600
 
-        self.question_label.configure(wraplength=new_wraplength)
-        self.question_label.update_idletasks()
+        # 1. 题目
+        try:
+            if hasattr(self, "question_label") and self.question_label.winfo_exists():
+                self.question_label.configure(wraplength=q_wrap)
+        except Exception:
+            pass
+
+        # 2. 所有选项文字（独立的 CTkLabel）
+        for lbl in getattr(self, "_option_text_labels", []):
+            if lbl is None:
+                continue
+            try:
+                if lbl.winfo_exists():
+                    lbl.configure(wraplength=opt_wrap)
+            except Exception:
+                pass
+
+        try:
+            self.update_idletasks()
+        except Exception:
+            pass
 
     # ==================== 原有方法 ====================
 
@@ -1062,6 +1177,7 @@ class CLFQuizApp(ctk.CTk):
         self.user_answers = {}
         self.current_index = 0
         self.option_widgets = []
+        self._option_text_labels = []
         self.is_multi = False
         self.multi_submit_btn = None
         self.current_mode = "all"

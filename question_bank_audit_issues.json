@@ -1,0 +1,11 @@
+{
+  "move_single_to_multi_ids": [],
+  "move_multi_to_single_ids": [],
+  "fix_domain_questions": [],
+  "official_domains": [
+    "Security and Compliance",
+    "Technology and Services",
+    "Cloud Concepts",
+    "Billing, Pricing, and Support"
+  ]
+}
