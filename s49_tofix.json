@@ -1,0 +1,15 @@
+{
+  "id": "S49",
+  "question": "AWS Key Management Service (KMS) 中，Customer Managed Key 和 AWS Managed Key 的主要区别是什么？",
+  "options": [
+    "A. Customer Managed Key 只能用于 S3 加密",
+    "B. Customer Managed Key 由客户完全控制生命周期和访问策略，AWS Managed Key 由 AWS 管理",
+    "C. AWS Managed Key 提供更高的安全性",
+    "D. 两者没有区别，可以互换使用"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「Customer Managed Key 由客户完全控制生命周期和访问策略，AWS Managed Key 由 AWS 管理」是正确的。\n\nCustomer Managed Keys (CMK) 由客户创建和管理，客户可以控制密钥的启用、禁用、轮换、删除以及访问策略。AWS Managed Keys 由 AWS 创建和管理，客户无法控制其生命周期。\n\n其他选项分析：\n\n「Customer Managed Key 只能用于 S3 加密」是错误的：CMK 可用于多种 AWS 服务。\n\n「AWS Managed Key 提供更高的安全性」是错误的：安全性主要取决于访问策略和使用方式，而非密钥类型。\n\n「两者没有区别，可以互换使用」是错误的：两者在控制权和生命周期管理上有显著差异。\n\n**重点考点 / 关键词补充：**\n- Customer Managed Key：客户完全控制（推荐用于敏感数据）\n- AWS Managed Key：AWS 管理，适合一般使用场景\n- 密钥轮换：CMK 支持自动轮换，AWS Managed Key 也支持但客户无法控制",
+  "domain": "Security and Compliance"
+}

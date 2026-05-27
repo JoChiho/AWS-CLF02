@@ -1,0 +1,17 @@
+{
+  "id": "M18",
+  "question": "Amazon Route 53 提供哪些功能？（选择两项）",
+  "options": [
+    "A. 域名注册",
+    "B. DNS 解析和流量路由策略（延迟、地理、加权等）",
+    "C. 内容缓存加速",
+    "D. 负载均衡器",
+    "E. 数据库备份"
+  ],
+  "correct_answers": [
+    "A",
+    "B"
+  ],
+  "explanation": "正确答案：\n\n「域名注册」\n「DNS 解析和流量路由策略（延迟、地理、加权等）」\n\n错误选项分析：\n\n「内容缓存加速」是错误的：内容缓存加速主要是 CloudFront 的功能。\n\n「负载均衡器」是错误的：负载均衡器主要是 ELB（ALB/NLB）的功能。\n\n「数据库备份」是错误的：数据库备份不是 Route 53 的功能。\n\n**重点考点 / 关键词补充：**\n- **Amazon Route 53**：AWS 的 DNS 服务，同时支持域名注册和智能流量路由。\n- **路由策略**（高频考点）：延迟路由、地理位置路由、加权路由、故障转移路由、多值回答路由。\n- **健康检查**：可配合故障转移路由策略实现自动 DNS 故障转移。\n- 常考：Route 53 不是负载均衡器（ALB/NLB/Global Accelerator 才是）。",
+  "domain": "Technology and Services"
+}

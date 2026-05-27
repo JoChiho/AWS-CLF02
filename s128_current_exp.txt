@@ -1,0 +1,20 @@
+「Local Zones 靠近人口中心可运行完整 AWS 服务，Wavelength Zones 是 5G 边缘用于超低延迟移动应用，Edge Locations 主要用于 CloudFront/Global Accelerator 内容分发」是正确的。
+
+这是 CLF-C02 重要的三者对比：
+- Local Zones：部署在靠近大型城市的位置，可运行完整的 AWS 服务（EC2、EBS、RDS 等），解决固定用户低延迟问题。
+- Wavelength Zones：与电信运营商合作部署在 5G 网络边缘，适合 AR/VR、自动驾驶、工业 IoT 等超低延迟（<10ms）移动场景。
+- Edge Locations：全球数量最多的内容分发节点，主要服务 CloudFront 和 Global Accelerator，用于缓存和加速，不运行通用计算服务。
+
+其他选项分析：
+
+「三者都是用于内容缓存的边缘节点」是错误的：只有 Edge Locations 主要用于缓存，Local Zones 和 Wavelength 可运行计算。
+
+「Wavelength Zones 可以运行完整 EC2 和 RDS」是错误的：Wavelength 更受限，主要用于特定 5G 低延迟应用。
+
+「Edge Locations 允许客户部署自定义容器应用」是错误的：Edge Locations 不支持运行客户计算工作负载。
+
+**重点考点 / 关键词补充：**
+- Local Zones：靠近人口中心，低延迟运行完整服务
+- Wavelength Zones：5G 边缘，超低延迟移动/实时应用
+- Edge Locations：全球 CDN 节点（CloudFront + Global Accelerator）
+- 核心基础设施仍是 Region + AZ，这三者是补充形式

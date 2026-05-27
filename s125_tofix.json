@@ -1,0 +1,15 @@
+{
+  "id": "S125",
+  "question": "CloudWatch、CloudTrail 和 AWS Config 在监控与审计方面的主要职责区别是什么？",
+  "options": [
+    "A. 三者功能完全相同，只是名称不同",
+    "B. CloudWatch 负责性能指标和告警，CloudTrail 负责记录 API 调用审计日志，Config 负责记录资源配置变更和合规评估",
+    "C. CloudTrail 负责性能监控，Config 负责安全补丁管理",
+    "D. CloudWatch 仅用于日志收集，Config 用于成本监控"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「CloudWatch 负责性能指标和告警，CloudTrail 负责记录 API 调用审计日志，Config 负责记录资源配置变更和合规评估」是正确的。\n\n这是 CLF-C02 最经典的三者对比：\n- CloudWatch：Metrics（性能数据）、Alarms（告警）、Logs（日志收集分析）\n- CloudTrail：记录所有 AWS API 调用（谁、在何时、对什么资源做了什么操作），用于审计和安全分析\n- AWS Config：持续记录资源配置变更历史，并可进行合规规则评估（如“所有 S3 桶是否开启加密”）\n\n其他选项分析：\n\n「三者功能完全相同」是错误的：职责完全不同。\n\n「CloudTrail 负责性能监控」是错误的：CloudTrail 不做性能指标。\n\n「CloudWatch 仅用于日志收集」是错误的：CloudWatch 核心是 Metrics + Alarms。\n\n**重点考点 / 关键词补充：**\n- CloudWatch：性能指标 + 告警 + 应用/系统日志\n- CloudTrail：API 调用审计日志（Who, What, When）\n- Config：资源配置变更历史 + 合规规则评估\n- 常考组合：CloudTrail + Config 一起用于安全合规审计",
+  "domain": "Technology and Services"
+}

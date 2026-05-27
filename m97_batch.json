@@ -1,0 +1,19 @@
+{
+  "id": "M97",
+  "question": "以下关于 Amazon S3 高级功能的描述，哪些是正确的？（选择三项）",
+  "options": [
+    "A. S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口，每个入口拥有独立的权限策略",
+    "B. S3 Object Ownership 主要用于控制上传对象的所有权（BucketOwnerPreferred 或 BucketOwnerEnforced）",
+    "C. S3 Batch Operations 可以对数百万对象批量执行复制、删除、标签修改等操作",
+    "D. S3 Requester Pays 模式下，请求者需要支付请求和数据传输费用，而不是存储桶拥有者支付",
+    "E. S3 Select 主要用于加速跨 Region 的数据复制"
+  ],
+  "correct_answers": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "explanation": "正确答案：\n\n「S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口」\n「S3 Object Ownership 主要用于控制上传对象的所有权」\n「S3 Batch Operations 可以对数百万对象批量执行...操作」\n「S3 Requester Pays 模式下，请求者需要支付...」\n\n错误选项分析：\n\n「S3 Select 主要用于加速跨 Region 的数据复制」是错误的：S3 Select 是按需查询对象内部特定内容的性能功能（类似 SQL 查询），不是用于复制加速。\n\n**重点考点 / 关键词补充：**\n- Access Points：简化大型桶的权限管理\n- Object Ownership：解决上传对象所有权归属问题（重要合规点）\n- Batch Operations：大规模对象处理（S3 + Lambda 或 内置操作）\n- Requester Pays：让请求者承担费用（常用于数据共享场景）",
+  "domain": "Technology and Services"
+}

@@ -1,0 +1,16 @@
+「创建、发布、维护、监控和保护 RESTful/WebSocket API」是正确的。
+
+Amazon API Gateway 是 AWS 全托管的 API 管理服务，主要用于创建、发布、维护、监控和保护 RESTful API 和 WebSocket API。它支持身份验证（Cognito、IAM、Lambda Authorizer）、限流、缓存、监控、版本控制等功能。
+
+其他选项分析：
+
+「托管关系型数据库」是错误的：这是 RDS、Aurora 的职责。
+
+「运行容器」是错误的：运行容器使用 ECS、EKS、Fargate、Lambda 等。
+
+「管理 DNS 记录」是错误的：DNS 管理是 Route 53 的功能。
+
+**重点考点 / 关键词补充：**
+- API Gateway 是“API 前门”
+- 常见集成：Lambda、EC2、S3、Step Functions
+- 安全功能：WAF、Throttling、API Keys、Usage Plans

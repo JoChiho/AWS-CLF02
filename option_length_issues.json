@@ -1,0 +1,4054 @@
+[
+  {
+    "id": "M24",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Business Support 和 Enterprise Support 的主要区别是什么？（选择两项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.2x",
+      "最长正确答案是最短干扰项的 4.3x"
+    ],
+    "metrics": {
+      "max_correct_len": 56,
+      "avg_distractor_len": 25.3,
+      "min_distractor_len": 13,
+      "ratio_maxc_avgd": 2.21,
+      "short_distractor_count": 1,
+      "length_std": 16.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Enterprise Support 提供 Technical Account Manager (TAM)",
+        "len": 56,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Business Support 提供 < 15 分钟的严重故障响应时间",
+        "len": 39,
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "C. Enterprise Support 支持更快的响应时间和架构审查",
+        "len": 36,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. Business Support 完全免费",
+        "len": 24,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 两者响应时间完全相同",
+        "len": 13,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "M101",
+    "domain": "Security and Compliance",
+    "question": "以下关于 AWS Control Tower 的核心功能描述，哪些是正确的？（选择三项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 43,
+      "avg_distractor_len": 19.5,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 2.21,
+      "short_distractor_count": 0,
+      "length_std": 11.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供一键部署符合 AWS 最佳实践的 Landing Zone（着陆区）",
+        "len": 39,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 自动应用 Guardrails（防护机制），包括预防性和检测性规则",
+        "len": 36,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 通过 Account Factory 实现新 AWS 账户的自动化创建和基线配置",
+        "len": 43,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 完全替代 IAM 和所有权限管理工作",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 主要用于单个账户的资源性能优化",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S64",
+    "domain": "Security and Compliance",
+    "question": "Amazon S3 Object Lock 的主要用途是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.2x",
+      "最长正确答案是最短干扰项的 3.0x"
+    ],
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 15.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 2.2,
+      "short_distractor_count": 1,
+      "length_std": 9.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提高对象检索速度",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 防止对象被删除或覆盖，实现 WORM（一次写入多次读取）保护",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 自动将对象转移到更便宜的存储类",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 跨 Region 复制对象",
+        "len": 16,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M89",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Enterprise Support 相比 Business Support 的主要优势？（选择两项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 37,
+      "avg_distractor_len": 17.0,
+      "min_distractor_len": 16,
+      "ratio_maxc_avgd": 2.18,
+      "short_distractor_count": 0,
+      "length_std": 9.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供 Technical Account Manager (TAM)",
+        "len": 37,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 严重故障响应时间可达 < 15 分钟",
+        "len": 21,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 支持无限次的白手套架构咨询",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 包含更全面的架构审查和优化服务",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S80",
+    "domain": "Technology and Services",
+    "question": "在生产环境中运行 Spot Instance 时，以下哪种做法最能有效降低中断风险并保证工作负载稳定性？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 58,
+      "avg_distractor_len": 26.7,
+      "min_distractor_len": 24,
+      "ratio_maxc_avgd": 2.17,
+      "short_distractor_count": 0,
+      "length_std": 15.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 只使用 Spot Instance，不使用其他购买选项",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量",
+        "len": 58,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 选择最便宜的 Spot 实例类型，不考虑中断率",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 关闭 Spot 中断通知处理逻辑以提高性能",
+        "len": 24,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S57",
+    "domain": "Technology and Services",
+    "question": "Amazon CloudFront 的主要功能是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.1x",
+      "最长正确答案是最短干扰项的 3.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 35,
+      "avg_distractor_len": 16.3,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 2.14,
+      "short_distractor_count": 1,
+      "length_std": 10.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供跨 Region 的高可用数据库",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 通过全球 Edge Location 缓存内容，降低用户访问延迟",
+        "len": 35,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 管理 DNS 记录和流量路由",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 提供容器编排服务",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S123",
+    "domain": "Security and Compliance",
+    "question": "在 S3 Object Lock 中，Compliance 模式和 Governance 模式的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.1x",
+      "选项长度标准差过大 (std=26)，质量严重不均",
+      "最长正确答案是最短干扰项的 4.9x"
+    ],
+    "metrics": {
+      "max_correct_len": 78,
+      "avg_distractor_len": 37.3,
+      "min_distractor_len": 16,
+      "ratio_maxc_avgd": 2.09,
+      "short_distractor_count": 0,
+      "length_std": 25.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Compliance 模式下 Root 用户可以修改保留期，Governance 模式则完全不可修改",
+        "len": 53,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除",
+        "len": 78,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者完全相同，只是命名不同",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Governance 模式仅用于合规审计，Compliance 模式用于日常备份",
+        "len": 43,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S54",
+    "domain": "Technology and Services",
+    "question": "AWS Lambda 的执行环境在函数执行结束后会发生什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.1x",
+      "存在 2 个极短干扰项(<15字)，正确答案详细(25字)"
+    ],
+    "metrics": {
+      "max_correct_len": 25,
+      "avg_distractor_len": 12.0,
+      "min_distractor_len": 10,
+      "ratio_maxc_avgd": 2.08,
+      "short_distractor_count": 2,
+      "length_std": 6.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 立即被永久删除",
+        "len": 10,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 可能被保留一段时间以供后续调用复用（暖启动）",
+        "len": 25,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 自动转换为 EC2 实例",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 必须手动释放资源",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S128",
+    "domain": "Cloud Concepts",
+    "question": "Local Zones、Wavelength Zones 和 Edge Locations 三者的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "选项长度标准差过大 (std=32)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 123,
+      "avg_distractor_len": 60.0,
+      "min_distractor_len": 52,
+      "ratio_maxc_avgd": 2.05,
+      "short_distractor_count": 0,
+      "length_std": 32.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 三者都是 AWS 全球内容分发网络 (CDN) 的不同实现，核心功能完全一致，主要用于缓存静态内容",
+        "len": 52,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Local Zones 靠近人口中心可运行完整 AWS 服务，Wavelength Zones 是 5G 边缘用于超低延迟移动应用，Edge Locations 主要用于 CloudFront/Global Accelerator 内容分发",
+        "len": 123,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Wavelength Zones 支持运行完整 EC2、RDS 和 EKS，Local Zones 仅用于 5G 网络加速和边缘计算",
+        "len": 69,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Edge Locations 支持客户部署容器化应用和 Lambda@Edge 计算逻辑，同时提供全球低延迟接入",
+        "len": 59,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M22",
+    "domain": "Technology and Services",
+    "question": "以下哪些因素会影响 Spot Instance 被中断的概率？（选择两项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "存在超短干扰项(<10字): ['C']",
+      "最长正确答案是最短干扰项的 3.3x"
+    ],
+    "metrics": {
+      "max_correct_len": 30,
+      "avg_distractor_len": 14.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 2.05,
+      "short_distractor_count": 1,
+      "length_std": 7.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 当前 Spot 价格与 On-Demand 价格的差距",
+        "len": 30,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 所选实例类型和可用区的供需情况",
+        "len": 18,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 实例运行时间",
+        "len": 9,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 是否开启 CloudTrail",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 是否附加了 IAM Role",
+        "len": 17,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M95",
+    "domain": "Billing, Pricing, and Support",
+    "question": "关于 AWS Savings Plans 的 Compute Savings Plans 和 EC2 Instance Savings Plans，以下哪些说法是正确的？（选择两项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "选项长度标准差过大 (std=22)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 90,
+      "avg_distractor_len": 44.0,
+      "min_distractor_len": 41,
+      "ratio_maxc_avgd": 2.05,
+      "short_distractor_count": 0,
+      "length_std": 21.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用，折扣通常略低于 EC2 Instance Savings Plans",
+        "len": 90,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣",
+        "len": 60,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两种 Savings Plans 购买后都可以在承诺期内随时取消且无任何费用",
+        "len": 41,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Compute Savings Plans 只能用于 EC2 实例，不能用于其他计算服务",
+        "len": 47,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S55",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Free Tier 中的「12 个月免费额度」和「永久免费套餐」的区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "存在超短干扰项(<10字): ['A']",
+      "最长正确答案是最短干扰项的 3.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 31,
+      "avg_distractor_len": 15.3,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 2.02,
+      "short_distractor_count": 1,
+      "length_std": 9.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 两者完全相同",
+        "len": 9,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 12 个月免费额度从账户激活起算，永久免费套餐无时间限制",
+        "len": 31,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 永久免费套餐仅限教育机构使用",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 12 个月免费额度只能用于 EC2",
+        "len": 20,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S137",
+    "domain": "Security and Compliance",
+    "question": "AWS Control Tower 的主要作用是什么？它为多账户环境提供了哪些核心治理能力？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "选项长度标准差过大 (std=24)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 94,
+      "avg_distractor_len": 46.7,
+      "min_distractor_len": 43,
+      "ratio_maxc_avgd": 2.01,
+      "short_distractor_count": 0,
+      "length_std": 23.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Control Tower 主要用于监控单个 EC2 实例的 CPU、内存和网络性能指标",
+        "len": 47,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Control Tower 提供一键式 Landing Zone 设置、Guardrails（防护机制）和 Account Factory，帮助企业快速建立安全、合规的多账户治理架构",
+        "len": 94,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Control Tower 只能管理单个 AWS 账户的资源，无法跨账户统一治理",
+        "len": 43,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Control Tower 主要功能是自动优化成本和购买 Reserved Instances",
+        "len": 50,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S138",
+    "domain": "Security and Compliance",
+    "question": "AWS Control Tower 与 AWS Organizations 的关系是什么？Control Tower 提供了 Organizations 本身没有的哪些额外治理能力？",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x",
+      "选项长度标准差过大 (std=33)，质量严重不均",
+      "最长正确答案是最短干扰项的 3.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 115,
+      "avg_distractor_len": 57.3,
+      "min_distractor_len": 36,
+      "ratio_maxc_avgd": 2.01,
+      "short_distractor_count": 0,
+      "length_std": 33.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Control Tower 完全替代了 Organizations，客户应直接使用 Control Tower 而非 Organizations",
+        "len": 75,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory，使多账户治理更加自动化和标准化",
+        "len": 115,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Organizations 提供多账户结构管理，Control Tower 则专注于安全组和网络 ACL 的集中管控",
+        "len": 61,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者提供完全相同的多账户治理功能，只是 AWS 推出的不同产品名称",
+        "len": 36,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M98",
+    "domain": "Technology and Services",
+    "question": "以下关于 AWS Storage Gateway 和 AWS Snow Family 的描述，哪些是正确的？（选择三项）",
+    "severity": "high",
+    "reasons": [
+      "正确答案最长且长度是平均干扰项的 2.0x"
+    ],
+    "metrics": {
+      "max_correct_len": 65,
+      "avg_distractor_len": 32.5,
+      "min_distractor_len": 30,
+      "ratio_maxc_avgd": 2.0,
+      "short_distractor_count": 0,
+      "length_std": 15.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Storage Gateway 可以在本地数据中心部署虚拟设备或硬件设备，将本地存储与 S3、EBS 等云存储无缝连接",
+        "len": 62,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Snowcone、Snowball、Snowmobile 是用于离线大数据迁移和边缘计算的物理设备系列",
+        "len": 54,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Storage Gateway 的 File Gateway 模式可以将 NFS/SMB 文件共享直接映射到 S3 对象存储",
+        "len": 65,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. Snow 设备主要用于实时在线数据同步，不适合离线环境",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. Storage Gateway 只能用于备份，不能用于主存储扩展",
+        "len": 35,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S39",
+    "domain": "Security and Compliance",
+    "question": "AWS CloudWatch 和 AWS CloudTrail 的核心区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=2.0)",
+      "存在超短干扰项(<10字): ['C']",
+      "最长正确答案是最短干扰项的 5.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 24.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.99,
+      "short_distractor_count": 1,
+      "length_std": 18.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. CloudWatch 记录 API 调用历史，CloudTrail 监控性能指标",
+        "len": 43,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. CloudWatch 监控性能指标和日志，CloudTrail 记录 API 调用和账户活动",
+        "len": 49,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者完全相同",
+        "len": 9,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. CloudTrail 只能监控 EC2",
+        "len": 22,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S83",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS 客户希望为组织内所有账户统一设置成本分配标签（Cost Allocation Tags），以便在 AWS Cost Explorer 和 Billing 中按业务部门进行成本分析。最佳做法是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=2.0)",
+      "最长正确答案是最短干扰项的 3.1x"
+    ],
+    "metrics": {
+      "max_correct_len": 44,
+      "avg_distractor_len": 22.3,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.97,
+      "short_distractor_count": 1,
+      "length_std": 13.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 在每个账户中分别激活相同的标签键",
+        "len": 19,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 在 AWS Organizations 管理账户中激活标签键，所有成员账户自动继承",
+        "len": 44,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 只在根账户激活标签即可",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 标签激活后立即在 Cost Explorer 中可用，无需等待",
+        "len": 34,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S79",
+    "domain": "Technology and Services",
+    "question": "以下关于 S3 Standard-IA 和 S3 One Zone-IA 的说法，哪一项是正确的？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=2.0)",
+      "存在 2 个极短干扰项(<15字)，正确答案详细(47字)",
+      "最长正确答案是最短干扰项的 3.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 47,
+      "avg_distractor_len": 24.0,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.96,
+      "short_distractor_count": 2,
+      "length_std": 18.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 两者在可用性上完全相同",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. One Zone-IA 的可用性低于 Standard-IA，因为数据只存储在一个可用区",
+        "len": 47,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. One Zone-IA 比 Standard-IA 更贵，因为它提供了更高的耐久性",
+        "len": 44,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者都不支持毫秒级检索",
+        "len": 14,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S130",
+    "domain": "Security and Compliance",
+    "question": "AWS IAM Permission Boundary 和 AWS Organizations 的 Service Control Policies (SCP) 主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=2.0)",
+      "选项长度标准差过大 (std=24)，质量严重不均",
+      "最长正确答案是最短干扰项的 3.6x"
+    ],
+    "metrics": {
+      "max_correct_len": 80,
+      "avg_distractor_len": 41.0,
+      "min_distractor_len": 22,
+      "ratio_maxc_avgd": 1.95,
+      "short_distractor_count": 0,
+      "length_std": 23.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Permission Boundary 只能限制 Root 用户，SCP 只能限制普通 IAM 用户",
+        "len": 53,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Permission Boundary 是在单个 AWS 账户内为特定 IAM 用户或角色设置的权限上限；SCP 是在组织层面为整个成员账户设置的权限边界",
+        "len": 80,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者功能完全相同，只是适用范围名称不同",
+        "len": 22,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. SCP 可以为 IAM 实体授予额外权限，Permission Boundary 只能限制",
+        "len": 48,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S51",
+    "domain": "Cloud Concepts",
+    "question": "AWS Global Accelerator 与 Amazon CloudFront 的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)",
+      "最长正确答案是最短干扰项的 5.0x"
+    ],
+    "metrics": {
+      "max_correct_len": 55,
+      "avg_distractor_len": 28.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.92,
+      "short_distractor_count": 1,
+      "length_std": 18.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Global Accelerator 只能加速 HTTP/HTTPS 流量",
+        "len": 40,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Global Accelerator 提供静态 Anycast IP 地址，可加速 TCP/UDP 应用",
+        "len": 55,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. CloudFront 主要用于降低跨 Region 数据传输费用",
+        "len": 35,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者功能完全相同",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S140",
+    "domain": "Security and Compliance",
+    "question": "AWS Personal Health Dashboard 与 AWS Trusted Advisor 的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)",
+      "选项长度标准差过大 (std=33)，质量严重不均",
+      "最长正确答案是最短干扰项的 5.2x"
+    ],
+    "metrics": {
+      "max_correct_len": 94,
+      "avg_distractor_len": 50.0,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.88,
+      "short_distractor_count": 0,
+      "length_std": 32.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 两者功能完全相同，只是界面不同",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议（成本、性能、安全等）",
+        "len": 94,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Personal Health Dashboard 只关注成本，Trusted Advisor 只关注安全",
+        "len": 56,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Trusted Advisor 是免费的，Personal Health Dashboard 只对 Enterprise Support 客户开放",
+        "len": 76,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S111",
+    "domain": "Cloud Concepts",
+    "question": "以下关于 AWS Local Zones 和 Edge Locations 的区别，哪一项是正确的？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)",
+      "选项长度标准差过大 (std=23)，质量严重不均",
+      "最长正确答案是最短干扰项的 4.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 70,
+      "avg_distractor_len": 39.0,
+      "min_distractor_len": 16,
+      "ratio_maxc_avgd": 1.79,
+      "short_distractor_count": 0,
+      "length_std": 22.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Local Zones 主要用于内容缓存，Edge Locations 可以运行完整的 EC2 实例",
+        "len": 53,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Local Zones 允许在靠近人口中心的位置运行完整的 AWS 服务，Edge Locations 主要用于全球内容分发和延迟降低",
+        "len": 70,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者完全相同，只是名称不同",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Local Zones 只存在于中国 Region，Edge Locations 全球都有",
+        "len": 48,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S132",
+    "domain": "Security and Compliance",
+    "question": "AWS Systems Manager (SSM) 的 Parameter Store 主要用于什么场景？它与 AWS Secrets Manager 的典型区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)",
+      "选项长度标准差过大 (std=27)，质量严重不均",
+      "最长正确答案是最短干扰项的 4.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 80,
+      "avg_distractor_len": 46.0,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.74,
+      "short_distractor_count": 0,
+      "length_std": 26.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Parameter Store 主要用于存储高度敏感的数据库密码和 API Key，Secrets Manager 只能存普通配置",
+        "len": 68,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Parameter Store 适合存储配置数据、数据库连接字符串和非敏感参数；Secrets Manager 专为加密存储和管理敏感凭证（自动轮换）设计",
+        "len": 80,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者功能完全相同，只是名称不同",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Parameter Store 只能存储字符串，Secrets Manager 只能存储二进制数据",
+        "len": 52,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S50",
+    "domain": "Technology and Services",
+    "question": "S3 Standard-IA 和 S3 One Zone-IA 的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)",
+      "最长正确答案是最短干扰项的 3.4x"
+    ],
+    "metrics": {
+      "max_correct_len": 48,
+      "avg_distractor_len": 27.7,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.73,
+      "short_distractor_count": 1,
+      "length_std": 14.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Standard-IA 支持毫秒级检索，One Zone-IA 不支持",
+        "len": 38,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Standard-IA 将数据存储在多个可用区，One Zone-IA 只存储在一个可用区",
+        "len": 48,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. One Zone-IA 比 Standard-IA 更贵",
+        "len": 31,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者在耐久性上完全相同",
+        "len": 14,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S120",
+    "domain": "Billing, Pricing, and Support",
+    "question": "使用 AWS Direct Connect 相比通过互联网连接 AWS 时，数据传输费用的主要区别是什么？",
+    "severity": "high",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)",
+      "最长正确答案是最短干扰项的 3.0x"
+    ],
+    "metrics": {
+      "max_correct_len": 45,
+      "avg_distractor_len": 27.0,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.67,
+      "short_distractor_count": 0,
+      "length_std": 12.4
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Direct Connect 的出方向数据传输费用通常更高",
+        "len": 32,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Direct Connect 可以显著降低跨 Region 或到互联网的数据传输成本",
+        "len": 45,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Direct Connect 完全免费，不收取任何数据传输费用",
+        "len": 34,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者数据传输费用完全相同",
+        "len": 15,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S133",
+    "domain": "Technology and Services",
+    "question": "Amazon S3 Access Points 的主要作用是什么？它相比传统存储桶策略有什么优势？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=2.0)"
+    ],
+    "metrics": {
+      "max_correct_len": 66,
+      "avg_distractor_len": 33.3,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.98,
+      "short_distractor_count": 0,
+      "length_std": 17.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Access Points 主要用于加速 S3 数据传输",
+        "len": 31,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Access Points 允许为不同应用或团队创建独立的访问点，每个访问点可以有自己的权限策略，从而简化大型存储桶的权限管理",
+        "len": 66,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Access Points 只能用于静态网站托管",
+        "len": 27,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Access Points 可以让 S3 存储桶变成多 Region 全局存储",
+        "len": 42,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S141",
+    "domain": "Security and Compliance",
+    "question": "使用 AWS Control Tower 后，企业通常还能从哪些其他 AWS 服务中获得额外治理价值？（本题为单选，选出最准确的描述）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)",
+      "选项长度标准差过大 (std=21)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 85,
+      "avg_distractor_len": 43.7,
+      "min_distractor_len": 40,
+      "ratio_maxc_avgd": 1.95,
+      "short_distractor_count": 0,
+      "length_std": 21.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 使用 AWS Control Tower 后，企业就不再需要任何其他治理相关的 AWS 服务",
+        "len": 49,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 结合 AWS Config 进行持续合规监控、AWS CloudTrail 进行 API 审计、AWS Organizations 进行账户管理，形成完整的治理闭环",
+        "len": 85,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Control Tower 已经完全包含了所有 IAM 权限管理和策略执行功能",
+        "len": 42,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 主要需要搭配 AWS Marketplace 中购买的第三方治理和合规工具",
+        "len": 40,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S136",
+    "domain": "Security and Compliance",
+    "question": "在 KMS Envelope Encryption（信封加密）模型中，数据密钥（Data Key）是如何被保护的？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 73,
+      "avg_distractor_len": 37.7,
+      "min_distractor_len": 29,
+      "ratio_maxc_avgd": 1.94,
+      "short_distractor_count": 0,
+      "length_std": 18.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 数据密钥会直接使用客户主密钥 (CMK) 进行加密，然后和加密后的数据一起明文存储",
+        "len": 44,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 数据密钥用 CMK 加密后得到加密的数据密钥（Encrypted Data Key），只有拿到 CMK 才能解密出明文数据密钥用于加解密数据",
+        "len": 73,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 数据密钥在生成后永远保持明文状态，不进行任何加密保护",
+        "len": 29,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 数据密钥的生命周期完全由 S3 服务自动管理，KMS 只负责最终的存储加密",
+        "len": 40,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S139",
+    "domain": "Technology and Services",
+    "question": "AWS Service Catalog 的主要作用是什么？它如何帮助企业实现自助服务与治理的平衡？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 81,
+      "avg_distractor_len": 41.7,
+      "min_distractor_len": 37,
+      "ratio_maxc_avgd": 1.94,
+      "short_distractor_count": 0,
+      "length_std": 20.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Service Catalog 主要用于监控应用程序性能和自动扩缩容",
+        "len": 37,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Service Catalog 允许管理员创建经过批准的产品组合（Portfolios），终端用户可以在受控权限下自助式部署标准化资源，同时强制执行治理约束",
+        "len": 81,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Service Catalog 只能用于部署 EC2 实例和简单的 S3 存储桶",
+        "len": 43,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Service Catalog 主要功能是自动备份所有 AWS 资源并进行跨区域复制",
+        "len": 45,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S69",
+    "domain": "Security and Compliance",
+    "question": "在 AWS KMS 中，如果客户需要能够随时禁用、删除或轮换密钥，并完全控制访问策略，应该创建哪种类型的密钥？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 29,
+      "avg_distractor_len": 15.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.93,
+      "short_distractor_count": 1,
+      "length_std": 7.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. AWS Managed Key",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Customer Managed Key (CMK)",
+        "len": 29,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. AWS Owned Key",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Data Key",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M68",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Compute Savings Plans 相比 EC2 Instance Savings Plans 的主要优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 27,
+      "avg_distractor_len": 14.0,
+      "min_distractor_len": 10,
+      "ratio_maxc_avgd": 1.93,
+      "short_distractor_count": 1,
+      "length_std": 7.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 可跨 EC2、Fargate、Lambda 使用",
+        "len": 27,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 可跨不同 AWS 区域使用",
+        "len": 16,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 折扣率通常更高",
+        "len": 10,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 必须锁定特定实例家族和操作系统",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M78",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Compute Savings Plans 相比 EC2 Instance Savings Plans 的主要优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 27,
+      "avg_distractor_len": 14.0,
+      "min_distractor_len": 10,
+      "ratio_maxc_avgd": 1.93,
+      "short_distractor_count": 1,
+      "length_std": 7.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 可跨 EC2、Fargate、Lambda 使用",
+        "len": 27,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 可跨不同 AWS 区域使用",
+        "len": 16,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 折扣率通常更高",
+        "len": 10,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 必须锁定特定实例家族和操作系统",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M47",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是正确的关于 Savings Plans 的说法？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 25.5,
+      "min_distractor_len": 17,
+      "ratio_maxc_avgd": 1.92,
+      "short_distractor_count": 0,
+      "length_std": 13.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
+        "len": 49,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. EC2 Instance Savings Plans 灵活性最低",
+        "len": 35,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 购买后可以随时取消且全额退款",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 所有 Savings Plans 都要求 1 年或 3 年承诺",
+        "len": 34,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S60",
+    "domain": "Technology and Services",
+    "question": "AWS 客户希望在不暴露公网 IP 的情况下，让私有子网中的 EC2 实例访问 S3，该最佳实践方案是？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 43,
+      "avg_distractor_len": 22.7,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.9,
+      "short_distractor_count": 0,
+      "length_std": 11.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 通过 NAT Gateway 访问 S3",
+        "len": 23,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 配置 VPC Endpoint (Gateway Endpoint) 访问 S3",
+        "len": 43,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 使用 S3 Transfer Acceleration",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 把 S3 存储桶设为公开",
+        "len": 15,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M102",
+    "domain": "Technology and Services",
+    "question": "以下关于 AWS Service Catalog 的治理价值描述，哪些是正确的？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)",
+      "选项长度标准差过大 (std=20)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 74,
+      "avg_distractor_len": 39.0,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.9,
+      "short_distractor_count": 0,
+      "length_std": 20.4
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 允许管理员将 CloudFormation 模板打包成标准化“产品”，并通过 Portfolio 分发给不同团队",
+        "len": 59,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 支持设置 Launch Constraints（启动约束）和 Template Constraints（模板约束），限制用户可配置的参数和权限",
+        "len": 74,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 帮助企业在保证合规的前提下实现基础设施的自助服务部署",
+        "len": 29,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 主要用于实时监控已部署资源的运行状态和性能指标",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 可以完全替代 AWS Organizations 对多个 AWS 账户进行统一治理和 SCP 管理",
+        "len": 52,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "M20",
+    "domain": "Technology and Services",
+    "question": "Amazon Aurora 与传统 MySQL 相比的最显著优势是什么？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 24,
+      "avg_distractor_len": 12.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.89,
+      "short_distractor_count": 2,
+      "length_std": 5.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 存储和计算分离，存储自动扩展至 128TB",
+        "len": 24,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 性能远超标准 MySQL",
+        "len": 15,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 必须手动管理备份",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 不兼容 MySQL 协议",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 仅支持单可用区部署",
+        "len": 12,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M103",
+    "domain": "Security and Compliance",
+    "question": "以下关于 AWS Personal Health Dashboard 和 AWS Trusted Advisor 的区别与用途，哪些说法是正确的？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 55,
+      "avg_distractor_len": 29.3,
+      "min_distractor_len": 19,
+      "ratio_maxc_avgd": 1.88,
+      "short_distractor_count": 0,
+      "length_std": 15.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Personal Health Dashboard 提供针对你具体账户的个性化服务健康事件和计划维护通知",
+        "len": 55,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Trusted Advisor 提供跨成本、安全、性能、容错和卓越运营五个类别的通用最佳实践检查和建议",
+        "len": 54,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Personal Health Dashboard 主要用于成本优化检查",
+        "len": 39,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Trusted Advisor 可以自动修复发现的问题",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 两个工具的功能完全重叠，没有区别",
+        "len": 19,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S125",
+    "domain": "Technology and Services",
+    "question": "CloudWatch、CloudTrail 和 AWS Config 在监控与审计方面的主要职责区别是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 73,
+      "avg_distractor_len": 39.0,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.87,
+      "short_distractor_count": 0,
+      "length_std": 19.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 三者功能完全相同，只是名称不同，可以完全互换使用",
+        "len": 27,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. CloudWatch 负责性能指标和告警，CloudTrail 负责记录 API 调用审计日志，Config 负责记录资源配置变更和合规评估",
+        "len": 73,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. CloudTrail 主要负责监控 EC2 实例的 CPU、内存和网络性能指标",
+        "len": 42,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. CloudWatch 仅用于收集和存储日志文件，Config 则专门用于分析账单和成本趋势",
+        "len": 48,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S129",
+    "domain": "Cloud Concepts",
+    "question": "在设计高可用和灾难恢复架构时，Multi-AZ 和 Multi-Region 的主要适用场景区别是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)",
+      "选项长度标准差过大 (std=21)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 86,
+      "avg_distractor_len": 46.0,
+      "min_distractor_len": 40,
+      "ratio_maxc_avgd": 1.87,
+      "short_distractor_count": 0,
+      "length_std": 21.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Multi-AZ 主要用于防范整个 Region 级故障，而 Multi-Region 主要用于消除单点故障",
+        "len": 57,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Multi-AZ 主要用于同一 Region 内的故障隔离和高可用（RTO 较低），Multi-Region 用于满足合规、全球低延迟或真正的灾难恢复（RTO 较高）",
+        "len": 86,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者在技术实现、RTO/RPO 和成本效果上完全一致，只是物理部署位置不同",
+        "len": 40,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Multi-Region 部署的成本通常更低，因为可以共享更多基础设施和数据",
+        "len": 41,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S06",
+    "domain": "Security and Compliance",
+    "question": "多因素认证 (MFA) 在 AWS 中的主要作用是？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.9)"
+    ],
+    "metrics": {
+      "max_correct_len": 23,
+      "avg_distractor_len": 12.3,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.86,
+      "short_distractor_count": 2,
+      "length_std": 6.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 加速登录速度",
+        "len": 9,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 即使密码泄露，没有第二因素也无法完成登录",
+        "len": 23,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 替代所有权限控制",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 允许 Root 用户日常操作",
+        "len": 17,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S35",
+    "domain": "Cloud Concepts",
+    "question": "AWS Well-Architected Tool 的主要用途是？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 53,
+      "avg_distractor_len": 28.7,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.85,
+      "short_distractor_count": 0,
+      "length_std": 12.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 自动根据审查结果为工作负载应用推荐的最佳实践配置",
+        "len": 27,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 帮助用户根据 Well-Architected Framework 审查自己的工作负载并生成改进建议",
+        "len": 53,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 对多个 AWS 账户执行统一的安全基准检查和合规性评分",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 持续监控工作负载的性能指标并在出现异常时自动发送告警",
+        "len": 29,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S48",
+    "domain": "Cloud Concepts",
+    "question": "在设计高可用架构时，为什么 AWS 推荐在一个 Region 内至少使用两个 Availability Zone？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)",
+      "存在 2 个极短干扰项(<15字)，正确答案详细(32字)"
+    ],
+    "metrics": {
+      "max_correct_len": 32,
+      "avg_distractor_len": 17.3,
+      "min_distractor_len": 13,
+      "ratio_maxc_avgd": 1.85,
+      "short_distractor_count": 2,
+      "length_std": 9.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 可以降低数据存储成本",
+        "len": 13,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行",
+        "len": 32,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 可以获得更高的网络带宽",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 所有 AWS 服务只在多 AZ 部署时才可用",
+        "len": 25,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S46",
+    "domain": "Technology and Services",
+    "question": "Amazon Redshift 主要用于什么工作负载？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 12.0,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 2,
+      "length_std": 5.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 实时事务处理 (OLTP)",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 大规模数据仓库和分析查询 (OLAP)",
+        "len": 22,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 非结构化文档存储",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 缓存热点数据",
+        "len": 9,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S94",
+    "domain": "Cloud Concepts",
+    "question": "以下哪种应用场景最适合使用 AWS Global Accelerator 而不是 Amazon CloudFront？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 36,
+      "avg_distractor_len": 19.7,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 全球用户访问静态图片和视频内容",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+        "len": 36,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 缓存动态 API 响应以降低延迟",
+        "len": 19,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 为 S3 存储桶提供全球 CDN 加速",
+        "len": 22,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S99",
+    "domain": "Cloud Concepts",
+    "question": "以下哪种应用场景最适合使用 AWS Global Accelerator 而不是 Amazon CloudFront？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 36,
+      "avg_distractor_len": 19.7,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 全球用户访问静态图片和视频内容",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+        "len": 36,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 缓存动态 API 响应以降低延迟",
+        "len": 19,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 为 S3 存储桶提供全球 CDN 加速",
+        "len": 22,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M01",
+    "domain": "Cloud Concepts",
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 1,
+      "length_std": 7.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 客户始终对所有安全负责",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. AWS 始终负责客户数据的加密密钥管理",
+        "len": 22,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 对于托管服务，AWS 承担更多运营责任",
+        "len": 22,
+        "is_correct": true
+      },
+      {
+        "letter": "E",
+        "text": "E. 客户永远不需要关心任何安全配置",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "D",
+      "B"
+    ]
+  },
+  {
+    "id": "M85",
+    "domain": "Cloud Concepts",
+    "question": "以下哪些是 AWS Local Zones 的正确特点？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 部署在靠近大型人口中心的位置",
+        "len": 17,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 主要用于全球静态内容缓存",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 属于 AWS 全球基础设施的补充形式",
+        "len": 21,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M07",
+    "domain": "Security and Compliance",
+    "question": "Security Group 和 Network ACL 的关键区别有哪些？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 38,
+      "avg_distractor_len": 21.0,
+      "min_distractor_len": 16,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 9.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Security Group 是有状态的，NACL 是无状态的",
+        "len": 34,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Security Group 作用于实例级别，NACL 作用于子网级别",
+        "len": 38,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. NACL 只支持允许规则，不支持拒绝",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Security Group 支持显式拒绝规则",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 两者都默认拒绝所有入站流量",
+        "len": 16,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M62",
+    "domain": "Security and Compliance",
+    "question": "以下哪些是使用 IAM Role 而非 IAM User 的最佳实践优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 27.0,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 11.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证",
+        "len": 49,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+        "len": 44,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Role 可以直接用于登录 AWS 管理控制台",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Role 的权限范围永远大于普通 IAM User",
+        "len": 28,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M92",
+    "domain": "Technology and Services",
+    "question": "以下关于 AWS 存储服务的适用场景描述，哪些是正确的？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 56,
+      "avg_distractor_len": 31.0,
+      "min_distractor_len": 31,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 10.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
+        "len": 54,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
+        "len": 44,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Amazon S3 适合存储非结构化数据、备份、静态网站和作为数据湖",
+        "len": 37,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持的场景",
+        "len": 56,
+        "is_correct": true
+      },
+      {
+        "letter": "E",
+        "text": "E. Amazon S3 适合作为 EC2 实例的根卷启动磁盘",
+        "len": 31,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "D",
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S38",
+    "domain": "Technology and Services",
+    "question": "AWS Marketplace 的主要作用是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 21,
+      "avg_distractor_len": 11.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.8,
+      "short_distractor_count": 3,
+      "length_std": 5.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 购买和部署第三方软件和服务的在线商店",
+        "len": 21,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 管理 AWS 支持案例",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "C. 估算 AWS 成本",
+        "len": 12,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 监控安全威胁",
+        "len": 9,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "A"
+    ]
+  },
+  {
+    "id": "M40",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是正确的关于 AWS 免费套餐的说法？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 37,
+      "avg_distractor_len": 20.5,
+      "min_distractor_len": 17,
+      "ratio_maxc_avgd": 1.8,
+      "short_distractor_count": 0,
+      "length_std": 8.4
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 12 个月免费额度从首次激活账户开始计算",
+        "len": 23,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制",
+        "len": 37,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 所有 AWS 服务都有 12 个月免费额度",
+        "len": 24,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 免费套餐用完后会自动停止服务",
+        "len": 17,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S135",
+    "domain": "Technology and Services",
+    "question": "Amazon EC2 Placement Groups 中的 Cluster、Spread 和 Partition 三种类型的核心区别和适用场景是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)",
+      "选项长度标准差过大 (std=20)，质量严重不均"
+    ],
+    "metrics": {
+      "max_correct_len": 92,
+      "avg_distractor_len": 51.3,
+      "min_distractor_len": 51,
+      "ratio_maxc_avgd": 1.79,
+      "short_distractor_count": 0,
+      "length_std": 20.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 三种 Placement Group 的功能和适用场景完全相同，只是 AWS 提供的不同命名方式",
+        "len": 51,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Cluster 适合需要极低延迟和高网络吞吐的紧密耦合应用；Spread 适合需要最大硬件隔离的少量关键实例；Partition 适合需要将实例分成多个隔离组的大型分布式工作负载",
+        "len": 92,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Spread Placement Group 主要目的是为了降低 EC2 实例的整体运行成本和费用",
+        "len": 52,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Partition Placement Group 只能在内存优化型或存储优化型实例上创建和使用",
+        "len": 51,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M60",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Savings Plans 相比传统 Reserved Instances 的主要灵活性优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 52,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.79,
+      "short_distractor_count": 0,
+      "length_std": 13.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 可跨 EC2 实例系列和操作系统使用",
+        "len": 21,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda",
+        "len": 52,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 购买后可以随时取消且获得全额退款，无任何财务损失",
+        "len": 27,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 必须提前指定具体的实例类型、操作系统和可用区才能锁定折扣",
+        "len": 31,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S119",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Cost Categories 的主要作用是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 32,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 17,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 7.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 自动检测账户中的异常成本支出",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 将成本按自定义业务维度（如部门、项目、环境）进行归类和分析",
+        "len": 32,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 设置预算阈值并在超支时发送告警",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 分析历史成本趋势并生成可视化报告",
+        "len": 19,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M81",
+    "domain": "Cloud Concepts",
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 41,
+      "avg_distractor_len": 23.0,
+      "min_distractor_len": 22,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 9.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 客户始终对云中运行的所有内容负全部安全责任",
+        "len": 24,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 责任边界会根据使用的是 IaaS、PaaS 还是 SaaS 服务而变化",
+        "len": 38,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. AWS 始终负责客户数据的加密密钥管理",
+        "len": 22,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 对于托管服务（如 Lambda、RDS），AWS 承担更多运营和基础设施责任",
+        "len": 41,
+        "is_correct": true
+      }
+    ],
+    "correct_answers": [
+      "D",
+      "B"
+    ]
+  },
+  {
+    "id": "M93",
+    "domain": "Security and Compliance",
+    "question": "关于 IAM Permission Boundary 和 AWS Organizations SCP（Service Control Policies），以下哪些说法是正确的？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 66,
+      "avg_distractor_len": 37.0,
+      "min_distractor_len": 35,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 14.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Permission Boundary 是在单个 AWS 账户内为 IAM 用户或角色设置的权限上限（天花板）",
+        "len": 58,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. SCP 是在 AWS Organizations 组织层面为成员账户或 OU 设置的权限边界，即使 IAM 策略允许也不能超过",
+        "len": 66,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 两者都只能用于限制权限，不能用于为 IAM 实体授予额外权限",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. Permission Boundary 可以扩大 IAM 实体的权限范围",
+        "len": 39,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. SCP 可以针对单个 IAM 用户单独设置限制，而不影响整个账户",
+        "len": 35,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S134",
+    "domain": "Security and Compliance",
+    "question": "AWS Certificate Manager (ACM) 的主要功能是什么？它与手动管理 SSL/TLS 证书相比有什么优势？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 79,
+      "avg_distractor_len": 44.7,
+      "min_distractor_len": 44,
+      "ratio_maxc_avgd": 1.77,
+      "short_distractor_count": 0,
+      "length_std": 17.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. ACM 主要用于监控和管理 EC2 实例的 CPU、内存使用率，并可自动生成性能报告",
+        "len": 45,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销，特别适合与 CloudFront、ALB、API Gateway 集成",
+        "len": 79,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. ACM 只能签发自签名证书，因此不适合面向公众的生产环境使用，需要额外购买商业证书",
+        "len": 44,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. ACM 主要用于对 S3 中的对象进行服务端加密，并支持与 KMS 深度集成管理密钥",
+        "len": 45,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S103",
+    "domain": "Cloud Concepts",
+    "question": "以下关于 Multi-AZ 部署和 Multi-Region 部署的描述，哪一项是正确的？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 51,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.76,
+      "short_distractor_count": 0,
+      "length_std": 13.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Multi-AZ 部署可以实现跨 Region 的灾难恢复",
+        "len": 32,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Multi-AZ 部署主要用于消除单点故障和提高可用性，而跨 Region 灾难恢复需要额外架构",
+        "len": 51,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Multi-Region 部署的延迟通常低于 Multi-AZ 部署",
+        "len": 37,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者效果完全相同，只是名称不同",
+        "len": 18,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S07",
+    "domain": "Security and Compliance",
+    "question": "当 EC2 实例需要访问 S3 时，以下哪种方式最符合安全最佳实践？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.8)"
+    ],
+    "metrics": {
+      "max_correct_len": 31,
+      "avg_distractor_len": 17.7,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.75,
+      "short_distractor_count": 0,
+      "length_std": 7.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 把 Access Key 硬编码在代码里",
+        "len": 23,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 将具有最小权限的 IAM Role 附加到 EC2 实例",
+        "len": 31,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 使用 Root 用户凭证",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 把 S3 存储桶设为公开",
+        "len": 15,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M100",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下关于 AWS 成本管理工具和定价概念的描述，哪些是正确的？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 83,
+      "avg_distractor_len": 47.5,
+      "min_distractor_len": 46,
+      "ratio_maxc_avgd": 1.75,
+      "short_distractor_count": 0,
+      "length_std": 14.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Pay-as-you-go（按需付费）是 AWS 的核心定价模型，只为实际使用的资源付费，无需前期承诺",
+        "len": 54,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单、创建分层定价和生成定制化账单",
+        "len": 59,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据，支持导入到 Athena 或 QuickSight 进行分析",
+        "len": 83,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. AWS Pricing Calculator 只能计算 EC2 成本，不能计算其他服务",
+        "len": 46,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. Consolidated Billing 只能在单个 AWS 账户内使用，无法跨多个账户合并",
+        "len": 49,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "M50",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Enterprise Support 相比 Business Support 的主要优势包括以下哪些？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 47,
+      "avg_distractor_len": 27.0,
+      "min_distractor_len": 24,
+      "ratio_maxc_avgd": 1.74,
+      "short_distractor_count": 0,
+      "length_std": 11.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供 Technical Account Manager (TAM) 作为专属技术联系人",
+        "len": 47,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 严重故障响应时间可达 < 15 分钟",
+        "len": 21,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 包含免费的架构审查服务和按需的深度优化咨询",
+        "len": 24,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 提供对整个组织架构的 IAM 策略集中管理和自动化执行",
+        "len": 30,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S19",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Support 计划中，Basic Support 主要提供哪些服务？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 35,
+      "avg_distractor_len": 20.3,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.72,
+      "short_distractor_count": 1,
+      "length_std": 9.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 7x24 技术支持和 <1 小时响应",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 账户和账单支持 + 有限的 Trusted Advisor 检查",
+        "len": 35,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Technical Account Manager",
+        "len": 28,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 架构审查和优化建议",
+        "len": 12,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M30",
+    "domain": "Cloud Concepts",
+    "question": "以下哪些服务可以帮助实现高可用架构？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 25,
+      "avg_distractor_len": 14.5,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.72,
+      "short_distractor_count": 1,
+      "length_std": 5.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 多可用区部署",
+        "len": 9,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 跨 Region 复制",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "C. Auto Scaling",
+        "len": 15,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 单台 EC2 + EBS",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. Elastic Load Balancing",
+        "len": 25,
+        "is_correct": true
+      }
+    ],
+    "correct_answers": [
+      "E",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S20",
+    "domain": "Security and Compliance",
+    "question": "AWS CloudTrail 主要记录什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 24,
+      "avg_distractor_len": 14.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.71,
+      "short_distractor_count": 2,
+      "length_std": 5.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. EC2 实例的 CPU 使用率",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 对 AWS 账户中资源的 API 调用历史",
+        "len": 24,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. S3 对象的访问内容",
+        "len": 13,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 网络流量详细内容",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M14",
+    "domain": "Security and Compliance",
+    "question": "AWS WAF 可以帮助防护哪些类型的攻击？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 20,
+      "avg_distractor_len": 11.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.71,
+      "short_distractor_count": 3,
+      "length_std": 4.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 基础设施层 DDoS",
+        "len": 13,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. SQL 注入和跨站脚本 (XSS)",
+        "len": 20,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 恶意机器人",
+        "len": 8,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 物理数据中心入侵",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 操作系统漏洞利用",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "M90",
+    "domain": "Security and Compliance",
+    "question": "以下哪些服务与描述的匹配是正确的？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 67,
+      "avg_distractor_len": 39.5,
+      "min_distractor_len": 36,
+      "ratio_maxc_avgd": 1.7,
+      "short_distractor_count": 0,
+      "length_std": 11.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常",
+        "len": 67,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描",
+        "len": 44,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）",
+        "len": 47,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. AWS Security Hub —— 提供对 EC2 实例的实时性能监控和告警",
+        "len": 43,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. AWS WAF —— 集中收集和分析跨多个 AWS 账户的安全数据",
+        "len": 36,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "S27",
+    "domain": "Technology and Services",
+    "question": "当 Spot Instance 被 AWS 中断时，通常会提前多久发出通知？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 18,
+      "avg_distractor_len": 10.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 3,
+      "length_std": 3.9
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 立即中断，无通知",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 通常提前 2 分钟发出中断通知",
+        "len": 18,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 提前 1 小时通知",
+        "len": 12,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 永远不会中断",
+        "len": 9,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M34",
+    "domain": "Technology and Services",
+    "question": "Amazon VPC 的主要组件包括哪些？（选择三项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 19.5,
+      "min_distractor_len": 13,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 1,
+      "length_std": 9.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Subnets",
+        "len": 10,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Route Tables",
+        "len": 15,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Internet Gateway / NAT Gateway",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. Security Groups & NACLs",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. S3 Buckets",
+        "len": 13,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "M55",
+    "domain": "Security and Compliance",
+    "question": "以下哪些是 IAM Role 相比 IAM User 的显著优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 44,
+      "avg_distractor_len": 26.0,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 0,
+      "length_std": 9.4
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证",
+        "len": 40,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+        "len": 44,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Role 可以直接用于登录 AWS 管理控制台",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Role 的权限永远大于普通 IAM User",
+        "len": 26,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M66",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Savings Plans 相比传统 Reserved Instances 的主要灵活性优势？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 0,
+      "length_std": 11.8
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
+        "len": 49,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 可在不同实例系列和操作系统之间灵活切换",
+        "len": 22,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 购买后可以随时取消且获得全额退款，无任何财务限制",
+        "len": 27,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 必须提前锁定具体的实例类型、操作系统和可用区才能享受折扣",
+        "len": 31,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S17",
+    "domain": "Billing, Pricing, and Support",
+    "question": "使用 AWS Organizations 进行 Consolidated Billing 的主要财务优势是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 25,
+      "avg_distractor_len": 15.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.67,
+      "short_distractor_count": 1,
+      "length_std": 5.7
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 每个账户独立享受完整免费套餐",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 多个账户用量合并计算，更容易达到更高折扣层级",
+        "len": 25,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 所有服务自动打 50% 折扣",
+        "len": 17,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 没有任何财务优势",
+        "len": 11,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S131",
+    "domain": "Technology and Services",
+    "question": "AWS CloudFormation 的主要作用是什么？它与手动在控制台创建资源相比有什么核心优势？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 59,
+      "avg_distractor_len": 35.3,
+      "min_distractor_len": 33,
+      "ratio_maxc_avgd": 1.67,
+      "short_distractor_count": 0,
+      "length_std": 12.3
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. CloudFormation 主要用于监控资源性能和设置告警",
+        "len": 33,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施",
+        "len": 59,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. CloudFormation 只能用于创建 EC2 实例，不能管理其他服务",
+        "len": 40,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. CloudFormation 主要用于实时成本优化和预算告警",
+        "len": 33,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S36",
+    "domain": "Technology and Services",
+    "question": "Amazon Lightsail 相比标准 EC2 的主要定位是？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 31,
+      "avg_distractor_len": 18.7,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 1,
+      "length_std": 9.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供更强大的 GPU 性能",
+        "len": 16,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器",
+        "len": 31,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 替代 Lambda 的 serverless 服务",
+        "len": 28,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 专门用于大数据处理",
+        "len": 12,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S74",
+    "domain": "Security and Compliance",
+    "question": "以下关于 S3 Versioning 和 S3 Object Lock 的说法，哪一项是正确的？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 51,
+      "avg_distractor_len": 30.7,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 0,
+      "length_std": 11.2
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 两者都可以防止对象被删除或覆盖，实现 WORM 保护",
+        "len": 29,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Versioning 主要用于防止误删和恢复历史版本，Object Lock 主要用于合规防篡改",
+        "len": 51,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 开启 Versioning 后对象就无法被删除",
+        "len": 26,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Object Lock 可以替代 Versioning 用于数据恢复",
+        "len": 37,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M32",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些做法可以降低 S3 的存储成本？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.7)"
+    ],
+    "metrics": {
+      "max_correct_len": 39,
+      "avg_distractor_len": 23.5,
+      "min_distractor_len": 22,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 0,
+      "length_std": 7.4
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 把不常访问的数据转移到 S3 Standard-IA 或 Glacier",
+        "len": 39,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 使用 S3 Intelligent-Tiering",
+        "len": 28,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 开启 S3 版本控制并永远保留所有版本",
+        "len": 22,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 把所有数据永远保存在 S3 Standard",
+        "len": 25,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S58",
+    "domain": "Technology and Services",
+    "question": "AWS 客户希望对 S3 中的数据进行跨 Region 复制以实现灾难恢复，最合适的方案是？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 39,
+      "avg_distractor_len": 23.7,
+      "min_distractor_len": 19,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 0,
+      "length_std": 9.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 开启 S3 Versioning",
+        "len": 19,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 配置 S3 Cross-Region Replication (CRR)",
+        "len": 39,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 使用 S3 Transfer Acceleration",
+        "len": 30,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 定期手动复制对象到另一个 Region",
+        "len": 22,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "S104",
+    "domain": "Cloud Concepts",
+    "question": "以下关于 AWS Edge Location 和 Local Zones 的描述，哪一项是正确的？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 68,
+      "avg_distractor_len": 41.3,
+      "min_distractor_len": 31,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 0,
+      "length_std": 16.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Edge Location 可以运行完整的 EC2 实例和 RDS 数据库",
+        "len": 40,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Local Zones 主要用于全球内容缓存加速，而 Edge Location 用于运行低延迟应用",
+        "len": 53,
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "C. Edge Location 主要用于降低延迟的内容分发，Local Zones 则允许在靠近人口中心的位置运行完整的 AWS 服务",
+        "len": 68,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 两者是完全相同的概念，只是不同 Region 的叫法不同",
+        "len": 31,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "C"
+    ]
+  },
+  {
+    "id": "S109",
+    "domain": "Cloud Concepts",
+    "question": "AWS Local Zones 相比传统 Region 的主要优势是什么？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 34,
+      "avg_distractor_len": 20.7,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 1,
+      "length_std": 9.6
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 提供更低的存储费用",
+        "len": 12,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 允许在靠近大型人口中心的位置以极低延迟运行完整的 AWS 服务",
+        "len": 34,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 自动实现跨 Region 的灾难恢复",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 完全替代 Edge Locations 进行内容分发",
+        "len": 29,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B"
+    ]
+  },
+  {
+    "id": "M107",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Free Tier 主要包含以下哪几种类型？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 13.5,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.63,
+      "short_distractor_count": 1,
+      "length_std": 4.5
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 新账户 12 个月免费额度",
+        "len": 16,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 永久免费套餐（Always Free）",
+        "len": 22,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 短期促销免费试用",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 仅限教育机构使用的免费资源",
+        "len": 16,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "S112",
+    "domain": "Cloud Concepts",
+    "question": "在设计多 Region 灾难恢复架构时，以下哪种模式通常恢复时间最快但成本也最高？",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 27,
+      "avg_distractor_len": 16.7,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.62,
+      "short_distractor_count": 1,
+      "length_std": 6.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Backup and Restore",
+        "len": 21,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Pilot Light",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "C. Warm Standby",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. Multi-Site Active/Active",
+        "len": 27,
+        "is_correct": true
+      }
+    ],
+    "correct_answers": [
+      "D"
+    ]
+  },
+  {
+    "id": "M06",
+    "domain": "Security and Compliance",
+    "question": "为什么强烈不推荐日常使用 AWS Root 用户？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 28,
+      "avg_distractor_len": 17.3,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.62,
+      "short_distractor_count": 1,
+      "length_std": 5.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. Root 用户权限最小",
+        "len": 14,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. Root 用户拥有账户全部权限，一旦泄露后果极严重",
+        "len": 28,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. Root 用户无法开启 MFA",
+        "len": 18,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 无法为 Root 用户创建访问密钥",
+        "len": 20,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 很多操作无法被 IAM 策略完全限制",
+        "len": 21,
+        "is_correct": true
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "E"
+    ]
+  },
+  {
+    "id": "M27",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Free Tier 主要包含哪几种类型？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 13.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.61,
+      "short_distractor_count": 1,
+      "length_std": 4.0
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 12 个月免费额度（新账户）",
+        "len": 17,
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "B. 永久免费套餐（Always Free）",
+        "len": 22,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 短期免费试用（短期促销）",
+        "len": 15,
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "D. 仅对教育机构开放",
+        "len": 11,
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "E. 仅适用于 Spot 实例",
+        "len": 15,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "A"
+    ]
+  },
+  {
+    "id": "M87",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些场景最适合使用 Spot Instances？（选择两项）",
+    "severity": "medium",
+    "reasons": [
+      "正确答案明显长于干扰项 (ratio=1.6)"
+    ],
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 20.5,
+      "min_distractor_len": 19,
+      "ratio_maxc_avgd": 1.61,
+      "short_distractor_count": 0,
+      "length_std": 6.1
+    },
+    "options": [
+      {
+        "letter": "A",
+        "text": "A. 需要长期稳定运行的核心生产数据库",
+        "len": 19,
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "B. 可中断、容错设计良好的批处理或大数据分析工作负载",
+        "len": 27,
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "C. 对成本极度敏感且可以接受实例被中断的渲染或 CI/CD 任务",
+        "len": 33,
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "D. 需要在特定时间窗口内完成的实时交易系统",
+        "len": 22,
+        "is_correct": false
+      }
+    ],
+    "correct_answers": [
+      "B",
+      "C"
+    ]
+  }
+]

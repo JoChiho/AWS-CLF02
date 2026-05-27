@@ -1,0 +1,18 @@
+{
+  "id": "M102",
+  "question": "以下关于 AWS Service Catalog 的治理价值描述，哪些是正确的？（选择三项）",
+  "options": [
+    "A. 允许管理员将 CloudFormation 模板打包成标准化“产品”，并通过 Portfolio 分发给不同团队",
+    "B. 支持设置 Launch Constraints（启动约束）和 Template Constraints（模板约束），限制用户可配置的参数和权限",
+    "C. 帮助企业在保证合规的前提下实现基础设施的自助服务部署",
+    "D. 主要用于实时监控已部署资源的运行状态",
+    "E. 可以完全替代 AWS Organizations 进行账户管理"
+  ],
+  "correct_answers": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": "正确答案：\n\n「允许管理员将 CloudFormation 模板打包成标准化“产品”」\n「支持设置 Launch Constraints 和 Template Constraints」\n「帮助企业在保证合规的前提下实现基础设施的自助服务部署」\n\n错误选项分析：\n\n「主要用于实时监控已部署资源的运行状态」是错误的：监控是 CloudWatch 的职责。\n\n「可以完全替代 AWS Organizations」是错误的：Service Catalog 专注于资源自助服务治理，不负责账户层级管理。\n\n**重点考点 / 关键词补充：**\n- Product：可部署的标准化单元（通常是 CloudFormation 模板）\n- Portfolio：产品组合，用于权限和分发控制\n- Constraints：限制用户在自助部署时的选择范围（关键治理手段）\n- 常考与 CloudFormation 结合使用",
+  "domain": "Technology and Services"
+}

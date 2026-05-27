@@ -1,0 +1,15 @@
+{
+  "id": "S93",
+  "question": "AWS 客户希望将本地 Oracle 数据库迁移到 AWS，同时尽量减少对现有应用代码的修改，并且希望获得托管数据库的运维优势。最佳方案是什么？",
+  "options": [
+    "A. 将 Oracle 安装到 EC2 上自行管理",
+    "B. 使用 AWS Database Migration Service (DMS) 迁移到 Amazon RDS for Oracle",
+    "C. 将数据文件直接复制到 S3 后手动恢复",
+    "D. 使用 Snowball Edge 进行离线迁移"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「使用 AWS Database Migration Service (DMS) 迁移到 Amazon RDS for Oracle」是正确的。\n\nDMS 可以进行同构（Oracle 到 Oracle）或异构迁移，同时 RDS for Oracle 提供托管的运维优势（备份、打补丁、高可用、多可用区等），并且对应用代码的修改最小，是最符合“少改代码 + 托管运维”需求的方案。\n\n其他选项分析：\n\n「将 Oracle 安装到 EC2 上自行管理」是错误的：虽然可行，但失去了托管数据库的所有运维优势。\n\n「将数据文件直接复制到 S3 后手动恢复」是错误的：这无法直接在 AWS 上运行 Oracle 数据库。\n\n「使用 Snowball Edge 进行离线迁移」是错误的：Snowball 主要用于大数据离线迁移，不适合在线数据库迁移。\n\n**重点考点 / 关键词补充：**\n- DMS 支持同构和异构数据库迁移\n- RDS for Oracle 提供托管运维优势\n- 最小化应用代码修改是关键考点",
+  "domain": "Technology and Services"
+}

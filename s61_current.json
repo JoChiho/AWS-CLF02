@@ -1,0 +1,15 @@
+{
+  "id": "S61",
+  "question": "AWS 客户希望将多个 AWS 账户统一管理，并通过一个主账户查看所有关联账户的账单，最佳实践是使用哪项服务？",
+  "options": [
+    "A. AWS IAM",
+    "B. AWS Organizations + Consolidated Billing",
+    "C. AWS Cost Explorer",
+    "D. AWS Budgets"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「AWS Organizations + Consolidated Billing」是正确的。\n\n通过 AWS Organizations 创建组织结构，并开启 Consolidated Billing 功能后，可以将多个 AWS 账户关联在一起，由主账户统一支付所有关联账户的费用，并在一个地方查看合并后的账单。\n\n其他选项分析：\n\n「AWS IAM」是错误的：IAM 是身份和访问管理，不处理跨账户账单。\n\n「AWS Cost Explorer」是错误的：Cost Explorer 用于分析和可视化成本，不是账户管理。\n\n「AWS Budgets」是错误的：Budgets 用于设置成本告警，不是用于合并多个账户的账单。\n\n**重点考点 / 关键词补充：**\n- Organizations 是多账户管理的核心服务\n- Consolidated Billing 允许折扣共享（RI/Savings Plans）\n- 强烈推荐用于有多个环境（开发/测试/生产）的企业",
+  "domain": "Billing, Pricing, and Support"
+}

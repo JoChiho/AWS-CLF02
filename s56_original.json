@@ -1,0 +1,15 @@
+{
+  "id": "S56",
+  "question": "AWS 客户希望在多个 AWS 账户之间实施统一的权限策略边界，最佳实践是使用哪项服务？",
+  "options": [
+    "A. AWS IAM",
+    "B. AWS Organizations 的 Service Control Policies (SCP)",
+    "C. AWS Config",
+    "D. AWS Shield"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「AWS Organizations 的 Service Control Policies (SCP)」是正确的。\n\nService Control Policies (SCP) 允许在 AWS Organizations 层面为成员账户设置权限边界。即使 IAM 策略允许，SCP 也可以阻止特定操作，是实现多账户治理和合规的重要工具。\n\n其他选项分析：\n\n「AWS IAM」是错误的：IAM 是账户级权限管理，无法跨账户统一设置边界。\n\n「AWS Config」是错误的：Config 用于配置合规检查，不是权限边界。\n\n「AWS Shield」是错误的：Shield 是 DDoS 防护服务。\n\n**重点考点 / 关键词补充：**\n- SCP 是“最大权限边界”，采用 Deny 优先\n- 必须在 Organizations 根或 OU 级别附加\n- 常用于禁止关闭 CloudTrail、限制使用特定 Region 等",
+  "domain": "Security and Compliance"
+}

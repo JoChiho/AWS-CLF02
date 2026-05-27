@@ -1,0 +1,15 @@
+{
+  "id": "S28",
+  "question": "AWS Config 主要用于什么？",
+  "options": [
+    "A. 记录 API 调用历史",
+    "B. 持续评估和记录 AWS 资源配置变更，并检查合规性",
+    "C. 威胁检测",
+    "D. 内容分发加速"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「持续评估和记录 AWS 资源配置变更，并检查合规性」是正确的。\n\nAWS Config 主要用于持续记录 AWS 资源的配置变更历史，并通过 Config Rules 对资源进行合规性检查和评估，是合规治理和配置管理的重要服务。\n\n其他选项分析：\n\n「记录 API 调用历史」是错误的：这是 CloudTrail 的功能。\n\n「威胁检测」是错误的：威胁检测是 GuardDuty、Security Hub 等服务的功能。\n\n「内容分发加速」是错误的：这是 CloudFront 的功能。\n\n**重点考点 / 关键词补充：**\n- Config = 配置变更历史 + 合规检查\n- 与 CloudTrail 的区别：Config 关注“资源变成了什么样子”，CloudTrail 关注“谁做了什么操作”\n- Config Rules 可用于自动检测不合规资源",
+  "domain": "Security and Compliance"
+}

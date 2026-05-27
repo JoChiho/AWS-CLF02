@@ -42,10 +42,10 @@ MULTI_CHOICE_QUESTIONS = [
         "id": "M03",
         "question": "AWS Well-Architected Framework 的五大支柱包括哪些？（选择三项）",
         "options": [
-            "A. 敏捷开发",
+            "A. 敏捷开发 (Agility) 与快速迭代交付能力",
             "B. 安全性 (Security)",
             "C. 成本优化 (Cost Optimization)",
-            "D. 人工智能",
+            "D. 人工智能与机器学习就绪能力",
             "E. 可靠性 (Reliability)",
         ],
         "correct_answers": [
@@ -53,7 +53,7 @@ MULTI_CHOICE_QUESTIONS = [
             "C",
             "E",
         ],
-        "explanation": "正确答案：\n\n「安全性 (Security)」\n「成本优化 (Cost Optimization)」\n「可靠性 (Reliability)」\n\n错误选项分析：\n\n「敏捷开发」是错误的：敏捷开发并不在 Well-Architected Framework 的五大支柱之中。\n\n「人工智能」是错误的：人工智能也不是五大支柱之一。\n\n**重点考点 / 关键词补充：**\n- **AWS Well-Architected Framework 五大支柱**（必须死记）：1. 卓越运营 (Operational Excellence)、2. 安全性 (Security)、3. 可靠性 (Reliability)、4. 性能效率 (Performance Efficiency)、5. 成本优化 (Cost Optimization)。\n- 常考陷阱：把“敏捷开发”或“AI/ML”当成支柱（都不是）。\n- 每根支柱都有官方的 Well-Architected Tool（免费）可用来审查自己的架构。",
+        "explanation": "正确答案：\n\n「安全性 (Security)」\n「成本优化 (Cost Optimization)」\n「可靠性 (Reliability)」\n\n错误选项分析：\n\n「敏捷开发 (Agility) 与快速迭代交付能力」是错误的：敏捷开发属于软件开发方法论和 DevOps 实践，并不在 Well-Architected Framework 的五大支柱之中。\n\n「人工智能与机器学习就绪能力」是错误的：人工智能/ML 属于具体的应用场景和技术领域，不是 Framework 的核心支柱（虽然很多支柱都支持 ML 工作负载）。\n\n**重点考点 / 关键词补充：**\n- **AWS Well-Architected Framework 五大支柱**（必须死记）：1. 卓越运营 (Operational Excellence)、2. 安全性 (Security)、3. 可靠性 (Reliability)、4. 性能效率 (Performance Efficiency)、5. 成本优化 (Cost Optimization)。\n- 常考陷阱：把“敏捷开发”或“AI/ML”当成支柱（都不是）。\n- 每根支柱都有官方的 Well-Architected Tool（免费）可用来审查自己的架构。",
         "domain": "Cloud Concepts",
     },
     {
@@ -303,15 +303,15 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 域名注册",
             "B. DNS 解析和流量路由策略（延迟、地理、加权等）",
-            "C. 内容缓存加速",
-            "D. 负载均衡器",
-            "E. 数据库备份",
+            "C. 通过全球 Edge Location 进行内容缓存和加速分发",
+            "D. 作为应用负载均衡器将流量分发到多个后端目标",
+            "E. 提供关系型数据库的自动备份和跨区域复制能力",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "正确答案：\n\n「域名注册」\n「DNS 解析和流量路由策略（延迟、地理、加权等）」\n\n错误选项分析：\n\n「内容缓存加速」是错误的：内容缓存加速主要是 CloudFront 的功能。\n\n「负载均衡器」是错误的：负载均衡器主要是 ELB（ALB/NLB）的功能。\n\n「数据库备份」是错误的：数据库备份不是 Route 53 的功能。\n\n**重点考点 / 关键词补充：**\n- **Amazon Route 53**：AWS 的 DNS 服务，同时支持域名注册和智能流量路由。\n- **路由策略**（高频考点）：延迟路由、地理位置路由、加权路由、故障转移路由、多值回答路由。\n- **健康检查**：可配合故障转移路由策略实现自动 DNS 故障转移。\n- 常考：Route 53 不是负载均衡器（ALB/NLB/Global Accelerator 才是）。",
+        "explanation": "正确答案：\n\n「域名注册」\n「DNS 解析和流量路由策略（延迟、地理、加权等）」\n\n错误选项分析：\n\n「通过全球 Edge Location 进行内容缓存和加速分发」是错误的：这是 Amazon CloudFront 的核心功能，Route 53 本身不提供内容缓存。\n\n「作为应用负载均衡器将流量分发到多个后端目标」是错误的：这是 Elastic Load Balancing (ALB/NLB) 的功能，Route 53 是 DNS 层面的流量路由。\n\n「提供关系型数据库的自动备份和跨区域复制能力」是错误的：数据库备份和跨区域复制是 RDS、DynamoDB Global Tables 等服务的功能。\n\n**重点考点 / 关键词补充：**\n- **Amazon Route 53**：AWS 的 DNS 服务，同时支持域名注册和智能流量路由。\n- **路由策略**（高频考点）：延迟路由、地理位置路由、加权路由、故障转移路由、多值回答路由。\n- **健康检查**：可配合故障转移路由策略实现自动 DNS 故障转移。\n- 常考：Route 53 不是负载均衡器（ALB/NLB/Global Accelerator 才是）。",
         "domain": "Technology and Services",
     },
     {
@@ -842,14 +842,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 提供 Technical Account Manager (TAM) 作为专属技术联系人",
             "B. 严重故障响应时间可达 < 15 分钟",
-            "C. 包含免费的架构审查和优化建议",
-            "D. 支持无限次的白手套架构咨询和事件管理",
+            "C. 包含免费的架构审查服务和按需的深度优化咨询",
+            "D. 提供对整个组织架构的 IAM 策略集中管理和自动化执行",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的架构审查」是错误的：架构审查在 Enterprise 是包含的，但“免费”表述不准确（它属于 Enterprise 套餐内服务）。\n\n「支持无限次的白手套架构咨询」是错误的：虽然 Enterprise 支持更深入的咨询，但并非完全无限制的白手套服务。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
+        "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的架构审查服务和按需的深度优化咨询」是错误的：架构审查和优化支持是 Enterprise Support 的服务内容之一，但“免费”表述不准确，它属于付费套餐内的权益。\n\n「提供对整个组织架构的 IAM 策略集中管理和自动化执行」是错误的：IAM 策略和权限管理主要通过 IAM、Organizations 的 SCP 以及 Control Tower 来实现，Enterprise Support 本身不提供自动化的 IAM 策略管理能力。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -1002,14 +1002,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 可跨 EC2 实例系列和操作系统使用",
             "B. Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda",
-            "C. 购买后可以随时取消且获得全额退款",
-            "D. 必须提前指定具体的实例类型和可用区",
+            "C. 购买后可以随时取消且获得全额退款，无任何财务损失",
+            "D. 必须提前指定具体的实例类型、操作系统和可用区才能锁定折扣",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「可跨 EC2 实例系列和操作系统使用」和「Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务（EC2/Fargate/Lambda）和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款」是错误的：Savings Plans 一旦购买，在承诺期内通常不可取消或全额退款。\n\n「必须提前指定具体的实例类型和可用区」是错误的：这是传统 RI 的特点，不是 Savings Plans 的优势。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
+        "explanation": "「可跨 EC2 实例系列和操作系统使用」和「Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务（EC2/Fargate/Lambda）和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款，无任何财务损失」是错误的：Savings Plans 一旦购买，在承诺期内（1 年或 3 年）通常不可取消或获得全额退款。\n\n「必须提前指定具体的实例类型、操作系统和可用区才能锁定折扣」是错误的：这是传统 Reserved Instances 或 EC2 Instance Savings Plans 的限制，Savings Plans 的优势正是不需要这种提前指定。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -1099,14 +1099,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
             "B. 可在不同实例系列和操作系统之间灵活切换",
-            "C. 购买后可以随时取消且获得全额退款",
-            "D. 必须提前锁定具体的实例类型和可用区",
+            "C. 购买后可以随时取消且获得全额退款，无任何财务限制",
+            "D. 必须提前锁定具体的实例类型、操作系统和可用区才能享受折扣",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用」和「可在不同实例系列和操作系统之间灵活切换」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款」是错误的：Savings Plans 一旦购买，在承诺期内通常不可取消或全额退款。\n\n「必须提前锁定具体的实例类型和可用区」是错误的：这是传统 RI 的特点，不是 Savings Plans 的优势。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
+        "explanation": "「Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用」和「可在不同实例系列和操作系统之间灵活切换」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款，无任何财务限制」是错误的：Savings Plans 一旦购买，在 1 年或 3 年承诺期内通常不可取消或获得全额退款。\n\n「必须提前锁定具体的实例类型、操作系统和可用区才能享受折扣」是错误的：这是传统 Reserved Instances 或 EC2 Instance Savings Plans 的限制，Savings Plans 的最大优势正是不需要这种提前指定。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -1163,14 +1163,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 支持绝大多数 AWS 服务（不限于 S3 和 DynamoDB）",
             "B. 需要创建 Elastic Network Interface (ENI) 并产生费用",
-            "C. 完全免费且仅通过路由表实现",
-            "D. 只能用于 S3 和 DynamoDB",
+            "C. 完全免费，且仅通过路由表即可实现，无需额外配置 ENI 或 Private DNS",
+            "D. 只能用于 S3 和 DynamoDB，其他 AWS 服务必须改用 Interface Endpoint 才能访问",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「支持绝大多数 AWS 服务（不限于 S3 和 DynamoDB）」和「需要创建 Elastic Network Interface (ENI) 并产生费用」是正确的。\n\nInterface Endpoint 通过 ENI 实现，支持几乎所有 AWS 服务，但需要付费；Gateway Endpoint 仅支持 S3 和 DynamoDB，完全免费，通过路由表实现。\n\n其他选项分析：\n\n「完全免费且仅通过路由表实现」是错误的：这是 Gateway Endpoint 的特点。\n\n「只能用于 S3 和 DynamoDB」是错误的：这是 Gateway Endpoint 的限制。\n\n**重点考点 / 关键词补充：**\n- Gateway Endpoint：仅 S3 + DynamoDB + 免费 + 路由表驱动\n- Interface Endpoint：支持绝大多数服务 + 收费 + ENI + Private DNS\n- 两者均可实现不经过公网访问 AWS 服务",
+        "explanation": "「支持绝大多数 AWS 服务（不限于 S3 和 DynamoDB）」和「需要创建 Elastic Network Interface (ENI) 并产生费用」是正确的。\n\nInterface Endpoint 通过 ENI 实现，支持几乎所有 AWS 服务，但需要付费；Gateway Endpoint 仅支持 S3 和 DynamoDB，完全免费，通过路由表实现。\n\n其他选项分析：\n\n「完全免费，且仅通过路由表即可实现，无需额外配置 ENI 或 Private DNS」是错误的：这是 Gateway Endpoint 的典型特点，Interface Endpoint 需要 ENI 并产生费用。\n\n「只能用于 S3 和 DynamoDB，其他 AWS 服务必须改用 Interface Endpoint 才能访问」是错误的：这是 Gateway Endpoint 的限制，Interface Endpoint 正是为了支持除 S3/DynamoDB 之外的绝大多数服务。\n\n**重点考点 / 关键词补充：**\n- Gateway Endpoint：仅 S3 + DynamoDB + 免费 + 路由表驱动\n- Interface Endpoint：支持绝大多数服务 + 收费 + ENI + Private DNS\n- 两者均可实现不经过公网访问 AWS 服务",
         "domain": "Technology and Services",
     },
     {
@@ -1419,14 +1419,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 提供 Technical Account Manager (TAM) 作为专属技术联系人",
             "B. 严重故障响应时间可达 < 15 分钟",
-            "C. 支持无限次的白手套架构咨询和事件管理",
-            "D. 包含免费的架构审查和优化建议",
+            "C. 提供无限次数的深度架构设计咨询和事件管理服务，由 TAM 全程跟进",
+            "D. 包含免费的 Well-Architected Framework 审查和成本优化建议，无需额外付费",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「提供 Technical Account Manager (TAM) 作为专属技术联系人」和「严重故障响应时间可达 < 15 分钟」是正确的。\\n\\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\\n\\n其他选项分析：\\n\\n「支持无限次的白手套架构咨询和事件管理」是错误的：虽然 Enterprise 支持更深入的咨询，但并非完全无限制的白手套服务。\\n\\n「包含免费的架构审查和优化建议」是错误的：架构审查在 Enterprise 是包含的，但“免费”表述不准确（它属于 Enterprise 套餐内服务）。\\n\\n**重点考点 / 关键词补充：**\\n- Business Support：< 1 小时严重故障响应，适合大多数生产环境，性价比高。\\n- Enterprise Support：提供 TAM + 更快响应 + 架构审查 + 更深入支持\\n- TAM 是 Enterprise 专属，负责协调技术支持和架构优化",
+        "explanation": "「提供 Technical Account Manager (TAM) 作为专属技术联系人」和「严重故障响应时间可达 < 15 分钟」是正确的。\\n\\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\\n\\n其他选项分析：\\n\\n「提供无限次数的深度架构设计咨询和事件管理服务，由 TAM 全程跟进」是错误的：Enterprise Support 虽然提供更深入的架构支持，但并非完全无限制的白手套服务，具体范围仍受支持计划条款限制。\\n\\n「包含免费的 Well-Architected Framework 审查和成本优化建议，无需额外付费」是错误的：架构审查和优化支持是 Enterprise Support 套餐内的服务，并非独立“免费”赠送；Business Support 客户需要额外付费才能获得类似审查。\\n\\n**重点考点 / 关键词补充：**\\n- Business Support：< 1 小时严重故障响应，适合大多数生产环境，性价比高。\\n- Enterprise Support：提供 TAM + 更快响应 + 架构审查 + 更深入支持\\n- TAM 是 Enterprise 专属，负责协调技术支持和架构优化",
         "domain": "Billing, Pricing, and Support",
     },
     {
@@ -1612,7 +1612,7 @@ MULTI_CHOICE_QUESTIONS = [
             "B. S3 Object Ownership 主要用于控制上传对象的所有权（BucketOwnerPreferred 或 BucketOwnerEnforced）",
             "C. S3 Batch Operations 可以对数百万对象批量执行复制、删除、标签修改等操作",
             "D. S3 Requester Pays 模式下，请求者需要支付请求和数据传输费用，而不是存储桶拥有者支付",
-            "E. S3 Select 主要用于加速跨 Region 的数据复制",
+            "E. S3 Select 主要用于从大型对象中按需查询特定记录，并能显著加速跨 Region 的数据复制和实时同步流程",
         ],
         "correct_answers": [
             "A",
@@ -1620,7 +1620,7 @@ MULTI_CHOICE_QUESTIONS = [
             "C",
             "D",
         ],
-        "explanation": "正确答案：\n\n「S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口」\n「S3 Object Ownership 主要用于控制上传对象的所有权」\n「S3 Batch Operations 可以对数百万对象批量执行...操作」\n「S3 Requester Pays 模式下，请求者需要支付...」\n\n错误选项分析：\n\n「S3 Select 主要用于加速跨 Region 的数据复制」是错误的：S3 Select 是按需查询对象内部特定内容的性能功能（类似 SQL 查询），不是用于复制加速。\n\n**重点考点 / 关键词补充：**\n- Access Points：简化大型桶的权限管理\n- Object Ownership：解决上传对象所有权归属问题（重要合规点）\n- Batch Operations：大规模对象处理（S3 + Lambda 或 内置操作）\n- Requester Pays：让请求者承担费用（常用于数据共享场景）",
+        "explanation": "正确答案：\n\n「S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口」\n「S3 Object Ownership 主要用于控制上传对象的所有权」\n「S3 Batch Operations 可以对数百万对象批量执行...操作」\n「S3 Requester Pays 模式下，请求者需要支付...」\n\n错误选项分析：\n\n「S3 Select 主要用于从大型对象中按需查询特定记录，并能显著加速跨 Region 的数据复制和实时同步流程」是错误的：S3 Select 是按需从对象中查询特定内容的性能功能（类似 SQL 查询 S3 对象内容），与数据复制、同步或迁移完全无关。数据复制应使用 S3 Replication 或 Batch Operations。\n\n**重点考点 / 关键词补充：**\n- Access Points：简化大型桶的权限管理\n- Object Ownership：解决上传对象所有权归属问题（重要合规点）\n- Batch Operations：大规模对象处理（S3 + Lambda 或 内置操作）\n- Requester Pays：让请求者承担费用（常用于数据共享场景）",
         "domain": "Technology and Services",
     },
     {
@@ -1703,15 +1703,15 @@ MULTI_CHOICE_QUESTIONS = [
             "A. 允许管理员将 CloudFormation 模板打包成标准化“产品”，并通过 Portfolio 分发给不同团队",
             "B. 支持设置 Launch Constraints（启动约束）和 Template Constraints（模板约束），限制用户可配置的参数和权限",
             "C. 帮助企业在保证合规的前提下实现基础设施的自助服务部署",
-            "D. 主要用于实时监控已部署资源的运行状态",
-            "E. 可以完全替代 AWS Organizations 进行账户管理",
+            "D. 主要用于实时监控已部署资源的运行状态和性能指标",
+            "E. 可以完全替代 AWS Organizations 对多个 AWS 账户进行统一治理和 SCP 管理",
         ],
         "correct_answers": [
             "A",
             "B",
             "C",
         ],
-        "explanation": "正确答案：\n\n「允许管理员将 CloudFormation 模板打包成标准化“产品”」\n「支持设置 Launch Constraints 和 Template Constraints」\n「帮助企业在保证合规的前提下实现基础设施的自助服务部署」\n\n错误选项分析：\n\n「主要用于实时监控已部署资源的运行状态」是错误的：监控是 CloudWatch 的职责。\n\n「可以完全替代 AWS Organizations」是错误的：Service Catalog 专注于资源自助服务治理，不负责账户层级管理。\n\n**重点考点 / 关键词补充：**\n- Product：可部署的标准化单元（通常是 CloudFormation 模板）\n- Portfolio：产品组合，用于权限和分发控制\n- Constraints：限制用户在自助部署时的选择范围（关键治理手段）\n- 常考与 CloudFormation 结合使用",
+        "explanation": "正确答案：\n\n「允许管理员将 CloudFormation 模板打包成标准化“产品”」\n「支持设置 Launch Constraints 和 Template Constraints」\n「帮助企业在保证合规的前提下实现基础设施的自助服务部署」\n\n错误选项分析：\n\n「主要用于实时监控已部署资源的运行状态和性能指标」是错误的：实时监控和告警是 Amazon CloudWatch 的核心职责，Service Catalog 专注于资源模板的标准化分发和治理。\n\n「可以完全替代 AWS Organizations 对多个 AWS 账户进行统一治理和 SCP 管理」是错误的：Service Catalog 专注于产品组合和自助部署治理，不提供 Organizations 的账户结构管理、SCP 权限边界等功能。\n\n**重点考点 / 关键词补充：**\n- Product：可部署的标准化单元（通常是 CloudFormation 模板）\n- Portfolio：产品组合，用于权限和分发控制\n- Constraints：限制用户在自助部署时的选择范围（关键治理手段）\n- 常考与 CloudFormation 结合使用",
         "domain": "Technology and Services",
     },
     {
@@ -1804,14 +1804,14 @@ MULTI_CHOICE_QUESTIONS = [
         "options": [
             "A. 提供 Technical Account Manager (TAM)",
             "B. 严重故障响应时间可达 < 15 分钟",
-            "C. 包含免费的架构审查和优化建议",
-            "D. 支持无限次的白手套架构咨询",
+            "C. 包含免费的 Well-Architected Framework 审查和成本优化建议，由专属团队提供",
+            "D. 支持无限次数的白手套架构咨询和事件管理服务，由 TAM 直接协调",
         ],
         "correct_answers": [
             "A",
             "B",
         ],
-        "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的架构审查」是错误的：架构审查在 Enterprise 是包含的，但“免费”表述不准确（它属于 Enterprise 套餐内服务）。\n\n「支持无限次的白手套架构咨询」是错误的：虽然 Enterprise 支持更深入的咨询，但并非完全无限制的白手套服务。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
+        "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的 Well-Architected Framework 审查和成本优化建议，由专属团队提供」是错误的：架构审查和优化支持是 Enterprise Support 套餐内的服务，但“免费”表述不准确，它属于付费计划的权益，并非独立免费赠送。\n\n「支持无限次数的白手套架构咨询和事件管理服务，由 TAM 直接协调」是错误的：Enterprise Support 提供更深入的支持，但并非完全无限制的白手套服务，具体服务范围仍受支持计划的条款和配额限制。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
         "domain": "Billing, Pricing, and Support",
     },
     {

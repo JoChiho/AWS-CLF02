@@ -1,0 +1,15 @@
+{
+  "id": "S85",
+  "question": "在 S3 Object Lock 中，以下关于 Governance 模式和 Compliance 模式的区别，哪一项是正确的？",
+  "options": [
+    "A. Governance 模式下，特定权限的用户可以提前删除或缩短保留期；Compliance 模式下任何用户（包括 root）都无法提前删除",
+    "B. 两者完全相同，只是名称不同",
+    "C. Compliance 模式可以被 root 用户随时解除；Governance 模式更严格",
+    "D. Governance 模式不支持合规审计日志"
+  ],
+  "correct_answers": [
+    "A"
+  ],
+  "explanation": "「Governance 模式下，特定权限的用户可以提前删除或缩短保留期；Compliance 模式下任何用户（包括 root）都无法提前删除」是正确的。\n\nGovernance 模式相对灵活，拥有 s3:BypassGovernanceRetention 权限的用户可以在保留期内删除对象或缩短保留期；Compliance 模式极其严格，在保留期内任何用户（包括 AWS 账户 root 用户）都无法删除或缩短保留期，满足最严格的监管要求（如 SEC 17a-4）。\n\n其他选项分析：\n\n「两者完全相同」是错误的：两者在权限绕过能力上有本质区别。\n\n「Compliance 模式可以被 root 用户随时解除」是错误的：Compliance 模式下 root 用户也无法提前删除。\n\n「Governance 模式不支持合规审计日志」是错误的：两者都支持审计。\n\n**重点考点 / 关键词补充：**\n- Governance：可由特定权限用户绕过（适合内部治理）\n- Compliance：任何人（含 root）都无法提前删除（适合外部监管）\n- 开启后 Object Lock 版本无法关闭（只能延长保留期）",
+  "domain": "Security and Compliance"
+}

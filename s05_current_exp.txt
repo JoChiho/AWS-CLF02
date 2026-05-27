@@ -1,0 +1,16 @@
+「下载 AWS 合规报告、SOC、PCI、HIPAA 报告及 NDA/BAA 协议」是正确的。
+
+AWS Artifact 是 AWS 的合规中心，提供各种官方合规报告（SOC、PCI DSS、HIPAA、ISO 等）、NDA/BAA 协议下载，以及合规性自助服务。对金融、医疗、政府等有严格合规要求的客户非常重要。
+
+其他选项分析：
+
+「自动部署应用」是错误的：这是 CodePipeline、CodeDeploy、Elastic Beanstalk 的功能。
+
+「管理 EC2 安全组」是错误的：安全组通过 EC2 控制台或 API 管理。
+
+「监控实时账单」是错误的：实时账单和成本监控主要使用 AWS Cost Explorer、Budgets 和 Billing Console。
+
+**重点考点 / 关键词补充：**
+- Artifact 是“合规证明”的官方来源
+- 常见报告：SOC 1/2/3、PCI、HIPAA、FedRAMP
+- 支持下载 NDA（保密协议）和 BAA（商业伙伴协议）

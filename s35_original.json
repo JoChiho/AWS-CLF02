@@ -1,0 +1,15 @@
+{
+  "id": "S35",
+  "question": "AWS Well-Architected Tool 的主要用途是？",
+  "options": [
+    "A. 自动修复架构问题",
+    "B. 帮助用户根据 Well-Architected Framework 审查自己的工作负载并生成改进建议",
+    "C. 管理 IAM 权限",
+    "D. 监控实时账单"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「帮助用户根据 Well-Architected Framework 审查自己的工作负载并生成改进建议」是正确的。\n\nAWS Well-Architected Tool 是一个免费工具，它引导用户按照 Well-Architected Framework 的五大支柱（卓越运营、安全、可靠性、性能效率、成本优化）对自己的工作负载进行审查，并生成具体的改进建议和最佳实践。\n\n其他选项分析：\n\n「自动修复架构问题」是错误的：工具只提供建议，不会自动修复。\n\n「管理 IAM 权限」是错误的：IAM 权限通过 IAM 服务管理。\n\n「监控实时账单」是错误的：账单监控是 Cost Explorer 和 Budgets 的功能。\n\n**重点考点 / 关键词补充：**\n- Well-Architected Tool 是免费的\n- 审查结果可导出为 PDF\n- 强烈建议在生产工作负载上线前进行审查",
+  "domain": "Cloud Concepts"
+}

@@ -1,0 +1,16 @@
+「Condition（配合 aws:SourceVpc 或 aws:SourceVpce）」是正确的。
+
+在 S3 Bucket Policy 中，通过 Condition 块使用 aws:SourceVpc 或 aws:SourceVpce 条件键，可以精确限制只有来自特定 VPC 或 VPC Endpoint 的请求才能访问存储桶。这是实现 VPC 级私有访问控制的常用且强大的方式。
+
+其他选项分析：
+
+「Principal」是错误的：Principal 指定允许访问的身份，无法直接限制来源 VPC。
+
+「Action」是错误的：Action 只控制允许哪些操作。
+
+「Resource」是错误的：Resource 指定策略适用的对象或存储桶。
+
+**重点考点 / 关键词补充：**
+- aws:SourceVpc：限制特定 VPC
+- aws:SourceVpce：限制特定 VPC Endpoint（更常用）
+- 常与 VPC Endpoint Policy 配合使用，实现端到端私有访问

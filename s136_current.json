@@ -1,0 +1,15 @@
+{
+  "id": "S136",
+  "question": "在 KMS Envelope Encryption（信封加密）模型中，数据密钥（Data Key）是如何被保护的？",
+  "options": [
+    "A. 数据密钥直接用客户主密钥 (CMK) 加密后和密文一起存储",
+    "B. 数据密钥用 CMK 加密后得到加密的数据密钥（Encrypted Data Key），只有拿到 CMK 才能解密出明文数据密钥用于加解密数据",
+    "C. 数据密钥永远不被加密，直接明文存储",
+    "D. 数据密钥由 S3 服务自动管理，与 KMS 无关"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「数据密钥用 CMK 加密后得到加密的数据密钥...只有拿到 CMK 才能解密出明文数据密钥用于加解密数据」是正确的。\n\nEnvelope Encryption（信封加密）是 KMS 的核心加密模式：先用随机生成的数据密钥加密实际数据，然后用 CMK 加密这个数据密钥（得到 Encrypted Data Key）。这样可以高效加密大量数据，同时利用 KMS 的安全性和密钥管理能力。只有拥有 CMK 解密权限的人才能拿到明文数据密钥。\n\n其他选项分析：\n\n「数据密钥直接用 CMK 加密后和密文一起存储」是错误的：描述接近但不完整，核心是先用数据密钥加密数据。\n\n「数据密钥永远不被加密」是错误的：这是不安全的做法。\n\n**重点考点 / 关键词补充：**\n- Envelope Encryption：用数据密钥加密数据 + 用 CMK 加密数据密钥\n- 优势：性能好 + 密钥管理安全\n- 几乎所有使用 KMS 的 AWS 服务（S3、EBS、RDS 等）都采用此模型",
+  "domain": "Security and Compliance"
+}

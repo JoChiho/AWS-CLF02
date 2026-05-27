@@ -1,0 +1,15 @@
+{
+  "id": "S90",
+  "question": "AWS 客户希望对 S3 对象实现自动存储分层，但又需要偶尔对归档层的数据进行毫秒级快速检索。推荐使用哪种 S3 存储类功能？",
+  "options": [
+    "A. S3 Glacier Deep Archive",
+    "B. S3 Intelligent-Tiering 的 Archive Instant Access 层",
+    "C. S3 Standard-IA",
+    "D. S3 One Zone-IA"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「S3 Intelligent-Tiering 的 Archive Instant Access 层」是正确的。\n\nS3 Intelligent-Tiering 支持 Archive Instant Access 层，它会自动将 90 天未访问的对象移动到低成本的归档层，但仍保持毫秒级的检索性能，非常适合访问模式不规律但偶尔需要快速访问的数据。\n\n其他选项分析：\n\n「S3 Glacier Deep Archive」是错误的：检索时间为小时级，不支持毫秒级访问。\n\n「S3 Standard-IA」是错误的：虽然支持毫秒级检索，但费用高于 Intelligent-Tiering 的归档层，且需要手动管理。\n\n「S3 One Zone-IA」是错误的：成本虽低，但可用性较低，且不具备自动分层能力。\n\n**重点考点 / 关键词补充：**\n- Intelligent-Tiering Archive Instant Access：90天自动归档 + 毫秒级检索\n- 适合访问不规律但需快速检索的场景\n- 比手动 Lifecycle 更智能，无需预定义规则",
+  "domain": "Technology and Services"
+}

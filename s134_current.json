@@ -1,0 +1,15 @@
+{
+  "id": "S134",
+  "question": "AWS Certificate Manager (ACM) 的主要功能是什么？它与手动管理 SSL/TLS 证书相比有什么优势？",
+  "options": [
+    "A. ACM 主要用于监控 EC2 实例的 CPU 使用率",
+    "B. ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销，特别适合与 CloudFront、ALB、API Gateway 集成",
+    "C. ACM 只能签发自签名证书，不能用于生产环境",
+    "D. ACM 主要用于加密 S3 对象内容"
+  ],
+  "correct_answers": [
+    "B"
+  ],
+  "explanation": "「ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销」是正确的。\n\nAWS Certificate Manager 让你可以轻松申请和部署受信任的公共 SSL/TLS 证书（由 Amazon 信任的 CA 签发），并与 CloudFront、Application Load Balancer、API Gateway、Elastic Beanstalk 等服务深度集成。最大优势是自动续期（无需人工干预，避免证书过期导致的服务中断）。\n\n其他选项分析：\n\n「主要用于监控 EC2 实例」是错误的：这是 CloudWatch。\n\n「只能签发自签名证书」是错误的：ACM 签发的是受信任的公共证书。\n\n「主要用于加密 S3 对象内容」是错误的：S3 加密用 KMS 或 SSE-S3。\n\n**重点考点 / 关键词补充：**\n- ACM：免费公共证书 + 自动续期\n- 主要集成：CloudFront、ALB、NLB、API Gateway\n- 优势：自动续期、集中管理、与 AWS 服务原生集成\n- 注意：证书必须在与使用服务的同一 Region（CloudFront 除外）",
+  "domain": "Security and Compliance"
+}
