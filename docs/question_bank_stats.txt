@@ -32,7 +32,7 @@ Billing, Pricing, and Support     23     25     48   19.6%
   • 重点新增：AWS Control Tower、Service Catalog、Personal Health Dashboard、CloudFormation、Placement Groups、S3 高级功能等
   • 领域平衡优化 + 治理类题目大幅增强
   • 题库总规模达到 245 题，知识点覆盖度显著提升
-  • 同步更新 README、项目开发日志及统计文档
+  • 同步更新 README 及统计文档
   • 2026-05-29：完成单/多选分类全面审计与修正（5 道题目迁移 + 新 ID 分配），领域归属 100% 正确
 
 ================================================================================

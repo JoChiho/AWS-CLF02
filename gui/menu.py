@@ -1,0 +1,169 @@
+# -*- coding: utf-8 -*-
+"""主菜单界面"""
+
+import customtkinter as ctk
+
+from data import (
+    ALL_QUESTIONS,
+    SINGLE_CHOICE_QUESTIONS,
+    MULTI_CHOICE_QUESTIONS,
+    DOMAINS,
+    get_domain_question_count,
+)
+from gui.constants import DOMAIN_DISPLAY_NAMES, MOCK_EXAM_QUESTION_COUNT, MOCK_EXAM_DURATION_MIN
+
+
+class MenuMixin:
+    """主菜单构建与题库入口"""
+
+    def _build_menu_ui(self):
+        """题库选择主菜单（支持传统模式 + 考试领域分类练习）"""
+        self.menu_frame = ctk.CTkFrame(self, fg_color="transparent")
+        self.menu_frame.pack(fill="both", expand=True, padx=40, pady=30)
+
+        scrollable = ctk.CTkScrollableFrame(self.menu_frame, fg_color="transparent")
+        scrollable.pack(fill="both", expand=True)
+
+        ctk.CTkLabel(
+            scrollable,
+            text="AWS CLF-C02 刷题系统",
+            font=ctk.CTkFont(size=28, weight="bold"),
+        ).pack(pady=(10, 5))
+
+        ctk.CTkLabel(
+            scrollable,
+            text="请选择练习模式或模拟考试",
+            font=ctk.CTkFont(size=16),
+        ).pack(pady=(0, 20))
+
+        # ========== 模拟考试（推荐备考） ==========
+        ctk.CTkLabel(
+            scrollable,
+            text="模拟考试（贴近真实 CLF-C02）",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#e67e22",
+        ).pack(anchor="w", padx=60, pady=(0, 6))
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"开始模拟考试（{MOCK_EXAM_QUESTION_COUNT}题 · {MOCK_EXAM_DURATION_MIN}分钟 · 无解析）",
+            height=52,
+            font=ctk.CTkFont(size=16, weight="bold"),
+            fg_color="#e67e22",
+            hover_color="#f39c12",
+            command=self._show_mock_exam_intro,
+        ).pack(pady=6, fill="x", padx=60)
+
+        # ========== 传统模式 ==========
+        ctk.CTkLabel(
+            scrollable,
+            text="传统模式",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#888888",
+        ).pack(anchor="w", padx=60, pady=(0, 6))
+
+        single_count = len(SINGLE_CHOICE_QUESTIONS)
+        multi_count = len(MULTI_CHOICE_QUESTIONS)
+        total_count = len(ALL_QUESTIONS)
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"单选题题库（{single_count}题）",
+            height=48,
+            font=ctk.CTkFont(size=16),
+            command=lambda: self._start_quiz(SINGLE_CHOICE_QUESTIONS, "single"),
+        ).pack(pady=6, fill="x", padx=60)
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"多选题题库（{multi_count}题）",
+            height=48,
+            font=ctk.CTkFont(size=16),
+            fg_color="#2980b9",
+            hover_color="#3498db",
+            command=lambda: self._start_quiz(MULTI_CHOICE_QUESTIONS, "multi"),
+        ).pack(pady=6, fill="x", padx=60)
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"全部题目（{total_count}题）",
+            height=48,
+            font=ctk.CTkFont(size=16),
+            command=lambda: self._start_quiz(ALL_QUESTIONS, "all"),
+        ).pack(pady=6, fill="x", padx=60)
+
+        ctk.CTkButton(
+            scrollable,
+            text="打开错题本（累计 C/W 统计 + 一键练习）",
+            height=48,
+            font=ctk.CTkFont(size=16, weight="bold"),
+            fg_color="#c0392b",
+            hover_color="#e74c3c",
+            command=self._show_wrong_book,
+        ).pack(pady=(12, 6), fill="x", padx=60)
+
+        # ========== 按考试领域分类练习 ==========
+        ctk.CTkLabel(
+            scrollable,
+            text="按考试领域分类练习（CLF-C02 官方四大领域）",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#00b894",
+        ).pack(anchor="w", padx=60, pady=(18, 6))
+
+        for domain in DOMAINS:
+            count = get_domain_question_count(domain)
+            display_name = DOMAIN_DISPLAY_NAMES.get(domain, domain)
+            ctk.CTkButton(
+                scrollable,
+                text=f"{display_name}（{count}题）",
+                height=48,
+                font=ctk.CTkFont(size=16),
+                fg_color="#00b894",
+                hover_color="#00d9a3",
+                command=lambda d=domain: self._start_domain_quiz(d),
+            ).pack(pady=6, fill="x", padx=60)
+
+        ctk.CTkLabel(
+            scrollable,
+            text="提示：多选题需要点击「提交答案」按钮后才会显示解析 | 领域练习会混合单选与多选题",
+            font=ctk.CTkFont(size=12),
+            text_color="#888888",
+        ).pack(pady=(20, 10))
+
+        # ========== 我的学习 ==========
+        ctk.CTkLabel(
+            scrollable,
+            text="我的学习",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#f39c12",
+        ).pack(anchor="w", padx=60, pady=(10, 6))
+
+        ctk.CTkButton(
+            scrollable,
+            text="历史记录（近10次）",
+            height=42,
+            font=ctk.CTkFont(size=15),
+            fg_color="#7f8c8d",
+            hover_color="#95a5a6",
+            command=self._show_history,
+        ).pack(pady=4, fill="x", padx=60)
+
+        ctk.CTkButton(
+            scrollable,
+            text="错题本（累计统计）",
+            height=42,
+            font=ctk.CTkFont(size=15),
+            fg_color="#c0392b",
+            hover_color="#e74c3c",
+            command=self._show_wrong_book,
+        ).pack(pady=4, fill="x", padx=60)
+
+        ctk.CTkButton(
+            scrollable,
+            text="我的统计与趋势",
+            height=42,
+            font=ctk.CTkFont(size=15),
+            fg_color="#8e44ad",
+            hover_color="#9b59b6",
+            command=self._show_my_stats,
+        ).pack(pady=4, fill="x", padx=60)

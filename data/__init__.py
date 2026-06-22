@@ -164,6 +164,17 @@ def get_shuffled_all_questions() -> list[dict]:
     return get_shuffled_questions(ALL_QUESTIONS)
 
 
+from .mock_exam import (  # noqa: E402
+    allocate_domain_counts,
+    select_mock_exam_questions,
+    score_mock_exam,
+    MOCK_EXAM_QUESTION_COUNT,
+    MOCK_EXAM_DURATION_SEC,
+    MOCK_EXAM_PASS_PERCENT,
+    MOCK_EXAM_DOMAIN_WEIGHTS,
+)
+
+
 __all__ = [
     "SINGLE_CHOICE_QUESTIONS",
     "MULTI_CHOICE_QUESTIONS",
@@ -181,4 +192,11 @@ __all__ = [
     "get_shuffled_single_choice_questions",
     "get_shuffled_multi_choice_questions",
     "get_shuffled_all_questions",
+    "allocate_domain_counts",
+    "select_mock_exam_questions",
+    "score_mock_exam",
+    "MOCK_EXAM_QUESTION_COUNT",
+    "MOCK_EXAM_DURATION_SEC",
+    "MOCK_EXAM_PASS_PERCENT",
+    "MOCK_EXAM_DOMAIN_WEIGHTS",
 ]

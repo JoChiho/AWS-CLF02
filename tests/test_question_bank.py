@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+"""题库数据完整性回归测试"""
+
+import unittest
+
+from data import (
+    ALL_QUESTIONS,
+    SINGLE_CHOICE_QUESTIONS,
+    MULTI_CHOICE_QUESTIONS,
+    DOMAINS,
+    QUESTION_BY_ID,
+    get_domain_question_count,
+)
+from data import shuffle_question_options
+
+OFFICIAL_DOMAINS = set(DOMAINS)
+REQUIRED_FIELDS = {"id", "question", "options", "correct_answers", "explanation", "domain"}
+
+
+class TestQuestionBankIntegrity(unittest.TestCase):
+    def test_total_question_count(self):
+        self.assertEqual(len(SINGLE_CHOICE_QUESTIONS), 136)
+        self.assertEqual(len(MULTI_CHOICE_QUESTIONS), 109)
+        self.assertEqual(len(ALL_QUESTIONS), 245)
+
+    def test_all_questions_have_required_fields(self):
+        for q in ALL_QUESTIONS:
+            missing = REQUIRED_FIELDS - set(q.keys())
+            self.assertEqual(missing, set(), f"{q.get('id', '?')} missing {missing}")
+
+    def test_question_ids_are_unique(self):
+        ids = [q["id"] for q in ALL_QUESTIONS]
+        self.assertEqual(len(ids), len(set(ids)), "duplicate question IDs found")
+
+    def test_question_by_id_map_is_complete(self):
+        self.assertEqual(len(QUESTION_BY_ID), len(ALL_QUESTIONS))
+        for q in ALL_QUESTIONS:
+            self.assertIs(QUESTION_BY_ID[q["id"]], q)
+
+    def test_single_choice_classification(self):
+        for q in SINGLE_CHOICE_QUESTIONS:
+            self.assertEqual(
+                len(q["correct_answers"]),
+                1,
+                f"{q['id']} in single_choice has {len(q['correct_answers'])} answers",
+            )
+
+    def test_multi_choice_classification(self):
+        for q in MULTI_CHOICE_QUESTIONS:
+            self.assertGreaterEqual(
+                len(q["correct_answers"]),
+                2,
+                f"{q['id']} in multi_choice has only {len(q['correct_answers'])} answer(s)",
+            )
+
+    def test_domains_are_official(self):
+        for q in ALL_QUESTIONS:
+            self.assertIn(q["domain"], OFFICIAL_DOMAINS, f"{q['id']} has invalid domain")
+
+    def test_domain_counts_sum_to_total(self):
+        total = sum(get_domain_question_count(d) for d in DOMAINS)
+        self.assertEqual(total, len(ALL_QUESTIONS))
+
+    def test_options_count_matches_answers(self):
+        for q in ALL_QUESTIONS:
+            options = q["options"]
+            self.assertGreaterEqual(len(options), 4, f"{q['id']} has fewer than 4 options")
+            for ans in q["correct_answers"]:
+                self.assertIn(ans, {"A", "B", "C", "D", "E"}, f"{q['id']} invalid answer {ans}")
+
+    def test_id_format(self):
+        for q in SINGLE_CHOICE_QUESTIONS:
+            self.assertRegex(q["id"], r"^S\d+$", f"bad single id: {q['id']}")
+        for q in MULTI_CHOICE_QUESTIONS:
+            self.assertRegex(q["id"], r"^M\d+$", f"bad multi id: {q['id']}")
+
+    def test_explanations_are_non_empty(self):
+        for q in ALL_QUESTIONS:
+            self.assertTrue(q["explanation"].strip(), f"{q['id']} has empty explanation")
+
+
+class TestShuffleQuestionOptions(unittest.TestCase):
+    def test_shuffle_preserves_correctness_mapping(self):
+        q = ALL_QUESTIONS[0]
+        info = shuffle_question_options(q)
+        self.assertEqual(len(info["shuffled_options"]), len(q["options"]))
+        for display_letter in info["display_correct_answers"]:
+            original = info["display_to_original"][display_letter]
+            self.assertIn(original, q["correct_answers"])
+
+    def test_shuffle_roundtrip(self):
+        q = MULTI_CHOICE_QUESTIONS[0]
+        info = shuffle_question_options(q)
+        for orig, display in info["original_to_display"].items():
+            self.assertEqual(info["display_to_original"][display], orig)
+
+
+if __name__ == "__main__":
+    unittest.main()

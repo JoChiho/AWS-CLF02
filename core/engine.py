@@ -6,12 +6,14 @@ Quiz 引擎模块（Quiz Engine）
 - 运行一轮测试的核心逻辑
 - 评分系统
 - 错题收集与回顾
-- 与解析器、数据层的解耦
+- CLI 持久化（与 GUI 共用 data/progress.py）
 """
 
-from typing import List, Dict, Any
+import time
+from typing import List, Dict, Any, Optional
 
 from data import ALL_QUESTIONS, shuffle_question_options, get_shuffled_questions
+from data.progress import record_session, update_question_stat
 from core.parser import parse_user_answers, is_quit_command
 
 
@@ -32,37 +34,106 @@ def _get_input_prompt(q: Dict[str, Any]) -> str:
         return "\n你的答案（A/B/C/D），输入 q 退出："
 
 
-def run_single_round() -> Dict[str, Any]:
+def persist_round_result(
+    mode: str,
+    questions: List[Dict[str, Any]],
+    answers_by_index: Dict[int, List[str]],
+    start_time: float,
+) -> Dict[str, Any]:
+    """
+    将一轮练习结果写入 user_data.json（与 GUI finish_quiz 逻辑一致）。
+
+    answers_by_index: 0-based 题目索引 -> 用户答案（原始字母列表）
+    """
+    correct_count = 0
+    answered_count = 0
+
+    for i, q in enumerate(questions):
+        user = answers_by_index.get(i, [])
+        if user:
+            answered_count += 1
+            if set(user) == set(q.get("correct_answers", [])):
+                correct_count += 1
+
+    duration = int(time.time() - start_time) if start_time else 0
+    total = len(questions)
+
+    try:
+        record_session(mode, total, correct_count, duration, answered=answered_count)
+        for i, q in enumerate(questions):
+            user_ans = answers_by_index.get(i, [])
+            if not user_ans:
+                continue
+            qid = q.get("id")
+            if not qid:
+                continue
+            is_correct = set(user_ans) == set(q.get("correct_answers", []))
+            update_question_stat(qid, is_correct, user_ans)
+        saved = True
+    except Exception as e:
+        print(f"[进度保存警告] {e}")
+        saved = False
+
+    answered_for_rate = answered_count if answered_count > 0 else 1
+    percentage = (correct_count / answered_for_rate) * 100 if answered_count > 0 else 0.0
+
+    return {
+        "correct_count": correct_count,
+        "answered_count": answered_count,
+        "total": total,
+        "percentage": percentage,
+        "duration": duration,
+        "saved": saved,
+    }
+
+
+def run_single_round(
+    question_list: Optional[List[Dict[str, Any]]] = None,
+    mode: str = "cli:all",
+) -> Dict[str, Any]:
     """
     运行一轮完整的测试，返回本轮统计结果。
+
+    参数：
+        question_list: 题目列表，默认 ALL_QUESTIONS
+        mode: 持久化会话模式标识（如 cli:all / cli:single）
 
     返回字典包含：
         - score: 得分
         - total: 总题数
-        - percentage: 正确率
+        - percentage: 正确率（基于已回答题目）
         - wrong_questions: 错题列表（用于回顾）
+        - early_exit: 是否中途退出
+        - answered_count: 实际作答数
+        - saved: 是否成功持久化
     """
-    if not ALL_QUESTIONS:
+    quiz_questions = get_shuffled_questions(question_list or ALL_QUESTIONS)
+
+    if not quiz_questions:
         print("题库为空，无法开始测试。")
-        return {"score": 0, "total": 0, "percentage": 0, "wrong_questions": []}
+        return {
+            "score": 0,
+            "total": 0,
+            "percentage": 0,
+            "wrong_questions": [],
+            "early_exit": False,
+            "answered_count": 0,
+            "saved": False,
+        }
 
-    # 随机打乱题目出题顺序（使用集中化工具）
-    quiz_questions = get_shuffled_questions(ALL_QUESTIONS)
-
+    start_time = time.time()
+    answers_by_index: Dict[int, List[str]] = {}
     score = 0
     wrong_questions = []
-
     total = len(quiz_questions)
 
     for i, q in enumerate(quiz_questions, 1):
         print("\n" + "=" * 70)
         print(_get_question_display(q, i, total))
 
-        # 获取打乱后的选项视图
         shuffle_info = shuffle_question_options(q)
         display_opts = shuffle_info["shuffled_options"]
         display_to_original = shuffle_info["display_to_original"]
-        original_to_display = shuffle_info["original_to_display"]
         display_correct = shuffle_info["display_correct_answers"]
 
         for opt in display_opts:
@@ -74,28 +145,37 @@ def run_single_round() -> Dict[str, Any]:
             raw = input(prompt).strip()
             if is_quit_command(raw):
                 print("\n⚠️  已中途退出本轮测试。")
+                summary = persist_round_result(mode, quiz_questions, answers_by_index, start_time)
+                if summary["saved"]:
+                    print("✓ 进度已自动保存（历史记录 + 错题统计）")
+                answered = summary["answered_count"]
+                pct = summary["percentage"] if answered > 0 else 0.0
                 return {
-                    "score": score,
+                    "score": summary["correct_count"],
                     "total": total,
-                    "percentage": (score / total * 100) if total > 0 else 0,
+                    "percentage": pct,
                     "wrong_questions": wrong_questions,
-                    "early_exit": True
+                    "early_exit": True,
+                    "answered_count": answered,
+                    "saved": summary["saved"],
                 }
 
-            # 用户输入的是「显示字母」，先解析再转回原始字母用于比较
             display_answers = parse_user_answers(raw)
             user_answers = sorted(display_to_original.get(d, d) for d in display_answers)
 
-            if display_answers or raw == "":  # 允许空输入（后续会判错）
+            if display_answers or raw == "":
                 break
             print("❗ 输入无效，请输入字母（如 A 或 A C）")
+
+        idx = i - 1
+        if user_answers:
+            answers_by_index[idx] = user_answers
 
         correct = q.get("correct_answers", [])
         if user_answers == correct:
             print("✅ 正确！")
             score += 1
         else:
-            # 给用户展示时使用「显示字母」（更友好）
             user_display_str = "、".join(display_answers) if display_answers else "未作答"
             correct_display_str = "、".join(display_correct)
             print(f"❌ 错误！正确答案是：{correct_display_str}")
@@ -103,34 +183,34 @@ def run_single_round() -> Dict[str, Any]:
             print(f"📝 解析：{q.get('explanation', '暂无解析')}")
 
             wrong_questions.append({
+                "id": q.get("id"),
                 "question": q["question"],
                 "your_answer": user_display_str,
                 "correct": correct_display_str,
-                "explanation": q.get("explanation", "")
+                "explanation": q.get("explanation", ""),
             })
 
-    # 本轮结束统计
-    percentage = (score / total * 100) if total > 0 else 0
+    summary = persist_round_result(mode, quiz_questions, answers_by_index, start_time)
+    if summary["saved"]:
+        print("✓ 进度已自动保存（历史记录 + 错题统计）")
+
+    percentage = summary["percentage"]
+    correct_count = summary["correct_count"]
+    answered_count = summary["answered_count"]
 
     print("\n" + "=" * 70)
-    print(f"🎯 本轮测试结束！得分：{score}/{total}")
-    print(f"正确率：{percentage:.1f}%")
-
-    if percentage >= 85:
-        print("🎉 非常优秀！这个水平已经非常接近或超过 CLF-C02 真实考试要求！")
-    elif percentage >= 75:
-        print("👍 很好！继续保持，很有希望一次通过考试！")
-    elif percentage >= 65:
-        print("📈 及格边缘，再针对性复习薄弱领域即可。")
-    else:
-        print("💪 继续努力！重点看错题解析和官方 Exam Guide。")
+    print(f"🎯 本轮测试结束！得分：{correct_count}/{answered_count or total}")
+    print(f"正确率：{percentage:.1f}%（基于已回答题目）")
+    print(get_performance_message(percentage))
 
     return {
-        "score": score,
+        "score": correct_count,
         "total": total,
         "percentage": percentage,
         "wrong_questions": wrong_questions,
-        "early_exit": False
+        "early_exit": False,
+        "answered_count": answered_count,
+        "saved": summary["saved"],
     }
 
 
@@ -147,6 +227,9 @@ def review_wrong_questions(wrong_questions: List[Dict]):
 
     for idx, wq in enumerate(wrong_questions, 1):
         print(f"\n--- 错题 {idx} ---")
+        qid = wq.get("id")
+        if qid:
+            print(f"ID：{qid}")
         print(f"题目：{wq['question']}")
         print(f"你的答案：{wq['your_answer']}   |   正确答案：{wq['correct']}")
         print(f"解析：{wq['explanation']}")

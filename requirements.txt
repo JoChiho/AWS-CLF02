@@ -1,0 +1,4 @@
+# AWS CLF-C02 刷题系统依赖
+# Python 3.9+
+
+customtkinter>=5.2.0
