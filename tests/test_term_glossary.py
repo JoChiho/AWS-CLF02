@@ -3,7 +3,7 @@
 
 import unittest
 
-from gui.term_glossary import annotate_text
+from gui.term_glossary import TERM_ANNOTATIONS, annotate_text
 
 
 class TestTermGlossary(unittest.TestCase):
@@ -58,6 +58,33 @@ class TestTermGlossary(unittest.TestCase):
     def test_enterprise_support(self):
         out = annotate_text("Enterprise Support 包含 TAM 服务")
         self.assertIn("Enterprise Support（企业级支持）", out)
+
+    def test_cost_explorer_unified_translation(self):
+        full = annotate_text("使用 AWS Cost Explorer 分析账单")
+        short = annotate_text("使用 Cost Explorer 分析账单")
+        self.assertIn("AWS Cost Explorer（成本分析器）", full)
+        self.assertIn("Cost Explorer（成本分析器）", short)
+
+    def test_aws_amazon_short_form_translations_match(self):
+        """AWS/Amazon 前缀与短形式应使用相同中文译名。"""
+        # KMS 密钥类型：带 AWS 前缀表示 AWS 托管/自有，与泛称 Managed/Owned Key 不同
+        allowed_mismatch = {
+            ("AWS Managed Key", "Managed Key"),
+            ("AWS Owned Key", "Owned Key"),
+        }
+        by_en = {en.lower(): zh for en, zh in TERM_ANNOTATIONS}
+        mismatches = []
+        for en, zh in TERM_ANNOTATIONS:
+            for prefix in ("AWS ", "Amazon "):
+                if not en.startswith(prefix):
+                    continue
+                core = en[len(prefix) :]
+                short_zh = by_en.get(core.lower())
+                if short_zh is not None and short_zh != zh:
+                    if (en, core) in allowed_mismatch:
+                        continue
+                    mismatches.append((en, zh, core, short_zh))
+        self.assertEqual(mismatches, [], f"术语不一致: {mismatches[:5]}")
 
 
 if __name__ == "__main__":

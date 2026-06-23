@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """题库数据完整性回归测试"""
 
+import re
 import unittest
 
 from data import (
@@ -15,6 +16,25 @@ from data import shuffle_question_options
 
 OFFICIAL_DOMAINS = set(DOMAINS)
 REQUIRED_FIELDS = {"id", "question", "options", "correct_answers", "explanation", "domain"}
+_CN_SELECT_COUNT = {
+    "一": 1, "两": 2, "二": 2, "三": 3, "四": 4, "五": 5,
+    "六": 6, "七": 7, "八": 8, "九": 9, "十": 10,
+}
+
+
+def _parse_select_count(question: str) -> int | None:
+    match = re.search(r"选择\s*([一二两三四五六七八九十\d]+)\s*项", question)
+    if not match:
+        return None
+    token = match.group(1)
+    if token.isdigit():
+        return int(token)
+    return _CN_SELECT_COUNT.get(token)
+
+
+def _normalize_question_stem(question: str) -> str:
+    stem = re.sub(r"（选择[^）]+）", "", question.strip())
+    return re.sub(r"\s+", "", stem)
 
 
 class TestQuestionBankIntegrity(unittest.TestCase):
@@ -77,6 +97,24 @@ class TestQuestionBankIntegrity(unittest.TestCase):
     def test_explanations_are_non_empty(self):
         for q in ALL_QUESTIONS:
             self.assertTrue(q["explanation"].strip(), f"{q['id']} has empty explanation")
+
+    def test_multi_select_count_matches_correct_answers(self):
+        mismatches = []
+        for q in MULTI_CHOICE_QUESTIONS:
+            expected = _parse_select_count(q["question"])
+            actual = len(q["correct_answers"])
+            if expected is not None and expected != actual:
+                mismatches.append(f"{q['id']}: asks {expected}, answers {actual}")
+        self.assertEqual(mismatches, [])
+
+    def test_no_cross_bank_duplicate_stems(self):
+        single_stems = {_normalize_question_stem(q["question"]): q["id"] for q in SINGLE_CHOICE_QUESTIONS}
+        duplicates = []
+        for q in MULTI_CHOICE_QUESTIONS:
+            stem = _normalize_question_stem(q["question"])
+            if stem in single_stems:
+                duplicates.append((single_stems[stem], q["id"]))
+        self.assertEqual(duplicates, [])
 
 
 class TestShuffleQuestionOptions(unittest.TestCase):

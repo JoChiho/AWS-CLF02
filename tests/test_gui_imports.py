@@ -20,13 +20,19 @@ class TestGuiImports(unittest.TestCase):
         from gui.stats_view import StatsMixin
         from gui.mock_exam import MockExamMixin
         from gui.wrong_book_view import WrongBookMixin
+        from gui.custom_practice_view import CustomPracticeMixin
         from gui.constants import DOMAIN_DISPLAY_NAMES
 
         self.assertTrue(hasattr(MenuMixin, "_build_menu_ui"))
         self.assertTrue(hasattr(QuizMixin, "_begin_quiz_session"))
+        self.assertTrue(hasattr(QuizMixin, "_toggle_explanation_layout"))
+        self.assertTrue(hasattr(QuizMixin, "_apply_explanation_layout"))
+        self.assertTrue(hasattr(QuizMixin, "_increase_quiz_font"))
+        self.assertTrue(hasattr(QuizMixin, "_decrease_quiz_font"))
         self.assertTrue(hasattr(StatsMixin, "_show_history"))
         self.assertTrue(hasattr(MockExamMixin, "_start_mock_exam"))
         self.assertTrue(hasattr(WrongBookMixin, "_show_wrong_book"))
+        self.assertTrue(hasattr(CustomPracticeMixin, "_show_custom_practice_dialog"))
         self.assertIn("Cloud Concepts", DOMAIN_DISPLAY_NAMES)
 
     def test_app_composes_mixins(self):
@@ -36,12 +42,14 @@ class TestGuiImports(unittest.TestCase):
         from gui.stats_view import StatsMixin
         from gui.mock_exam import MockExamMixin
         from gui.wrong_book_view import WrongBookMixin
+        from gui.custom_practice_view import CustomPracticeMixin
 
         self.assertTrue(issubclass(CLFQuizApp, MenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, QuizMixin))
         self.assertTrue(issubclass(CLFQuizApp, StatsMixin))
         self.assertTrue(issubclass(CLFQuizApp, MockExamMixin))
         self.assertTrue(issubclass(CLFQuizApp, WrongBookMixin))
+        self.assertTrue(issubclass(CLFQuizApp, CustomPracticeMixin))
 
 
 if __name__ == "__main__":

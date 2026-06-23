@@ -92,6 +92,23 @@ class MenuMixin:
             command=lambda: self._start_quiz(ALL_QUESTIONS, "all"),
         ).pack(pady=6, fill="x", padx=60)
 
+        ctk.CTkLabel(
+            scrollable,
+            text="自定义练习",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            text_color="#9b59b6",
+        ).pack(anchor="w", padx=60, pady=(12, 6))
+
+        ctk.CTkButton(
+            scrollable,
+            text="自定义练习（抽 10/20/30/50 题 · 筛选未做/低正确率）",
+            height=48,
+            font=ctk.CTkFont(size=16, weight="bold"),
+            fg_color="#8e44ad",
+            hover_color="#9b59b6",
+            command=self._show_custom_practice_dialog,
+        ).pack(pady=6, fill="x", padx=60)
+
         ctk.CTkButton(
             scrollable,
             text="打开错题本（筛选 · Top10 · 单题练习 · 已掌握）",

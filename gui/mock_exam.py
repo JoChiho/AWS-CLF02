@@ -17,6 +17,11 @@ from data.mock_exam import (
 )
 from data.progress import record_session, update_question_stat
 from gui.constants import DOMAIN_DISPLAY_NAMES, MOCK_EXAM_DURATION_MIN
+from gui.wrapped_label import (
+    apply_wraplength,
+    measure_option_wraplength,
+    measure_question_wraplength,
+)
 
 
 class MockExamMixin:
@@ -191,6 +196,7 @@ class MockExamMixin:
             wraplength=620,
             justify="left",
             anchor="w",
+            height=0,
         )
         self.question_label.pack(fill="x", anchor="w", pady=(6, 6))
 
@@ -315,10 +321,7 @@ class MockExamMixin:
 
         scale = max(0.7, min(1.1, self.winfo_width() / 1000.0))
         opt_font_size = int(13 * scale)
-        try:
-            init_wrap = max(280, self.winfo_width() - 160)
-        except Exception:
-            init_wrap = 620
+        init_wrap = measure_option_wraplength(self)
 
         if self.is_multi:
             for letter in ["A", "B", "C", "D", "E"][: len(display_options)]:
@@ -345,11 +348,12 @@ class MockExamMixin:
                     wraplength=init_wrap,
                     justify="left",
                     anchor="w",
+                    height=0,
                 )
-                text_label.grid(row=0, column=1, sticky="w", pady=3)
+                text_label.grid(row=0, column=1, sticky="ew", pady=3)
                 row.grid_columnconfigure(1, weight=1)
 
-                def _toggle(var=var, ind=indicator, event=None):
+                def _toggle(event, var=var, ind=indicator):
                     ind.toggle()
 
                 text_label.bind("<Button-1>", _toggle)
@@ -383,11 +387,12 @@ class MockExamMixin:
                     wraplength=init_wrap,
                     justify="left",
                     anchor="w",
+                    height=0,
                 )
-                text_label.grid(row=0, column=1, sticky="w", pady=3)
+                text_label.grid(row=0, column=1, sticky="ew", pady=3)
                 row.grid_columnconfigure(1, weight=1)
 
-                def _select(ltr=letter, event=None):
+                def _select(event, ltr=letter):
                     self.radio_var.set(ltr)
 
                 text_label.bind("<Button-1>", _select)
@@ -647,22 +652,12 @@ class MockExamMixin:
             pass
 
     def _mock_update_wraplength(self):
-        self.update_idletasks()
-        try:
-            win_width = self.winfo_width()
-            if win_width > 400:
-                q_wrap = max(320, win_width - 135)
-                opt_wrap = max(280, win_width - 155)
-            else:
-                q_wrap = 320
-                opt_wrap = 280
-        except Exception:
-            q_wrap = 680
-            opt_wrap = 600
+        q_wrap = measure_question_wraplength(self)
+        opt_wrap = measure_option_wraplength(self)
 
         try:
             if hasattr(self, "question_label") and self.question_label.winfo_exists():
-                self.question_label.configure(wraplength=q_wrap)
+                apply_wraplength(self.question_label, q_wrap)
         except Exception:
             pass
 
@@ -671,6 +666,6 @@ class MockExamMixin:
                 continue
             try:
                 if lbl.winfo_exists():
-                    lbl.configure(wraplength=opt_wrap)
+                    apply_wraplength(lbl, opt_wrap)
             except Exception:
                 pass

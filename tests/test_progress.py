@@ -26,6 +26,14 @@ class TestProgressPersistence(unittest.TestCase):
         self.assertEqual(data["version"], 1)
         self.assertEqual(data["sessions"], [])
         self.assertEqual(data["question_stats"], {})
+        self.assertEqual(data["preferences"], {})
+
+    def test_practice_font_scale_persistence(self):
+        self.assertEqual(progress.get_practice_font_scale(), 1.0)
+        progress.set_practice_font_scale(1.15)
+        self.assertEqual(progress.get_practice_font_scale(), 1.15)
+        data = progress.load_progress()
+        self.assertEqual(data["preferences"]["practice_font_scale"], 1.15)
 
     def test_record_session_persists_and_trims(self):
         for i in range(12):

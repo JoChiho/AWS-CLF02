@@ -36,6 +36,7 @@ def _default_progress() -> Dict[str, Any]:
         "last_updated": _now_iso(),
         "sessions": [],           # 最近 10 次会话，最新在前
         "question_stats": {},     # qid -> 累计统计 + consecutive_correct + mastered
+        "preferences": {},        # UI 偏好（如练习模式字体大小）
     }
 
 
@@ -79,6 +80,8 @@ def load_progress() -> Dict[str, Any]:
             data["question_stats"] = {}
         if "last_updated" not in data:
             data["last_updated"] = _now_iso()
+        if "preferences" not in data:
+            data["preferences"] = {}
 
         return data
     except Exception:
@@ -379,6 +382,23 @@ def clear_all_progress() -> bool:
         return True
     except Exception:
         return False
+
+
+def get_practice_font_scale() -> float:
+    """读取练习模式用户字体缩放（默认 1.0）。"""
+    try:
+        raw = load_progress().get("preferences", {}).get("practice_font_scale", 1.0)
+        return float(raw)
+    except (TypeError, ValueError):
+        return 1.0
+
+
+def set_practice_font_scale(scale: float) -> bool:
+    """保存练习模式用户字体缩放。"""
+    data = load_progress()
+    prefs = data.setdefault("preferences", {})
+    prefs["practice_font_scale"] = round(float(scale), 2)
+    return save_progress(data)
 
 
 def get_progress_file_path() -> Path:

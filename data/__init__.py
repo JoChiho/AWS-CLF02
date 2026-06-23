@@ -164,6 +164,18 @@ def get_shuffled_all_questions() -> list[dict]:
     return get_shuffled_questions(ALL_QUESTIONS)
 
 
+from .custom_practice import (  # noqa: E402
+    FILTER_ALL,
+    FILTER_LOW_ACCURACY,
+    FILTER_NEVER,
+    SCOPE_ALL,
+    SCOPE_MULTI,
+    SCOPE_SINGLE,
+    CustomPracticeResult,
+    build_custom_practice_mode,
+    get_practice_pool,
+    select_custom_practice_questions,
+)
 from .mock_exam import (  # noqa: E402
     allocate_domain_counts,
     select_mock_exam_questions,
@@ -192,6 +204,16 @@ __all__ = [
     "get_shuffled_single_choice_questions",
     "get_shuffled_multi_choice_questions",
     "get_shuffled_all_questions",
+    "FILTER_ALL",
+    "FILTER_LOW_ACCURACY",
+    "FILTER_NEVER",
+    "SCOPE_ALL",
+    "SCOPE_MULTI",
+    "SCOPE_SINGLE",
+    "CustomPracticeResult",
+    "build_custom_practice_mode",
+    "get_practice_pool",
+    "select_custom_practice_questions",
     "allocate_domain_counts",
     "select_mock_exam_questions",
     "score_mock_exam",

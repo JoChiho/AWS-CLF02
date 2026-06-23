@@ -1497,7 +1497,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M91",
-        "question": "关于 AWS 灾难恢复（DR）策略，以下哪些描述与策略名称匹配正确？（选择三项）",
+        "question": "关于 AWS 灾难恢复（DR）策略，以下哪些描述与策略名称匹配正确？（选择四项）",
         "options": [
             "A. Pilot Light：核心基础设施（如数据库）在备用 Region 持续运行，应用层在故障时才启动",
             "B. Warm Standby：备用 Region 运行缩减版的完整生产环境，故障时快速扩容接管流量",
@@ -1516,7 +1516,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M92",
-        "question": "以下关于 AWS 存储服务的适用场景描述，哪些是正确的？（选择三项）",
+        "question": "以下关于 AWS 存储服务的适用场景描述，哪些是正确的？（选择四项）",
         "options": [
             "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
             "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
@@ -1587,7 +1587,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M96",
-        "question": "关于 AWS 数据传输费用，以下哪些说法是正确的？（选择三项）",
+        "question": "关于 AWS 数据传输费用，以下哪些说法是正确的？（选择四项）",
         "options": [
             "A. 从互联网传入 AWS 的数据（入方向）大多数情况下是免费的",
             "B. 从 AWS 传出到互联网的数据（出方向）通常需要付费，且费用较高",
@@ -1606,7 +1606,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M97",
-        "question": "以下关于 Amazon S3 高级功能的描述，哪些是正确的？（选择三项）",
+        "question": "以下关于 Amazon S3 高级功能的描述，哪些是正确的？（选择四项）",
         "options": [
             "A. S3 Access Points 可以为大型共享存储桶创建多个独立的访问入口，每个入口拥有独立的权限策略",
             "B. S3 Object Ownership 主要用于控制上传对象的所有权（BucketOwnerPreferred 或 BucketOwnerEnforced）",
@@ -1643,7 +1643,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M99",
-        "question": "以下关于云原生核心概念的描述，哪些是正确的？（选择三项）",
+        "question": "以下关于云原生核心概念的描述，哪些是正确的？（选择四项）",
         "options": [
             "A. Scalability（可扩展性）指系统在负载增加时能够通过增加资源来维持或提高性能",
             "B. Elasticity（弹性）强调根据实际需求自动、快速地增减资源（Scale Out/In 或 Scale Up/Down），通常与按需付费结合",
@@ -1733,7 +1733,7 @@ MULTI_CHOICE_QUESTIONS = [
     },
     {
         "id": "M104",
-        "question": "在构建企业级 AWS 治理体系时，以下哪些服务组合通常被推荐一起使用？（选择三项）",
+        "question": "在构建企业级 AWS 治理体系时，以下哪些服务组合通常被推荐一起使用？（选择四项）",
         "options": [
             "A. AWS Control Tower（多账户着陆区和 Guardrails）",
             "B. AWS Service Catalog（自助服务与标准化治理）",
