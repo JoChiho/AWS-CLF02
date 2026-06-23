@@ -19,9 +19,9 @@ REQUIRED_FIELDS = {"id", "question", "options", "correct_answers", "explanation"
 
 class TestQuestionBankIntegrity(unittest.TestCase):
     def test_total_question_count(self):
-        self.assertEqual(len(SINGLE_CHOICE_QUESTIONS), 136)
-        self.assertEqual(len(MULTI_CHOICE_QUESTIONS), 109)
-        self.assertEqual(len(ALL_QUESTIONS), 245)
+        self.assertEqual(len(SINGLE_CHOICE_QUESTIONS), 155)
+        self.assertEqual(len(MULTI_CHOICE_QUESTIONS), 120)
+        self.assertEqual(len(ALL_QUESTIONS), 275)
 
     def test_all_questions_have_required_fields(self):
         for q in ALL_QUESTIONS:

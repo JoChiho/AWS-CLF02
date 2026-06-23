@@ -12,6 +12,10 @@ MOCK_EXAM_QUESTION_COUNT = 65
 MOCK_EXAM_DURATION_MIN = 90
 MOCK_EXAM_PASS_PERCENT = 70.0
 
+# 连续答对 N 次后自动标为「已掌握」，默认不再出现在错题本主列表
+MASTER_STREAK_REQUIRED = 2
+WRONG_BOOK_TOP_N_DEFAULT = 10
+
 ACCURACY_TREND_TEXT = {
     "improving": "📈 最近表现有明显进步！继续保持",
     "declining": "📉 最近正确率有所下降，建议多看错题解析",

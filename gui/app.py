@@ -7,7 +7,8 @@ AWS CLF-C02 图形界面刷题系统（练习模式）
     menu.py       - 主菜单
     quiz_view.py  - 答题界面
     stats_view.py - 历史 / 错题本 / 统计
-    mock_exam.py  - 模拟考试（65 题 / 90 分钟）
+    mock_exam.py     - 模拟考试（65 题 / 90 分钟）
+    wrong_book_view.py - 增强错题本
 """
 
 from typing import Dict, List, Any
@@ -18,9 +19,12 @@ from gui.menu import MenuMixin
 from gui.quiz_view import QuizMixin
 from gui.stats_view import StatsMixin
 from gui.mock_exam import MockExamMixin
+from gui.wrong_book_view import WrongBookMixin
 
 
-class CLFQuizApp(MenuMixin, QuizMixin, StatsMixin, MockExamMixin, ctk.CTk):
+class CLFQuizApp(
+    MenuMixin, QuizMixin, StatsMixin, MockExamMixin, WrongBookMixin, ctk.CTk
+):
     """AWS CLF-C02 刷题主窗口（组合各功能 Mixin）"""
 
     def __init__(self):

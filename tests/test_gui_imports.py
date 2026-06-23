@@ -19,12 +19,14 @@ class TestGuiImports(unittest.TestCase):
         from gui.quiz_view import QuizMixin
         from gui.stats_view import StatsMixin
         from gui.mock_exam import MockExamMixin
+        from gui.wrong_book_view import WrongBookMixin
         from gui.constants import DOMAIN_DISPLAY_NAMES
 
         self.assertTrue(hasattr(MenuMixin, "_build_menu_ui"))
         self.assertTrue(hasattr(QuizMixin, "_begin_quiz_session"))
         self.assertTrue(hasattr(StatsMixin, "_show_history"))
         self.assertTrue(hasattr(MockExamMixin, "_start_mock_exam"))
+        self.assertTrue(hasattr(WrongBookMixin, "_show_wrong_book"))
         self.assertIn("Cloud Concepts", DOMAIN_DISPLAY_NAMES)
 
     def test_app_composes_mixins(self):
@@ -33,11 +35,13 @@ class TestGuiImports(unittest.TestCase):
         from gui.quiz_view import QuizMixin
         from gui.stats_view import StatsMixin
         from gui.mock_exam import MockExamMixin
+        from gui.wrong_book_view import WrongBookMixin
 
         self.assertTrue(issubclass(CLFQuizApp, MenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, QuizMixin))
         self.assertTrue(issubclass(CLFQuizApp, StatsMixin))
         self.assertTrue(issubclass(CLFQuizApp, MockExamMixin))
+        self.assertTrue(issubclass(CLFQuizApp, WrongBookMixin))
 
 
 if __name__ == "__main__":

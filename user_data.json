@@ -1,7 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-06-22T10:31:40",
+  "last_updated": "2026-06-22T13:18:49",
   "sessions": [
+    {
+      "timestamp": "2026-06-22T13:18:49",
+      "mode": "single",
+      "total": 155,
+      "answered": 2,
+      "correct": 2,
+      "accuracy": 100.0,
+      "duration_sec": 77
+    },
+    {
+      "timestamp": "2026-06-22T13:17:23",
+      "mode": "wrong_book:all_visible",
+      "total": 32,
+      "answered": 32,
+      "correct": 26,
+      "accuracy": 81.2,
+      "duration_sec": 613
+    },
+    {
+      "timestamp": "2026-06-22T13:06:38",
+      "mode": "wrong_book",
+      "total": 32,
+      "answered": 32,
+      "correct": 15,
+      "accuracy": 46.9,
+      "duration_sec": 8778
+    },
     {
       "timestamp": "2026-06-22T10:31:40",
       "mode": "single",
@@ -59,30 +86,6 @@
       "correct": 3,
       "accuracy": 6.5,
       "duration_sec": 14
-    },
-    {
-      "timestamp": "2026-05-27T10:11:25",
-      "mode": "single",
-      "total": 46,
-      "correct": 9,
-      "accuracy": 19.6,
-      "duration_sec": 57
-    },
-    {
-      "timestamp": "2026-05-27T09:44:04",
-      "mode": "domain:Cloud Concepts",
-      "total": 14,
-      "correct": 8,
-      "accuracy": 57.1,
-      "duration_sec": 194
-    },
-    {
-      "timestamp": "2026-05-27T09:40:39",
-      "mode": "single",
-      "total": 46,
-      "correct": 5,
-      "accuracy": 10.9,
-      "duration_sec": 18
     }
   ],
   "question_stats": {
@@ -95,12 +98,15 @@
       ]
     },
     "S11": {
-      "correct_count": 1,
-      "wrong_count": 2,
-      "last_attempt": "2026-05-27T11:07:31",
+      "correct_count": 2,
+      "wrong_count": 3,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "A"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S02": {
       "correct_count": 9,
@@ -151,28 +157,37 @@
       ]
     },
     "S08": {
-      "correct_count": 3,
-      "wrong_count": 3,
-      "last_attempt": "2026-05-27T11:31:47",
+      "correct_count": 4,
+      "wrong_count": 4,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S09": {
-      "correct_count": 4,
+      "correct_count": 6,
       "wrong_count": 2,
-      "last_attempt": "2026-05-27T11:07:31",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "A"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S10": {
-      "correct_count": 5,
+      "correct_count": 7,
       "wrong_count": 2,
-      "last_attempt": "2026-05-27T11:31:47",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S12": {
       "correct_count": 2,
@@ -199,28 +214,37 @@
       ]
     },
     "S15": {
-      "correct_count": 2,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "correct_count": 3,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S16": {
-      "correct_count": 3,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:31:46",
+      "correct_count": 4,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S35": {
-      "correct_count": 2,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "correct_count": 3,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "M01": {
       "correct_count": 1,
@@ -232,13 +256,16 @@
       ]
     },
     "M02": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T09:44:04",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B",
-        "E"
-      ]
+        "D"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "M03": {
       "correct_count": 1,
@@ -251,42 +278,54 @@
       ]
     },
     "M04": {
-      "correct_count": 1,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T10:22:28",
+      "correct_count": 2,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "A",
         "B",
         "C"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "M05": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T09:44:04",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B",
-        "D"
-      ]
+        "C"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "M30": {
       "correct_count": 1,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T10:22:28",
+      "wrong_count": 3,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "A",
-        "C",
+        "D",
         "E"
-      ]
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "M43": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T09:44:04",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A",
+        "B",
         "D"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "M46": {
       "correct_count": 1,
@@ -325,21 +364,27 @@
       ]
     },
     "M14": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T10:21:23",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "B",
-        "D"
-      ]
+        "A",
+        "B"
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "S42": {
-      "correct_count": 1,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:31:46",
+      "correct_count": 2,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S44": {
       "correct_count": 2,
@@ -350,20 +395,26 @@
       ]
     },
     "S32": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S43": {
       "correct_count": 2,
-      "wrong_count": 1,
-      "last_attempt": "2026-06-22T10:31:40",
+      "wrong_count": 3,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A"
-      ]
+        "D"
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "S17": {
       "correct_count": 1,
@@ -374,20 +425,26 @@
       ]
     },
     "S22": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "A"
-      ]
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "S40": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "C"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S41": {
       "correct_count": 2,
@@ -454,20 +511,26 @@
       ]
     },
     "S19": {
-      "correct_count": 1,
+      "correct_count": 3,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:31:47",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S36": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "C"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S26": {
       "correct_count": 3,
@@ -486,28 +549,37 @@
       ]
     },
     "S25": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S34": {
-      "correct_count": 1,
+      "correct_count": 3,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:31:47",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S45": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:07:31",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "A"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S21": {
       "correct_count": 1,
@@ -519,19 +591,25 @@
     },
     "S37": {
       "correct_count": 0,
-      "wrong_count": 2,
-      "last_attempt": "2026-06-22T10:31:40",
+      "wrong_count": 4,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "C"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "S31": {
-      "correct_count": 0,
-      "wrong_count": 2,
-      "last_attempt": "2026-05-27T21:41:36",
+      "correct_count": 1,
+      "wrong_count": 3,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S38": {
       "correct_count": 2,
@@ -558,12 +636,15 @@
       ]
     },
     "S66": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T11:31:46",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S63": {
       "correct_count": 1,
@@ -574,12 +655,15 @@
       ]
     },
     "S65": {
-      "correct_count": 1,
+      "correct_count": 3,
       "wrong_count": 1,
-      "last_attempt": "2026-06-22T10:31:40",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S58": {
       "correct_count": 1,
@@ -590,12 +674,15 @@
       ]
     },
     "S50": {
-      "correct_count": 1,
+      "correct_count": 2,
       "wrong_count": 0,
-      "last_attempt": "2026-05-27T11:31:47",
+      "last_attempt": "2026-06-22T13:18:49",
       "last_answer": [
         "B"
-      ]
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S127": {
       "correct_count": 1,
@@ -606,12 +693,15 @@
       ]
     },
     "S59": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-05-27T21:41:36",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "C"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S60": {
       "correct_count": 1,
@@ -654,20 +744,26 @@
       ]
     },
     "S70": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-05-27T21:41:36",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "A"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S57": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-06-22T10:31:40",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
         "C"
-      ]
+      ],
+      "consecutive_correct": 0,
+      "mastered": false,
+      "mastered_at": null
     },
     "S47": {
       "correct_count": 1,
@@ -686,12 +782,15 @@
       ]
     },
     "S72": {
-      "correct_count": 0,
-      "wrong_count": 1,
-      "last_attempt": "2026-06-22T10:31:40",
+      "correct_count": 1,
+      "wrong_count": 2,
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "C"
-      ]
+        "A"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     },
     "S84": {
       "correct_count": 1,
@@ -710,12 +809,26 @@
       ]
     },
     "S125": {
-      "correct_count": 0,
+      "correct_count": 2,
       "wrong_count": 1,
-      "last_attempt": "2026-06-22T10:31:40",
+      "last_attempt": "2026-06-22T13:17:23",
       "last_answer": [
-        "D"
-      ]
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
+    },
+    "S62": {
+      "correct_count": 1,
+      "wrong_count": 0,
+      "last_attempt": "2026-06-22T13:18:49",
+      "last_answer": [
+        "B"
+      ],
+      "consecutive_correct": 1,
+      "mastered": false,
+      "mastered_at": null
     }
   }
 }

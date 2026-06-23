@@ -52,6 +52,18 @@ python main.py --cli
 
 首次完成任意一套练习后，系统会自动在项目根目录生成 `user_data.json`，用于保存你的历史记录和错题统计。
 
+### Windows 打包（免装 Python）
+
+```bash
+# 1. 安装打包依赖
+pip install -r requirements-dev.txt
+
+# 2. 生成 dist/AWS-CLF-C02-Quiz/ 分发目录
+python build/build_windows.py
+```
+
+将 `dist/AWS-CLF-C02-Quiz/` **整个文件夹**复制到目标机器，运行 `AWS-CLF-C02-Quiz.exe` 即可。学习进度保存在 exe 同级目录的 `user_data.json`。
+
 ---
 
 ## 📊 当前题库状态（最新）
@@ -91,7 +103,7 @@ python main.py --cli
 
 4. **我的学习**（持久化功能）
    - **历史记录（近10次）**：查看最近练习的详细数据
-   - **错题本（累计统计）**：按错误率排序，支持「练习全部错题」
+   - **错题本（增强）**：全量滚动列表、领域筛选、练 Top 10 / 单题、连续答对自动掌握
    - **我的统计与趋势**：平均正确率、最高/最低、简单进步提示
 
 ### 答题流程
@@ -125,13 +137,19 @@ python main.py --cli
 ```
 aws-clf02-sim/
 ├── main.py                 # 入口（默认 GUI，可加 --cli）
-├── requirements.txt        # Python 依赖清单
+├── app_paths.py            # 开发/打包模式路径解析
+├── requirements.txt        # 运行依赖
+├── requirements-dev.txt    # 开发 + PyInstaller 打包依赖
+├── build/
+│   ├── clf_quiz.spec       # PyInstaller 配置
+│   └── build_windows.py    # 一键打包脚本
 ├── gui/
 │   ├── app.py              # 应用入口（组合各 Mixin）
 │   ├── menu.py             # 主菜单
 │   ├── quiz_view.py        # 答题界面
 │   ├── stats_view.py       # 历史 / 错题本 / 统计
 │   ├── mock_exam.py        # 模拟考试
+│   ├── wrong_book_view.py  # 增强错题本
 │   └── constants.py        # GUI 共享常量
 ├── core/
 │   ├── engine.py           # CLI 核心引擎

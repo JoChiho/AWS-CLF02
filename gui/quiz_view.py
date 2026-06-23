@@ -13,10 +13,15 @@ from data import (
     get_shuffled_questions,
 )
 from data.progress import record_session, update_question_stat
+from gui.term_glossary import annotate_text
 
 
 class QuizMixin:
     """练习模式答题流程"""
+
+    def _practice_text(self, text: str) -> str:
+        """练习模式：英文服务名后附中文标注，便于记忆。"""
+        return annotate_text(text or "")
 
     def _get_shuffle_info(self, quiz_idx: int, q: Dict[str, Any]) -> Dict[str, Any]:
         """获取（或生成）当前题目的打乱信息，缓存以保证同一会话内稳定"""
@@ -62,13 +67,13 @@ class QuizMixin:
             return
         self._begin_quiz_session(questions, f"domain:{domain}")
 
-    def _start_wrong_book_quiz(self, wrong_ids: List[str]):
+    def _start_wrong_book_quiz(self, wrong_ids: List[str], mode: str = "wrong_book"):
         """从错题本启动针对性练习"""
         questions = get_wrong_book_questions(wrong_ids)
         if not questions:
             print("错题本为空，无法开始练习")
             return
-        self._begin_quiz_session(questions, "wrong_book")
+        self._begin_quiz_session(questions, mode)
 
     def _build_quiz_ui(self):
         self.grid_rowconfigure(0, weight=0)
@@ -190,7 +195,7 @@ class QuizMixin:
         self.progress_label.configure(text=f"{index + 1} / {self.total}")
         self.question_counter.configure(text=f"第 {index + 1} 题 / 共 {self.total} 题")
         self.domain_label.configure(text=f"领域：{q.get('domain', '未分类')}")
-        self.question_label.configure(text=q["question"])
+        self.question_label.configure(text=self._practice_text(q["question"]))
 
         self.update_idletasks()
         self._update_wraplength()
@@ -244,7 +249,7 @@ class QuizMixin:
 
                 text_label = ctk.CTkLabel(
                     row,
-                    text=display_options[ord(letter) - ord("A")],
+                    text=self._practice_text(display_options[ord(letter) - ord("A")]),
                     font=ctk.CTkFont(size=opt_font_size),
                     wraplength=init_wrap,
                     justify="left",
@@ -297,7 +302,7 @@ class QuizMixin:
 
                 text_label = ctk.CTkLabel(
                     row,
-                    text=opt_text,
+                    text=self._practice_text(opt_text),
                     font=ctk.CTkFont(size=opt_font_size),
                     wraplength=init_wrap,
                     justify="left",
@@ -382,7 +387,8 @@ class QuizMixin:
         self.explain_text.insert("end", f"{status}\n\n")
         self.explain_text.insert("end", f"你的答案：{', '.join(user_ans_display)}\n")
         self.explain_text.insert("end", f"正确答案：{', '.join(correct_display)}\n\n")
-        self.explain_text.insert("end", f"📝 解析：\n{q.get('explanation', '暂无解析')}")
+        explanation = self._practice_text(q.get("explanation", "暂无解析"))
+        self.explain_text.insert("end", f"📝 解析：\n{explanation}")
         self.explain_text.configure(state="disabled")
 
     def _on_window_resize(self, event):

@@ -8,6 +8,10 @@ import sys
 import io
 import json
 import statistics
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 from data.single_choice import SINGLE_CHOICE_QUESTIONS
@@ -152,7 +156,7 @@ def analyze():
         print()
 
     # ========== 导出 JSON（完整数据，便于后续脚本处理） ==========
-    with open("option_length_issues.json", "w", encoding="utf-8") as f:
+    with open(ROOT / "option_length_issues.json", "w", encoding="utf-8") as f:
         json.dump(issues, f, ensure_ascii=False, indent=2)
 
     # ========== 生成人类可读的详细 TXT 报告 ==========
@@ -192,7 +196,7 @@ def analyze():
     report_lines.append("4. 错误选项应使用『具体但错误』的表述，而非『泛泛而正确但不完整』或『过于简短』。")
     report_lines.append("=" * 80)
 
-    with open("option_length_audit_report.txt", "w", encoding="utf-8") as f:
+    with open(ROOT / "option_length_audit_report.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(report_lines))
 
     print(f"\n已导出:")

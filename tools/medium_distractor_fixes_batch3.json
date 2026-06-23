@@ -1,0 +1,114 @@
+{
+  "M30": {
+    "options": [
+      "A. 多可用区部署",
+      "B. 跨 Region 异步复制与故障转移架构",
+      "C. Auto Scaling",
+      "D. 单可用区单台 EC2 实例与 EBS 块存储部署",
+      "E. Elastic Load Balancing"
+    ],
+    "explanation": "正确答案：\n\n「多可用区部署」\n「Auto Scaling」\n「Elastic Load Balancing」\n\n错误选项分析：\n\n「跨 Region 异步复制与故障转移架构」是错误的：跨 Region 复制主要用于灾难恢复和合规，不是实现同一 Region 内高可用的最直接方式。\n\n「单可用区单台 EC2 实例与 EBS 块存储部署」是错误的：单台实例配合单块 EBS 存在明显单点故障，不利于高可用架构。\n\n**重点考点 / 关键词补充：**\n- **高可用 (High Availability)** 核心要素：消除单点故障 + 自动故障转移 + 冗余。\n- **多可用区部署 (Multi-AZ)**：资源跨 AZ 部署，AZ 故障时自动切换。\n- **Auto Scaling**：根据负载自动增减实例数量，实现弹性。\n- **Elastic Load Balancing**：将流量分发到健康实例，结合健康检查实现故障转移。\n- 经典高可用架构三件套：Multi-AZ + Auto Scaling + ELB。"
+  },
+  "S20": {
+    "options": [
+      "A. EC2 实例的 CPU、内存和网络 I/O 性能指标",
+      "B. 对 AWS 账户中资源的 API 调用历史",
+      "C. S3 对象被读取或下载时的实际文件内容详情",
+      "D. VPC 内各子网之间传输的网络数据包详细内容"
+    ],
+    "explanation": "「对 AWS 账户中资源的 API 调用历史」是正确的。\n\nAWS CloudTrail 主要记录对 AWS 账户中资源的 API 调用历史，包括通过控制台、CLI、SDK 发起的所有操作，是安全审计、合规取证和事件调查的核心服务。\n\n其他选项分析：\n\n「EC2 实例的 CPU、内存和网络 I/O 性能指标」是错误的：这是 Amazon CloudWatch 负责采集和监控的性能指标，不是 CloudTrail 的记录范围。\n\n「S3 对象被读取或下载时的实际文件内容详情」是错误的：CloudTrail 记录的是 API 操作本身，不会记录对象内容；对象级访问详情需依赖 S3 访问日志或 CloudTrail 数据事件。\n\n「VPC 内各子网之间传输的网络数据包详细内容」是错误的：网络流量分析通常使用 VPC Flow Logs，它记录 IP 层流量元数据而非 API 调用历史。\n\n**重点考点 / 关键词补充：**\n- CloudTrail = API 调用日志（谁在什么时候做了什么）\n- 强烈建议开启所有区域的 CloudTrail\n- 与 CloudWatch 的区别：CloudTrail 关注“做了什么操作”，CloudWatch 关注“资源状态和指标”"
+  },
+  "S80": {
+    "options": [
+      "A. 全部工作负载仅使用 Spot Instance 且不设 On-Demand 基础容量，以追求最大化的成本节省",
+      "B. 使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量",
+      "C. 仅按当前最低出价选择 Spot 实例类型，而不参考历史中断率、容量池和可用区分布",
+      "D. 关闭 Spot 中断通知处理逻辑并忽略容量再平衡，以减少系统开销并提升短期性能"
+    ],
+    "explanation": "「使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量」是正确的。\n\n最佳实践是使用混合购买模型：通过 Auto Scaling Group 或 Spot Fleet 设置一定比例的 On-Demand 作为基础容量（保证稳定性），剩余容量使用 Spot 实例降低成本，同时开启容量再平衡（Capacity Rebalancing）来提前应对中断。\n\n其他选项分析：\n\n「全部工作负载仅使用 Spot Instance 且不设 On-Demand 基础容量，以追求最大化的成本节省」是错误的：纯 Spot 模式存在中断风险，不适合对稳定性有要求的生产关键负载。\n\n「仅按当前最低出价选择 Spot 实例类型，而不参考历史中断率、容量池和可用区分布」是错误的：价格最低的 Spot 实例通常中断率最高，应同时参考中断率历史和可用区分布。\n\n「关闭 Spot 中断通知处理逻辑并忽略容量再平衡，以减少系统开销并提升短期性能」是错误的：中断通知是提前 2 分钟应对的关键机制，关闭它会导致工作负载被无预警中断。\n\n**重点考点 / 关键词补充：**\n- 混合实例策略（On-Demand base + Spot）是生产环境推荐做法\n- 开启 Capacity Rebalancing 可提前 2 分钟前主动替换即将中断的 Spot\n- 适合无状态、可水平扩展的应用"
+  },
+  "M14": {
+    "options": [
+      "A. 网络层和传输层的大规模 DDoS 洪泛攻击",
+      "B. SQL 注入和跨站脚本 (XSS)",
+      "C. 恶意机器人",
+      "D. 针对 AWS 物理数据中心的未授权物理入侵行为",
+      "E. 利用操作系统未修补漏洞对 EC2 主机发起的远程利用"
+    ],
+    "explanation": "正确答案：\n\n「SQL 注入和跨站脚本 (XSS)」\n「恶意机器人」\n\n错误选项分析：\n\n「网络层和传输层的大规模 DDoS 洪泛攻击」是错误的：基础设施层 DDoS 防护主要由 AWS Shield 负责，WAF 工作在应用层。\n\n「针对 AWS 物理数据中心的未授权物理入侵行为」是错误的：物理数据中心安全属于 AWS 共享责任模型中 AWS 的责任范围，WAF 不处理此问题。\n\n「利用操作系统未修补漏洞对 EC2 主机发起的远程利用」是错误的：操作系统漏洞利用主要通过补丁管理、Inspector 等工具防护，WAF 无法有效防护主机层漏洞。\n\n**重点考点 / 关键词补充：**\n- **WAF 工作层级**：应用层（Layer 7），可检查 HTTP/HTTPS 请求内容。\n- **可防护的攻击**：SQL 注入、跨站脚本 (XSS)、恶意机器人、IP 信誉、地理限制等。\n- **WAF vs Shield**：WAF 防护应用层攻击；Shield 主要防护网络/传输层 DDoS。\n- **Bot Control**：WAF 的高级功能之一，可识别和管理恶意机器人流量。"
+  },
+  "M90": {
+    "options": [
+      "A. Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常",
+      "B. AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描",
+      "C. Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）",
+      "D. AWS Security Hub —— 提供对 EC2 实例 CPU、内存和网络流量的实时性能监控与告警",
+      "E. AWS WAF —— 集中收集并聚合跨多个 AWS 账户的安全发现、合规状态和威胁情报数据"
+    ],
+    "explanation": "正确答案：\n\n「Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常」\n「AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描」\n「Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）」\n\n错误选项分析：\n\n「AWS Security Hub —— 提供对 EC2 实例 CPU、内存和网络流量的实时性能监控与告警」是错误的：Security Hub 是安全态势聚合与管理平台，不是性能监控（那是 CloudWatch）。\n\n「AWS WAF —— 集中收集并聚合跨多个 AWS 账户的安全发现、合规状态和威胁情报数据」是错误的：WAF 是 Web 应用防火墙，负责过滤恶意 HTTP 请求；跨账户安全数据聚合是 Security Hub 的职责。\n\n**重点考点 / 关键词补充：**\n- GuardDuty：威胁检测（无代理，分析日志）\n- Inspector：漏洞扫描（EC2 + 容器镜像）\n- Macie：S3 敏感数据发现（ML）\n- Security Hub：安全态势管理 + 聚合多个安全服务发现\n- 常考陷阱：不要把 Security Hub 当成性能监控工具"
+  },
+  "S27": {
+    "options": [
+      "A. Spot 实例被回收时会立即终止且不提供任何提前通知",
+      "B. 通常提前 2 分钟发出中断通知",
+      "C. AWS 通常会在中断前约 1 小时通过电子邮件发送通知",
+      "D. Spot Instance 一经启动后在整个生命周期内永远不会被中断"
+    ],
+    "explanation": "「通常提前 2 分钟发出中断通知」是正确的。\n\n当 Spot Instance 被 AWS 中断时，AWS 通常会在中断前 2 分钟通过实例元数据和 EventBridge 发出中断通知，让应用有时间做优雅关机、保存状态或进行 Checkpointing。\n\n其他选项分析：\n\n「Spot 实例被回收时会立即终止且不提供任何提前通知」是错误的：AWS 会提供 2 分钟的宽限期，通过实例元数据和 EventBridge 发出通知。\n\n「AWS 通常会在中断前约 1 小时通过电子邮件发送通知」是错误的：通知时间是 2 分钟，不是 1 小时，且主要通过实例元数据而非电子邮件。\n\n「Spot Instance 一经启动后在整个生命周期内永远不会被中断」是错误的：Spot Instance 的本质就是可中断的，当 AWS 需要回收容量时会发出中断通知。\n\n**重点考点 / 关键词补充：**\n- Spot 中断通知时间：2 分钟（固定）\n- 应用必须做好中断处理才能安全使用 Spot\n- 可以通过 Spot 实例中断处理（Spot Instance Interruption）机制优雅退出"
+  },
+  "M34": {
+    "options": [
+      "A. Subnets",
+      "B. Route Tables",
+      "C. Internet Gateway / NAT Gateway",
+      "D. Security Groups、Network ACLs 和 VPC Flow Logs",
+      "E. Amazon S3 存储桶与对象存储访问端点 (Endpoint)"
+    ],
+    "explanation": "正确答案：\n\n「Subnets」\n「Route Tables」\n「Internet Gateway / NAT Gateway」\n\n错误选项分析：\n\n「Security Groups、Network ACLs 和 VPC Flow Logs」是错误的：Security Groups 和 NACLs 是 VPC 的安全组件，Flow Logs 是流量日志服务，但题目重点是网络核心组件。\n\n「Amazon S3 存储桶与对象存储访问端点 (Endpoint)」是错误的：S3 是独立的对象存储服务，不属于 VPC 的网络核心组件。\n\n**重点考点 / 关键词补充：**\n- **VPC 核心组件**：子网（Subnet）、路由表（Route Table）、网关（IGW/NAT Gateway）是必考三件套。\n- **安全组件**：虽然 Security Group + NACL 也属于 VPC，但通常单独作为安全考点出现。\n- **常见陷阱**：不要把 S3、DynamoDB 等存储/数据库服务当成 VPC 组件。\n- 考试常考：VPC = 网络隔离 + 子网 + 路由 + 网关 + 安全组/NACL。"
+  },
+  "M55": {
+    "options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证",
+      "B. Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+      "C. IAM Role 可以直接作为独立身份登录 AWS 管理控制台，无需先 AssumeRole",
+      "D. IAM Role 默认附加的策略权限永远大于具有相同策略的普通 IAM User"
+    ],
+    "explanation": "「Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证」和「Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源」是正确的。\n\nRole 的核心优势是无长期凭证（通过 AssumeRole 获取最长 12 小时临时凭证），极大降低密钥泄露风险，非常适合服务间访问和跨账户访问。\n\n其他选项分析：\n\n「IAM Role 可以直接作为独立身份登录 AWS 管理控制台，无需先 AssumeRole」是错误的：Role 不能直接登录控制台，必须先通过 IAM 用户或其他身份 AssumeRole 后使用临时凭证。\n\n「IAM Role 默认附加的策略权限永远大于具有相同策略的普通 IAM User」是错误的：权限大小完全由附加的策略决定，与是 Role 还是 User 无关。\n\n**重点考点 / 关键词补充：**\n- Role 核心优势：无长期凭证 + 临时凭证（AssumeRole）\n- 最适合服务（EC2/Lambda 等）和跨账户访问\n- 不能直接登录控制台\n- 考试高频：Role 是“无长期密钥”最佳实践"
+  },
+  "M66": {
+    "options": [
+      "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
+      "B. 可在不同实例系列和操作系统之间灵活切换",
+      "C. 购买 Savings Plans 后可在承诺期内随时取消并按比例获得剩余期限的全额退款",
+      "D. 必须提前锁定具体的实例类型、可用区和操作系统才能享受承诺用量折扣"
+    ],
+    "explanation": "「Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用」和「可在不同实例系列和操作系统之间灵活切换」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务和跨 Region 使用。\n\n其他选项分析：\n\n「购买 Savings Plans 后可在承诺期内随时取消并按比例获得剩余期限的全额退款」是错误的：Savings Plans 一旦购买，在 1 年或 3 年承诺期内通常不可取消或获得全额退款。\n\n「必须提前锁定具体的实例类型、可用区和操作系统才能享受承诺用量折扣」是错误的：这是传统 Reserved Instances 或 EC2 Instance Savings Plans 的限制，Savings Plans 的最大优势正是不需要这种提前指定。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区"
+  },
+  "S17": {
+    "options": [
+      "A. 组织内每个成员账户都可独立享受完整的新账户免费套餐额度",
+      "B. 多个账户用量合并计算，更容易达到更高折扣层级",
+      "C. 合并计费后所有 AWS 服务账单将自动统一享受固定 50% 折扣",
+      "D. Consolidated Billing 仅简化账单汇总，不会产生任何合并计费的财务优势"
+    ],
+    "explanation": "「多个账户用量合并计算，更容易达到更高折扣层级」是正确的。\n\n使用 AWS Organizations 的 Consolidated Billing 功能后，所有关联账户的用量会被合并计算，更容易达到更高的折扣层级（尤其是数据传输费），同时由主账户统一支付，简化财务管理。\n\n其他选项分析：\n\n「组织内每个成员账户都可独立享受完整的新账户免费套餐额度」是错误的：多个账户合并后，免费额度是共享的，并非每个账户都独立享受完整额度。\n\n「合并计费后所有 AWS 服务账单将自动统一享受固定 50% 折扣」是错误的：折扣主要来自用量合并达到更高阶梯，并非固定 50% 的统一折扣。\n\n「Consolidated Billing 仅简化账单汇总，不会产生任何合并计费的财务优势」是错误的：合并计费是 AWS Organizations 的主要财务优势之一，可通过用量合并获得更高折扣层级。\n\n**重点考点 / 关键词补充：**\n- Consolidated Billing：合并计费\n- 主要好处：用量合并 → 更高折扣层级 + 统一支付\n- 注意：免费额度在组织内是共享的"
+  },
+  "S131": {
+    "options": [
+      "A. CloudFormation 主要用于监控已部署资源的性能指标并配置 CloudWatch 告警规则",
+      "B. CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施",
+      "C. CloudFormation 只能用于创建和管理 EC2 实例，不支持 S3、VPC 或 IAM 等其他 AWS 服务",
+      "D. CloudFormation 主要用于实时分析账单数据、优化成本并配置 AWS Budgets 预算告警"
+    ],
+    "explanation": "「CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施」是正确的。\n\nAWS CloudFormation 是基础设施即代码 (IaC) 服务。通过 JSON 或 YAML 模板，你可以定义整个 AWS 架构（VPC、EC2、S3、IAM、RDS 等），然后一键部署。核心优势包括：可重复部署、一致性、版本控制、回滚能力、依赖关系自动处理。\n\n其他选项分析：\n\n「CloudFormation 主要用于监控已部署资源的性能指标并配置 CloudWatch 告警规则」是错误的：性能监控和告警是 Amazon CloudWatch 的职责，CloudFormation 专注于基础设施的自动化部署。\n\n「CloudFormation 只能用于创建和管理 EC2 实例，不支持 S3、VPC 或 IAM 等其他 AWS 服务」是错误的：CloudFormation 支持几乎所有 AWS 资源类型，远不止 EC2。\n\n「CloudFormation 主要用于实时分析账单数据、优化成本并配置 AWS Budgets 预算告警」是错误的：成本分析和预算告警主要靠 Cost Explorer、Budgets 和 Trusted Advisor，不是 CloudFormation 的功能。\n\n**重点考点 / 关键词补充：**\n- CloudFormation = 基础设施即代码 (Infrastructure as Code)\n- 模板格式：JSON / YAML\n- 核心优势：可重复、一致性、版本控制、自动回滚、依赖管理\n- 常考：CloudFormation Stack = 一组相关资源的集合；Change Set 可预览变更"
+  },
+  "S36": {
+    "options": [
+      "A. 为机器学习和高性能计算提供比标准 EC2 更强大的 GPU 算力",
+      "B. 面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器",
+      "C. 完全替代 AWS Lambda 的无服务器 (Serverless) 计算服务",
+      "D. 专为大规模批处理和分布式大数据分析工作负载设计"
+    ],
+    "explanation": "「面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器」是正确的。\n\nAmazon Lightsail 主要面向初学者、个人开发者和简单工作负载，提供固定价格、开箱即用的一键式虚拟服务器（VPS），管理界面简单，适合快速搭建博客、网站、小型应用等场景。\n\n其他选项分析：\n\n「为机器学习和高性能计算提供比标准 EC2 更强大的 GPU 算力」是错误的：Lightsail 的 GPU 选项有限，更强大的 GPU 算力应使用标准 EC2 的 GPU 实例类型。\n\n「完全替代 AWS Lambda 的无服务器 (Serverless) 计算服务」是错误的：Lightsail 仍然是传统虚拟服务器，不是无服务器计算服务。\n\n「专为大规模批处理和分布式大数据分析工作负载设计」是错误的：大规模批处理和大数据分析应使用 EMR、Glue 等服务，不是 Lightsail 的定位。\n\n**重点考点 / 关键词补充：**\n- Lightsail = 简化版的 EC2 + 托管数据库 + 负载均衡 + CDN\n- 适合快速启动简单项目\n- 超过一定规模后建议迁移到标准 EC2 以获得更多灵活性"
+  }
+}

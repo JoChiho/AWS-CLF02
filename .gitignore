@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/AWS-CLF-C02-Quiz/
+*.spec.bak
+
+# PyInstaller work dir (keep build/*.spec)
+build/clf_quiz/
+
+# Local user data (optional — remove if you want to track sample data)
+# user_data.json

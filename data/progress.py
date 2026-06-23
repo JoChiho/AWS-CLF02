@@ -15,8 +15,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
-# 进度文件位置（项目根目录）
-PROGRESS_FILE = Path(__file__).resolve().parent.parent / "user_data.json"
+from app_paths import get_app_root
+
+# 进度文件位置（开发模式：项目根；打包后：exe 同级目录）
+PROGRESS_FILE = get_app_root() / "user_data.json"
+
+# 连续答对次数达到此值后自动标为「已掌握」
+MASTER_STREAK_REQUIRED = 2
 
 
 def _now_iso() -> str:
@@ -30,8 +35,27 @@ def _default_progress() -> Dict[str, Any]:
         "version": 1,
         "last_updated": _now_iso(),
         "sessions": [],           # 最近 10 次会话，最新在前
-        "question_stats": {},     # qid -> {correct_count, wrong_count, last_attempt, last_answer}
+        "question_stats": {},     # qid -> 累计统计 + consecutive_correct + mastered
     }
+
+
+def _default_question_stat() -> Dict[str, Any]:
+    return {
+        "correct_count": 0,
+        "wrong_count": 0,
+        "last_attempt": None,
+        "last_answer": [],
+        "consecutive_correct": 0,
+        "mastered": False,
+        "mastered_at": None,
+    }
+
+
+def _normalize_question_stat(qstat: Dict[str, Any]) -> Dict[str, Any]:
+    """为旧版 user_data 补齐错题本扩展字段"""
+    base = _default_question_stat()
+    base.update(qstat)
+    return base
 
 
 def load_progress() -> Dict[str, Any]:
@@ -143,21 +167,24 @@ def update_question_stat(
     progress = load_progress()
     stats = progress.setdefault("question_stats", {})
 
-    qstat = stats.setdefault(qid, {
-        "correct_count": 0,
-        "wrong_count": 0,
-        "last_attempt": None,
-        "last_answer": []
-    })
+    qstat = _normalize_question_stat(stats.setdefault(qid, _default_question_stat()))
 
     if is_correct:
         qstat["correct_count"] += 1
+        qstat["consecutive_correct"] = qstat.get("consecutive_correct", 0) + 1
+        if qstat["consecutive_correct"] >= MASTER_STREAK_REQUIRED:
+            qstat["mastered"] = True
+            qstat["mastered_at"] = _now_iso()
     else:
         qstat["wrong_count"] += 1
+        qstat["consecutive_correct"] = 0
+        qstat["mastered"] = False
+        qstat["mastered_at"] = None
 
     qstat["last_attempt"] = _now_iso()
-    qstat["last_answer"] = user_answer[:]   # 拷贝列表
+    qstat["last_answer"] = user_answer[:]
 
+    stats[qid] = qstat
     save_progress(progress)
 
 
@@ -171,7 +198,99 @@ def get_recent_sessions(limit: int = 10) -> List[Dict[str, Any]]:
 def get_question_stats(qid: str) -> Optional[Dict[str, Any]]:
     """获取某题的累计统计"""
     progress = load_progress()
-    return progress.get("question_stats", {}).get(qid)
+    raw = progress.get("question_stats", {}).get(qid)
+    return _normalize_question_stat(raw) if raw else None
+
+
+def set_question_mastered(qid: str, mastered: bool = True) -> bool:
+    """手动标记/取消「已掌握」"""
+    if not qid:
+        return False
+
+    progress = load_progress()
+    stats = progress.setdefault("question_stats", {})
+    if qid not in stats:
+        return False
+
+    qstat = _normalize_question_stat(stats[qid])
+    qstat["mastered"] = mastered
+    qstat["mastered_at"] = _now_iso() if mastered else None
+    if mastered:
+        qstat["consecutive_correct"] = max(
+            qstat.get("consecutive_correct", 0), MASTER_STREAK_REQUIRED
+        )
+    stats[qid] = qstat
+    return save_progress(progress)
+
+
+def _sort_wrong_entries(
+    entries: List[Dict[str, Any]],
+    sort_by: str,
+) -> List[Dict[str, Any]]:
+    if sort_by == "wrong_count":
+        return sorted(
+            entries,
+            key=lambda e: (-e["wrong_count"], -e["error_rate"], e.get("last_attempt") or ""),
+        )
+    if sort_by == "last_wrong":
+        return sorted(
+            entries,
+            key=lambda e: e.get("last_attempt") or "",
+            reverse=True,
+        )
+    return sorted(
+        entries,
+        key=lambda e: (-e["error_rate"], -e["wrong_count"], e.get("last_attempt") or ""),
+    )
+
+
+def get_wrong_book_entries(
+    sort_by: str = "error_rate",
+    domain: Optional[str] = None,
+    include_mastered: bool = False,
+) -> List[Dict[str, Any]]:
+    """
+    返回错题本条目（含统计与题目摘要），支持领域筛选与是否包含已掌握题目。
+    """
+    from data import get_question_by_id
+
+    stats = get_all_question_stats()
+    entries: List[Dict[str, Any]] = []
+
+    for qid, raw in stats.items():
+        s = _normalize_question_stat(raw)
+        if s.get("wrong_count", 0) <= 0:
+            continue
+        if not include_mastered and s.get("mastered"):
+            continue
+
+        q = get_question_by_id(qid)
+        q_domain = q.get("domain", "") if q else ""
+        if domain and q_domain != domain:
+            continue
+
+        c = s.get("correct_count", 0)
+        w = s.get("wrong_count", 0)
+        total = c + w
+        rate = (w / total * 100.0) if total > 0 else 0.0
+        preview = ""
+        if q:
+            text = q.get("question", "")
+            preview = (text[:72] + "...") if len(text) > 75 else text
+
+        entries.append({
+            "id": qid,
+            "domain": q_domain,
+            "correct_count": c,
+            "wrong_count": w,
+            "error_rate": round(rate, 1),
+            "consecutive_correct": s.get("consecutive_correct", 0),
+            "mastered": bool(s.get("mastered")),
+            "last_attempt": s.get("last_attempt"),
+            "question_preview": preview or "(题目不存在)",
+        })
+
+    return _sort_wrong_entries(entries, sort_by)
 
 
 def get_all_question_stats() -> Dict[str, Dict[str, Any]]:
@@ -180,35 +299,30 @@ def get_all_question_stats() -> Dict[str, Dict[str, Any]]:
     return progress.get("question_stats", {}).copy()
 
 
-def get_wrong_question_ids(sort_by: str = "error_rate") -> List[str]:
+def get_wrong_question_ids(
+    sort_by: str = "error_rate",
+    domain: Optional[str] = None,
+    include_mastered: bool = False,
+) -> List[str]:
     """
-    返回所有曾经答错过的题目 ID 列表。
+    返回错题 ID 列表（默认排除已掌握题目）。
 
-    sort_by:
-        "error_rate"  - 按错误率降序（默认）
-        "wrong_count" - 按错误次数降序
-        "last_wrong"  - 按最近答错时间降序
+    sort_by: error_rate | wrong_count | last_wrong
     """
-    stats = get_all_question_stats()
-    wrong_ids = [qid for qid, s in stats.items() if s.get("wrong_count", 0) > 0]
+    return [
+        e["id"]
+        for e in get_wrong_book_entries(sort_by, domain, include_mastered)
+    ]
 
-    def sort_key(qid: str):
-        s = stats.get(qid, {})
-        c = s.get("correct_count", 0)
-        w = s.get("wrong_count", 0)
-        total = c + w
-        rate = (w / total) if total > 0 else 0.0
-        last = s.get("last_attempt") or ""
 
-        if sort_by == "wrong_count":
-            return (-w, -rate, last)
-        elif sort_by == "last_wrong":
-            return (last, -rate, -w)
-        else:  # error_rate
-            return (-rate, -w, last)
-
-    wrong_ids.sort(key=sort_key)
-    return wrong_ids
+def count_mastered_wrong_questions() -> int:
+    """统计已标为掌握、但仍保留历史错题记录的题目数"""
+    return sum(
+        1
+        for raw in get_all_question_stats().values()
+        if _normalize_question_stat(raw).get("wrong_count", 0) > 0
+        and _normalize_question_stat(raw).get("mastered")
+    )
 
 
 def get_accuracy_trend() -> Dict[str, Any]:

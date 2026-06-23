@@ -94,7 +94,7 @@ class MenuMixin:
 
         ctk.CTkButton(
             scrollable,
-            text="打开错题本（累计 C/W 统计 + 一键练习）",
+            text="打开错题本（筛选 · Top10 · 单题练习 · 已掌握）",
             height=48,
             font=ctk.CTkFont(size=16, weight="bold"),
             fg_color="#c0392b",
@@ -150,7 +150,7 @@ class MenuMixin:
 
         ctk.CTkButton(
             scrollable,
-            text="错题本（累计统计）",
+            text="错题本（增强）",
             height=42,
             font=ctk.CTkFont(size=15),
             fg_color="#c0392b",

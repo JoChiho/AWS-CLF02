@@ -1,0 +1,1321 @@
+[
+  {
+    "id": "S48",
+    "domain": "Cloud Concepts",
+    "question": "在设计高可用架构时，为什么 AWS 推荐在一个 Region 内至少使用两个 Availability Zone？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 可以降低数据存储成本",
+      "B. 当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行",
+      "C. 可以获得更高的网络带宽",
+      "D. 所有 AWS 服务只在多 AZ 部署时才可用"
+    ],
+    "explanation": "「当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行」是正确的。\n\nAvailability Zone 是物理隔离的数据中心。在一个 Region 内跨多个 AZ 部署资源，可以实现真正的故障隔离。当一个 AZ 发生电力、网络或自然灾害故障时，其他 AZ 通常不受影响，从而提高整体可用性。\n\n其他选项分析：\n\n「可以降低数据存储成本」是错误的：多 AZ 部署通常会增加成本（需要复制数据）。\n\n「可以获得更高的网络带宽」是错误的：多 AZ 主要解决可用性，而不是带宽。\n\n「所有 AWS 服务只在多 AZ 部署时才可用」是错误的：大多数服务在单 AZ 也可以使用，只是高可用架构推荐跨 AZ。\n\n**重点考点 / 关键词补充：**\n- AZ = 物理隔离的数据中心（Region 内）\n- 推荐高可用架构至少跨 2 个 AZ\n- 跨 AZ 数据传输通常免费或极低费用",
+    "metrics": {
+      "max_correct_len": 32,
+      "avg_distractor_len": 17.3,
+      "min_distractor_len": 13,
+      "ratio_maxc_avgd": 1.85,
+      "short_distractor_count": 2,
+      "length_std": 9.1
+    },
+    "correct_options": [
+      "B. 当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行"
+    ]
+  },
+  {
+    "id": "S46",
+    "domain": "Technology and Services",
+    "question": "Amazon Redshift 主要用于什么工作负载？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 实时事务处理 (OLTP)",
+      "B. 大规模数据仓库和分析查询 (OLAP)",
+      "C. 非结构化文档存储",
+      "D. 缓存热点数据"
+    ],
+    "explanation": "「大规模数据仓库和分析查询 (OLAP)」是正确的。\n\nAmazon Redshift 是 AWS 的全托管 PB 级数据仓库服务，主要用于大规模数据仓库和复杂分析查询（OLAP）工作负载，适合商业智能、报表和大规模数据分析场景。\n\n其他选项分析：\n\n「实时事务处理 (OLTP)」是错误的：OLTP 更适合使用 RDS、Aurora 或 DynamoDB。\n\n「非结构化文档存储」是错误的：非结构化/文档存储更适合 DynamoDB、DocumentDB 或 S3。\n\n「缓存热点数据」是错误的：缓存服务是 ElastiCache。\n\n**重点考点 / 关键词补充：**\n- Redshift = 数据仓库（OLAP）\n- 适合复杂分析查询和 BI\n- 与 Athena 的区别：Redshift 适合大量结构化数据 + 高并发分析；Athena 适合即席查询 S3 数据",
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 12.0,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 2,
+      "length_std": 5.8
+    },
+    "correct_options": [
+      "B. 大规模数据仓库和分析查询 (OLAP)"
+    ]
+  },
+  {
+    "id": "S94",
+    "domain": "Cloud Concepts",
+    "question": "以下哪种应用场景最适合使用 AWS Global Accelerator 而不是 Amazon CloudFront？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 全球用户访问静态图片和视频内容",
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+      "C. 缓存动态 API 响应以降低延迟",
+      "D. 为 S3 存储桶提供全球 CDN 加速"
+    ],
+    "explanation": "「全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用」是正确的。\n\nAWS Global Accelerator 使用 Anycast IP + AWS 全球骨干网，能显著加速非 HTTP/HTTPS 的 TCP/UDP 流量，特别适合对延迟敏感的游戏、VoIP、金融交易等应用。而 CloudFront 主要优化 HTTP/HTTPS 静态和动态内容缓存。\n\n其他选项分析：\n\n「全球用户访问静态图片和视频内容」是错误的：这是 CloudFront 的强项。\n\n「缓存动态 API 响应以降低延迟」是错误的：CloudFront 更适合此场景。\n\n「为 S3 存储桶提供全球 CDN 加速」是错误的：CloudFront + S3 是标准组合。\n\n**重点考点 / 关键词补充：**\n- Global Accelerator：TCP/UDP + Anycast + 全球骨干网\n- CloudFront：HTTP/HTTPS + 边缘缓存\n- 两者经常结合使用（Global Accelerator + CloudFront）",
+    "metrics": {
+      "max_correct_len": 36,
+      "avg_distractor_len": 19.7,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.3
+    },
+    "correct_options": [
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用"
+    ]
+  },
+  {
+    "id": "S99",
+    "domain": "Cloud Concepts",
+    "question": "以下哪种应用场景最适合使用 AWS Global Accelerator 而不是 Amazon CloudFront？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 全球用户访问静态图片和视频内容",
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+      "C. 缓存动态 API 响应以降低延迟",
+      "D. 为 S3 存储桶提供全球 CDN 加速"
+    ],
+    "explanation": "「全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用」是正确的。\n\nAWS Global Accelerator 使用 Anycast IP + AWS 全球骨干网，能显著加速非 HTTP/HTTPS 的 TCP/UDP 流量，特别适合对延迟敏感的游戏、VoIP、金融交易等应用。而 CloudFront 主要优化 HTTP/HTTPS 静态和动态内容缓存。\n\n其他选项分析：\n\n「全球用户访问静态图片和视频内容」是错误的：这是 CloudFront 的强项。\n\n「缓存动态 API 响应以降低延迟」是错误的：CloudFront 更适合此场景。\n\n「为 S3 存储桶提供全球 CDN 加速」是错误的：CloudFront + S3 是标准组合。\n\n**重点考点 / 关键词补充：**\n- Global Accelerator：TCP/UDP + Anycast + 全球骨干网\n- CloudFront：HTTP/HTTPS + 边缘缓存\n- 两者经常结合使用（Global Accelerator + CloudFront）",
+    "metrics": {
+      "max_correct_len": 36,
+      "avg_distractor_len": 19.7,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.3
+    },
+    "correct_options": [
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用"
+    ]
+  },
+  {
+    "id": "M01",
+    "domain": "Cloud Concepts",
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "options": [
+      "A. 客户始终对所有安全负责",
+      "B. 责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）",
+      "C. AWS 始终负责客户数据的加密密钥管理",
+      "D. 对于托管服务，AWS 承担更多运营责任",
+      "E. 客户永远不需要关心任何安全配置"
+    ],
+    "explanation": "正确答案：\n\n「责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）」\n「对于托管服务，AWS 承担更多运营责任」\n\n错误选项分析：\n\n「客户始终对所有安全负责」是错误的：客户并不始终对所有安全负责，责任会根据服务类型（IaaS/PaaS/SaaS）变化。\n\n「AWS 始终负责客户数据的加密密钥管理」是错误的：客户数据的加密密钥管理通常由客户自己负责（尤其是使用客户托管 KMS 密钥时）。\n\n「客户永远不需要关心任何安全配置」是错误的：在云中客户仍然需要关心安全配置，这是共享责任模型的重要部分。\n\n**重点考点 / 关键词补充：**\n- **Shared Responsibility Model**：AWS 负责“云的安全”（物理设施、硬件、网络基础设施），客户负责“云中的安全”（数据、身份与访问管理、应用安全、加密配置）。\n- **IaaS / PaaS / SaaS 责任边界**：IaaS（EC2 等）客户管最多（OS、应用、数据）；PaaS（Lambda、RDS）客户管较少；SaaS（WorkMail 等）客户管最少。这是 CLF-C02 最常考的概念。\n- **客户托管 KMS 密钥**：客户完全控制密钥的创建、轮换、禁用和删除，AWS 只负责基础设施层的安全。",
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 1,
+      "length_std": 7.1
+    },
+    "correct_options": [
+      "B. 责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）",
+      "D. 对于托管服务，AWS 承担更多运营责任"
+    ]
+  },
+  {
+    "id": "M85",
+    "domain": "Cloud Concepts",
+    "question": "以下哪些是 AWS Local Zones 的正确特点？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 部署在靠近大型人口中心的位置",
+      "B. 允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）",
+      "C. 主要用于全球静态内容缓存",
+      "D. 属于 AWS 全球基础设施的补充形式"
+    ],
+    "explanation": "「部署在靠近大型人口中心的位置」和「允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）」是正确的。\\n\\nLocal Zones 是较新的基础设施形式，部署在靠近大城市的位置，让客户能够以极低的延迟运行完整的 AWS 服务，同时仍能利用 AWS 的全球基础设施。\\n\\n其他选项分析：\\n\\n「主要用于全球静态内容缓存」是错误的：这是 Edge Locations 的主要用途。\\n\\n「属于 AWS 全球基础设施的补充形式」虽然描述正确，但单独这个选项不够完整。\\n\\n**重点考点 / 关键词补充：**\\n- Local Zones：靠近人口中心，低延迟运行完整 AWS 服务\\n- 适合场景：游戏、媒体、金融交易、实时应用\\n- 与 Edge Locations 区别：Local Zones 可运行计算/存储服务，Edge Locations 主要用于缓存",
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.83,
+      "short_distractor_count": 0,
+      "length_std": 8.1
+    },
+    "correct_options": [
+      "A. 部署在靠近大型人口中心的位置",
+      "B. 允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）"
+    ]
+  },
+  {
+    "id": "S138",
+    "domain": "Security and Compliance",
+    "question": "AWS Control Tower 与 AWS Organizations 的关系是什么？Control Tower 提供了 Organizations 本身没有的哪些额外治理能力？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. Control Tower 完全替代了 Organizations，客户可以直接使用 Control Tower 而无需创建 Organizations 结构",
+      "B. Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory，使多账户治理更加自动化和标准化",
+      "C. Organizations 提供多账户结构管理，Control Tower 则专注于安全组、NACL 和 VPC 配置的集中管控",
+      "D. 两者提供完全相同的多账户治理能力，只是 AWS 推出的两个不同产品名称和品牌"
+    ],
+    "explanation": "「Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory...」是正确的。\n\nControl Tower 建立在 AWS Organizations 基础之上。它会自动为你创建并配置 Organizations（包括管理账户、日志归档账户和审计账户），并在此基础上叠加更高级的治理功能：预构建的 Guardrails（基于 SCP 和 Config 规则）、账户蓝图（Blueprint）和 Account Factory（自动化账户创建流程）。\n\n其他选项分析：\n\n「Control Tower 完全替代了 Organizations，客户可以直接使用 Control Tower 而无需创建 Organizations 结构」是错误的：Control Tower 必须构建在 AWS Organizations 之上，它会自动帮你创建和配置 Organizations 结构，而非替代它。\n\n「Organizations 提供多账户结构管理，Control Tower 则专注于安全组、NACL 和 VPC 配置的集中管控」是错误的：Control Tower 的核心价值是提供预构建的 Guardrails、Account Factory 和蓝图，而非仅做网络配置的集中管控。\n\n「两者提供完全相同的多账户治理能力，只是 AWS 推出的两个不同产品名称和品牌」是错误的：Organizations 提供基础的多账户结构与 SCP，而 Control Tower 在其上叠加了更高级、更自动化的治理框架，两者功能定位明显不同。\n\n**重点考点 / 关键词补充：**\n- Control Tower 构建于 Organizations 之上\n- 额外价值：预设 Guardrails + Account Factory + 蓝图\n- 常考：Control Tower 让多账户治理“开箱即用”，大幅降低手动配置 Organizations + SCP + Config 的工作量",
+    "metrics": {
+      "max_correct_len": 115,
+      "avg_distractor_len": 63.3,
+      "min_distractor_len": 41,
+      "ratio_maxc_avgd": 1.82,
+      "short_distractor_count": 0,
+      "length_std": 30.9
+    },
+    "correct_options": [
+      "B. Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory，使多账户治理更加自动化和标准化"
+    ]
+  },
+  {
+    "id": "M07",
+    "domain": "Security and Compliance",
+    "question": "Security Group 和 Network ACL 的关键区别有哪些？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. Security Group 是有状态的，NACL 是无状态的",
+      "B. Security Group 作用于实例级别，NACL 作用于子网级别",
+      "C. NACL 只支持允许规则，不支持拒绝",
+      "D. Security Group 支持显式拒绝规则",
+      "E. 两者都默认拒绝所有入站流量"
+    ],
+    "explanation": "正确答案：\n\n「Security Group 是有状态的，NACL 是无状态的」\n「Security Group 作用于实例级别，NACL 作用于子网级别」\n\n**重点考点 / 关键词补充：**\n- **有状态 (Stateful) vs 无状态 (Stateless)**：Security Group 记住出站请求，自动允许响应流量返回；NACL 必须同时配置入站和出站规则。\n- **作用范围**：Security Group 作用于单个 EC2 实例（或 ELB、RDS 等资源）；NACL 作用于整个子网。\n- **显式拒绝**：NACL 支持在规则中明确写 Deny；Security Group 只支持允许规则（默认拒绝）。\n- 考试常考组合：Security Group（有状态、实例级）+ NACL（无状态、子网级、支持 Deny）。",
+    "metrics": {
+      "max_correct_len": 38,
+      "avg_distractor_len": 21.0,
+      "min_distractor_len": 16,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 9.1
+    },
+    "correct_options": [
+      "A. Security Group 是有状态的，NACL 是无状态的",
+      "B. Security Group 作用于实例级别，NACL 作用于子网级别"
+    ]
+  },
+  {
+    "id": "M62",
+    "domain": "Security and Compliance",
+    "question": "以下哪些是使用 IAM Role 而非 IAM User 的最佳实践优势？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证",
+      "B. Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+      "C. Role 可以直接用于登录 AWS 管理控制台",
+      "D. Role 的权限范围永远大于普通 IAM User"
+    ],
+    "explanation": "「Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证」和「Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源」是正确的。\n\nRole 的核心优势是“无长期密钥”，极大降低凭证泄露风险，是服务间访问和跨账户访问的最佳实践。\n\n其他选项分析：\n\n「Role 可以直接用于登录 AWS 管理控制台」是错误的：Role 不能直接登录控制台，必须先通过用户 AssumeRole 后再使用临时凭证。\n\n「Role 的权限范围永远大于普通 IAM User」是错误的：权限大小完全由附加的策略决定，与是 Role 还是 User 无关。\n\n**重点考点 / 关键词补充：**\n- Role 核心优势：无长期凭证 + 临时凭证（AssumeRole，最长 12 小时）\n- 最适合服务（EC2/Lambda 等）和跨账户访问\n- 不能直接登录控制台\n- 考试高频：Role 是“无长期密钥”最佳实践",
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 27.0,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 11.5
+    },
+    "correct_options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证",
+      "B. Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源"
+    ]
+  },
+  {
+    "id": "M92",
+    "domain": "Technology and Services",
+    "question": "以下关于 AWS 存储服务的适用场景描述，哪些是正确的？（选择三项）",
+    "correct_answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "options": [
+      "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
+      "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
+      "C. Amazon S3 适合存储非结构化数据、备份、静态网站和作为数据湖",
+      "D. Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持的场景",
+      "E. Amazon S3 适合作为 EC2 实例的根卷启动磁盘"
+    ],
+    "explanation": "正确答案：\n\n「Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统」\n「Amazon EBS 适合需要低延迟块存储的单实例数据库」\n「Amazon S3 适合存储非结构化数据、备份、静态网站」\n「Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持」\n\n错误选项分析：\n\n「Amazon S3 适合作为 EC2 实例的根卷启动磁盘」是错误的：S3 是对象存储，不能作为 EC2 根卷；根卷必须使用 EBS（或实例存储）。\n\n**重点考点 / 关键词补充：**\n- S3：对象存储，海量非结构化数据、备份、数据湖、静态网站\n- EBS：块存储，单实例低延迟（数据库、OS 卷）\n- EFS：托管 NFS，跨多实例共享文件系统\n- FSx：托管 Windows 文件系统（SMB）或 Lustre（高性能计算）\n- 常考：S3 不能做 EC2 根卷或需要 POSIX 语义的共享文件系统",
+    "metrics": {
+      "max_correct_len": 56,
+      "avg_distractor_len": 31.0,
+      "min_distractor_len": 31,
+      "ratio_maxc_avgd": 1.81,
+      "short_distractor_count": 0,
+      "length_std": 10.7
+    },
+    "correct_options": [
+      "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
+      "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
+      "C. Amazon S3 适合存储非结构化数据、备份、静态网站和作为数据湖",
+      "D. Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持的场景"
+    ]
+  },
+  {
+    "id": "S38",
+    "domain": "Technology and Services",
+    "question": "AWS Marketplace 的主要作用是什么？",
+    "correct_answers": [
+      "A"
+    ],
+    "options": [
+      "A. 购买和部署第三方软件和服务的在线商店",
+      "B. 管理 AWS 支持案例",
+      "C. 估算 AWS 成本",
+      "D. 监控安全威胁"
+    ],
+    "explanation": "「购买和部署第三方软件和服务的在线商店」是正确的。\n\nAWS Marketplace 是一个在线商店，客户可以在这里查找、购买和快速部署来自第三方厂商的软件、AMI、SaaS 服务和解决方案，大大简化了采购和部署流程。\n\n其他选项分析：\n\n「管理 AWS 支持案例」是错误的：支持案例通过 Support Center 管理。\n\n「估算 AWS 成本」是错误的：成本估算使用 AWS Pricing Calculator。\n\n「监控安全威胁」是错误的：安全威胁监控使用 GuardDuty、Security Hub 等。\n\n**重点考点 / 关键词补充：**\n- Marketplace 支持按小时、按月或按使用量计费\n- 包含大量第三方 AMI 和 SaaS 产品\n- 购买后可直接部署到 AWS 环境",
+    "metrics": {
+      "max_correct_len": 21,
+      "avg_distractor_len": 11.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.8,
+      "short_distractor_count": 3,
+      "length_std": 5.1
+    },
+    "correct_options": [
+      "A. 购买和部署第三方软件和服务的在线商店"
+    ]
+  },
+  {
+    "id": "M40",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是正确的关于 AWS 免费套餐的说法？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 12 个月免费额度从首次激活账户开始计算",
+      "B. 永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制",
+      "C. 所有 AWS 服务都有 12 个月免费额度",
+      "D. 免费套餐用完后会自动停止服务"
+    ],
+    "explanation": "正确答案：\n\n「12 个月免费额度从首次激活账户开始计算」\n「永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制」\n\n错误选项分析：\n\n「所有 AWS 服务都有 12 个月免费额度」是错误的：不是所有 AWS 服务都有 12 个月免费额度，只有部分服务提供（例如 EC2、S3、RDS 等）。\n\n「免费套餐用完后会自动停止服务」是错误的：免费套餐用完后不会自动停止服务，而是开始正常收费。\n\n**重点考点 / 关键词补充：**\n- **12 个月免费额度**：从首次激活 AWS 账户开始计算（不是注册日期），部分服务（如 EC2 t2/t3.micro）有 12 个月免费。\n- **永久免费 (Always Free)**：没有时间限制，只要账户处于活跃状态就一直可用（如 DynamoDB 25GB、Lambda 每月 100 万次调用、S3 5GB 等）。\n- 常考陷阱：不要以为所有服务都有免费额度，用完后会自动停止（实际会正常计费）。",
+    "metrics": {
+      "max_correct_len": 37,
+      "avg_distractor_len": 20.5,
+      "min_distractor_len": 17,
+      "ratio_maxc_avgd": 1.8,
+      "short_distractor_count": 0,
+      "length_std": 8.4
+    },
+    "correct_options": [
+      "A. 12 个月免费额度从首次激活账户开始计算",
+      "B. 永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制"
+    ]
+  },
+  {
+    "id": "S135",
+    "domain": "Technology and Services",
+    "question": "Amazon EC2 Placement Groups 中的 Cluster、Spread 和 Partition 三种类型的核心区别和适用场景是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 三种 Placement Group 的功能和适用场景完全相同，只是 AWS 提供的不同命名方式",
+      "B. Cluster 适合需要极低延迟和高网络吞吐的紧密耦合应用；Spread 适合需要最大硬件隔离的少量关键实例；Partition 适合需要将实例分成多个隔离组的大型分布式工作负载",
+      "C. Spread Placement Group 主要目的是为了降低 EC2 实例的整体运行成本和费用",
+      "D. Partition Placement Group 只能在内存优化型或存储优化型实例上创建和使用"
+    ],
+    "explanation": "「Cluster 适合需要极低延迟和高网络吞吐...；Spread 适合需要最大硬件隔离...；Partition 适合...大型分布式工作负载」是正确的。\n\n- Cluster：实例放在同一机架/低延迟网络，适合 HPC、紧密耦合应用（高网络性能）。\n- Spread：每个实例放在不同的物理硬件（不同机架、不同电源等），适合少量关键实例需要最高隔离（如主数据库、关键应用）。\n- Partition：将实例分成多个“分区”，每个分区有独立的硬件，适合 Hadoop、Cassandra、Kafka 等大型分布式系统（既隔离又保持组内通信）。\n\n其他选项分析：\n\n「三种 Placement Group 的功能和适用场景完全相同，只是 AWS 提供的不同命名方式」是错误的：三者在网络拓扑、硬件隔离级别和推荐工作负载上差异显著，设计目标完全不同。\n\n「Spread Placement Group 主要目的是为了降低 EC2 实例的整体运行成本和费用」是错误的：Spread 主要是为了实现最大程度的硬件故障隔离（不同机架、电源、冷却等），通常成本更高而非更低。\n\n**重点考点 / 关键词补充：**\n- Cluster：低延迟 + 高吞吐（HPC）\n- Spread：最大硬件隔离（关键少量实例）\n- Partition：大规模分布式工作负载的组级隔离\n- 考试常考：根据应用类型选择正确的 Placement Group 类型",
+    "metrics": {
+      "max_correct_len": 92,
+      "avg_distractor_len": 51.3,
+      "min_distractor_len": 51,
+      "ratio_maxc_avgd": 1.79,
+      "short_distractor_count": 0,
+      "length_std": 20.3
+    },
+    "correct_options": [
+      "B. Cluster 适合需要极低延迟和高网络吞吐的紧密耦合应用；Spread 适合需要最大硬件隔离的少量关键实例；Partition 适合需要将实例分成多个隔离组的大型分布式工作负载"
+    ]
+  },
+  {
+    "id": "M60",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Savings Plans 相比传统 Reserved Instances 的主要灵活性优势？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 可跨 EC2 实例系列和操作系统使用",
+      "B. Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda",
+      "C. 购买后可以随时取消且获得全额退款，无任何财务损失",
+      "D. 必须提前指定具体的实例类型、操作系统和可用区才能锁定折扣"
+    ],
+    "explanation": "「可跨 EC2 实例系列和操作系统使用」和「Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务（EC2/Fargate/Lambda）和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款，无任何财务损失」是错误的：Savings Plans 一旦购买，在承诺期内（1 年或 3 年）通常不可取消或获得全额退款。\n\n「必须提前指定具体的实例类型、操作系统和可用区才能锁定折扣」是错误的：这是传统 Reserved Instances 或 EC2 Instance Savings Plans 的限制，Savings Plans 的优势正是不需要这种提前指定。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
+    "metrics": {
+      "max_correct_len": 52,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.79,
+      "short_distractor_count": 0,
+      "length_std": 13.5
+    },
+    "correct_options": [
+      "A. 可跨 EC2 实例系列和操作系统使用",
+      "B. Compute Savings Plans 可同时适用于 EC2、Fargate 和 Lambda"
+    ]
+  },
+  {
+    "id": "S119",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Cost Categories 的主要作用是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 自动检测账户中的异常成本支出",
+      "B. 将成本按自定义业务维度（如部门、项目、环境）进行归类和分析",
+      "C. 设置预算阈值并在超支时发送告警",
+      "D. 分析历史成本趋势并生成可视化报告"
+    ],
+    "explanation": "「将成本按自定义业务维度（如部门、项目、环境）进行归类和分析」是正确的。\n\nAWS Cost Categories 允许用户定义自定义规则，将成本按业务维度（部门、项目、环境等）进行归类，支持多层级分层，并在 Cost Explorer、Budgets 和 Billing 中使用这些类别进行分析，是高级成本分摊的核心工具。\n\n其他选项分析：\n\n「自动检测账户中的异常成本支出」是错误的：这是 Cost Anomaly Detection 的功能。\n\n「设置预算阈值并在超支时发送告警」是错误的：这是 AWS Budgets 的功能。\n\n「分析历史成本趋势并生成可视化报告」是错误的：这是 AWS Cost Explorer 的主要功能。\n\n**重点考点 / 关键词补充：**\n- Cost Categories：自定义多维度成本归类（支持继承规则）\n- 可在 Cost Explorer、Budgets 中使用\n- 适合复杂组织的多维度成本分摊和分析",
+    "metrics": {
+      "max_correct_len": 32,
+      "avg_distractor_len": 18.0,
+      "min_distractor_len": 17,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 7.0
+    },
+    "correct_options": [
+      "B. 将成本按自定义业务维度（如部门、项目、环境）进行归类和分析"
+    ]
+  },
+  {
+    "id": "M81",
+    "domain": "Cloud Concepts",
+    "question": "关于 AWS Shared Responsibility Model，以下哪些说法是正确的？（选择两项）",
+    "correct_answers": [
+      "B",
+      "D"
+    ],
+    "options": [
+      "A. 客户始终对云中运行的所有内容负全部安全责任",
+      "B. 责任边界会根据使用的是 IaaS、PaaS 还是 SaaS 服务而变化",
+      "C. AWS 始终负责客户数据的加密密钥管理",
+      "D. 对于托管服务（如 Lambda、RDS），AWS 承担更多运营和基础设施责任"
+    ],
+    "explanation": "「责任边界会根据使用的是 IaaS、PaaS 还是 SaaS 服务而变化」和「对于托管服务（如 Lambda、RDS），AWS 承担更多运营和基础设施责任」是正确的。\\n\\nShared Responsibility Model 的核心是：责任划分取决于服务类型。IaaS（如 EC2）客户负责最多；PaaS/SaaS（如 Lambda、RDS）AWS 负责更多基础设施和运营。\\n\\n其他选项分析：\\n\\n「客户始终对云中运行的所有内容负全部安全责任」是错误的：责任是共享的，且会随服务类型变化。\\n\\n「AWS 始终负责客户数据的加密密钥管理」是错误的：使用 Customer Managed KMS Key 时，密钥管理责任在客户。\\n\\n**重点考点 / 关键词补充：**\\n- IaaS（EC2 等）：客户负责最多（OS、应用、数据、身份配置）\\n- PaaS/SaaS（Lambda、RDS 等）：AWS 承担更多基础设施和平台责任\\n- 客户托管 KMS 密钥：客户完全控制密钥生命周期",
+    "metrics": {
+      "max_correct_len": 41,
+      "avg_distractor_len": 23.0,
+      "min_distractor_len": 22,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 9.6
+    },
+    "correct_options": [
+      "B. 责任边界会根据使用的是 IaaS、PaaS 还是 SaaS 服务而变化",
+      "D. 对于托管服务（如 Lambda、RDS），AWS 承担更多运营和基础设施责任"
+    ]
+  },
+  {
+    "id": "M93",
+    "domain": "Security and Compliance",
+    "question": "关于 IAM Permission Boundary 和 AWS Organizations SCP（Service Control Policies），以下哪些说法是正确的？（选择三项）",
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. Permission Boundary 是在单个 AWS 账户内为 IAM 用户或角色设置的权限上限（天花板）",
+      "B. SCP 是在 AWS Organizations 组织层面为成员账户或 OU 设置的权限边界，即使 IAM 策略允许也不能超过",
+      "C. 两者都只能用于限制权限，不能用于为 IAM 实体授予额外权限",
+      "D. Permission Boundary 可以扩大 IAM 实体的权限范围",
+      "E. SCP 可以针对单个 IAM 用户单独设置限制，而不影响整个账户"
+    ],
+    "explanation": "正确答案：\n\n「Permission Boundary 是在单个 AWS 账户内...权限上限」\n「SCP 是在 AWS Organizations 组织层面...权限边界」\n「两者都只能用于限制权限，不能用于...授予额外权限」\n\n错误选项分析：\n\n「Permission Boundary 可以扩大 IAM 实体的权限范围」是错误的：它只会设置上限（与策略取交集），绝不会扩大权限。\n\n「SCP 可以针对单个 IAM 用户单独设置限制」是错误的：SCP 是账户/OU 级别的，无法针对单个用户或角色单独生效。\n\n**重点考点 / 关键词补充：**\n- Permission Boundary：账户内，针对具体 IAM 实体（User/Role）的权限天花板\n- SCP：组织级，针对整个账户或 OU 的强制边界（Deny 优先）\n- 共同点：都只能限制、不能授予权限\n- 常考组合：两者经常一起使用实现多层权限治理",
+    "metrics": {
+      "max_correct_len": 66,
+      "avg_distractor_len": 37.0,
+      "min_distractor_len": 35,
+      "ratio_maxc_avgd": 1.78,
+      "short_distractor_count": 0,
+      "length_std": 14.9
+    },
+    "correct_options": [
+      "A. Permission Boundary 是在单个 AWS 账户内为 IAM 用户或角色设置的权限上限（天花板）",
+      "B. SCP 是在 AWS Organizations 组织层面为成员账户或 OU 设置的权限边界，即使 IAM 策略允许也不能超过",
+      "C. 两者都只能用于限制权限，不能用于为 IAM 实体授予额外权限"
+    ]
+  },
+  {
+    "id": "S134",
+    "domain": "Security and Compliance",
+    "question": "AWS Certificate Manager (ACM) 的主要功能是什么？它与手动管理 SSL/TLS 证书相比有什么优势？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. ACM 主要用于监控和管理 EC2 实例的 CPU、内存使用率，并可自动生成性能报告",
+      "B. ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销，特别适合与 CloudFront、ALB、API Gateway 集成",
+      "C. ACM 只能签发自签名证书，因此不适合面向公众的生产环境使用，需要额外购买商业证书",
+      "D. ACM 主要用于对 S3 中的对象进行服务端加密，并支持与 KMS 深度集成管理密钥"
+    ],
+    "explanation": "「ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销」是正确的。\n\nAWS Certificate Manager 让你可以轻松申请和部署受信任的公共 SSL/TLS 证书（由 Amazon 信任的 CA 签发），并与 CloudFront、Application Load Balancer、API Gateway、Elastic Beanstalk 等服务深度集成。最大优势是自动续期（无需人工干预，避免证书过期导致的服务中断）。\n\n其他选项分析：\n\n「ACM 主要用于监控和管理 EC2 实例的 CPU、内存使用率，并可自动生成性能报告」是错误的：这是 Amazon CloudWatch 的核心功能，ACM 完全不涉及实例性能监控。\n\n「ACM 只能签发自签名证书，因此不适合面向公众的生产环境使用，需要额外购买商业证书」是错误的：ACM 可以直接签发由 Amazon 信任的公共 CA 签发的受信任证书，广泛用于面向公众的生产环境，无需额外购买。\n\n「ACM 主要用于对 S3 中的对象进行服务端加密，并支持与 KMS 深度集成管理密钥」是错误的：S3 对象加密主要使用 SSE-S3、SSE-KMS 或客户端加密，ACM 的主要用途是 SSL/TLS 终端证书管理。\n\n**重点考点 / 关键词补充：**\n- ACM：免费公共证书 + 自动续期\n- 主要集成：CloudFront、ALB、NLB、API Gateway\n- 优势：自动续期、集中管理、与 AWS 服务原生集成\n- 注意：证书必须在与使用服务的同一 Region（CloudFront 除外）",
+    "metrics": {
+      "max_correct_len": 79,
+      "avg_distractor_len": 44.7,
+      "min_distractor_len": 44,
+      "ratio_maxc_avgd": 1.77,
+      "short_distractor_count": 0,
+      "length_std": 17.2
+    },
+    "correct_options": [
+      "B. ACM 提供免费的 SSL/TLS 证书，并自动处理证书的申请、部署、续期和吊销，特别适合与 CloudFront、ALB、API Gateway 集成"
+    ]
+  },
+  {
+    "id": "S103",
+    "domain": "Cloud Concepts",
+    "question": "以下关于 Multi-AZ 部署和 Multi-Region 部署的描述，哪一项是正确的？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. Multi-AZ 部署可以实现跨 Region 的灾难恢复",
+      "B. Multi-AZ 部署主要用于消除单点故障和提高可用性，而跨 Region 灾难恢复需要额外架构",
+      "C. Multi-Region 部署的延迟通常低于 Multi-AZ 部署",
+      "D. 两者效果完全相同，只是名称不同"
+    ],
+    "explanation": "「Multi-AZ 部署主要用于消除单点故障和提高可用性，而跨 Region 灾难恢复需要额外架构」是正确的。\n\nMulti-AZ（同一 Region 内多个可用区）主要解决高可用和单点故障问题；真正的跨 Region 灾难恢复（RPO/RTO 要求极高）需要多 Region 架构（如跨 Region 复制、Route 53 故障转移等）。\n\n其他选项分析：\n\n「Multi-AZ 部署可以实现跨 Region 的灾难恢复」是错误的：Multi-AZ 无法跨越 Region 边界。\n\n「Multi-Region 部署的延迟通常低于 Multi-AZ 部署」是错误的：跨 Region 延迟通常更高。\n\n「两者效果完全相同」是错误的：两者解决的问题范围和复杂度差异很大。\n\n**重点考点 / 关键词补充：**\n- Multi-AZ：高可用 + 消除单点故障（同一 Region 内）\n- Multi-Region 灾难恢复：需要额外架构（跨 Region 复制、Route 53 故障转移等）\n- 两者经常结合使用实现不同层级的容灾",
+    "metrics": {
+      "max_correct_len": 51,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 18,
+      "ratio_maxc_avgd": 1.76,
+      "short_distractor_count": 0,
+      "length_std": 13.6
+    },
+    "correct_options": [
+      "B. Multi-AZ 部署主要用于消除单点故障和提高可用性，而跨 Region 灾难恢复需要额外架构"
+    ]
+  },
+  {
+    "id": "S07",
+    "domain": "Security and Compliance",
+    "question": "当 EC2 实例需要访问 S3 时，以下哪种方式最符合安全最佳实践？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 把 Access Key 硬编码在代码里",
+      "B. 将具有最小权限的 IAM Role 附加到 EC2 实例",
+      "C. 使用 Root 用户凭证",
+      "D. 把 S3 存储桶设为公开"
+    ],
+    "explanation": "「将具有最小权限的 IAM Role 附加到 EC2 实例」是正确的。\n\n将具有最小权限的 IAM Role 附加到 EC2 实例后，实例可以通过 Instance Metadata Service 自动获取临时凭证（每小时轮换），无需在代码中硬编码长期 Access Key，这是 AWS 强烈推荐的安全最佳实践。\n\n其他选项分析：\n\n「把 Access Key 硬编码在代码里」是错误的：这是严重的安全反模式，一旦代码泄露，凭证将永久暴露。\n\n「使用 Root 用户凭证」是错误的：Root 用户拥有全部权限，日常操作使用 Root 极度危险。\n\n「把 S3 存储桶设为公开」是错误的：这会让存储桶中的数据被任何人访问，严重违反安全原则。\n\n**重点考点 / 关键词补充：**\n- IAM Role + Instance Profile 是 EC2 访问其他 AWS 服务的推荐方式\n- 临时凭证自动轮换（通常 1 小时）\n- 配合最小权限策略（Least Privilege）使用",
+    "metrics": {
+      "max_correct_len": 31,
+      "avg_distractor_len": 17.7,
+      "min_distractor_len": 15,
+      "ratio_maxc_avgd": 1.75,
+      "short_distractor_count": 0,
+      "length_std": 7.7
+    },
+    "correct_options": [
+      "B. 将具有最小权限的 IAM Role 附加到 EC2 实例"
+    ]
+  },
+  {
+    "id": "M100",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下关于 AWS 成本管理工具和定价概念的描述，哪些是正确的？（选择三项）",
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. Pay-as-you-go（按需付费）是 AWS 的核心定价模型，只为实际使用的资源付费，无需前期承诺",
+      "B. AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单、创建分层定价和生成定制化账单",
+      "C. AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据，支持导入到 Athena 或 QuickSight 进行分析",
+      "D. AWS Pricing Calculator 只能计算 EC2 成本，不能计算其他服务",
+      "E. Consolidated Billing 只能在单个 AWS 账户内使用，无法跨多个账户合并"
+    ],
+    "explanation": "正确答案：\n\n「Pay-as-you-go（按需付费）是 AWS 的核心定价模型」\n「AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单...」\n「AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据」\n\n错误选项分析：\n\n「AWS Pricing Calculator 只能计算 EC2 成本」是错误的：Pricing Calculator 支持几乎所有 AWS 服务。\n\n「Consolidated Billing 只能在单个 AWS 账户内使用」是错误的：Consolidated Billing 需要通过 AWS Organizations 在多个账户间使用。\n\n**重点考点 / 关键词补充：**\n- Pay-as-you-go：AWS 基础定价哲学\n- Billing Conductor：高级账单定制（MSP、大型企业常用）\n- CUR：最详细的成本数据源（可用于深度分析）\n- 常考：CUR + Athena 是高级成本分析的经典组合",
+    "metrics": {
+      "max_correct_len": 83,
+      "avg_distractor_len": 47.5,
+      "min_distractor_len": 46,
+      "ratio_maxc_avgd": 1.75,
+      "short_distractor_count": 0,
+      "length_std": 14.7
+    },
+    "correct_options": [
+      "A. Pay-as-you-go（按需付费）是 AWS 的核心定价模型，只为实际使用的资源付费，无需前期承诺",
+      "B. AWS Billing Conductor 主要帮助服务提供商或大型企业自定义账单、创建分层定价和生成定制化账单",
+      "C. AWS Cost and Usage Report (CUR) 可以提供最详细的资源使用和成本数据，支持导入到 Athena 或 QuickSight 进行分析"
+    ]
+  },
+  {
+    "id": "M50",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Enterprise Support 相比 Business Support 的主要优势包括以下哪些？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 提供 Technical Account Manager (TAM) 作为专属技术联系人",
+      "B. 严重故障响应时间可达 < 15 分钟",
+      "C. 包含免费的架构审查服务和按需的深度优化咨询",
+      "D. 提供对整个组织架构的 IAM 策略集中管理和自动化执行"
+    ],
+    "explanation": "「提供 Technical Account Manager (TAM)」和「严重故障响应时间可达 < 15 分钟」是正确的。\n\nEnterprise Support 提供 TAM（专属技术客户经理）、更快的响应时间（严重故障 <15 分钟 vs Business 的 <1 小时）、架构审查和白手套支持，适合大型关键业务。\n\n其他选项分析：\n\n「包含免费的架构审查服务和按需的深度优化咨询」是错误的：架构审查和优化支持是 Enterprise Support 的服务内容之一，但“免费”表述不准确，它属于付费套餐内的权益。\n\n「提供对整个组织架构的 IAM 策略集中管理和自动化执行」是错误的：IAM 策略和权限管理主要通过 IAM、Organizations 的 SCP 以及 Control Tower 来实现，Enterprise Support 本身不提供自动化的 IAM 策略管理能力。\n\n**重点考点 / 关键词补充：**\n- Business Support：性价比高，<1 小时严重故障响应，无 TAM\n- Enterprise Support：有 TAM + <15 分钟响应 + 架构审查 + 更深入支持\n- TAM 是 Enterprise 最显著的差异化优势",
+    "metrics": {
+      "max_correct_len": 47,
+      "avg_distractor_len": 27.0,
+      "min_distractor_len": 24,
+      "ratio_maxc_avgd": 1.74,
+      "short_distractor_count": 0,
+      "length_std": 11.6
+    },
+    "correct_options": [
+      "A. 提供 Technical Account Manager (TAM) 作为专属技术联系人",
+      "B. 严重故障响应时间可达 < 15 分钟"
+    ]
+  },
+  {
+    "id": "S123",
+    "domain": "Security and Compliance",
+    "question": "在 S3 Object Lock 中，Compliance 模式和 Governance 模式的主要区别是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. Compliance 模式下 Root 用户可以修改保留期，Governance 模式则完全不可修改",
+      "B. Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除",
+      "C. 两者在保留期设置和权限控制上完全相同，只是命名不同",
+      "D. Governance 模式主要用于内部审计和日志保留，Compliance 模式则用于生产数据备份保护"
+    ],
+    "explanation": "「Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除」是正确的。\n\n这是 S3 Object Lock 两种保留模式的经典区别：Compliance 模式极其严格（满足 SEC、FINRA 等最严监管），连 Root 用户也无法在保留期内删除或缩短保留期；Governance 模式相对灵活，拥有 s3:BypassGovernanceRetention 权限的用户可以修改保留设置或提前删除。\n\n其他选项分析：\n\n「Compliance 模式下 Root 用户可以修改保留期」是错误的：Compliance 模式下 Root 用户也完全无法修改或缩短保留期，这是其最严格的特点。\n\n「两者在保留期设置和权限控制上完全相同，只是命名不同」是错误的：两者在是否允许特定权限用户绕过保留上有本质区别，权限模型完全不同。\n\n「Governance 模式主要用于内部审计和日志保留，Compliance 模式则用于生产数据备份保护」是错误的：Governance 模式更适合需要一定灵活性的内部治理场景，而非仅审计；Compliance 才是最严的生产数据保护模式。\n\n**重点考点 / 关键词补充：**\n- Object Lock 两种模式：Compliance（最严格） vs Governance（可绕过）\n- Compliance：任何人（含 Root）都无法删除/缩短保留期\n- Governance：拥有 s3:BypassGovernanceRetention 权限的用户可修改\n- 常考：Compliance 用于金融、医疗等强监管场景",
+    "metrics": {
+      "max_correct_len": 78,
+      "avg_distractor_len": 45.0,
+      "min_distractor_len": 28,
+      "ratio_maxc_avgd": 1.73,
+      "short_distractor_count": 0,
+      "length_std": 20.4
+    },
+    "correct_options": [
+      "B. Compliance 模式下任何用户（包括 Root）在保留期内都无法删除或覆盖对象，Governance 模式允许特定权限的用户修改保留期或提前删除"
+    ]
+  },
+  {
+    "id": "S19",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Support 计划中，Basic Support 主要提供哪些服务？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 7x24 技术支持和 <1 小时响应",
+      "B. 账户和账单支持 + 有限的 Trusted Advisor 检查",
+      "C. Technical Account Manager",
+      "D. 架构审查和优化建议"
+    ],
+    "explanation": "「账户和账单支持 + 有限的 Trusted Advisor 检查」是正确的。\n\nBasic Support 仅提供基本的账户和账单支持，以及有限的 Trusted Advisor 检查（7 个检查项）。它不提供技术支持，生产环境通常至少需要 Business Support。\n\n其他选项分析：\n\n「7x24 技术支持和 <1 小时响应」是错误的：这是 Business Support 及以上计划才有的服务。\n\n「Technical Account Manager」是错误的：TAM 是 Enterprise Support 的专属服务。\n\n「架构审查和优化建议」是错误的：深度架构审查是 Enterprise Support 的功能。\n\n**重点考点 / 关键词补充：**\n- Basic Support：几乎没有技术支持\n- Business Support：生产环境推荐的最低支持计划（24x7 技术支持）\n- Enterprise Support：有 TAM + 架构审查",
+    "metrics": {
+      "max_correct_len": 35,
+      "avg_distractor_len": 20.3,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.72,
+      "short_distractor_count": 1,
+      "length_std": 9.8
+    },
+    "correct_options": [
+      "B. 账户和账单支持 + 有限的 Trusted Advisor 检查"
+    ]
+  },
+  {
+    "id": "M30",
+    "domain": "Cloud Concepts",
+    "question": "以下哪些服务可以帮助实现高可用架构？（选择三项）",
+    "correct_answers": [
+      "A",
+      "C",
+      "E"
+    ],
+    "options": [
+      "A. 多可用区部署",
+      "B. 跨 Region 复制",
+      "C. Auto Scaling",
+      "D. 单台 EC2 + EBS",
+      "E. Elastic Load Balancing"
+    ],
+    "explanation": "正确答案：\n\n「多可用区部署」\n「Auto Scaling」\n「Elastic Load Balancing」\n\n错误选项分析：\n\n「跨 Region 复制」是错误的：跨 Region 复制有助于灾难恢复，但不是实现高可用的最直接方式。\n\n「单台 EC2 + EBS」是错误的：单台 EC2 + EBS 是单点故障，不利于高可用。\n\n**重点考点 / 关键词补充：**\n- **高可用 (High Availability)** 核心要素：消除单点故障 + 自动故障转移 + 冗余。\n- **多可用区部署 (Multi-AZ)**：资源跨 AZ 部署，AZ 故障时自动切换。\n- **Auto Scaling**：根据负载自动增减实例数量，实现弹性。\n- **Elastic Load Balancing**：将流量分发到健康实例，结合健康检查实现故障转移。\n- 经典高可用架构三件套：Multi-AZ + Auto Scaling + ELB。",
+    "metrics": {
+      "max_correct_len": 25,
+      "avg_distractor_len": 14.5,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.72,
+      "short_distractor_count": 1,
+      "length_std": 5.8
+    },
+    "correct_options": [
+      "A. 多可用区部署",
+      "C. Auto Scaling",
+      "E. Elastic Load Balancing"
+    ]
+  },
+  {
+    "id": "S20",
+    "domain": "Security and Compliance",
+    "question": "AWS CloudTrail 主要记录什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. EC2 实例的 CPU 使用率",
+      "B. 对 AWS 账户中资源的 API 调用历史",
+      "C. S3 对象的访问内容",
+      "D. 网络流量详细内容"
+    ],
+    "explanation": "「对 AWS 账户中资源的 API 调用历史」是正确的。\n\nAWS CloudTrail 主要记录对 AWS 账户中资源的 API 调用历史，包括通过控制台、CLI、SDK 发起的所有操作，是安全审计、合规取证和事件调查的核心服务。\n\n其他选项分析：\n\n「EC2 实例的 CPU 使用率」是错误的：这是 CloudWatch 的功能。\n\n「S3 对象的访问内容」是错误的：S3 对象内容访问主要由 S3 访问日志或 CloudTrail 数据事件记录。\n\n「网络流量详细内容」是错误的：网络流量详细分析通常使用 VPC Flow Logs。\n\n**重点考点 / 关键词补充：**\n- CloudTrail = API 调用日志（谁在什么时候做了什么）\n- 强烈建议开启所有区域的 CloudTrail\n- 与 CloudWatch 的区别：CloudTrail 关注“做了什么操作”，CloudWatch 关注“资源状态和指标”",
+    "metrics": {
+      "max_correct_len": 24,
+      "avg_distractor_len": 14.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.71,
+      "short_distractor_count": 2,
+      "length_std": 5.8
+    },
+    "correct_options": [
+      "B. 对 AWS 账户中资源的 API 调用历史"
+    ]
+  },
+  {
+    "id": "S80",
+    "domain": "Technology and Services",
+    "question": "在生产环境中运行 Spot Instance 时，以下哪种做法最能有效降低中断风险并保证工作负载稳定性？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 只使用 Spot Instance，不使用其他购买选项，以最大化成本节省",
+      "B. 使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量",
+      "C. 选择最便宜的 Spot 实例类型，不考虑历史中断率和可用性",
+      "D. 关闭 Spot 中断通知处理逻辑以减少系统开销并提升性能"
+    ],
+    "explanation": "「使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量」是正确的。\n\n最佳实践是使用混合购买模型：通过 Auto Scaling Group 或 Spot Fleet 设置一定比例的 On-Demand 作为基础容量（保证稳定性），剩余容量使用 Spot 实例降低成本，同时开启容量再平衡（Capacity Rebalancing）来提前应对中断。\n\n其他选项分析：\n\n「只使用 Spot Instance，不使用其他购买选项，以最大化成本节省」是错误的：纯 Spot 模式存在中断风险，不适合对稳定性有要求的生产关键负载。\n\n「选择最便宜的 Spot 实例类型，不考虑历史中断率和可用性」是错误的：价格最低的 Spot 实例通常中断率最高，应同时参考中断率历史和可用区分布。\n\n「关闭 Spot 中断通知处理逻辑以减少系统开销并提升性能」是错误的：中断通知是提前 2 分钟应对的关键机制，关闭它会导致工作负载被无预警中断。\n\n**重点考点 / 关键词补充：**\n- 混合实例策略（On-Demand base + Spot）是生产环境推荐做法\n- 开启 Capacity Rebalancing 可提前 2 分钟前主动替换即将中断的 Spot\n- 适合无状态、可水平扩展的应用",
+    "metrics": {
+      "max_correct_len": 58,
+      "avg_distractor_len": 34.0,
+      "min_distractor_len": 31,
+      "ratio_maxc_avgd": 1.71,
+      "short_distractor_count": 0,
+      "length_std": 12.5
+    },
+    "correct_options": [
+      "B. 使用 Spot Fleet 或 Auto Scaling Group，并配置 On-Demand 作为基础容量"
+    ]
+  },
+  {
+    "id": "M14",
+    "domain": "Security and Compliance",
+    "question": "AWS WAF 可以帮助防护哪些类型的攻击？（选择两项）",
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. 基础设施层 DDoS",
+      "B. SQL 注入和跨站脚本 (XSS)",
+      "C. 恶意机器人",
+      "D. 物理数据中心入侵",
+      "E. 操作系统漏洞利用"
+    ],
+    "explanation": "正确答案：\n\n「SQL 注入和跨站脚本 (XSS)」\n「恶意机器人」\n\n错误选项分析：\n\n「基础设施层 DDoS」是错误的：基础设施层 DDoS 防护主要由 AWS Shield 负责，WAF 工作在应用层。\n\n「物理数据中心入侵」是错误的：物理数据中心入侵防护属于 AWS 的责任范围，WAF 不处理此问题。\n\n「操作系统漏洞利用」是错误的：操作系统漏洞利用主要通过补丁、Inspector 等工具防护，WAF 无法有效防护。\n\n**重点考点 / 关键词补充：**\n- **WAF 工作层级**：应用层（Layer 7），可检查 HTTP/HTTPS 请求内容。\n- **可防护的攻击**：SQL 注入、跨站脚本 (XSS)、恶意机器人、IP 信誉、地理限制等。\n- **WAF vs Shield**：WAF 防护应用层攻击；Shield 主要防护网络/传输层 DDoS。\n- **Bot Control**：WAF 的高级功能之一，可识别和管理恶意机器人流量。",
+    "metrics": {
+      "max_correct_len": 20,
+      "avg_distractor_len": 11.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.71,
+      "short_distractor_count": 3,
+      "length_std": 4.5
+    },
+    "correct_options": [
+      "B. SQL 注入和跨站脚本 (XSS)",
+      "C. 恶意机器人"
+    ]
+  },
+  {
+    "id": "M90",
+    "domain": "Security and Compliance",
+    "question": "以下哪些服务与描述的匹配是正确的？（选择三项）",
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常",
+      "B. AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描",
+      "C. Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）",
+      "D. AWS Security Hub —— 提供对 EC2 实例的实时性能监控和告警",
+      "E. AWS WAF —— 集中收集和分析跨多个 AWS 账户的安全数据"
+    ],
+    "explanation": "正确答案：\n\n「Amazon GuardDuty —— 智能威胁检测」\n「AWS Inspector —— 漏洞评估与安全扫描」\n「Amazon Macie —— 发现和保护 S3 中的敏感数据」\n\n错误选项分析：\n\n「AWS Security Hub —— 提供对 EC2 实例的实时性能监控」是错误的：Security Hub 是安全态势聚合与管理平台，不是性能监控（那是 CloudWatch）。\n\n「AWS WAF —— 集中收集和分析跨多个 AWS 账户的安全数据」是错误的：WAF 是 Web 应用防火墙，负责过滤恶意 HTTP 请求；跨账户安全数据聚合是 Security Hub 的职责。\n\n**重点考点 / 关键词补充：**\n- GuardDuty：威胁检测（无代理，分析日志）\n- Inspector：漏洞扫描（EC2 + 容器镜像）\n- Macie：S3 敏感数据发现（ML）\n- Security Hub：安全态势管理 + 聚合多个安全服务发现\n- 常考陷阱：不要把 Security Hub 当成性能监控工具",
+    "metrics": {
+      "max_correct_len": 67,
+      "avg_distractor_len": 39.5,
+      "min_distractor_len": 36,
+      "ratio_maxc_avgd": 1.7,
+      "short_distractor_count": 0,
+      "length_std": 11.7
+    },
+    "correct_options": [
+      "A. Amazon GuardDuty —— 智能威胁检测服务，自动分析 CloudTrail、VPC Flow Logs 等发现异常",
+      "B. AWS Inspector —— 针对 EC2 实例和容器镜像的漏洞评估与安全扫描",
+      "C. Amazon Macie —— 使用机器学习发现和保护 S3 中的敏感数据（如 PII）"
+    ]
+  },
+  {
+    "id": "S27",
+    "domain": "Technology and Services",
+    "question": "当 Spot Instance 被 AWS 中断时，通常会提前多久发出通知？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 立即中断，无通知",
+      "B. 通常提前 2 分钟发出中断通知",
+      "C. 提前 1 小时通知",
+      "D. 永远不会中断"
+    ],
+    "explanation": "「通常提前 2 分钟发出中断通知」是正确的。\n\n当 Spot Instance 被 AWS 中断时，AWS 通常会在中断前 2 分钟通过实例元数据和 EventBridge 发出中断通知，让应用有时间做优雅关机、保存状态或进行 Checkpointing。\n\n其他选项分析：\n\n「立即中断，无通知」是错误的：AWS 会提供 2 分钟的宽限期。\n\n「提前 1 小时通知」是错误的：通知时间是 2 分钟，不是 1 小时。\n\n「永远不会中断」是错误的：Spot Instance 的本质就是可中断的。\n\n**重点考点 / 关键词补充：**\n- Spot 中断通知时间：2 分钟（固定）\n- 应用必须做好中断处理才能安全使用 Spot\n- 可以通过 Spot 实例中断处理（Spot Instance Interruption）机制优雅退出",
+    "metrics": {
+      "max_correct_len": 18,
+      "avg_distractor_len": 10.7,
+      "min_distractor_len": 9,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 3,
+      "length_std": 3.9
+    },
+    "correct_options": [
+      "B. 通常提前 2 分钟发出中断通知"
+    ]
+  },
+  {
+    "id": "M34",
+    "domain": "Technology and Services",
+    "question": "Amazon VPC 的主要组件包括哪些？（选择三项）",
+    "correct_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. Subnets",
+      "B. Route Tables",
+      "C. Internet Gateway / NAT Gateway",
+      "D. Security Groups & NACLs",
+      "E. S3 Buckets"
+    ],
+    "explanation": "正确答案：\n\n「Subnets」\n「Route Tables」\n「Internet Gateway / NAT Gateway」\n\n错误选项分析：\n\n「Security Groups & NACLs」是错误的：Security Groups 和 NACLs 是 VPC 的安全组件，但题目重点是网络核心组件。\n\n「S3 Buckets」是错误的：S3 Buckets 不属于 VPC 的组件，是独立的对象存储服务。\n\n**重点考点 / 关键词补充：**\n- **VPC 核心组件**：子网（Subnet）、路由表（Route Table）、网关（IGW/NAT Gateway）是必考三件套。\n- **安全组件**：虽然 Security Group + NACL 也属于 VPC，但通常单独作为安全考点出现。\n- **常见陷阱**：不要把 S3、DynamoDB 等存储/数据库服务当成 VPC 组件。\n- 考试常考：VPC = 网络隔离 + 子网 + 路由 + 网关 + 安全组/NACL。",
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 19.5,
+      "min_distractor_len": 13,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 1,
+      "length_std": 9.7
+    },
+    "correct_options": [
+      "A. Subnets",
+      "B. Route Tables",
+      "C. Internet Gateway / NAT Gateway"
+    ]
+  },
+  {
+    "id": "M55",
+    "domain": "Security and Compliance",
+    "question": "以下哪些是 IAM Role 相比 IAM User 的显著优势？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证",
+      "B. Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+      "C. Role 可以直接用于登录 AWS 管理控制台",
+      "D. Role 的权限永远大于普通 IAM User"
+    ],
+    "explanation": "「Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证」和「Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源」是正确的。\n\nRole 的核心优势是无长期凭证（通过 AssumeRole 获取最长 12 小时临时凭证），极大降低密钥泄露风险，非常适合服务间访问和跨账户访问。\n\n其他选项分析：\n\n「Role 可以直接用于登录 AWS 管理控制台」是错误的：Role 不能直接登录控制台，必须先 AssumeRole 后使用临时凭证。\n\n「Role 的权限永远大于普通 IAM User」是错误的：权限大小由附加的策略决定，与是 Role 还是 User 无关。\n\n**重点考点 / 关键词补充：**\n- Role 核心优势：无长期凭证 + 临时凭证（AssumeRole）\n- 最适合服务（EC2/Lambda 等）和跨账户访问\n- 不能直接登录控制台\n- 考试高频：Role 是“无长期密钥”最佳实践",
+    "metrics": {
+      "max_correct_len": 44,
+      "avg_distractor_len": 26.0,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 0,
+      "length_std": 9.4
+    },
+    "correct_options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取临时凭证",
+      "B. Role 特别适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源"
+    ]
+  },
+  {
+    "id": "M66",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些是 Savings Plans 相比传统 Reserved Instances 的主要灵活性优势？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
+      "B. 可在不同实例系列和操作系统之间灵活切换",
+      "C. 购买后可以随时取消且获得全额退款，无任何财务限制",
+      "D. 必须提前锁定具体的实例类型、操作系统和可用区才能享受折扣"
+    ],
+    "explanation": "「Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用」和「可在不同实例系列和操作系统之间灵活切换」是正确的。\n\nSavings Plans 的最大优势是不需要锁定具体实例类型和区域，Compute Savings Plans 甚至可以跨计算服务和跨 Region 使用。\n\n其他选项分析：\n\n「购买后可以随时取消且获得全额退款，无任何财务限制」是错误的：Savings Plans 一旦购买，在 1 年或 3 年承诺期内通常不可取消或获得全额退款。\n\n「必须提前锁定具体的实例类型、操作系统和可用区才能享受折扣」是错误的：这是传统 Reserved Instances 或 EC2 Instance Savings Plans 的限制，Savings Plans 的最大优势正是不需要这种提前指定。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：灵活性最高，可跨 EC2/Fargate/Lambda + 跨 Region\n- EC2 Instance Savings Plans：灵活性较低，只能锁定特定实例族和 Region\n- 与传统 RI 最大区别：不需要指定具体实例类型和可用区",
+    "metrics": {
+      "max_correct_len": 49,
+      "avg_distractor_len": 29.0,
+      "min_distractor_len": 27,
+      "ratio_maxc_avgd": 1.69,
+      "short_distractor_count": 0,
+      "length_std": 11.8
+    },
+    "correct_options": [
+      "A. Compute Savings Plans 可跨 EC2、Fargate、Lambda 使用",
+      "B. 可在不同实例系列和操作系统之间灵活切换"
+    ]
+  },
+  {
+    "id": "S17",
+    "domain": "Billing, Pricing, and Support",
+    "question": "使用 AWS Organizations 进行 Consolidated Billing 的主要财务优势是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 每个账户独立享受完整免费套餐",
+      "B. 多个账户用量合并计算，更容易达到更高折扣层级",
+      "C. 所有服务自动打 50% 折扣",
+      "D. 没有任何财务优势"
+    ],
+    "explanation": "「多个账户用量合并计算，更容易达到更高折扣层级」是正确的。\n\n使用 AWS Organizations 的 Consolidated Billing 功能后，所有关联账户的用量会被合并计算，更容易达到更高的折扣层级（尤其是数据传输费），同时由主账户统一支付，简化财务管理。\n\n其他选项分析：\n\n「每个账户独立享受完整免费套餐」是错误的：多个账户合并后，免费额度是共享的，并非每个账户都独立享受完整额度。\n\n「所有服务自动打 50% 折扣」是错误的：折扣主要来自用量合并达到更高阶梯，并非固定 50%。\n\n「没有任何财务优势」是错误的：合并计费是 AWS 组织的主要财务优势之一。\n\n**重点考点 / 关键词补充：**\n- Consolidated Billing：合并计费\n- 主要好处：用量合并 → 更高折扣层级 + 统一支付\n- 注意：免费额度在组织内是共享的",
+    "metrics": {
+      "max_correct_len": 25,
+      "avg_distractor_len": 15.0,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.67,
+      "short_distractor_count": 1,
+      "length_std": 5.7
+    },
+    "correct_options": [
+      "B. 多个账户用量合并计算，更容易达到更高折扣层级"
+    ]
+  },
+  {
+    "id": "S131",
+    "domain": "Technology and Services",
+    "question": "AWS CloudFormation 的主要作用是什么？它与手动在控制台创建资源相比有什么核心优势？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. CloudFormation 主要用于监控资源性能和设置告警",
+      "B. CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施",
+      "C. CloudFormation 只能用于创建 EC2 实例，不能管理其他服务",
+      "D. CloudFormation 主要用于实时成本优化和预算告警"
+    ],
+    "explanation": "「CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施」是正确的。\n\nAWS CloudFormation 是基础设施即代码 (IaC) 服务。通过 JSON 或 YAML 模板，你可以定义整个 AWS 架构（VPC、EC2、S3、IAM、RDS 等），然后一键部署。核心优势包括：可重复部署、一致性、版本控制、回滚能力、依赖关系自动处理。\n\n其他选项分析：\n\n「主要用于监控资源性能」是错误的：这是 CloudWatch 的职责。\n\n「只能用于创建 EC2 实例」是错误的：CloudFormation 支持几乎所有 AWS 资源。\n\n「主要用于实时成本优化」是错误的：成本优化主要靠 Cost Explorer、Budgets 和 Trusted Advisor。\n\n**重点考点 / 关键词补充：**\n- CloudFormation = 基础设施即代码 (Infrastructure as Code)\n- 模板格式：JSON / YAML\n- 核心优势：可重复、一致性、版本控制、自动回滚、依赖管理\n- 常考：CloudFormation Stack = 一组相关资源的集合；Change Set 可预览变更",
+    "metrics": {
+      "max_correct_len": 59,
+      "avg_distractor_len": 35.3,
+      "min_distractor_len": 33,
+      "ratio_maxc_avgd": 1.67,
+      "short_distractor_count": 0,
+      "length_std": 12.3
+    },
+    "correct_options": [
+      "B. CloudFormation 允许使用代码（模板）以可重复、可版本控制的方式自动创建和管理 AWS 资源基础设施"
+    ]
+  },
+  {
+    "id": "S36",
+    "domain": "Technology and Services",
+    "question": "Amazon Lightsail 相比标准 EC2 的主要定位是？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 提供更强大的 GPU 性能",
+      "B. 面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器",
+      "C. 替代 Lambda 的 serverless 服务",
+      "D. 专门用于大数据处理"
+    ],
+    "explanation": "「面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器」是正确的。\n\nAmazon Lightsail 主要面向初学者、个人开发者和简单工作负载，提供固定价格、开箱即用的一键式虚拟服务器（VPS），管理界面简单，适合快速搭建博客、网站、小型应用等场景。\n\n其他选项分析：\n\n「提供更强大的 GPU 性能」是错误的：Lightsail 的 GPU 选项有限，更强大的 GPU 应使用标准 EC2。\n\n「替代 Lambda 的 serverless 服务」是错误的：Lightsail 仍然是传统虚拟服务器，不是 serverless。\n\n「专门用于大数据处理」是错误的：大数据处理应使用 EMR、Glue 等服务。\n\n**重点考点 / 关键词补充：**\n- Lightsail = 简化版的 EC2 + 托管数据库 + 负载均衡 + CDN\n- 适合快速启动简单项目\n- 超过一定规模后建议迁移到标准 EC2 以获得更多灵活性",
+    "metrics": {
+      "max_correct_len": 31,
+      "avg_distractor_len": 18.7,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 1,
+      "length_std": 9.2
+    },
+    "correct_options": [
+      "B. 面向初学者和简单工作负载，提供固定价格的一键式虚拟服务器"
+    ]
+  },
+  {
+    "id": "S74",
+    "domain": "Security and Compliance",
+    "question": "以下关于 S3 Versioning 和 S3 Object Lock 的说法，哪一项是正确的？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 两者都可以防止对象被删除或覆盖，实现 WORM 保护",
+      "B. Versioning 主要用于防止误删和恢复历史版本，Object Lock 主要用于合规防篡改",
+      "C. 开启 Versioning 后对象就无法被删除",
+      "D. Object Lock 可以替代 Versioning 用于数据恢复"
+    ],
+    "explanation": "「Versioning 主要用于防止误删和恢复历史版本，Object Lock 主要用于合规防篡改」是正确的。\n\nS3 Versioning 会保留对象的多个版本，主要用于误删恢复和审计历史变更；S3 Object Lock 则在保留期内强制实施 WORM（一次写入多次读取），防止任何删除或覆盖操作，满足严格的合规要求（如 SEC 17a-4）。\n\n其他选项分析：\n\n「两者都可以防止对象被删除或覆盖」是错误的：Versioning 不会阻止删除，它只是保留旧版本。\n\n「开启 Versioning 后对象就无法被删除」是错误的：Versioning 允许删除，但会保留删除标记和旧版本。\n\n「Object Lock 可以替代 Versioning 用于数据恢复」是错误的：两者目的不同，Object Lock 更侧重不可变性而非版本恢复。\n\n**重点考点 / 关键词补充：**\n- Versioning：数据保护 + 版本历史（可删除但可恢复）\n- Object Lock：合规不可变性（Compliance/Governance 模式）\n- 两者可以同时开启，互补使用",
+    "metrics": {
+      "max_correct_len": 51,
+      "avg_distractor_len": 30.7,
+      "min_distractor_len": 26,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 0,
+      "length_std": 11.2
+    },
+    "correct_options": [
+      "B. Versioning 主要用于防止误删和恢复历史版本，Object Lock 主要用于合规防篡改"
+    ]
+  },
+  {
+    "id": "M32",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些做法可以降低 S3 的存储成本？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 把不常访问的数据转移到 S3 Standard-IA 或 Glacier",
+      "B. 使用 S3 Intelligent-Tiering",
+      "C. 开启 S3 版本控制并永远保留所有版本",
+      "D. 把所有数据永远保存在 S3 Standard"
+    ],
+    "explanation": "正确答案：\n\n「把不常访问的数据转移到 S3 Standard-IA 或 Glacier」\n「使用 S3 Intelligent-Tiering」\n\n错误选项分析：\n\n「开启 S3 版本控制并永远保留所有版本」是错误的：开启 S3 版本控制会保留所有历史版本，显著增加存储成本（除非配合生命周期策略清理）。\n\n「把所有数据永远保存在 S3 Standard」是错误的：把所有数据永远保存在 S3 Standard 是最贵的做法；应根据访问频率下沉到 IA 或 Glacier。\n\n**重点考点 / 关键词补充：**\n- **降低 S3 成本三大法宝**：1. 使用 Intelligent-Tiering 自动分层；2. 把冷数据转 IA/Glacier；3. 配合 Lifecycle Policy 自动转换。\n- **版本控制陷阱**：版本控制本身会增加存储费用，必须搭配生命周期规则清理旧版本。\n- **Intelligent-Tiering**：最推荐的「懒人」方案，无需手动干预，AWS 自动根据访问模式移动数据。\n- 考试常考：Standard → Standard-IA（30天最低）→ Glacier Instant/Deep Archive 的成本递减顺序。",
+    "metrics": {
+      "max_correct_len": 39,
+      "avg_distractor_len": 23.5,
+      "min_distractor_len": 22,
+      "ratio_maxc_avgd": 1.66,
+      "short_distractor_count": 0,
+      "length_std": 7.4
+    },
+    "correct_options": [
+      "A. 把不常访问的数据转移到 S3 Standard-IA 或 Glacier",
+      "B. 使用 S3 Intelligent-Tiering"
+    ]
+  },
+  {
+    "id": "S58",
+    "domain": "Technology and Services",
+    "question": "AWS 客户希望对 S3 中的数据进行跨 Region 复制以实现灾难恢复，最合适的方案是？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 开启 S3 Versioning",
+      "B. 配置 S3 Cross-Region Replication (CRR)",
+      "C. 使用 S3 Transfer Acceleration",
+      "D. 定期手动复制对象到另一个 Region"
+    ],
+    "explanation": "「配置 S3 Cross-Region Replication (CRR)」是正确的。\n\nS3 Cross-Region Replication 允许自动、异步地将对象从源存储桶复制到另一个 Region 的目标存储桶，是实现跨 Region 灾难恢复和数据冗余的标准方案。\n\n其他选项分析：\n\n「开启 S3 Versioning」是错误的：版本控制主要防止误删，不能实现跨 Region 复制。\n\n「使用 S3 Transfer Acceleration」是错误的：Transfer Acceleration 主要优化上传速度，不是复制方案。\n\n「定期手动复制对象」是错误的：手动方式不可靠且难以管理，不符合最佳实践。\n\n**重点考点 / 关键词补充：**\n- CRR 是异步复制，通常在几分钟内完成\n- 支持复制加密对象和元数据\n- 常用于合规、灾难恢复和降低跨 Region 访问延迟",
+    "metrics": {
+      "max_correct_len": 39,
+      "avg_distractor_len": 23.7,
+      "min_distractor_len": 19,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 0,
+      "length_std": 9.0
+    },
+    "correct_options": [
+      "B. 配置 S3 Cross-Region Replication (CRR)"
+    ]
+  },
+  {
+    "id": "S104",
+    "domain": "Cloud Concepts",
+    "question": "以下关于 AWS Edge Location 和 Local Zones 的描述，哪一项是正确的？",
+    "correct_answers": [
+      "C"
+    ],
+    "options": [
+      "A. Edge Location 可以运行完整的 EC2 实例和 RDS 数据库",
+      "B. Local Zones 主要用于全球内容缓存加速，而 Edge Location 用于运行低延迟应用",
+      "C. Edge Location 主要用于降低延迟的内容分发，Local Zones 则允许在靠近人口中心的位置运行完整的 AWS 服务",
+      "D. 两者是完全相同的概念，只是不同 Region 的叫法不同"
+    ],
+    "explanation": "「Edge Location 主要用于降低延迟的内容分发，Local Zones 则允许在靠近人口中心的位置运行完整的 AWS 服务」是正确的。\n\nEdge Location 是 CloudFront 和 Global Accelerator 使用的全球边缘节点，主要功能是内容缓存和加速；Local Zones 是较新的基础设施形式，部署在靠近大城市的位置，让客户能以极低延迟运行完整的 AWS 服务（如 EC2、EBS、RDS 等）。\n\n其他选项分析：\n\n「Edge Location 可以运行完整的 EC2 实例和 RDS 数据库」是错误的：Edge Location 主要提供缓存和加速能力，不支持完整计算服务。\n\n「Local Zones 主要用于全球内容缓存加速」是错误的：这是 Edge Location 的主要用途。\n\n「两者是完全相同的概念」是错误的：两者定位和能力差异很大。\n\n**重点考点 / 关键词补充：**\n- Edge Location：全球内容分发网络节点（CloudFront/Global Accelerator）\n- Local Zones：靠近人口中心，可运行完整 AWS 服务，低延迟计算\n- 两者都属于全球基础设施的补充形式，核心仍是 Region + AZ",
+    "metrics": {
+      "max_correct_len": 68,
+      "avg_distractor_len": 41.3,
+      "min_distractor_len": 31,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 0,
+      "length_std": 16.1
+    },
+    "correct_options": [
+      "C. Edge Location 主要用于降低延迟的内容分发，Local Zones 则允许在靠近人口中心的位置运行完整的 AWS 服务"
+    ]
+  },
+  {
+    "id": "S109",
+    "domain": "Cloud Concepts",
+    "question": "AWS Local Zones 相比传统 Region 的主要优势是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 提供更低的存储费用",
+      "B. 允许在靠近大型人口中心的位置以极低延迟运行完整的 AWS 服务",
+      "C. 自动实现跨 Region 的灾难恢复",
+      "D. 完全替代 Edge Locations 进行内容分发"
+    ],
+    "explanation": "「允许在靠近大型人口中心的位置以极低延迟运行完整的 AWS 服务」是正确的。\\n\\nLocal Zones 是部署在靠近大城市的位置的基础设施，让客户能够以极低的延迟运行完整的 AWS 服务（如 EC2、EBS、RDS、ECS 等），同时仍能利用 AWS 的全球基础设施。\\n\\n其他选项分析：\\n\\n「提供更低的存储费用」是错误的：Local Zones 的费用通常高于标准 Region。\\n\\n「自动实现跨 Region 的灾难恢复」是错误的：Local Zones 仍属于同一 Region，不提供跨 Region 容灾。\\n\\n「完全替代 Edge Locations 进行内容分发」是错误的：Edge Locations 主要用于内容缓存加速，两者定位不同。\\n\\n**重点考点 / 关键词补充：**\\n- Local Zones：靠近人口中心，低延迟运行完整 AWS 服务\\n- 适合场景：游戏、媒体、金融交易、实时应用\\n- 与 Edge Locations 区别：Local Zones 可运行计算/存储服务，Edge Locations 主要用于缓存",
+    "metrics": {
+      "max_correct_len": 34,
+      "avg_distractor_len": 20.7,
+      "min_distractor_len": 12,
+      "ratio_maxc_avgd": 1.65,
+      "short_distractor_count": 1,
+      "length_std": 9.6
+    },
+    "correct_options": [
+      "B. 允许在靠近大型人口中心的位置以极低延迟运行完整的 AWS 服务"
+    ]
+  },
+  {
+    "id": "M95",
+    "domain": "Billing, Pricing, and Support",
+    "question": "关于 AWS Savings Plans 的 Compute Savings Plans 和 EC2 Instance Savings Plans，以下哪些说法是正确的？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用，折扣通常略低于 EC2 Instance Savings Plans",
+      "B. EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣",
+      "C. 两种 Savings Plans 购买后都可以在承诺期内随时取消且无任何提前终止费用",
+      "D. Compute Savings Plans 只能用于 EC2 实例，不能用于 Lambda、Fargate 或容器化工作负载"
+    ],
+    "explanation": "正确答案：\n\n「Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用」\n「EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣」\n\n错误选项分析：\n\n「两种 Savings Plans 购买后都可以在承诺期内随时取消且无任何提前终止费用」是错误的：Savings Plans 一旦购买，在承诺期内通常不可取消或退款，提前终止会有费用损失。\n\n「Compute Savings Plans 只能用于 EC2 实例，不能用于 Lambda、Fargate 或容器化工作负载」是错误的：Compute Savings Plans 的最大优势正是可以跨 EC2、Lambda、Fargate 等多种计算服务使用。\n\n**重点考点 / 关键词补充：**\n- Compute Savings Plans：最高灵活性（跨实例类型、Region、甚至 Lambda/Fargate），折扣稍低\n- EC2 Instance Savings Plans：仅限特定实例系列 + Region，折扣通常更高\n- 推荐：大多数场景优先选择 Compute Savings Plans（灵活性价值更高）\n- 与 Reserved Instances 最大区别：Savings Plans 无需指定具体实例类型",
+    "metrics": {
+      "max_correct_len": 90,
+      "avg_distractor_len": 55.0,
+      "min_distractor_len": 45,
+      "ratio_maxc_avgd": 1.64,
+      "short_distractor_count": 0,
+      "length_std": 18.7
+    },
+    "correct_options": [
+      "A. Compute Savings Plans 灵活性最高，可跨 EC2、Lambda、Fargate 使用，折扣通常略低于 EC2 Instance Savings Plans",
+      "B. EC2 Instance Savings Plans 仅适用于特定实例系列和 Region，但通常能提供更高的折扣"
+    ]
+  },
+  {
+    "id": "M107",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Free Tier 主要包含以下哪几种类型？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 新账户 12 个月免费额度",
+      "B. 永久免费套餐（Always Free）",
+      "C. 短期促销免费试用",
+      "D. 仅限教育机构使用的免费资源"
+    ],
+    "explanation": "「新账户 12 个月免费额度」和「永久免费套餐（Always Free）」是正确的。\n\nAWS Free Tier 主要由两种类型组成：从账户激活起 12 个月的免费额度，以及无时间限制的永久免费套餐（如每月一定量的 Lambda 调用、DynamoDB 存储等）。\n\n其他选项分析：\n\n「短期促销免费试用」是错误的：虽然偶尔有促销活动，但不属于 Free Tier 的标准组成部分。\n\n「仅限教育机构使用的免费资源」是错误的：Free Tier 对所有新注册用户开放。\n\n**重点考点 / 关键词补充：**\n- 12 个月免费：从「激活账户」开始计算，不是注册日期\n- Always Free：无时间限制，只要账户保持活跃即可使用\n- 用完后会正常收费，不会自动停止服务\n- 考试常考：区分两种免费类型的适用范围和时间限制",
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 13.5,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.63,
+      "short_distractor_count": 1,
+      "length_std": 4.5
+    },
+    "correct_options": [
+      "A. 新账户 12 个月免费额度",
+      "B. 永久免费套餐（Always Free）"
+    ]
+  },
+  {
+    "id": "S112",
+    "domain": "Cloud Concepts",
+    "question": "在设计多 Region 灾难恢复架构时，以下哪种模式通常恢复时间最快但成本也最高？",
+    "correct_answers": [
+      "D"
+    ],
+    "options": [
+      "A. Backup and Restore",
+      "B. Pilot Light",
+      "C. Warm Standby",
+      "D. Multi-Site Active/Active"
+    ],
+    "explanation": "「Multi-Site Active/Active」是正确的。\n\nMulti-Site Active/Active 模式下，多个 Region 同时处理生产流量，故障时可以实现几乎零停机的故障转移，因此恢复时间最快（RTO 接近 0），但需要维护多个完整生产环境的成本也最高。\n\n其他选项分析：\n\n「Backup and Restore」是错误的：这是最便宜但恢复时间最长的模式。\n\n「Pilot Light」是错误的：核心基础设施运行在备用 Region，但应用层需要启动，恢复时间中等。\n\n「Warm Standby」是错误的：备用 Region 运行缩减版的完整系统，恢复时间较快但不如 Active/Active。\n\n**重点考点 / 关键词补充：**\n- Multi-Site Active/Active：RTO/RPO 最低，成本最高\n- Pilot Light：核心服务运行，应用层待命\n- Warm Standby：缩减版完整系统待命\n- Backup and Restore：最便宜，RTO/RPO 最高",
+    "metrics": {
+      "max_correct_len": 27,
+      "avg_distractor_len": 16.7,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.62,
+      "short_distractor_count": 1,
+      "length_std": 6.0
+    },
+    "correct_options": [
+      "D. Multi-Site Active/Active"
+    ]
+  },
+  {
+    "id": "M06",
+    "domain": "Security and Compliance",
+    "question": "为什么强烈不推荐日常使用 AWS Root 用户？（选择两项）",
+    "correct_answers": [
+      "B",
+      "E"
+    ],
+    "options": [
+      "A. Root 用户权限最小",
+      "B. Root 用户拥有账户全部权限，一旦泄露后果极严重",
+      "C. Root 用户无法开启 MFA",
+      "D. 无法为 Root 用户创建访问密钥",
+      "E. 很多操作无法被 IAM 策略完全限制"
+    ],
+    "explanation": "正确答案：\n\n「Root 用户拥有账户全部权限，一旦泄露后果极严重」\n「很多操作无法被 IAM 策略完全限制」\n\n错误选项分析：\n\n「Root 用户权限最小」是错误的：Root 用户权限是最大的，而不是最小。\n\n「Root 用户无法开启 MFA」是错误的：Root 用户完全可以开启 MFA。\n\n「无法为 Root 用户创建访问密钥」是错误的：Root 用户可以创建访问密钥。\n\n**重点考点 / 关键词补充：**\n- **AWS 账户 Root 用户**：创建 AWS 账户时默认的唯一身份，拥有账户内所有权限（无法被 IAM 策略完全限制）。\n- **最佳实践**：日常绝不使用 Root，只在极少数必须操作时（创建 IAM 用户、修改账单信息、关闭账户等）使用，并立即为其开启 MFA。\n- **IAM 用户**：为日常操作创建的身份，可严格控制权限 + 开启 MFA，是推荐做法。",
+    "metrics": {
+      "max_correct_len": 28,
+      "avg_distractor_len": 17.3,
+      "min_distractor_len": 14,
+      "ratio_maxc_avgd": 1.62,
+      "short_distractor_count": 1,
+      "length_std": 5.1
+    },
+    "correct_options": [
+      "B. Root 用户拥有账户全部权限，一旦泄露后果极严重",
+      "E. 很多操作无法被 IAM 策略完全限制"
+    ]
+  },
+  {
+    "id": "S140",
+    "domain": "Security and Compliance",
+    "question": "AWS Personal Health Dashboard 与 AWS Trusted Advisor 的主要区别是什么？",
+    "correct_answers": [
+      "B"
+    ],
+    "options": [
+      "A. 两者功能完全相同，只是界面和名称不同，实际提供的建议内容一致",
+      "B. Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议（成本、性能、安全等）",
+      "C. Personal Health Dashboard 只关注成本优化，Trusted Advisor 只关注安全和合规检查",
+      "D. Trusted Advisor 是免费的，Personal Health Dashboard 只对 Enterprise Support 及以上客户开放"
+    ],
+    "explanation": "「Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议」是正确的。\n\nPersonal Health Dashboard：显示 AWS 针对你具体账户的个性化事件（如特定服务在你使用区域的计划维护、已知问题影响等），非常及时和相关。\nTrusted Advisor：提供跨成本优化、性能、安全、容错、卓越运营五个类别的通用最佳实践检查和建议（部分检查需要 Business Support 及以上）。\n\n其他选项分析：\n\n「两者功能完全相同，只是界面和名称不同，实际提供的建议内容一致」是错误的：Personal Health Dashboard 提供针对你具体账户的个性化事件通知，Trusted Advisor 提供跨五个类别的通用最佳实践检查，两者用途和信息来源完全不同。\n\n「Personal Health Dashboard 只关注成本优化，Trusted Advisor 只关注安全和合规检查」是错误的：Personal Health Dashboard 关注你账户的个性化服务健康事件和计划维护，Trusted Advisor 提供成本、性能、安全、容错、卓越运营五个类别的通用检查。\n\n**重点考点 / 关键词补充：**\n- Personal Health Dashboard：个性化、及时、针对你的账户的事件通知\n- Trusted Advisor：通用、检查项驱动的优化建议（5 个类别）\n- 考试常考：不要混淆两者用途\n- Personal Health Dashboard 对所有支持计划免费开放",
+    "metrics": {
+      "max_correct_len": 94,
+      "avg_distractor_len": 58.3,
+      "min_distractor_len": 33,
+      "ratio_maxc_avgd": 1.61,
+      "short_distractor_count": 0,
+      "length_std": 26.1
+    },
+    "correct_options": [
+      "B. Personal Health Dashboard 提供针对你账户的个性化健康事件和计划维护通知；Trusted Advisor 提供基于最佳实践的通用优化建议（成本、性能、安全等）"
+    ]
+  },
+  {
+    "id": "M27",
+    "domain": "Billing, Pricing, and Support",
+    "question": "AWS Free Tier 主要包含哪几种类型？（选择两项）",
+    "correct_answers": [
+      "A",
+      "B"
+    ],
+    "options": [
+      "A. 12 个月免费额度（新账户）",
+      "B. 永久免费套餐（Always Free）",
+      "C. 短期免费试用（短期促销）",
+      "D. 仅对教育机构开放",
+      "E. 仅适用于 Spot 实例"
+    ],
+    "explanation": "正确答案：\n\n「12 个月免费额度（新账户）」\n「永久免费套餐（Always Free）」\n\n错误选项分析：\n\n「短期免费试用（短期促销）」是错误的：短期免费试用（促销性质）虽然存在，但不是 Free Tier 的主要构成部分。\n\n「仅对教育机构开放」是错误的：AWS Free Tier 对所有新注册用户开放，并不只对教育机构开放。\n\n「仅适用于 Spot 实例」是错误的：Spot 实例本身不属于 Free Tier 范畴（Spot 是独立的购买选项）。\n\n**重点考点 / 关键词补充：**\n- **AWS Free Tier 两种主要类型**（必须区分）：\n  - 12 个月免费额度：从首次激活账户开始计算（非注册日期），仅限新账户。\n  - 永久免费（Always Free）：无时间限制，只要账户活跃即可使用（如 DynamoDB 25GB、Lambda 每月 100 万次调用、S3 5GB 等）。\n- **常见误区**：不是所有服务都有 12 个月免费；用完后会正常收费，不会自动停止。\n- 考试常考：12 个月免费从「激活」开始算 + 哪些服务属于永久免费。",
+    "metrics": {
+      "max_correct_len": 22,
+      "avg_distractor_len": 13.7,
+      "min_distractor_len": 11,
+      "ratio_maxc_avgd": 1.61,
+      "short_distractor_count": 1,
+      "length_std": 4.0
+    },
+    "correct_options": [
+      "A. 12 个月免费额度（新账户）",
+      "B. 永久免费套餐（Always Free）"
+    ]
+  },
+  {
+    "id": "M87",
+    "domain": "Billing, Pricing, and Support",
+    "question": "以下哪些场景最适合使用 Spot Instances？（选择两项）",
+    "correct_answers": [
+      "B",
+      "C"
+    ],
+    "options": [
+      "A. 需要长期稳定运行的核心生产数据库",
+      "B. 可中断、容错设计良好的批处理或大数据分析工作负载",
+      "C. 对成本极度敏感且可以接受实例被中断的渲染或 CI/CD 任务",
+      "D. 需要在特定时间窗口内完成的实时交易系统"
+    ],
+    "explanation": "「可中断、容错设计良好的批处理或大数据分析工作负载」和「对成本极度敏感且可以接受实例被中断的渲染或 CI/CD 任务」是正确的。\\n\\nSpot Instances 价格可比 On-Demand 低 90%，但实例可能被中断（通常提前 2 分钟通知）。非常适合可中断、容错设计良好的工作负载。\\n\\n其他选项分析：\\n\\n「需要长期稳定运行的核心生产数据库」是错误的：Spot 存在中断风险，不适合关键生产负载。\\n\\n「需要在特定时间窗口内完成的实时交易系统」是错误的：实时系统对稳定性要求极高，不适合使用 Spot。\\n\\n**重点考点 / 关键词补充：**\\n- Spot Instance：最便宜，但可中断（2 分钟中断通知）\\n- 适合场景：批处理、容器化、容错设计好的应用、渲染、CI/CD\\n- 必须做好中断处理（Checkpointing、Queue、Auto Scaling 等）\\n- 最佳实践：与 On-Demand 混合使用",
+    "metrics": {
+      "max_correct_len": 33,
+      "avg_distractor_len": 20.5,
+      "min_distractor_len": 19,
+      "ratio_maxc_avgd": 1.61,
+      "short_distractor_count": 0,
+      "length_std": 6.1
+    },
+    "correct_options": [
+      "B. 可中断、容错设计良好的批处理或大数据分析工作负载",
+      "C. 对成本极度敏感且可以接受实例被中断的渲染或 CI/CD 任务"
+    ]
+  }
+]

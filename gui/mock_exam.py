@@ -290,6 +290,7 @@ class MockExamMixin:
         type_hint = "（多选题）" if is_multi else "（单选题）"
         domain_cn = DOMAIN_DISPLAY_NAMES.get(q.get("domain", ""), q.get("domain", "未分类"))
         self.domain_label.configure(text=f"领域：{domain_cn} {type_hint}")
+        # 模拟考试保持纯英文题干，不附加中文服务名标注（贴近真实考试）
         self.question_label.configure(text=q["question"])
 
         self.update_idletasks()

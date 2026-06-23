@@ -1,0 +1,113 @@
+{
+  "S48": {
+    "options": [
+      "A. 通过在多个 AZ 之间分散存储副本，可以显著降低同一 Region 内的数据存储与快照费用",
+      "B. 当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行",
+      "C. 跨多个 AZ 部署资源会自动获得更高的区域间网络带宽配额，并提升同 Region 内实例间的专线吞吐",
+      "D. 大多数 AWS 托管服务（如 RDS、ElastiCache）在单 AZ 部署时不可用，必须配置 Multi-AZ 才能创建"
+    ],
+    "explanation": "「当一个 AZ 发生故障时，应用可以在另一个 AZ 继续运行」是正确的。\n\nAvailability Zone 是物理隔离的数据中心。在一个 Region 内跨多个 AZ 部署资源，可以实现真正的故障隔离。当一个 AZ 发生电力、网络或自然灾害故障时，其他 AZ 通常不受影响，从而提高整体可用性。\n\n其他选项分析：\n\n「通过在多个 AZ 之间分散存储副本，可以显著降低同一 Region 内的数据存储与快照费用」是错误的：多 AZ 部署通常会增加成本（需要复制数据和跨 AZ 资源），而非降低存储费用。\n\n「跨多个 AZ 部署资源会自动获得更高的区域间网络带宽配额，并提升同 Region 内实例间的专线吞吐」是错误的：多 AZ 主要解决可用性和故障隔离，并非为了获得更高网络带宽；同 Region 内 AZ 间带宽虽高，但这不是推荐 Multi-AZ 的核心原因。\n\n「大多数 AWS 托管服务（如 RDS、ElastiCache）在单 AZ 部署时不可用，必须配置 Multi-AZ 才能创建」是错误的：大多数 AWS 服务在单 AZ 也可以正常创建和使用，Multi-AZ 是高可用架构的推荐做法，而非强制前提。\n\n**重点考点 / 关键词补充：**\n- AZ = 物理隔离的数据中心（Region 内）\n- 推荐高可用架构至少跨 2 个 AZ\n- 跨 AZ 数据传输通常免费或极低费用"
+  },
+  "S46": {
+    "options": [
+      "A. 适合高并发在线交易和订单处理等 OLTP 工作负载，如电商结账和银行核心交易系统",
+      "B. 大规模数据仓库和分析查询 (OLAP)",
+      "C. 适合存储 JSON/XML 文档、用户上传文件等非结构化数据，支持毫秒级单文档读写访问",
+      "D. 适合在内存中缓存数据库查询结果和会话数据，以降低后端读取延迟并提升应用响应速度"
+    ],
+    "explanation": "「大规模数据仓库和分析查询 (OLAP)」是正确的。\n\nAmazon Redshift 是 AWS 的全托管 PB 级数据仓库服务，主要用于大规模数据仓库和复杂分析查询（OLAP）工作负载，适合商业智能、报表和大规模数据分析场景。\n\n其他选项分析：\n\n「适合高并发在线交易和订单处理等 OLTP 工作负载，如电商结账和银行核心交易系统」是错误的：OLTP 更适合使用 RDS、Aurora 或 DynamoDB 等事务型数据库服务。\n\n「适合存储 JSON/XML 文档、用户上传文件等非结构化数据，支持毫秒级单文档读写访问」是错误的：非结构化/文档存储更适合 DynamoDB、DocumentDB 或 S3，而非列式数据仓库。\n\n「适合在内存中缓存数据库查询结果和会话数据，以降低后端读取延迟并提升应用响应速度」是错误的：内存缓存服务是 Amazon ElastiCache（Redis/Memcached），不是 Redshift。\n\n**重点考点 / 关键词补充：**\n- Redshift = 数据仓库（OLAP）\n- 适合复杂分析查询和 BI\n- 与 Athena 的区别：Redshift 适合大量结构化数据 + 高并发分析；Athena 适合即席查询 S3 数据"
+  },
+  "S94": {
+    "options": [
+      "A. 为全球用户提供静态图片、视频和 JavaScript 等静态 Web 资产的边缘缓存与 HTTPS 加速分发",
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+      "C. 通过边缘节点缓存 REST API 的动态 JSON 响应，以降低全球用户的 HTTP/HTTPS API 调用延迟",
+      "D. 将 S3 存储桶作为源站接入全球 CDN，为静态对象提供 HTTPS 边缘缓存与就近访问加速"
+    ],
+    "explanation": "「全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用」是正确的。\n\nAWS Global Accelerator 使用 Anycast IP + AWS 全球骨干网，能显著加速非 HTTP/HTTPS 的 TCP/UDP 流量，特别适合对延迟敏感的游戏、VoIP、金融交易等应用。而 CloudFront 主要优化 HTTP/HTTPS 静态和动态内容缓存。\n\n其他选项分析：\n\n「为全球用户提供静态图片、视频和 JavaScript 等静态 Web 资产的边缘缓存与 HTTPS 加速分发」是错误的：静态 Web 内容分发和边缘缓存是 Amazon CloudFront 的核心强项。\n\n「通过边缘节点缓存 REST API 的动态 JSON 响应，以降低全球用户的 HTTP/HTTPS API 调用延迟」是错误的：HTTP/HTTPS 动态 API 加速和边缘缓存更适合 CloudFront，而非 Global Accelerator。\n\n「将 S3 存储桶作为源站接入全球 CDN，为静态对象提供 HTTPS 边缘缓存与就近访问加速」是错误的：S3 + CloudFront 是标准的全球 CDN 组合，不是 Global Accelerator 的典型场景。\n\n**重点考点 / 关键词补充：**\n- Global Accelerator：TCP/UDP + Anycast + 全球骨干网\n- CloudFront：HTTP/HTTPS + 边缘缓存\n- 两者经常结合使用（Global Accelerator + CloudFront）"
+  },
+  "S99": {
+    "options": [
+      "A. 为全球用户提供静态图片、视频和 JavaScript 等静态 Web 资产的边缘缓存与 HTTPS 加速分发",
+      "B. 全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用",
+      "C. 通过边缘节点缓存 REST API 的动态 JSON 响应，以降低全球用户的 HTTP/HTTPS API 调用延迟",
+      "D. 将 S3 存储桶作为源站接入全球 CDN，为静态对象提供 HTTPS 边缘缓存与就近访问加速"
+    ],
+    "explanation": "「全球用户通过 TCP/UDP 协议访问游戏服务器或 VoIP 应用」是正确的。\n\nAWS Global Accelerator 使用 Anycast IP + AWS 全球骨干网，能显著加速非 HTTP/HTTPS 的 TCP/UDP 流量，特别适合对延迟敏感的游戏、VoIP、金融交易等应用。而 CloudFront 主要优化 HTTP/HTTPS 静态和动态内容缓存。\n\n其他选项分析：\n\n「为全球用户提供静态图片、视频和 JavaScript 等静态 Web 资产的边缘缓存与 HTTPS 加速分发」是错误的：静态 Web 内容分发和边缘缓存是 Amazon CloudFront 的核心强项。\n\n「通过边缘节点缓存 REST API 的动态 JSON 响应，以降低全球用户的 HTTP/HTTPS API 调用延迟」是错误的：HTTP/HTTPS 动态 API 加速和边缘缓存更适合 CloudFront，而非 Global Accelerator。\n\n「将 S3 存储桶作为源站接入全球 CDN，为静态对象提供 HTTPS 边缘缓存与就近访问加速」是错误的：S3 + CloudFront 是标准的全球 CDN 组合，不是 Global Accelerator 的典型场景。\n\n**重点考点 / 关键词补充：**\n- Global Accelerator：TCP/UDP + Anycast + 全球骨干网\n- CloudFront：HTTP/HTTPS + 边缘缓存\n- 两者经常结合使用（Global Accelerator + CloudFront）"
+  },
+  "M01": {
+    "options": [
+      "A. 无论使用 EC2、Lambda 还是 SaaS，客户始终需要对账户内所有安全控制、物理设施和底层硬件负全部责任",
+      "B. 责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）",
+      "C. AWS 始终负责为客户数据生成、轮换和管理所有加密密钥，包括 Customer Managed KMS Key 的完整生命周期",
+      "D. 对于托管服务，AWS 承担更多运营责任",
+      "E. 在采用托管服务后，客户永远不需要配置 IAM 策略、安全组或数据加密等任何安全配置"
+    ],
+    "explanation": "正确答案：\n\n「责任边界取决于使用的服务类型（IaaS/PaaS/SaaS）」\n「对于托管服务，AWS 承担更多运营责任」\n\n错误选项分析：\n\n「无论使用 EC2、Lambda 还是 SaaS，客户始终需要对账户内所有安全控制、物理设施和底层硬件负全部责任」是错误的：责任是共享的，且会随服务类型变化；物理设施和底层硬件安全由 AWS 负责。\n\n「AWS 始终负责为客户数据生成、轮换和管理所有加密密钥，包括 Customer Managed KMS Key 的完整生命周期」是错误的：使用 Customer Managed KMS Key 时，密钥的创建、轮换、禁用和删除责任在客户，而非 AWS。\n\n「在采用托管服务后，客户永远不需要配置 IAM 策略、安全组或数据加密等任何安全配置」是错误的：即使使用托管服务，客户仍须负责身份与访问管理、数据保护和应用层安全配置。\n\n**重点考点 / 关键词补充：**\n- **Shared Responsibility Model**：AWS 负责“云的安全”（物理设施、硬件、网络基础设施），客户负责“云中的安全”（数据、身份与访问管理、应用安全、加密配置）。\n- **IaaS / PaaS / SaaS 责任边界**：IaaS（EC2 等）客户管最多（OS、应用、数据）；PaaS（Lambda、RDS）客户管较少；SaaS（WorkMail 等）客户管最少。这是 CLF-C02 最常考的概念。\n- **客户托管 KMS 密钥**：客户完全控制密钥的创建、轮换、禁用和删除，AWS 只负责基础设施层的安全。"
+  },
+  "M85": {
+    "options": [
+      "A. 部署在靠近大型人口中心的位置",
+      "B. 允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）",
+      "C. 主要用于通过 CloudFront Edge Locations 在全球范围内缓存和分发静态 HTML、图片与视频等 Web 内容",
+      "D. 属于 AWS 全球基础设施的核心组成部分，与标准 Region 具有完全相同的全球覆盖范围和完整服务目录"
+    ],
+    "explanation": "「部署在靠近大型人口中心的位置」和「允许以极低延迟运行完整的 AWS 服务（如 EC2、RDS）」是正确的。\n\nLocal Zones 是较新的基础设施形式，部署在靠近大城市的位置，让客户能够以极低的延迟运行完整的 AWS 服务，同时仍能利用 AWS 的全球基础设施。\n\n其他选项分析：\n\n「主要用于通过 CloudFront Edge Locations 在全球范围内缓存和分发静态 HTML、图片与视频等 Web 内容」是错误的：全球静态内容缓存和 CDN 加速是 Edge Locations（CloudFront）的主要用途，而非 Local Zones。\n\n「属于 AWS 全球基础设施的核心组成部分，与标准 Region 具有完全相同的全球覆盖范围和完整服务目录」是错误的：Local Zones 是全球基础设施的补充形式，部署范围有限、服务目录也不及标准 Region 完整。\n\n**重点考点 / 关键词补充：**\n- Local Zones：靠近人口中心，低延迟运行完整 AWS 服务\n- 适合场景：游戏、媒体、金融交易、实时应用\n- 与 Edge Locations 区别：Local Zones 可运行计算/存储服务，Edge Locations 主要用于缓存"
+  },
+  "S138": {
+    "options": [
+      "A. Control Tower 已完全取代 AWS Organizations，客户在设置 Landing Zone 后无需再创建 Organizations 组织单元、整合计费或 SCP 即可独立实现多账户治理",
+      "B. Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory，使多账户治理更加自动化和标准化",
+      "C. Organizations 的核心职责仅是创建成员账户和 OU 层级，Control Tower 的额外价值则集中在跨账户批量管理安全组入站规则、NACL 显式拒绝策略以及 VPC 路由表的统一分发",
+      "D. 两者在多账户治理上的 Guardrails 预设规则、Account Factory 自动化开户和基于 Config 的合规检测能力完全重叠，只是 AWS 为不同客户群体使用了不同的产品名称与定价套餐"
+    ],
+    "explanation": "「Control Tower 构建在 Organizations 之上，自动配置 Organizations 结构，并额外提供预设的 Guardrails、蓝图和 Account Factory...」是正确的。\n\nControl Tower 建立在 AWS Organizations 基础之上。它会自动为你创建并配置 Organizations（包括管理账户、日志归档账户和审计账户），并在此基础上叠加更高级的治理功能：预构建的 Guardrails（基于 SCP 和 Config 规则）、账户蓝图（Blueprint）和 Account Factory（自动化账户创建流程）。\n\n其他选项分析：\n\n「Control Tower 已完全取代 AWS Organizations，客户在设置 Landing Zone 后无需再创建 Organizations 组织单元、整合计费或 SCP 即可独立实现多账户治理」是错误的：Control Tower 必须构建在 AWS Organizations 之上，它会自动帮你创建和配置 Organizations 结构，而非替代它。\n\n「Organizations 的核心职责仅是创建成员账户和 OU 层级，Control Tower 的额外价值则集中在跨账户批量管理安全组入站规则、NACL 显式拒绝策略以及 VPC 路由表的统一分发」是错误的：Control Tower 的核心价值是提供预构建的 Guardrails、Account Factory 和蓝图，而非仅做网络配置的集中管控。\n\n「两者在多账户治理上的 Guardrails 预设规则、Account Factory 自动化开户和基于 Config 的合规检测能力完全重叠，只是 AWS 为不同客户群体使用了不同的产品名称与定价套餐」是错误的：Organizations 提供基础的多账户结构与 SCP，而 Control Tower 在其上叠加了更高级、更自动化的治理框架，两者功能定位明显不同。\n\n**重点考点 / 关键词补充：**\n- Control Tower 构建于 Organizations 之上\n- 额外价值：预设 Guardrails + Account Factory + 蓝图\n- 常考：Control Tower 让多账户治理“开箱即用”，大幅降低手动配置 Organizations + SCP + Config 的工作量"
+  },
+  "M07": {
+    "options": [
+      "A. Security Group 是有状态的，NACL 是无状态的",
+      "B. Security Group 作用于实例级别，NACL 作用于子网级别",
+      "C. NACL 是无状态防火墙，因此只能配置 Allow 规则，无法在规则列表中显式添加 Deny 条目以阻止特定流量",
+      "D. Security Group 作为无状态防火墙，支持在入站和出站规则中同时配置显式的 Allow 和 Deny 动作，可精细拒绝恶意 IP 地址",
+      "E. Security Group 和 NACL 在创建后都会默认拒绝所有入站和出站流量，必须手动添加允许规则后实例才能与外部通信"
+    ],
+    "explanation": "正确答案：\n\n「Security Group 是有状态的，NACL 是无状态的」\n「Security Group 作用于实例级别，NACL 作用于子网级别」\n\n错误选项分析：\n\n「NACL 是无状态防火墙，因此只能配置 Allow 规则，无法在规则列表中显式添加 Deny 条目以阻止特定流量」是错误的：NACL 恰恰支持显式 Deny 规则；说“只能配置 Allow、无法添加 Deny”与 NACL 的实际能力完全相反。\n\n「Security Group 作为无状态防火墙，支持在入站和出站规则中同时配置显式的 Allow 和 Deny 动作，可精细拒绝恶意 IP 地址」是错误的：Security Group 是有状态的，且只支持 Allow 规则（默认拒绝），不支持显式 Deny；无状态且支持 Deny 的是 NACL。\n\n「Security Group 和 NACL 在创建后都会默认拒绝所有入站和出站流量，必须手动添加允许规则后实例才能与外部通信」是错误的：Security Group 默认拒绝入站、允许出站；NACL 默认允许所有入站和出站，需显式配置拒绝规则。\n\n**重点考点 / 关键词补充：**\n- **有状态 (Stateful) vs 无状态 (Stateless)**：Security Group 记住出站请求，自动允许响应流量返回；NACL 必须同时配置入站和出站规则。\n- **作用范围**：Security Group 作用于单个 EC2 实例（或 ELB、RDS 等资源）；NACL 作用于整个子网。\n- **显式拒绝**：NACL 支持在规则中明确写 Deny；Security Group 只支持允许规则（默认拒绝）。\n- 考试常考组合：Security Group（有状态、实例级）+ NACL（无状态、子网级、支持 Deny）。"
+  },
+  "M62": {
+    "options": [
+      "A. Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证",
+      "B. Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源",
+      "C. IAM Role 可以像 IAM User 一样直接持有长期密码，并作为独立身份登录 AWS 管理控制台执行日常运维",
+      "D. IAM Role 附加的策略权限上限永远高于普通 IAM User，因此只要创建 Role 就能自动获得比用户更广的 API 访问范围"
+    ],
+    "explanation": "「Role 本身不保存长期访问密钥，通过 AssumeRole 获取最长 12 小时的临时凭证」和「Role 非常适合 EC2、Lambda、ECS 等服务需要访问其他 AWS 资源」是正确的。\n\nRole 的核心优势是“无长期密钥”，极大降低凭证泄露风险，是服务间访问和跨账户访问的最佳实践。\n\n其他选项分析：\n\n「IAM Role 可以像 IAM User 一样直接持有长期密码，并作为独立身份登录 AWS 管理控制台执行日常运维」是错误的：Role 不能直接登录控制台，必须先通过 IAM User 或联合身份 AssumeRole 后再使用临时凭证。\n\n「IAM Role 附加的策略权限上限永远高于普通 IAM User，因此只要创建 Role 就能自动获得比用户更广的 API 访问范围」是错误的：权限大小完全由附加的策略决定，与是 Role 还是 User 无关，Role 不会自动拥有更大权限。\n\n**重点考点 / 关键词补充：**\n- Role 核心优势：无长期凭证 + 临时凭证（AssumeRole，最长 12 小时）\n- 最适合服务（EC2/Lambda 等）和跨账户访问\n- 不能直接登录控制台\n- 考试高频：Role 是“无长期密钥”最佳实践"
+  },
+  "M92": {
+    "options": [
+      "A. Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统的场景（如内容管理系统、开发环境）",
+      "B. Amazon EBS 适合需要低延迟块存储的单实例数据库或需要高 IOPS 的应用",
+      "C. Amazon S3 适合存储非结构化数据、备份、静态网站和作为数据湖",
+      "D. Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持的场景",
+      "E. Amazon S3 对象存储适合作为 EC2 实例的操作系统根卷启动磁盘，可替代 EBS 卷并在实例终止后自动保留系统盘数据"
+    ],
+    "explanation": "正确答案：\n\n「Amazon EFS 适合多个 EC2 实例需要同时读写同一文件系统」\n「Amazon EBS 适合需要低延迟块存储的单实例数据库」\n「Amazon S3 适合存储非结构化数据、备份、静态网站」\n「Amazon FSx for Windows 适合运行 Windows 应用且需要原生 SMB 支持」\n\n错误选项分析：\n\n「Amazon S3 对象存储适合作为 EC2 实例的操作系统根卷启动磁盘，可替代 EBS 卷并在实例终止后自动保留系统盘数据」是错误的：S3 是对象存储，不具备块设备语义，不能作为 EC2 根卷；根卷必须使用 EBS（或实例存储）。\n\n**重点考点 / 关键词补充：**\n- S3：对象存储，海量非结构化数据、备份、数据湖、静态网站\n- EBS：块存储，单实例低延迟（数据库、OS 卷）\n- EFS：托管 NFS，跨多实例共享文件系统\n- FSx：托管 Windows 文件系统（SMB）或 Lustre（高性能计算）\n- 常考：S3 不能做 EC2 根卷或需要 POSIX 语义的共享文件系统"
+  },
+  "S38": {
+    "options": [
+      "A. 购买和部署第三方软件和服务的在线商店",
+      "B. 提供集中界面用于创建、跟踪和升级 AWS Support 技术案例，并查看 Business/Enterprise 支持计划的响应 SLA",
+      "C. 在线工具，可根据预期 EC2、RDS、S3 等资源用量模拟月度账单并导出详细的成本估算报告",
+      "D. 持续扫描账户中的异常 API 活动、恶意 IP 访问和合规偏离，并生成集中式安全威胁告警与修复建议"
+    ],
+    "explanation": "「购买和部署第三方软件和服务的在线商店」是正确的。\n\nAWS Marketplace 是一个在线商店，客户可以在这里查找、购买和快速部署来自第三方厂商的软件、AMI、SaaS 服务和解决方案，大大简化了采购和部署流程。\n\n其他选项分析：\n\n「提供集中界面用于创建、跟踪和升级 AWS Support 技术案例，并查看 Business/Enterprise 支持计划的响应 SLA」是错误的：支持案例管理通过 AWS Support Center 完成，不是 Marketplace 的功能。\n\n「在线工具，可根据预期 EC2、RDS、S3 等资源用量模拟月度账单并导出详细的成本估算报告」是错误的：成本估算使用 AWS Pricing Calculator，不是 Marketplace。\n\n「持续扫描账户中的异常 API 活动、恶意 IP 访问和合规偏离，并生成集中式安全威胁告警与修复建议」是错误的：安全威胁检测使用 GuardDuty、Security Hub 等服务，不是 Marketplace。\n\n**重点考点 / 关键词补充：**\n- Marketplace 支持按小时、按月或按使用量计费\n- 包含大量第三方 AMI 和 SaaS 产品\n- 购买后可直接部署到 AWS 环境"
+  },
+  "M40": {
+    "options": [
+      "A. 12 个月免费额度从首次激活账户开始计算",
+      "B. 永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制",
+      "C. 所有 AWS 服务（包括 EC2、Redshift、Kinesis 等）在新账户激活后均自动享受 12 个月全额免费，无需查看各服务单独条款",
+      "D. 当免费额度耗尽后，相关 AWS 服务会自动停止运行并关闭已创建资源，避免产生任何后续账单费用"
+    ],
+    "explanation": "正确答案：\n\n「12 个月免费额度从首次激活账户开始计算」\n「永久免费套餐（如 Lambda 每月 100 万次调用）没有时间限制」\n\n错误选项分析：\n\n「所有 AWS 服务（包括 EC2、Redshift、Kinesis 等）在新账户激活后均自动享受 12 个月全额免费，无需查看各服务单独条款」是错误的：不是所有 AWS 服务都有 12 个月免费额度，只有部分服务提供（例如 EC2、S3、RDS 等），且各服务额度不同。\n\n「当免费额度耗尽后，相关 AWS 服务会自动停止运行并关闭已创建资源，避免产生任何后续账单费用」是错误的：免费套餐用完后不会自动停止服务，而是开始按标准费率正常收费。\n\n**重点考点 / 关键词补充：**\n- **12 个月免费额度**：从首次激活 AWS 账户开始计算（不是注册日期），部分服务（如 EC2 t2/t3.micro）有 12 个月免费。\n- **永久免费 (Always Free)**：没有时间限制，只要账户处于活跃状态就一直可用（如 DynamoDB 25GB、Lambda 每月 100 万次调用、S3 5GB 等）。\n- 常考陷阱：不要以为所有服务都有免费额度，用完后会自动停止（实际会正常计费）。"
+  }
+}

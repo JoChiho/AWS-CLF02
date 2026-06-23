@@ -3,12 +3,9 @@
 
 import customtkinter as ctk
 
-from data import get_question_by_id
 from data.progress import (
     get_recent_sessions,
-    get_wrong_question_ids,
     get_accuracy_trend,
-    get_question_stats,
 )
 from gui.constants import ACCURACY_TREND_TEXT
 
@@ -62,88 +59,6 @@ class StatsMixin:
 
         textbox.configure(state="disabled")
         ctk.CTkButton(win, text="关闭", width=100, command=win.destroy).pack(pady=12)
-
-    def _show_wrong_book(self):
-        """显示错题本 + 支持一键练习"""
-        wrong_ids = get_wrong_question_ids(sort_by="error_rate")
-
-        win = ctk.CTkToplevel(self)
-        win.title("错题本（累计统计）")
-        win.geometry("860x580")
-        win.grab_set()
-
-        ctk.CTkLabel(
-            win,
-            text="错题本（按错误率排序）",
-            font=ctk.CTkFont(size=18, weight="bold"),
-        ).pack(pady=(12, 6))
-
-        if not wrong_ids:
-            ctk.CTkLabel(
-                win,
-                text="太棒了！目前没有任何错题记录。\n继续练习，系统会自动统计你做错的题目。",
-                font=ctk.CTkFont(size=15),
-            ).pack(pady=40)
-            ctk.CTkButton(win, text="关闭", command=win.destroy).pack(pady=20)
-            return
-
-        total_wrong = len(wrong_ids)
-        ctk.CTkLabel(
-            win,
-            text=f"共 {total_wrong} 道题目曾经答错过（错误率从高到低排序）",
-            font=ctk.CTkFont(size=13),
-        ).pack(pady=(0, 8))
-
-        textbox = ctk.CTkTextbox(win, font=ctk.CTkFont(size=12), wrap="word")
-        textbox.pack(fill="both", expand=True, padx=15, pady=6)
-
-        header = f"{'ID':<6} {'C/W':<8} {'错误率':<8}  题目摘要\n"
-        header += "-" * 100 + "\n"
-        textbox.insert("end", header)
-
-        for qid in wrong_ids[:30]:
-            stat = get_question_stats(qid) or {}
-            c = stat.get("correct_count", 0)
-            w = stat.get("wrong_count", 0)
-            rate = (w / (c + w) * 100.0) if (c + w) > 0 else 0.0
-            q = get_question_by_id(qid)
-            qtext = (
-                (q["question"][:55] + "...")
-                if q and len(q["question"]) > 58
-                else (q["question"] if q else "(题目不存在)")
-            )
-            line = f"{qid:<6} {c}/{w:<6} {rate:>6.1f}%  {qtext}\n"
-            textbox.insert("end", line)
-
-        if len(wrong_ids) > 30:
-            textbox.insert("end", f"\n... 还有 {len(wrong_ids) - 30} 道错题未显示 ...\n")
-
-        textbox.configure(state="disabled")
-
-        btn_frame = ctk.CTkFrame(win, fg_color="transparent")
-        btn_frame.pack(pady=12)
-
-        def start_practice():
-            win.destroy()
-            self._start_wrong_book_quiz(wrong_ids)
-
-        ctk.CTkButton(
-            btn_frame,
-            text=f"练习全部 {len(wrong_ids)} 道错题",
-            width=200,
-            height=38,
-            fg_color="#c0392b",
-            hover_color="#e74c3c",
-            command=start_practice,
-        ).pack(side="left", padx=10)
-
-        ctk.CTkButton(
-            btn_frame,
-            text="关闭",
-            width=100,
-            height=38,
-            command=win.destroy,
-        ).pack(side="left", padx=10)
 
     def _show_my_stats(self):
         """显示个人正确率趋势与总体统计"""
