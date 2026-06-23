@@ -7,7 +7,7 @@ Usage:
   python tools/print_question.py M70
 """
 import sys
-import json
+
 from data.single_choice import SINGLE_CHOICE_QUESTIONS
 from data.multi_choice import MULTI_CHOICE_QUESTIONS
 

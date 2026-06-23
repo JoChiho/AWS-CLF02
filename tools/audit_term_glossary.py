@@ -38,7 +38,7 @@ SKIP_WORDS = {
     "Enable", "Disable", "Allow", "Deny", "Grant", "Revoke", "Apply",
     "Store", "Save", "Read", "Write", "Send", "Receive", "Move", "Copy",
     "Share", "Public", "Private", "Local", "Remote", "Global", "Region",
-    "Regions", "Zone", "Zones", "Zone", "Account", "Accounts", "Group",
+    "Regions", "Zone", "Zones", "Account", "Accounts", "Group",
     "Groups", "Role", "Roles", "Policy", "Policies", "Key", "Keys",
     "Log", "Logs", "Rule", "Rules", "Plan", "Plans", "Type", "Types",
     "Mode", "Model", "Models", "Level", "Levels", "Size", "Sizes",

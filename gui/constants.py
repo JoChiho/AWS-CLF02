@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 """GUI 层共享常量"""
 
+from data.mock_exam import (
+    MOCK_EXAM_DURATION_SEC,
+    MOCK_EXAM_PASS_PERCENT,
+    MOCK_EXAM_QUESTION_COUNT,
+)
+
 DOMAIN_DISPLAY_NAMES = {
     "Cloud Concepts": "云概念",
     "Security and Compliance": "安全与合规",
@@ -8,9 +14,7 @@ DOMAIN_DISPLAY_NAMES = {
     "Billing, Pricing, and Support": "账单、定价与支持",
 }
 
-MOCK_EXAM_QUESTION_COUNT = 65
-MOCK_EXAM_DURATION_MIN = 90
-MOCK_EXAM_PASS_PERCENT = 70.0
+MOCK_EXAM_DURATION_MIN = MOCK_EXAM_DURATION_SEC // 60
 
 # 连续答对 N 次后自动标为「已掌握」，默认不再出现在错题本主列表
 MASTER_STREAK_REQUIRED = 2

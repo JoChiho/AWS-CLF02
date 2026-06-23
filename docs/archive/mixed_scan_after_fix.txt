@@ -1,5 +1,0 @@
-﻿=== Single-choice bank scan ===
-No problems found after fixes.
-
-Single total: 46
-Multi total: 49

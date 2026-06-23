@@ -9,13 +9,14 @@ from tkinter import messagebox
 
 from data import shuffle_question_options
 from data.mock_exam import (
-    select_mock_exam_questions,
-    score_mock_exam,
     MOCK_EXAM_DURATION_SEC,
     MOCK_EXAM_PASS_PERCENT,
+    MOCK_EXAM_QUESTION_COUNT,
+    score_mock_exam,
+    select_mock_exam_questions,
 )
 from data.progress import record_session, update_question_stat
-from gui.constants import DOMAIN_DISPLAY_NAMES, MOCK_EXAM_QUESTION_COUNT, MOCK_EXAM_DURATION_MIN
+from gui.constants import DOMAIN_DISPLAY_NAMES, MOCK_EXAM_DURATION_MIN
 
 
 class MockExamMixin:
