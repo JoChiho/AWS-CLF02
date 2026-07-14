@@ -27,6 +27,11 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from data.aws_english_terms import (  # noqa: E402
+    restore_aws_english_terms,
+    restore_option,
+    should_force_english_option,
+)
 from data.cloudcertprep.domains import DOMAIN_FILE_MAP, SOURCE_RAW_BASE  # noqa: E402
 
 CACHE_FILE = ROOT / "tools" / "cloudcertprep_translation_cache.json"
@@ -68,6 +73,24 @@ _PROTECTED_TERMS = sorted(
         "CapEx", "OpEx", "Route 53", "CloudFront", "CloudWatch", "CloudTrail",
         "CloudFormation", "GuardDuty", "Inspector", "Macie", "Cognito",
         "DynamoDB", "Redshift", "Lambda", "CloudHSM", "Artifact", "Organizations",
+        "Elastic Load Balancing", "Elastic Load Balancer", "Application Load Balancer",
+        "Network Load Balancer", "Auto Scaling", "Elastic Beanstalk", "Elastic File System",
+        "Elastic Block Store", "Serverless", "Multi-Factor Authentication", "Internet Gateway",
+        "NAT Gateway", "Virtual Private Gateway", "Consolidated Billing", "Dedicated Hosts",
+        "Dedicated Instances", "Placement Groups", "Security Groups", "Network ACL",
+        "AWS Fargate", "AWS Batch", "AWS Glue", "AWS Step Functions", "AWS AppSync",
+        "AWS DataSync", "AWS Snowball", "AWS Snowmobile", "AWS Outposts", "AWS App Runner",
+        "AWS Migration Hub", "AWS Service Catalog", "AWS Marketplace", "AWS CodePipeline",
+        "AWS CodeBuild", "AWS CodeDeploy", "AWS CodeCommit", "AWS Database Migration Service",
+        "AWS Storage Gateway", "AWS Resource Groups", "AWS Health Dashboard",
+        "AWS Cost and Usage Report", "AWS Well-Architected Tool", "AWS Pricing Calculator",
+        "AWS Management Console", "AWS Professional Services", "Amazon Pinpoint",
+        "Amazon Comprehend", "Amazon Transcribe", "Amazon Rekognition", "Amazon Polly",
+        "Amazon Lex", "Amazon Neptune", "Amazon DocumentDB", "Amazon OpenSearch Service",
+        "Amazon EventBridge", "Amazon API Gateway", "Amazon ElastiCache", "Amazon EMR",
+        "Amazon ECS", "Amazon EKS", "Amazon MQ", "Amazon WorkSpaces", "Amazon AppStream",
+        "Operational Excellence", "Performance Efficiency", "Cost Optimization",
+        "Reliability", "Shared Responsibility Model", "On-Demand", "Spot Fleet",
     },
     key=len,
     reverse=True,
@@ -139,7 +162,8 @@ def _translate_protected(text: str) -> str:
     else:
         translated = text
     translated = _restore_terms(translated or text, mapping)
-    return _polish_translation(translated)
+    translated = _polish_translation(translated)
+    return restore_aws_english_terms(translated)
 
 
 def translate_text(text: str, cache: dict[str, str], *, enabled: bool = True) -> str:
@@ -286,8 +310,14 @@ def convert_question(
             question_zh = f"{question_zh}（选择{count_token}项）"
 
     options_zh = []
-    for letter, opt_zh in zip(sorted(options_en.keys()), opt_zh_list):
-        options_zh.append(f"{letter}. {opt_zh}")
+    for letter, opt_zh, opt_en in zip(
+        sorted(options_en.keys()), opt_zh_list, opt_texts,
+    ):
+        en_stripped = (opt_en or "").strip()
+        if should_force_english_option(en_stripped):
+            options_zh.append(f"{letter}. {en_stripped}")
+        else:
+            options_zh.append(restore_option(f"{letter}. {opt_zh}"))
 
     explanation_zh = _format_explanation_zh(
         correct_zh,

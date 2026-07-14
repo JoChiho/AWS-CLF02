@@ -1,0 +1,2752 @@
+cache_mismatch 546
+- CCP-S003 q015
+  en   : What is the advantage of the AWS-recommended practice of "decoupling" applications?
+  file : AWS 推荐的“解耦”应用程序的优势是什么？
+  cache: AWS推荐的“解耦”应用程序的优势是什么？
+
+- CCP-S007 q077
+  en   : How does AWS shorten the time to provision IT resources?
+  file : AWS 如何缩短配置 IT 资源的时间？
+  cache: AWS如何缩短配置IT资源的时间？
+
+- CCP-S009 q099
+  en   : Distributing workloads across multiple Availability Zones supports which cloud architecture design p
+  file : 在多个 Availability Zones 之间分配工作负载支持哪种云架构设计原则？
+  cache: 在多个Availability Zones之间分配工作负载支持哪种云架构设计原则？
+
+- CCP-S010 q128
+  en   : What is an advantage of deploying an application across multiple Availability Zones?
+  file : 跨多个 Availability Zones 部署应用程序有什么优势？
+  cache: 跨多个Availability Zones部署应用程序有什么优势？
+
+- CCP-S015 q148
+  en   : Which disaster recovery scenario offers the lowest probability of down time?
+  file : 哪种 DR 场景提供的停机概率最低？
+  cache: 哪种灾难恢复场景提供的停机概率最低？
+
+- CCP-S023 q227
+  en   : Which statement best describes the operational excellence pillar of the AWS Well-Architected Framewo
+  file : 哪句话最能描述 AWS Well-Architected Framework 的 Operational Excellence 支柱？
+  cache: 哪句话最能描述 AWS Well-Architected Framework 的卓越运营支柱？
+
+- CCP-S024 q242
+  en   : Jessica is managing an e-commerce web application in AWS. The application is hosted on six EC2 insta
+  file : Jessica 正在 AWS 中管理一个电子商务 Web 应用程序。该应用程序托管在六个 Amazon EC2 instances 上。有一天，其中三个实例崩溃了；但她的顾客都没有受到影响。在这种情况
+  cache: Jessica 正在 AWS 中管理一个电子商务 Web 应用程序。该应用程序托管在六个 EC2 实例上。有一天，其中三个实例崩溃了；但她的顾客都没有受到影响。在这种情况下，杰西卡做对了什么？
+
+- CCP-S025 q253
+  en   : Using Amazon EC2 falls under which of the following cloud computing models?
+  file : 使用 Amazon EC2 属于以下哪种云计算模型？
+  cache: 使用Amazon EC2属于以下哪种云计算模型？
+
+- CCP-S033 q327
+  en   : What is the framework created by AWS Professional Services that helps organizations design a road ma
+  file : AWS Professional Services 创建的可帮助组织设计成功采用云的路线图的框架是什么？
+  cache: AWS 专业服务创建的可帮助组织设计成功采用云的路线图的框架是什么？
+
+- CCP-S035 q343
+  en   : A company is using EC2 Instances to run their e-commerce site on the AWS platform. If the site becom
+  file : 一家公司正在使用 Amazon EC2 instances 在 AWS 平台上运行其电子商务网站。如果该网站不可用，该网站每不可用一分钟，公司就会损失大量资金。公司应使用哪种设计原则来最大程度地降低停
+  cache: 一家公司正在使用 EC2 实例在 AWS 平台上运行其电子商务网站。如果该网站不可用，该网站每不可用一分钟，公司就会损失大量资金。公司应使用哪种设计原则来最大程度地降低停电风险？
+
+- CCP-S036 q371
+  en   : Which of the following is a best practice for making your application on AWS highly available?
+  file : 以下哪项是使您的应用程序在 AWS 上实现 High Availability 性的最佳实践？
+  cache: 以下哪项是使您的应用程序在 AWS 上实现高可用性的最佳实践？
+
+- CCP-S039 q420
+  en   : What does the term “Economies of scale” mean?
+  file : “Economies of Scale”一词是什么意思？
+  cache: “规模经济”一词是什么意思？
+
+- CCP-S040 q439
+  en   : Why are Serverless Architectures more economical than Server-based Architectures?
+  file : 为什么 Serverless architecture 比基于服务器的架构更经济？
+  cache: 为什么无服务器架构比基于服务器的架构更经济？
+
+- CCP-S042 q470
+  en   : You have developed a web application targeting a global audience. Which of the following will help y
+  file : 您开发了一个面向全球受众的 Web 应用程序。从基础设施的角度来看，以下哪一项将帮助您实现最高的冗余和 Fault Tolerance 能力？
+  cache: 您开发了一个面向全球受众的 Web 应用程序。从基础设施的角度来看，以下哪一项将帮助您实现最高的冗余和容错能力？
+
+- CCP-S043 q514
+  en   : How can you increase your application's fault-tolerance while it is being hosted in AWS?
+  file : 当应用程序托管在 AWS 中时，如何提高其 Fault Tolerance 能力？
+  cache: 当应用程序托管在 AWS 中时，如何提高其容错能力？
+
+- CCP-S044 q517
+  en   : Which of the following is a benefit of the "Loose Coupling" architecture principle?
+  file : 以下哪一项是“Loose Coupling”架构原则的好处？
+  cache: 以下哪一项是“松耦合”架构原则的好处？
+
+- CCP-S046 q530
+  en   : AWS provides disaster recovery capability by allowing customers to deploy infrastructure into multip
+  file : AWS 通过允许客户将基础设施部署到多个 [...] 中来提供 DR 功能。
+  cache: AWS 通过允许客户将基础设施部署到多个 [...] 中来提供灾难恢复功能。
+
+- CCP-S048 q541
+  en   : Which is a recommended pattern for designing a highly available architecture on AWS?
+  file : 在 AWS 上设计 High Availability 架构的推荐模式是什么？
+  cache: 在 AWS 上设计高可用架构的推荐模式是什么？
+
+- CCP-S051 q572
+  en   : Which AWS feature should a customer leverage to achieve high availability of an application?
+  file : 客户应该利用哪些 AWS 功能来实现应用程序的 High Availability 性？
+  cache: 客户应该利用哪些 AWS 功能来实现应用程序的高可用性？
+
+- CCP-S057 q621
+  en   : How do customers benefit from Amazon's massive economies of scale?
+  file : 客户如何从 Amazon Economies of Scale 中受益？
+  cache: 客户如何从Amazon巨大的规模经济中受益？
+
+- CCP-S061 q671
+  en   : Which of the following is an AWS Well-Architected Framework design principle related to reliability?
+  file : 以下哪项是与 Reliability 相关的 AWS Well-Architected Framework 设计原则？
+  cache: 以下哪项是与可靠性相关的AWS Well-Architected Framework设计原则？
+
+- CCP-S063 q681
+  en   : Why should a company choose AWS instead of a traditional data center?
+  file : 为什么公司应该选择 AWS 而不是传统的数据中心？
+  cache: 为什么公司应该选择AWS而不是传统的数据中心？
+
+- CCP-S068 q703
+  en   : What is an example of high availability in the AWS Cloud?
+  file : AWS 云中 High Availability 性的示例是什么？
+  cache: AWS 云中高可用性的示例是什么？
+
+- CCP-S070 q731
+  en   : When a company provisions web servers in multiple AWS Regions, what is being increased?
+  file : 当公司在多个 AWS Region 配置 Web 服务器时，会增加什么？
+  cache: 当公司在多个 AWS 区域配置 Web 服务器时，会增加什么？
+
+- CCP-S075 q763
+  en   : What does it mean if a user deploys a hybrid cloud architecture on AWS?
+  file : 如果用户在 AWS 上部署混合云架构意味着什么？
+  cache: 如果用户在AWS上部署混合云架构意味着什么？
+
+- CCP-S080 q789
+  en   : An application designed to span multiple Availability Zones is described as:
+  file : 设计用于跨越多个 Availability Zones 的应用程序描述为：
+  cache: 设计用于跨越多个Availability Zones的应用程序描述为：
+
+- CCP-S081 q790
+  en   : A new service using AWS must be highly available. Yet, due to regulatory requirements, all of its Am
+  file : 使用 AWS 的新服务必须具有 High Availability 性。然而，由于监管要求，其所有 Amazon EC2 实例必须位于单个地理区域。根据最佳实践，为了满足这些要求，Amazon EC2
+  cache: 使用 AWS 的新服务必须具有高可用性。然而，由于监管要求，其所有 Amazon EC2 实例必须位于单个地理区域。根据最佳实践，为了满足这些要求，EC2实例必须放置在至少两个中：
+
+- CCP-S082 q803
+  en   : A user deploys an Amazon RDS DB instance in multiple Availability Zones. This strategy involves whic
+  file : 用户在多个 Availability Zones 中部署一个 Amazon RDS 数据库实例。该策略涉及 AWS Well-Architected Framework 的哪个支柱？
+  cache: 用户在多个Availability Zones中部署一个Amazon RDS数据库实例。该策略涉及AWS Well-Architected Framework的哪个支柱？
+
+- CCP-S086 q833
+  en   : The ability to horizontally scale Amazon EC2 instances based on demand is an example of which concep
+  file : 根据需求 Horizontal Scaling Amazon EC2 实例的能力是 AWS 云价值主张中哪个概念的一个示例？
+  cache: 根据需求水平扩展 Amazon EC2 实例的能力是 AWS 云价值主张中哪个概念的一个示例？
+
+- CCP-S089 q845
+  en   : The continual reduction of AWS Cloud pricing is due to:
+  file : AWS 云定价持续降低的原因是：
+  cache: AWS云定价持续降低的原因是：
+
+- CCP-S093 q867
+  en   : A Cloud Practitioner is developing a disaster recovery plan and intends to replicate data between mu
+  file : 云从业者正在制定 DR 计划，并打算在多个地理区域之间复制数据。以下哪一项符合这些要求？
+  cache: 云从业者正在制定灾难恢复计划，并打算在多个地理区域之间复制数据。以下哪一项符合这些要求？
+
+- CCP-S094 q875
+  en   : A company wants to use Amazon Elastic Compute Cloud (Amazon EC2) to deploy a global commercial appli
+  file : 一家公司希望使用 Amazon Elastic Compute Cloud (Amazon EC2) 部署全球商业应用程序。部署解决方案应具有最高的冗余和 Fault Tolerance 能力。根据这
+  cache: 一家公司希望使用 Amazon Elastic Compute Cloud (Amazon EC2) 部署全球商业应用程序。部署解决方案应具有最高的冗余和容错能力。根据这种情况，需要部署Amazon 
+
+- CCP-S097 q913
+  en   : Fault tolerance refers to:
+  file : Fault Tolerance 是指：
+  cache: 容错是指：
+
+- CCP-S100 q937
+  en   : A company wants to set up a highly available workload in AWS with a disaster recovery plan that will
+  file : 一家公司希望在 AWS 中建立高度可用的工作负载，并制定 DR 计划，以便公司在出现区域服务中断时能够进行恢复。哪种配置可以满足这些要求？
+  cache: 一家公司希望在 AWS 中建立高度可用的工作负载，并制定灾难恢复计划，以便公司在出现区域服务中断时能够进行恢复。哪种配置可以满足这些要求？
+
+- CCP-S102 q948
+  en   : Which design principle is achieved by following the reliability pillar of the AWS Well-Architected F
+  file : 遵循 AWS Well-Architected Framework 的 Reliability 支柱可以实现哪种设计原则？
+  cache: 遵循AWS Well-Architected Framework的可靠性支柱可以实现哪种设计原则？
+
+- CCP-S111 q1062
+  en   : A company needs a disaster recovery strategy where a scaled-down but fully functional version of its
+  file : 公司需要一种 DR 策略，其中缩小但功能齐全的环境版本在辅助 AWS Region 中持续运行，从而在灾难发生时通过扩展至全部容量来实现快速故障转移。这描述了哪种 DR 策略？
+  cache: 公司需要一种灾难恢复策略，其中缩小但功能齐全的环境版本在辅助 AWS 区域中持续运行，从而在灾难发生时通过扩展至全部容量来实现快速故障转移。这描述了哪种灾难恢复策略？
+
+- CCP-S112 q1063
+  en   : Which disaster recovery strategy has the longest recovery time and the lowest cost because no standb
+  file : 由于辅助位置没有备用基础设施保持运行，哪种 DR 策略具有最长的 Time Recovery 和最低的成本？
+  cache: 由于辅助位置没有备用基础设施保持运行，哪种灾难恢复策略具有最长的恢复时间和最低的成本？
+
+- CCP-S114 q1065
+  en   : A company is migrating an application to AWS and decides to move its self-managed MySQL database run
+  file : 一家公司正在将应用程序迁移到 AWS，并决定将其在虚拟机上运行的自管理 MySQL DMS 到 Amazon RDS，而不更改核心应用程序逻辑或重写任何代码。这代表了哪种迁移策略？
+  cache: 一家公司正在将应用程序迁移到 AWS，并决定将其在虚拟机上运行的自管理 MySQL 数据库迁移到Amazon RDS，而不更改核心应用程序逻辑或重写任何代码。这代表了哪种迁移策略？
+
+- CCP-S117 q1093
+  en   : A company is planning a cloud migration and needs to assess the readiness of its workforce and ident
+  file : 一家公司正在计划云迁移，需要评估其员工的准备情况并确定技能差距。哪种 AWS Cloud Adoption Framework (AWS CAF) 视角可以满足这一需求？
+  cache: 一家公司正在计划云迁移，需要评估其员工的准备情况并确定技能差距。哪种 AWS 云采用框架 (AWS CAF) 视角可以满足这一需求？
+
+- CCP-S118 q1095
+  en   : A company wants to ensure its cloud adoption minimizes transformation-related risks and aligns with 
+  file : 一家公司希望确保其云采用最大限度地减少与转型相关的风险并符合监管要求。哪个 AWS Cloud Adoption Framework (AWS CAF) 观点最相关？
+  cache: 一家公司希望确保其云采用最大限度地减少与转型相关的风险并符合监管要求。哪个 AWS 云采用框架 (AWS CAF) 观点最相关？
+
+- CCP-S119 q1096
+  en   : Which AWS Cloud Adoption Framework (AWS CAF) perspective helps ensure that cloud workloads achieve t
+  file : 哪个 AWS Cloud Adoption Framework (AWS CAF) 视角有助于确保云工作负载实现数据的机密性、完整性和可用性？
+  cache: 哪个 AWS 云采用框架 (AWS CAF) 视角有助于确保云工作负载实现数据的机密性、完整性和可用性？
+
+- CCP-S120 q1117
+  en   : A company wants to use the AWS Cloud Adoption Framework (AWS CAF) to build a business case for cloud
+  file : 一家公司希望使用 AWS Cloud Adoption Framework (AWS CAF) 构建云迁移的业务案例。他们应该关注哪个 CAF 视角？
+  cache: 一家公司希望使用 AWS 云采用框架 (AWS CAF) 构建云迁移的业务案例。他们应该关注哪个 CAF 观点？
+
+- CCP-S121 q1118
+  en   : Which AWS Cloud Adoption Framework (AWS CAF) perspective focuses on designing and implementing new c
+  file : AWS Cloud Adoption Framework (AWS CAF) 的哪个角度侧重于设计和实施具有企业级可扩展性的新云环境？
+  cache: AWS 云采用框架 (AWS CAF) 的哪个角度侧重于设计和实施具有企业级可扩展性的新云环境？
+
+- CCP-S122 q1119
+  en   : A company needs to define how it will manage and monitor cloud workloads on a day-to-day basis after
+  file : 公司需要定义迁移后如何日常管理和监控云工作负载。哪个 AWS Cloud Adoption Framework (AWS CAF) 视角可以解决此问题？
+  cache: 公司需要定义迁移后如何日常管理和监控云工作负载。哪个 AWS 云采用框架 (AWS CAF) 视角可以解决此问题？
+
+- CCP-S123 q1120
+  en   : How many perspectives does the AWS Cloud Adoption Framework (AWS CAF) define?
+  file : AWS Cloud Adoption Framework (AWS CAF) 定义了多少个视角？
+  cache: AWS 云采用框架 (AWS CAF) 定义了多少个视角？
+
+- CCP-S124 q1122
+  en   : A company is evaluating its cloud readiness and discovers that its IT staff lacks experience with AW
+  file : 一家公司正在评估其云准备情况，发现其 IT 员工缺乏 AWS 服务的经验。根据 AWS Cloud Adoption Framework (AWS CAF)，公司应采取哪些行动？
+  cache: 一家公司正在评估其云准备情况，发现其 IT 员工缺乏 AWS 服务的经验。根据 AWS 云采用框架 (AWS CAF)，公司应采取哪些行动？
+
+- CCP-S125 q1123
+  en   : Which of the following is a key focus area of the Governance perspective in the AWS Cloud Adoption F
+  file : 以下哪项是 AWS Cloud Adoption Framework (AWS CAF) 中治理视角的重点关注领域？
+  cache: 以下哪项是 AWS 云采用框架 (AWS CAF) 中治理视角的重点关注领域？
+
+- CCP-S126 q1124
+  en   : The AWS Cloud Adoption Framework (AWS CAF) identifies four transformation domains. Which of the foll
+  file : AWS Cloud Adoption Framework (AWS CAF) 确定了四个转换域。以下哪一个是这些域之一？
+  cache: AWS 云采用框架 (AWS CAF) 确定了四个转换域。以下哪一个是这些域之一？
+
+- CCP-S127 q1126
+  en   : A company wants to use the AWS Cloud Adoption Framework (AWS CAF) to assess which of its application
+  file : 一家公司希望使用 AWS Cloud Adoption Framework (AWS CAF) 来评估其哪些应用程序已准备好迁移到 AWS。这描述了哪项 CAF 活动？
+  cache: 一家公司希望使用 AWS 云采用框架 (AWS CAF) 来评估其哪些应用程序已准备好迁移到 AWS。这描述了哪项 CAF 活动？
+
+- CCP-S128 q1127
+  en   : What is the correct order of the AWS Cloud Adoption Framework (AWS CAF) phases for cloud transformat
+  file : 云转型的 AWS Cloud Adoption Framework (AWS CAF) 阶段的正确顺序是什么？
+  cache: 云转型的 AWS 云采用框架 (AWS CAF) 阶段的正确顺序是什么？
+
+- CCP-S129 q1128
+  en   : A company is using the AWS Cloud Adoption Framework (AWS CAF) and wants to establish a Cloud Center 
+  file : 一家公司正在使用 AWS Cloud Adoption Framework (AWS CAF)，并希望建立云卓越中心 (CCoE)。 CAF 转型之旅的哪个阶段通常涉及此活动？
+  cache: 一家公司正在使用 AWS 云采用框架 (AWS CAF)，并希望建立云卓越中心 (CCoE)。 CAF 转型之旅的哪个阶段通常涉及此活动？
+
+- CCP-S133 q1100
+  en   : A company wants to migrate its on-premises MySQL database to Amazon RDS for MySQL to take advantage 
+  file : 一家公司希望将其本地 MySQL DMS 到 Amazon RDS，以便 MySQL 能够利用托管修补和备份，而无需更改应用程序代码。这描述了哪种迁移策略？
+  cache: 一家公司希望将其本地 MySQL 数据库迁移到 Amazon RDS，以便 MySQL 能够利用托管修补和备份，而无需更改应用程序代码。这描述了哪种迁移策略？
+
+- CCP-S134 q1101
+  en   : Which migration strategy involves redesigning an application to take full advantage of cloud-native 
+  file : 哪种迁移策略涉及重新设计应用程序以充分利用 Serverless computing 和 Microservices 等云原生功能？
+  cache: 哪种迁移策略涉及重新设计应用程序以充分利用无服务器计算和微服务等云原生功能？
+
+- CCP-S137 q1130
+  en   : How many migration strategies (Rs) are defined in the AWS Cloud Adoption Framework (AWS CAF)?
+  file : AWS Cloud Adoption Framework (AWS CAF) 中定义了多少迁移策略 (R)？
+  cache: AWS 云采用框架 (AWS CAF) 中定义了多少迁移策略 (R)？
+
+- CCP-S138 q1131
+  en   : A company wants to migrate a large on-premises Oracle database to Amazon DynamoDB to improve scalabi
+  file : 一家公司希望将大型本地 Oracle DMS 到 Amazon DynamoDB，以提高可扩展性并降低许可成本。这描述了哪种迁移策略？
+  cache: 一家公司希望将大型本地 Oracle 数据库迁移到Amazon DynamoDB，以提高可扩展性并降低许可成本。这描述了哪种迁移策略？
+
+- CCP-S141 q1134
+  en   : A company needs to migrate a 100 TB on-premises database to AWS but has limited network bandwidth. W
+  file : 某公司需要将 100 TB 的本地 DMS 到 AWS，但网络带宽有限。哪种 AWS 服务最适合此数据传输？
+  cache: 某公司需要将 100 TB 的本地数据库迁移到 AWS，但网络带宽有限。哪种 AWS 服务最适合此数据传输？
+
+- CCP-S145 q1138
+  en   : A company is migrating a monolithic application to AWS and decides to break it into microservices us
+  file : 一家公司正在将单体应用程序迁移到 AWS，并决定使用 AWS Lambda 和 Amazon API Gateway 将其分解为 Microservices。这代表了哪种迁移策略？
+  cache: 一家公司正在将单体应用程序迁移到 AWS，并决定使用 AWS Lambda 和 Amazon API Gateway 将其分解为微服务。这代表了哪种迁移策略？
+
+- CCP-S152 q036
+  en   : Which of the following must an IAM user provide to interact with AWS services using the AWS Command 
+  file : IAM User 必须提供以下哪项才能使用 AWS 命令​​行界面 (AWS CLI) 与 AWS 服务交互？
+  cache: IAM 用户必须提供以下哪项才能使用 AWS 命令​​行界面 (AWS CLI) 与 AWS 服务交互？
+
+- CCP-S154 q043
+  en   : Under the shared responsibility model, which of the following is the responsibility of AWS?
+  file : 在共担责任模型下，以下哪项是 AWS 的责任？
+  cache: 在共担责任模型下，以下哪项是AWS的责任？
+
+- CCP-S156 q056
+  en   : Which of the following is the customer's responsibility under the AWS shared responsibility model?
+  file : 在 AWS Shared Responsibility Model 下，以下哪项是客户的责任？
+  cache: 在 AWS 责任共担模型下，以下哪项是客户的责任？
+
+- CCP-S157 q057
+  en   : According to the AWS shared responsibility model who is responsible for configuration management?
+  file : 根据 AWS 共享责任模型，谁负责配置管理？
+  cache: 根据AWS共享责任模型，谁负责配置管理？
+
+- CCP-S160 q075
+  en   : Access keys in AWS Identity and Access Management (IAM) are used to:
+  file : AWS Identity and Access Management (IAM) 中的 Access Key 用于：
+  cache: AWS Identity and Access Management (IAM) 中的访问密钥用于：
+
+- CCP-S161 q090
+  en   : Which AWS IAM feature allows developers to access AWS services through the AWS CLI?
+  file : 哪个 AWS IAM 功能允许开发者通过 AWSCLI 访问 AWS 服务？
+  cache: 哪个AWS IAM功能允许开发者通过AWSCLI访问AWS服务？
+
+- CCP-S164 q114
+  en   : If a customer needs to audit the change management of AWS resources, which of the following AWS serv
+  file : 如果客户需要审核 AWS 资源的变更管理，客户应该使用以下哪些 AWS 服务？
+  cache: 如果客户需要审核AWS资源的变更管理，客户应该使用以下哪些AWS服务？
+
+- CCP-S165 q117
+  en   : Which of the following Identity and Access Management (IAM) entities is associated with an access ke
+  file : 使用 AWS 命令​​行界面 (AWS CLI) 时，以下哪些身份和访问管理 (IAM) 实体与 Access Key ID 和秘密 Access Key 关联？
+  cache: 使用 AWS 命令​​行界面 (AWS CLI) 时，以下哪些身份和访问管理 (IAM) 实体与访问密钥 ID 和秘密访问密钥关联？
+
+- CCP-S168 q144
+  en   : Which activity is a customer responsibility in the AWS Cloud according to the AWS shared responsibil
+  file : 根据 AWS Shared Responsibility Model，AWS 云中的哪些活动是客户的责任？
+  cache: 根据 AWS 责任共担模型，AWS 云中的哪些活动是客户的责任？
+
+- CCP-S171 q169
+  en   : A Cloud Practitioner must determine if any security groups in an AWS account have been provisioned t
+  file : 云从业者必须确定 AWS 账户中是否已配置任何 Security Group 以允许对特定端口进行不受限制的访问。最简单的方法是什么？
+  cache: 云从业者必须确定 AWS 账户中是否已配置任何安全组以允许对特定端口进行不受限制的访问。最简单的方法是什么？
+
+- CCP-S172 q175
+  en   : What can users access from AWS Artifact?
+  file : 用户可以从 AWS Artifact 访问什么？
+  cache: 用户可以从AWS Artifact访问什么？
+
+- CCP-S178 q204
+  en   : According to the AWS Acceptable Use Policy, which of the following statements is true regarding pene
+  file : 根据 AWS 可接受使用政策，关于 Amazon EC2 instances 的 penetration testing，以下哪项陈述是正确的？
+  cache: 根据 AWS 可接受使用政策，关于 EC2 实例的渗透测试，以下哪项陈述是正确的？
+
+- CCP-S182 q223
+  en   : What are the default security credentials that are required to access the AWS management console for
+  file : IAM User 账户访问 AWS Management Console 需要哪些默认安全凭证？
+  cache: IAM 用户账户访问 AWS 管理控制台需要哪些默认安全凭证？
+
+- CCP-S184 q236
+  en   : Which of the following AWS security features is associated with an EC2 instance and functions to fil
+  file : 以下哪些 AWS 安全功能与 Amazon EC2 instances 和过滤传入流量请求的功能相关？
+  cache: 以下哪些 AWS 安全功能与 EC2 实例和过滤传入流量请求的功能相关？
+
+- CCP-S187 q292
+  en   : Data security is one of the top priorities of AWS. How does AWS deal with old storage devices that h
+  file : 数据安全是 AWS 的首要任务之一。 AWS 如何处理已达到使用寿命的旧存储设备？
+  cache: 数据安全是AWS的首要任务之一。 AWS 如何处理已达到使用寿命的旧存储设备？
+
+- CCP-S189 q302
+  en   : A company needs to track resource changes using the API call history. Which AWS service can help the
+  file : 公司需要使用 API 调用历史记录来跟踪资源变化。哪些 AWS 服务可以帮助公司实现这一目标？
+  cache: 公司需要使用 API 调用历史记录来跟踪资源变化。哪些AWS服务可以帮助公司实现这一目标？
+
+- CCP-S190 q305
+  en   : What is the AWS' recommendation regarding access keys?
+  file : AWS 关于 Access Key 的建议是什么？
+  cache: AWS 关于访问密钥的建议是什么？
+
+- CCP-S191 q306
+  en   : What is the AWS IAM feature that provides an additional layer of security on top of username and pas
+  file : 除了用户名和密码身份验证之外，提供额外安全层的 AWS IAM 功能是什么？
+  cache: 除了用户名和密码身份验证之外，提供额外安全层的AWS IAM 功能是什么？
+
+- CCP-S192 q316
+  en   : A company has discovered that multiple S3 buckets were deleted, but it is unclear who performed thes
+  file : 一家公司发现多个 S3 存储桶被删除，但尚不清楚是谁执行了这些操作。哪种 AWS 服务可用于识别谁删除了存储桶？
+  cache: 一家公司发现多个S3存储桶被删除，但尚不清楚是谁执行了这些操作。哪种 AWS 服务可用于识别谁删除了存储桶？
+
+- CCP-S200 q367
+  en   : You have just hired a skilled sys-admin to join your team. As usual, you have created a new IAM user
+  file : 您刚刚聘请了一位熟练的系统管理员加入您的团队。像往常一样，您创建了一个新的 IAM User 供他与 AWS 服务交互。在他的第一天，您要求他创建所有现有 Amazon EBS 卷的快照并将它们保存在
+  cache: 您刚刚聘请了一位熟练的系统管理员加入您的团队。像往常一样，您创建了一个新的 IAM 用户供他与 AWS 服务交互。在他的第一天，您要求他创建所有现有 Amazon EBS 卷的快照并将它们保存在新的 
+
+- CCP-S209 q414
+  en   : Which of the following strategies helps protect your AWS root account?
+  file : 以下哪些策略有助于保护您的 AWS Root Account？
+  cache: 以下哪些策略有助于保护您的 AWS 根账户？
+
+- CCP-S210 q416
+  en   : You have just set up your AWS environment and have created six IAM user accounts for the DevOps team
+  file : 您刚刚设置了 AWS 环境，并为 DevOps 团队创建了六个 IAM User 帐户。向这些 IAM 账户授予权限时，AWS 有什么建议？
+  cache: 您刚刚设置了 AWS 环境，并为 DevOps 团队创建了六个 IAM 用户帐户。向这些 IAM 账户授予权限时，AWS 有什么建议？
+
+- CCP-S211 q428
+  en   : What best describes penetration testing?
+  file : 什么最能描述 penetration testing？
+  cache: 什么最能描述渗透测试？
+
+- CCP-S214 q458
+  en   : What can you use to assign permissions directly to an IAM user?
+  file : 您可以使用什么来直接向 IAM User 分配权限？
+  cache: 您可以使用什么来直接向 IAM 用户分配权限？
+
+- CCP-S223 q493
+  en   : What is the main benefit of attaching security groups to an Amazon RDS instance?
+  file : 将 Security Group 附加到 Amazon RDS 实例的主要好处是什么？
+  cache: 将安全组附加到 Amazon RDS 实例的主要好处是什么？
+
+- CCP-S224 q496
+  en   : You have been tasked with auditing the security of your VPC. As part of this process, you need to st
+  file : 您的任务是审核您的 VPC 的安全性。在此过程中，您需要首先分析 Amazon EC2 instances 上允许哪些入站和出站流量。为了完成这项任务，您需要检查 VPC 的哪两个部分？
+  cache: 您的任务是审核您的 VPC 的安全性。在此过程中，您需要首先分析 EC2 实例上允许哪些入站和出站流量。为了完成这项任务，您需要检查 VPC 的哪两个部分？
+
+- CCP-S229 q535
+  en   : Which of the following steps should be taken by a customer when conducting penetration testing on AW
+  file : 在 AWS 上进行 penetration testing 时，客户应采取以下哪些步骤？
+  cache: 在 AWS 上进行渗透测试时，客户应采取以下哪些步骤？
+
+- CCP-S231 q553
+  en   : According to the AWS shared responsibility model what is the sole responsibility of AWS?
+  file : 根据 AWS 共享责任模型，AWS 的唯一责任是什么？
+  cache: 根据AWS共享责任模型，AWS的唯一责任是什么？
+
+- CCP-S232 q555
+  en   : Which AWS service identifies security groups that allow unrestricted access to a user's AWS resource
+  file : 哪种 AWS 服务可识别允许不受限制地访问用户的 AWS 资源的 Security Group？
+  cache: 哪种 AWS 服务可识别允许不受限制地访问用户的 AWS 资源的安全组？
+
+- CCP-S233 q565
+  en   : Under the shared responsibility model, which of the following is a shared control between a customer
+  file : 在 Shared Responsibility Model 下，以下哪一项是客户与 AWS 之间的共享控制权？
+  cache: 在责任共担模型下，以下哪一项是客户与 AWS 之间的共享控制权？
+
+- CCP-S234 q575
+  en   : Which service enables risk auditing by continuously monitoring and logging account activity, includi
+  file : 哪种服务可以通过持续监控和记录账户活动（包括 AWS Management Console 和 AWS SDKs 中的用户操作）来实现风险审核？
+  cache: 哪种服务可以通过持续监控和记录账户活动（包括 AWS 管理控制台和 AWS SDKs 中的用户操作）来实现风险审核？
+
+- CCP-S236 q581
+  en   : What is the AWS customer responsible for according to the AWS shared responsibility model?
+  file : 根据 AWS Shared Responsibility Model，AWS 客户负责什么？
+  cache: 根据 AWS 责任共担模型，AWS 客户负责什么？
+
+- CCP-S239 q618
+  en   : Which of the following is a component of the shared responsibility model managed entirely by AWS?
+  file : 以下哪一项是完全由 AWS 管理的 Shared Responsibility Model 的组成部分？
+  cache: 以下哪一项是完全由 AWS 管理的责任共担模型的组成部分？
+
+- CCP-S240 q628
+  en   : Which of the following is entirely the responsibility of AWS, according to the AWS shared responsibi
+  file : 根据 AWS Shared Responsibility Model，以下哪项完全由 AWS 负责？
+  cache: 根据 AWS 责任共担模型，以下哪项完全由 AWS 负责？
+
+- CCP-S241 q633
+  en   : Which AWS IAM feature is used to associate a set of permissions with multiple users?
+  file : 哪个 AWS IAM 功能用于将一组权限与多个用户关联？
+  cache: 哪个AWS IAM功能用于将一组权限与多个用户关联？
+
+- CCP-S242 q635
+  en   : Which of the following can a customer use to enable single sign-on (SSO) to the AWS Management Conso
+  file : 客户可以使用以下哪项来启用 AWS Management Console 的 SSO (SSO)？
+  cache: 客户可以使用以下哪项来启用 AWS 管理控制台的单点登录 (SSO)？
+
+- CCP-S243 q638
+  en   : Which of the following services provides on-demand access to AWS compliance reports?
+  file : 以下哪项服务提供对 AWS 合规性报告的 On-Demand 访问？
+  cache: 以下哪项服务提供对 AWS 合规性报告的按需访问？
+
+- CCP-S244 q639
+  en   : As part of the AWS shared responsibility model, which of the following operational controls do users
+  file : 作为 AWS Shared Responsibility Model 的一部分，用户完全从 AWS 继承了以下哪些操作控制权？
+  cache: 作为 AWS 责任共担模型的一部分，用户完全从 AWS 继承了以下哪些操作控制权？
+
+- CCP-S245 q646
+  en   : What function do security groups serve related Amazon Elastic Compute Cloud (Amazon EC2) instance se
+  file : Security Group 为相关的 Amazon Elastic Compute Cloud (Amazon EC2) 实例安全性提供什么功能？
+  cache: 安全组为相关的 Amazon Elastic Compute Cloud (Amazon EC2) 实例安全性提供什么功能？
+
+- CCP-S248 q656
+  en   : Under the AWS shared responsibility model, customer responsibilities include which one of the follow
+  file : 在 AWS Shared Responsibility Model 下，客户责任包括以下哪一项？
+  cache: 在 AWS 责任共担模型下，客户责任包括以下哪一项？
+
+- CCP-S250 q661
+  en   : What is a responsibility of AWS in the shared responsibility model?
+  file : AWS 在 Shared Responsibility Model 中的责任是什么？
+  cache: AWS在责任共担模型中的责任是什么？
+
+- CCP-S251 q663
+  en   : What does it mean to grant least privilege to AWS IAM users?
+  file : 向 AWS IAM 用户授予最低权限意味着什么？
+  cache: 向AWS IAM用户授予最低权限意味着什么？
+
+- CCP-S252 q683
+  en   : Which AWS service provides a self-service portal for on-demand access to AWS compliance reports?
+  file : 哪项 AWS 服务提供自助服务门户来 On-Demand 访问 AWS 合规性报告？
+  cache: 哪项 AWS 服务提供自助服务门户来按需访问 AWS 合规性报告？
+
+- CCP-S253 q692
+  en   : According to the AWS shared responsibility model, what is AWS responsible for?
+  file : 根据 AWSShared Responsibility Model，AWS 负责什么？
+  cache: 根据AWS责任共担模型，AWS负责什么？
+
+- CCP-S254 q694
+  en   : Which AWS tool will identify security groups that grant unrestricted Internet access to a limited li
+  file : 哪种 AWS 工具可以识别向有限端口列表授予不受限制的 Internet 访问权限的 Security Group？
+  cache: 哪种 AWS 工具可以识别向有限端口列表授予不受限制的 Internet 访问权限的安全组？
+
+- CCP-S259 q727
+  en   : Which AWS service offers on-demand access to AWS security and compliance reports?
+  file : 哪些 AWS 服务提供对 AWS 安全性和合规性报告的 On-Demand 访问？
+  cache: 哪些 AWS 服务提供对 AWS 安全性和合规性报告的按需访问？
+
+- CCP-S260 q730
+  en   : Which AWS service provides inbound and outbound network ACLs to harden external connectivity to Amaz
+  file : 哪种 AWS 服务提供入站和出站 Network ACL 来强化与 Amazon EC2 的外部连接？
+  cache: 哪种 AWS 服务提供入站和出站网络 ACL 来强化与 Amazon EC2 的外部连接？
+
+- CCP-S261 q733
+  en   : Under the AWS shared responsibility model, AWS is responsible for which security-related task?
+  file : 在 AWS 共享责任模型下，AWS 负责哪些安全相关任务？
+  cache: 在AWS共享责任模型下，AWS负责哪些安全相关任务？
+
+- CCP-S266 q755
+  en   : Within the AWS shared responsibility model, who is responsible for security and compliance?
+  file : 在 AWS Shared Responsibility Model 中，谁负责安全性和合规性？
+  cache: 在 AWS 责任共担模型中，谁负责安全性和合规性？
+
+- CCP-S268 q760
+  en   : What does AWS Shield Standard provide?
+  file : AWS Shield 标准提供什么？
+  cache: AWS Shield标准提供什么？
+
+- CCP-S269 q766
+  en   : What is one of the customer's responsibilities according to the AWS shared responsibility model?
+  file : 根据 AWS Shared Responsibility Model，客户的责任之一是什么？
+  cache: 根据 AWS 责任共担模型，客户的责任之一是什么？
+
+- CCP-S271 q771
+  en   : Which AWS service needs to be enabled to track all user account changes within the AWS Management Co
+  file : 需要启用哪个 AWS 服务才能跟踪 AWS Management Console 中的所有用户账户更改？
+  cache: 需要启用哪个 AWS 服务才能跟踪 AWS 管理控制台中的所有用户账户更改？
+
+- CCP-S272 q777
+  en   : Which of the following is AWS's responsibility under the AWS shared responsibility model?
+  file : 以下哪项是 AWS 在 AWS Shared Responsibility Model 下的责任？
+  cache: 以下哪项是 AWS 在 AWS 责任共担模型下的责任？
+
+- CCP-S273 q779
+  en   : How would a system administrator add an additional layer of login security to a user's AWS Managemen
+  file : 系统管理员如何向用户的 AWS Management Console 添加额外的登录安全层？
+  cache: 系统管理员如何向用户的 AWS 管理控制台添加额外的登录安全层？
+
+- CCP-S274 q780
+  en   : Which service can identify the user that made the API call when an Amazon Elastic Compute Cloud (Ama
+  file : 当 Amazon Elastic Compute Cloud (Amazon EC2) 实例终止时，哪个服务可以识别发出 API 调用的用户？
+  cache: 当 Amazon Elastic Compute Cloud (Amazon EC2) 实例终止时，哪个服务可以识别发出API 调用的用户？
+
+- CCP-S277 q800
+  en   : Which functions can users perform using AWS KMS?
+  file : 用户使用 AWS KMS 可以实现哪些功能？
+  cache: 用户使用AWS KMS可以实现哪些功能？
+
+- CCP-S284 q828
+  en   : Which service can be used to monitor and receive alerts for AWS account root user AWS Management Con
+  file : 哪种服务可用于监控 AWS 账户 Root User AWS Management Console 登录事件并接收警报？
+  cache: 哪种服务可用于监控 AWS 账户根用户 AWS 管理控制台登录事件并接收警报？
+
+- CCP-S285 q846
+  en   : A company needs an Amazon S3 bucket that cannot have any public objects due to compliance requiremen
+  file : 由于合规性要求，公司需要一个不能包含任何公共对象的 Amazon S3 存储桶。如何才能做到这一点？
+  cache: 由于合规性要求，公司需要一个不能包含任何公共对象的Amazon S3存储桶。如何才能做到这一点？
+
+- CCP-S290 q859
+  en   : Which AWS service provides on-demand access to AWS security and compliance documentation?
+  file : 哪种 AWS 服务提供对 AWS 安全性和合规性文档的 On-Demand 访问？
+  cache: 哪种 AWS 服务提供对 AWS 安全性和合规性文档的按需访问？
+
+- CCP-S291 q862
+  en   : A user needs to generate a report that outlines the status of key security checks in an AWS account.
+  file : 用户需要生成一份报告，概述 AWS 账户中关键安全检查的状态。该报告必须包含 Amazon S3 存储桶权限的状态、是否为 AWS 账户 Root User 启用 Multi-Factor Authe
+  cache: 用户需要生成一份报告，概述 AWS 账户中关键安全检查的状态。该报告必须包含 Amazon S3 存储桶权限的状态、是否为 AWS 账户根用户启用多重身份验证、是否将任何安全组配置为允许无限制访问。在
+
+- CCP-S294 q883
+  en   : Which AWS service or feature helps restrict the AWS services, resources, and individual API actions 
+  file : 哪些 AWS 服务或功能有助于限制每个成员账户中的用户和角色可以访问的 AWS 服务、资源和个人 API 操作？
+  cache: 哪些 AWS 服务或功能有助于限制每个成员账户中的用户和角色可以访问的 AWS 服务、资源和个人API操作？
+
+- CCP-S296 q889
+  en   : A user would like to encrypt data that is received, stored, and managed by AWS CloudTrail. Which AWS
+  file : 用户希望对 AWS CloudTrail 接收、存储和管理的数据进行加密。哪个 AWS 服务将提供此功能？
+  cache: 用户希望对AWS CloudTrail接收、存储和管理的数据进行加密。哪个 AWS 服务将提供此功能？
+
+- CCP-S297 q895
+  en   : Which AWS service provides the ability to detect inadvertent data leaks of personally identifiable i
+  file : 哪种 AWS 服务能够检测 PII (PII) 和用户凭证数据的无意数据泄漏？
+  cache: 哪种 AWS 服务能够检测个人身份信息 (PII) 和用户凭证数据的无意数据泄漏？
+
+- CCP-S301 q917
+  en   : A company is launching an e-commerce site that will store and process credit card data. The company 
+  file : 一家公司正在推出一个电子商务网站，该网站将存储和处理信用卡数据。该公司需要有关 AWS 合规性报告和 AWS 协议的信息。哪些 AWS 服务提供对这些项目的 On-Demand 访问？
+  cache: 一家公司正在推出一个电子商务网站，该网站将存储和处理信用卡数据。该公司需要有关 AWS 合规性报告和 AWS 协议的信息。哪些 AWS 服务提供对这些项目的按需访问？
+
+- CCP-S303 q920
+  en   : A user needs to regularly audit and evaluate the setup of all AWS resources, identify non-compliant 
+  file : 用户需要定期审核和评估所有 AWS 资源的设置，识别不合规的账户，并在资源发生更改时收到通知。哪些 AWS 服务可以满足这些要求？
+  cache: 用户需要定期审核和评估所有 AWS 资源的设置，识别不合规的账户，并在资源发生更改时收到通知。哪些AWS服务可以满足这些要求？
+
+- CCP-S304 q924
+  en   : A user needs to automatically discover, classify, and protect sensitive data stored in Amazon S3. Wh
+  file : 用户需要自动发现、分类和保护 Amazon S3 中存储的敏感数据。哪些 AWS 服务可以满足这些要求？
+  cache: 用户需要自动发现、分类和保护Amazon S3中存储的敏感数据。哪些AWS服务可以满足这些要求？
+
+- CCP-S306 q931
+  en   : Which AWS service allows users to download security and compliance reports about the AWS infrastruct
+  file : 哪种 AWS 服务允许用户 On-Demand 下载有关 AWS 基础设施的安全性和合规性报告？
+  cache: 哪种 AWS 服务允许用户按需下载有关 AWS 基础设施的安全性和合规性报告？
+
+- CCP-S307 q936
+  en   : During a compliance review, an auditor requests AWS compliance documentation such as SOC 2 reports. 
+  file : 在合规性审查期间，审核员会请求 AWS 合规性文档，例如 SOC 2 报告。哪些 AWS 服务提供对这些文档的 On-Demand 访问？
+  cache: 在合规性审查期间，审核员会请求 AWS 合规性文档，例如 SOC 2 报告。哪些 AWS 服务提供对这些文档的按需访问？
+
+- CCP-S308 q941
+  en   : A company wants to allow full access to an Amazon S3 bucket for a particular user. Which element in 
+  file : 一家公司希望允许特定用户完全访问 Amazon S3 存储桶。 S3 Bucket Policy 中的哪个元素保存描述谁需要访问 S3 存储桶的用户详细信息？
+  cache: 一家公司希望允许特定用户完全访问 Amazon S3 存储桶。 S3 存储桶策略中的哪个元素保存描述谁需要访问 S3 存储桶的用户详细信息？
+
+- CCP-S309 q945
+  en   : Under the AWS shared responsibility model, which of the following is a responsibility of AWS?
+  file : 在 AWS Shared Responsibility Model 下，以下哪项是 AWS 的责任？
+  cache: 在 AWS 责任共担模型下，以下哪项是 AWS 的责任？
+
+- CCP-S312 q969
+  en   : A company wants to ensure that AWS Management Console users are meeting password complexity requirem
+  file : 一家公司希望确保 AWS Management Console 用户满足密码复杂性要求。公司如何配置密码复杂度？
+  cache: 一家公司希望确保 AWS 管理控制台用户满足密码复杂性要求。公司如何配置密码复杂度？
+
+- CCP-S313 q970
+  en   : Under the AWS shared responsibility model, which of the following is the customer's responsibility?
+  file : 在 AWS Shared Responsibility Model 下，以下哪项是客户的责任？
+  cache: 在 AWS 责任共担模型下，以下哪项是客户的责任？
+
+- CCP-S315 q978
+  en   : Which AWS service gives users on-demand, self-service access to AWS compliance control reports?
+  file : 哪种 AWS 服务允许用户 On-Demand 自助访问 AWS 合规性控制报告？
+  cache: 哪种 AWS 服务允许用户按需自助访问 AWS 合规性控制报告？
+
+- CCP-S317 q984
+  en   : Which of the following is the customer's responsibility when using Amazon RDS?
+  file : 使用 Amazon RDS 时，客户需承担以下哪些责任？
+  cache: 使用Amazon RDS时，客户需承担以下哪些责任？
+
+- CCP-S320 q997
+  en   : Which AWS service can be used to retrieve compliance reports on demand?
+  file : 哪种 AWS 服务可用于 On-Demand 检索合规性报告？
+  cache: 哪种 AWS 服务可用于按需检索合规性报告？
+
+- CCP-S321 q998
+  en   : A company has an AWS-hosted website located behind an Application Load Balancer. The company wants t
+  file : 一家公司有一个位于 Application Load Balancer 后面的 AWS 托管网站。该公司希望保护网站免受 SQL 注入或跨站点脚本攻击。公司应该使用哪种 AWS 服务？
+  cache: 一家公司有一个位于应用程序负载均衡器后面的 AWS 托管网站。该公司希望保护网站免受 SQL 注入或跨站点脚本攻击。公司应该使用哪种 AWS 服务？
+
+- CCP-S322 q1001
+  en   : An external auditor has requested that a company provide a list of all its IAM users, including the 
+  file : 外部审计员要求公司提供所有 IAM User 的列表，包括用户凭证和 Access Key 的状态。提供此信息的最简单方法是什么？
+  cache: 外部审计员要求公司提供所有IAM 用户的列表，包括用户凭证和访问密钥的状态。提供此信息的最简单方法是什么？
+
+- CCP-S324 q1006
+  en   : The AWS IAM best practice for granting least privilege is to:
+  file : 授予 Least Privilege 的 AWS IAM 最佳实践是：
+  cache: 授予最小权限的 AWS IAM 最佳实践是：
+
+- CCP-S329 q002
+  en   : Which of the following is an example of horizontal scaling in the AWS Cloud?
+  file : 以下哪项是 AWS 云中 Horizontal Scaling 的示例？
+  cache: 以下哪项是 AWS 云中水平扩展的示例？
+
+- CCP-S331 q012
+  en   : A company has decided to migrate its Oracle database to AWS. Which AWS service can help achieve this
+  file : 一家公司决定将其 Oracle DMS 到 AWS。哪种 AWS 服务可以帮助实现这一目标，而不会对源数据库的功能产生负面影响？
+  cache: 一家公司决定将其 Oracle 数据库迁移到 AWS。哪种 AWS 服务可以帮助实现这一目标，而不会对源数据库的功能产生负面影响？
+
+- CCP-S332 q021
+  en   : What does Amazon CloudFront use to distribute content to global users with low latency?
+  file : Amazon CloudFront 用什么来低延迟向全球用户分发内容？
+  cache: Amazon CloudFront用什么来低延迟向全球用户分发内容？
+
+- CCP-S334 q025
+  en   : Which service provides DNS in the AWS cloud?
+  file : AWS 云中哪种服务提供 DNS？
+  cache: AWS 云中哪种服务提供DNS？
+
+- CCP-S336 q030
+  en   : Which of the following can be described as a global content delivery network (CDN) service?
+  file : 以下哪项可以被描述为全球 Amazon CloudFront (CDN) 服务？
+  cache: 以下哪项可以被描述为全球内容分发网络 (CDN) 服务？
+
+- CCP-S337 q033
+  en   : Your company has a data store application that requires access to a NoSQL database. Which AWS databa
+  file : 您的公司有一个需要访问 Amazon DynamoDB 的数据存储应用程序。哪种 AWS 数据库产品可以满足此要求？
+  cache: 您的公司有一个需要访问 NoSQL 数据库的数据存储应用程序。哪种 AWS 数据库产品可以满足此要求？
+
+- CCP-S341 q045
+  en   : You have deployed your application on multiple Amazon EC2 instances. Your customers complain that so
+  file : 您已将应用程序部署在多个 Amazon EC2 实例上。您的客户抱怨有时他们无法访问您的应用程序。哪种 AWS 服务允许您监控 Amazon EC2 instances 的性能以帮助解决这些问题？
+  cache: 您已将应用程序部署在多个 Amazon EC2 实例上。您的客户抱怨有时他们无法访问您的应用程序。哪种 AWS 服务允许您监控 EC2 实例的性能以帮助解决这些问题？
+
+- CCP-S343 q055
+  en   : A company wants to reduce the physical compute footprint that developers use to run code. Which serv
+  file : 一家公司希望减少开发人员用于运行代码的物理计算占用量。哪种服务可以通过启用 Serverless architecture 来满足该需求？
+  cache: 一家公司希望减少开发人员用于运行代码的物理计算占用量。哪种服务可以通过启用无服务器架构来满足该需求？
+
+- CCP-S344 q067
+  en   : Which of the following is an AWS managed Domain Name System (DNS) web service?
+  file : 以下哪项是 AWS 托管 DNS (DNS) Web 服务？
+  cache: 以下哪项是 AWS 托管域名系统 (DNS) Web 服务？
+
+- CCP-S348 q081
+  en   : Which of the following services is in the category of AWS serverless platform?
+  file : 以下哪些服务属于 AWS Serverless 平台类别？
+  cache: 以下哪些服务属于 AWS 无服务器平台类别？
+
+- CCP-S350 q086
+  en   : Which AWS service is a managed NoSQL database?
+  file : 哪项 AWS 服务是托管 Amazon DynamoDB？
+  cache: 哪项 AWS 服务是托管 NoSQL 数据库？
+
+- CCP-S351 q087
+  en   : Which of the following is a correct relationship between regions, Availability Zones, and edge locat
+  file : 以下哪项是区域、Availability Zones 和 Edge Locations 之间的正确关系？
+  cache: 以下哪项是区域、Availability Zones 和边缘位置之间的正确关系？
+
+- CCP-S354 q094
+  en   : Which AWS service can be used to automatically scale an application up and down without making capac
+  file : 哪种 AWS 服务可用于 Auto Scaling 和缩减应用程序，而无需做出容量规划决策？
+  cache: 哪种 AWS 服务可用于自动扩展和缩减应用程序，而无需做出容量规划决策？
+
+- CCP-S356 q098
+  en   : Which service stores objects, provides real-time access to those objects, and offers versioning and 
+  file : 哪个服务存储对象，提供对这些对象的实时访问，并提供 Versioning 和生命周期功能？
+  cache: 哪个服务存储对象，提供对这些对象的实时访问，并提供版本控制和生命周期功能？
+
+- CCP-S357 q108
+  en   : A company wants to expand from one AWS Region into a second AWS Region. What does the company need t
+  file : 一家公司希望从一个 AWS Region 扩展到第二个 AWS Region。公司需要做什么才能开始支持新区域？
+  cache: 一家公司希望从一个 AWS 区域扩展到第二个 AWS 区域。公司需要做什么才能开始支持新区域？
+
+- CCP-S358 q109
+  en   : Why is it beneficial to use Elastic Load Balancers with applications?
+  file : 为什么在应用程序中使用 Elastic Load Balancer 是有益的？
+  cache: 为什么在应用程序中使用弹性负载均衡器是有益的？
+
+- CCP-S361 q119
+  en   : Which AWS service provides a simple and scalable shared file storage solution for use with Linux-bas
+  file : 哪种 AWS 服务提供了简单且可扩展的共享 Amazon EFS 解决方案，可与基于 Linux 的 AWS 和本地服务器配合使用？
+  cache: 哪种 AWS 服务提供了简单且可扩展的共享文件存储解决方案，可与基于 Linux 的 AWS 和本地服务器配合使用？
+
+- CCP-S363 q124
+  en   : Which services are parts of the AWS serverless platform?
+  file : 哪些服务是 AWS Serverless 平台的一部分？
+  cache: 哪些服务是 AWS 无服务器平台的一部分？
+
+- CCP-S364 q127
+  en   : Which AWS service provides the ability to manage infrastructure as code?
+  file : 哪种 AWS 服务提供了管理 AWS CloudFormation 的能力？
+  cache: 哪种 AWS 服务提供了管理基础设施即代码的能力？
+
+- CCP-S367 q149
+  en   : Which service's PRIMARY purpose is software version control?
+  file : 哪个服务的主要目的是软件 Versioning？
+  cache: 哪个服务的主要目的是软件版本控制？
+
+- CCP-S369 q154
+  en   : A characteristic of edge locations is that they:
+  file : Edge Locations 的一个特征是：
+  cache: 边缘位置的一个特征是：
+
+- CCP-S373 q178
+  en   : How do Amazon EC2 Auto Scaling groups help achieve high availability for a web application?
+  file : Amazon EC2 Auto Scaling 组如何帮助实现 Web 应用程序的 High Availability 性？
+  cache: Amazon EC2 Auto Scaling 组如何帮助实现 Web 应用程序的高可用性？
+
+- CCP-S374 q184
+  en   : A company is looking for a scalable data warehouse solution. Which of the following AWS solutions wo
+  file : 一家公司正在寻找可扩展的 Amazon Redshift 解决方案。以下哪些 AWS 解决方案可以满足该公司的需求？
+  cache: 一家公司正在寻找可扩展的数据仓库解决方案。以下哪些 AWS 解决方案可以满足该公司的需求？
+
+- CCP-S380 q202
+  en   : You work as an on-premises MySQL DBA. The work of database configuration, backups, patching, and DR 
+  file : 您担任本地 MySQL DBA。数据库配置、备份、修补和 DR 工作可能非常耗时且重复。您的公司已决定迁移到 AWS 云。以下哪项可以帮助节省数据库维护时间，以便您可以专注于数据架构和性能？
+  cache: 您担任本地 MySQL DBA。数据库配置、备份、修补和灾难恢复工作可能非常耗时且重复。您的公司已决定迁移到 AWS 云。以下哪项可以帮助节省数据库维护时间，以便您可以专注于数据架构和性能？
+
+- CCP-S384 q212
+  en   : What does Amazon ElastiCache provide?
+  file : Amazon ElastiCache 提供什么？
+  cache: Amazon ElastiCache提供什么？
+
+- CCP-S389 q224
+  en   : In your on-premises environment, you can create as many virtual servers as you need from a single te
+  file : 在本地环境中，您可以根据需要从单个模板创建任意数量的 virtual servers。您可以使用什么在 AWS 中执行相同的操作？
+  cache: 在本地环境中，您可以根据需要从单个模板创建任意数量的虚拟服务器。您可以使用什么在 AWS 中执行相同的操作？
+
+- CCP-S390 q228
+  en   : AWS has created a large number of Edge Locations as part of its Global Infrastructure. Which of the 
+  file : AWS 创建了大量的 Edge Locations 作为其全球基础设施的一部分。以下哪一项不是使用 Edge Locations 的好处？
+  cache: AWS 创建了大量的Edge Locations 作为其全球基础设施的一部分。以下哪一项不是使用 Edge Locations 的好处？
+
+- CCP-S391 q230
+  en   : Which of the following services allows you to run containerized applications on a cluster of EC2 ins
+  file : 以下哪项服务允许您在 Amazon EC2 instances 集群上运行容器化应用程序？
+  cache: 以下哪项服务允许您在 EC2 实例集群上运行容器化应用程序？
+
+- CCP-S393 q235
+  en   : What is the AWS service/feature that takes advantage of Amazon CloudFront's globally distributed edg
+  file : 利用 Amazon CloudFront 全球分布的 Edge Locations 以更高的上传速度将文件传输到 S3 的 AWS 服务/功能是什么？
+  cache: 利用 Amazon CloudFront 全球分布的边缘站点以更高的上传速度将文件传输到 S3 的 AWS 服务/功能是什么？
+
+- CCP-S394 q239
+  en   : A company has a large amount of structured data stored in their on-premises data center. They are pl
+  file : 一家公司在其本地数据中心存储了大量结构化数据。他们计划将所有数据迁移到 AWS，最合适的 AWS 数据库选项是什么？
+  cache: 一家公司在其本地数据中心存储了大量结构化数据。他们计划将所有数据迁移到AWS，最合适的AWS数据库选项是什么？
+
+- CCP-S395 q241
+  en   : What is the AWS serverless service that allows you to run your applications without any administrati
+  file : 什么是 AWS serverless services，可以让您在没有任何管理负担的情况下运行应用程序？
+  cache: 什么是 AWS 无服务器服务，可以让您在没有任何管理负担的情况下运行应用程序？
+
+- CCP-S397 q247
+  en   : What is the primary storage service used by Amazon RDS database instances?
+  file : Amazon RDS 数据库实例使用的主存储服务是什么？
+  cache: Amazon RDS数据库实例使用的主存储服务是什么？
+
+- CCP-S398 q248
+  en   : A company is developing a new application using a microservices framework. The new application is ha
+  file : 一家公司正在使用 Microservices 框架开发新应用程序。新应用程序存在性能和延迟问题。应使用哪种 AWS 服务来解决这些问题？
+  cache: 一家公司正在使用微服务框架开发新应用程序。新应用程序存在性能和延迟问题。应使用哪种 AWS 服务来解决这些问题？
+
+- CCP-S403 q268
+  en   : Which of the following AWS offerings is a MySQL-compatible relational database service that can scal
+  file : 以下哪些 AWS 产品是与 MySQL 兼容的关系数据库服务，可以根据需求 Auto Scaling 容量？
+  cache: 以下哪些 AWS 产品是与 MySQL 兼容的关系数据库服务，可以根据需求自动扩展容量？
+
+- CCP-S404 q270
+  en   : What is the AWS data warehouse service that supports a high level of query performance on large amou
+  file : 支持对大量数据集进行高水平查询性能的 AWS Amazon Redshift 服务是什么？
+  cache: 支持对大量数据集进行高水平查询性能的 AWS 数据仓库服务是什么？
+
+- CCP-S405 q274
+  en   : A customer spent a lot of time configuring a newly deployed Amazon EC2 instance. After the workload 
+  file : 客户花费了大量时间来配置新部署的 Amazon EC2 实例。工作负载增加后，客户决定配置另一个具有相同配置的 Amazon EC2 instances。客户如何才能实现这一目标？
+  cache: 客户花费了大量时间来配置新部署的 Amazon EC2 实例。工作负载增加后，客户决定配置另一个具有相同配置的EC2实例。客户如何才能实现这一目标？
+
+- CCP-S407 q282
+  en   : Which AWS service provides the current status of all AWS services in all AWS Regions?
+  file : 哪项 AWS 服务提供所有 AWS Region 中所有 AWS 服务的当前状态？
+  cache: 哪项 AWS 服务提供所有 AWS 区域中所有 AWS 服务的当前状态？
+
+- CCP-S410 q287
+  en   : A company has hundreds of VPCs in multiple AWS Regions worldwide. What service does AWS offer to sim
+  file : 一家公司在全球多个 AWS Region 拥有数百个 VPC。 AWS 提供什么服务来简化 VPC 之间的连接管理？
+  cache: 一家公司在全球多个 AWS 区域拥有数百个 VPC。 AWS 提供什么服务来简化 VPC 之间的连接管理？
+
+- CCP-S411 q289
+  en   : Why does every AWS Region contain multiple Availability Zones?
+  file : 为什么每个 AWS Region 都包含多个 Availability Zones？
+  cache: 为什么每个 AWS 区域都包含多个 Availability Zones？
+
+- CCP-S412 q296
+  en   : How do ELBs improve the reliability of your application?
+  file : ELB 如何提高应用程序的 Reliability？
+  cache: ELB 如何提高应用程序的可靠性？
+
+- CCP-S413 q298
+  en   : A customer is planning to move billions of images and videos to be stored on Amazon S3. The customer
+  file : 一位客户计划将数十亿张图像和视频存储在 Amazon S3 上。客户有大约 60 PB 的数据需要移动。以下哪项 AWS 服务是将数据传输到 AWS 的最佳选择？
+  cache: 一位客户计划将数十亿张图像和视频存储在Amazon S3上。客户有大约 60 PB 的数据需要移动。以下哪项 AWS 服务是将数据传输到 AWS 的最佳选择？
+
+- CCP-S415 q308
+  en   : A company is planning to migrate a database with high read/write activity to AWS. What is the best s
+  file : 一家公司正计划将具有高读/写活动的 DMS 到 AWS。最好的存储选项是什么？
+  cache: 一家公司正计划将具有高读/写活动的数据库迁移到 AWS。最好的存储选项是什么？
+
+- CCP-S419 q315
+  en   : Which statement best describes the concept of an AWS region?
+  file : 哪种说法最能描述 AWS Region 的概念？
+  cache: 哪种说法最能描述 AWS 区域的概念？
+
+- CCP-S422 q326
+  en   : Both AWS and traditional IT distributors provide a wide range of virtual servers to meet their custo
+  file : AWS 和传统 IT 分销商都提供各种 virtual servers 来满足客户的需求。 AWS 中这些 virtual servers 的名称是什么？
+  cache: AWS 和传统 IT 分销商都提供各种虚拟服务器来满足客户的需求。 AWS 中这些虚拟服务器的名称是什么？
+
+- CCP-S425 q353
+  en   : A company has a web application that is hosted on a single EC2 instance and is approaching 100 perce
+  file : 一家公司有一个 Web 应用程序托管在单个 Amazon EC2 instances 上，并且在峰值负载期间 CPU 利用率接近 100%。该公司决定并行部署三个 Amazon EC2 实例，并在三个
+  cache: 一家公司有一个 Web 应用程序托管在单个 EC2 实例上，并且在峰值负载期间 CPU 利用率接近 100%。该公司决定并行部署三个Amazon EC2实例，并在三个服务器之间分配流量，而不是垂直扩展
+
+- CCP-S427 q358
+  en   : You are running a financial services web application on AWS. The application uses a MySQL database t
+  file : 您正在 AWS 上运行金融服务 Web 应用程序。该应用程序使用 MySQL 数据库来存储数据。以下哪些 AWS 服务允许您从快速 Amazon ElastiCache 中检索信息，从而提高应用程序的
+  cache: 您正在 AWS 上运行金融服务 Web 应用程序。该应用程序使用 MySQL 数据库来存储数据。以下哪些 AWS 服务允许您从快速内存缓存中检索信息，从而提高应用程序的性能？
+
+- CCP-S428 q359
+  en   : What are the advantages of using Auto Scaling Groups for EC2 instances?
+  file : 对 Amazon EC2 instances 使用 Auto Scaling 组有哪些优势？
+  cache: 对 EC2 实例使用 Auto Scaling 组有哪些优势？
+
+- CCP-S431 q366
+  en   : A company is building an online cloud storage platform. They need a storage service that can scale c
+  file : 一家公司正在构建一个在线云存储平台。他们需要一种能够 Auto Scaling 容量、同时最大限度降低成本的存储服务。公司应该使用哪种 AWS 存储服务来满足这些要求？
+  cache: 一家公司正在构建一个在线云存储平台。他们需要一种能够自动扩展容量、同时最大限度降低成本的存储服务。公司应该使用哪种 AWS 存储服务来满足这些要求？
+
+- CCP-S432 q376
+  en   : Which AWS service provides the ability to automate the configuration, management, and patching of EC
+  file : 哪种 AWS 服务能够大规模自动配置、管理和修补 Amazon EC2 instances？
+  cache: 哪种 AWS 服务能够大规模自动配置、管理和修补 EC2 实例？
+
+- CCP-S437 q389
+  en   : Which AWS Service offers an NFS file system that can be mounted concurrently from multiple EC2 insta
+  file : 哪种 AWS 服务提供可以从多个 Amazon EC2 instances 同时挂载的 NFS Amazon FSx？
+  cache: 哪种 AWS 服务提供可以从多个 EC2 实例同时挂载的 NFS 文件系统？
+
+- CCP-S438 q390
+  en   : Availability Zones within a Region are connected over low-latency links. Which of the following is a
+  file : 区域内的 Availability Zones 通过低延迟链路进行连接。以下哪一项是这些链接的好处？
+  cache: 区域内的Availability Zones通过低延迟链路进行连接。以下哪一项是这些链接的好处？
+
+- CCP-S439 q393
+  en   : Which of the following is true regarding the AWS availability zones and edge locations?
+  file : 关于 AWS Availability Zone 和 Edge Locations，以下哪一项是正确的？
+  cache: 关于 AWS 可用区和边缘站点，以下哪一项是正确的？
+
+- CCP-S443 q404
+  en   : You need to migrate a large number of on-premises workloads to AWS. Which AWS service is the most ap
+  file : 您需要将大量本地工作负载迁移到 AWS。哪种 AWS 服务最合适？
+  cache: 您需要将大量本地工作负载迁移到AWS。哪种 AWS 服务最合适？
+
+- CCP-S444 q407
+  en   : A company is hosting business critical workloads in an AWS Region. To protect against data loss and 
+  file : 一家公司在 AWS Region 托管关键业务工作负载。为了防止数据丢失并确保业务连续性，应在另一个 AWS Region 创建当前 AWS 环境的镜像。公司政策要求备用环境必须在几分钟内可用，以防主
+  cache: 一家公司在 AWS 区域托管关键业务工作负载。为了防止数据丢失并确保业务连续性，应在另一个 AWS 区域创建当前 AWS 环境的镜像。公司政策要求备用环境必须在几分钟内可用，以防主 AWS 区域发生中
+
+- CCP-S445 q408
+  en   : Which of the following S3 storage classes is most appropriate to host static assets for a popular e-
+  file : 以下哪种 S3 存储类最适合为具有稳定访问模式的流行电子商务网站托管静态资产？
+  cache: 以下哪种S3存储类最适合为具有稳定访问模式的流行电子商务网站托管静态资产？
+
+- CCP-S447 q412
+  en   : Which of the following is a feature of Amazon RDS that performs automatic failover when the primary 
+  file : 以下哪一项是 Amazon RDS 在主数据库无法响应时执行自动故障转移的功能？
+  cache: 以下哪一项是Amazon RDS在主数据库无法响应时执行自动故障转移的功能？
+
+- CCP-S450 q425
+  en   : Which AWS service can be used to automate the configuration and management of EC2 instances?
+  file : 哪种 AWS 服务可用于自动配置和管理 Amazon EC2 instances？
+  cache: 哪种 AWS 服务可用于自动配置和管理 EC2 实例？
+
+- CCP-S451 q431
+  en   : A developer wants to quickly deploy and manage his application in the AWS Cloud, but he doesn't have
+  file : 一位开发人员希望在 AWS 云中快速部署和管理他的应用程序，但他没有任何云计算经验。以下哪些 AWS 服务可以帮助开发人员实现其目标？
+  cache: 一位开发人员希望在AWS云中快速部署和管理他的应用程序，但他没有任何云计算经验。以下哪些 AWS 服务可以帮助开发人员实现其目标？
+
+- CCP-S461 q452
+  en   : Which AWS service collects metrics from running EC2 instances?
+  file : 哪个 AWS 服务从运行的 Amazon EC2 instances 收集指标？
+  cache: 哪个 AWS 服务从运行的 EC2 实例收集指标？
+
+- CCP-S464 q460
+  en   : Amazon RDS supports multiple database engines to choose from. Which of the following is not one of t
+  file : Amazon RDS 支持多种数据库引擎可供选择。以下哪一项不是其中之一？
+  cache: Amazon RDS支持多种数据库引擎可供选择。以下哪一项不是其中之一？
+
+- CCP-S465 q461
+  en   : Which of the following AWS services would help you migrate on-premise databases to AWS?
+  file : 以下哪些 AWS 服务可以帮助您将本地 DMS 到 AWS？
+  cache: 以下哪些 AWS 服务可以帮助您将本地数据库迁移到 AWS？
+
+- CCP-S469 q475
+  en   : How can you protect data stored on Amazon S3 from accidental deletion?
+  file : 如何保护 Amazon S3 上存储的数据不被意外删除？
+  cache: 如何保护Amazon S3上存储的数据不被意外删除？
+
+- CCP-S471 q483
+  en   : Which AWS service allows you to build a data warehouse in the cloud?
+  file : 哪种 AWS 服务允许您在云中构建 Amazon Redshift？
+  cache: 哪种 AWS 服务允许您在云中构建数据仓库？
+
+- CCP-S472 q485
+  en   : Which of the following services is an AWS repository management system that allows for storing, vers
+  file : 以下哪项服务是 AWS 存储库管理系统，允许存储、Versioning 和管理您的应用程序代码？
+  cache: 以下哪项服务是 AWS 存储库管理系统，允许存储、版本控制和管理您的应用程序代码？
+
+- CCP-S473 q486
+  en   : Which AWS service can be used to route end users to the nearest AWS Region to reduce latency?
+  file : 哪种 AWS 服务可用于将最终用户路由到最近的 AWS Region 以减少延迟？
+  cache: 哪种 AWS 服务可用于将最终用户路由到最近的 AWS 区域以减少延迟？
+
+- CCP-S474 q494
+  en   : A company wants to use Amazon Elastic Container Service (Amazon ECS) to run its containerized applic
+  file : 一家公司希望使用 Amazon Elastic Container Service (Amazon ECS) 来运行其容器化应用程序。出于合规性原因，该公司希望保留对底层服务器集群的完整可见性和控制力
+  cache: 一家公司希望使用 Amazon Elastic Container Service (Amazon ECS) 来运行其容器化应用程序。出于合规性原因，该公司希望保留对底层服务器集群的完整可见性和控制力
+
+- CCP-S476 q502
+  en   : Which AWS service provides the EASIEST way to set up and manage a secure, well-architected, multi-ac
+  file : 哪种 AWS 服务提供了设置和管理安全、Well-Architected 的多账户 AWS 环境的最简单方法？
+  cache: 哪种 AWS 服务提供了设置和管理安全、架构良好的多账户 AWS 环境的最简单方法？
+
+- CCP-S477 q503
+  en   : A company is running a large web application that needs to always be available. The application tend
+  file : 一家公司正在运行一个需要始终可用的大型 Web 应用程序。当 CPU 使用率超过 60% 时，应用程序往往会变慢。他们如何跟踪账户中任何 Amazon EC2 instances 的 CPU 使用率何
+  cache: 一家公司正在运行一个需要始终可用的大型 Web 应用程序。当 CPU 使用率超过 60% 时，应用程序往往会变慢。他们如何跟踪账户中任何 EC2 实例的 CPU 使用率何时超过 60%？
+
+- CCP-S479 q505
+  en   : You are working as a site reliability engineer (SRE) in an AWS environment. Which of the following s
+  file : 您在 AWS 环境中担任站点 Reliability 工程师 (SRE)。以下哪些服务有助于监控您的应用程序？
+  cache: 您在 AWS 环境中担任站点可靠性工程师 (SRE)。以下哪些服务有助于监控您的应用程序？
+
+- CCP-S481 q512
+  en   : What should you consider when storing data in Amazon S3 Glacier?
+  file : 在 Amazon S3 Glacier 中存储数据时应该考虑什么？
+  cache: 在Amazon S3 Glacier 中存储数据时应该考虑什么？
+
+- CCP-S483 q518
+  en   : A company needs to host a big data application on AWS using EC2 instances. Which of the following AW
+  file : 一家公司需要使用 Amazon EC2 instances 在 AWS 上托管大数据应用程序。他们会选择以下哪种 AWS 存储服务来自动为多个计算节点获得高吞吐量？
+  cache: 一家公司需要使用 EC2 实例在 AWS 上托管大数据应用程序。他们会选择以下哪种 AWS 存储服务来自动为多个计算节点获得高吞吐量？
+
+- CCP-S484 q521
+  en   : What is the benefit of Amazon EBS volumes being automatically replicated within the same availabilit
+  file : 在同一 Availability Zone 内自动复制 Amazon EBS 卷有什么好处？
+  cache: 在同一可用区内自动复制Amazon EBS卷有什么好处？
+
+- CCP-S485 q529
+  en   : Each AWS Region is composed of multiple Availability Zones. Which of the following best describes wh
+  file : 每个 AWS 区域由多个 Availability Zones 组成。以下哪一项最能描述什么是 Availability Zone？
+  cache: 每个AWS区域由多个Availability Zones组成。以下哪一项最能描述什么是 Availability Zone？
+
+- CCP-S486 q532
+  en   : What is the maximum amount of data that can be stored in S3 in a single AWS account?
+  file : 单个 AWS 账户的 S3 中最多可以存储多少数据？
+  cache: 单个 AWS 账户的S3 中最多可以存储多少数据？
+
+- CCP-S487 q534
+  en   : Which AWS service delivers data, videos, applications, and APIs to users globally with low latency a
+  file : 哪种 AWS 服务能够以低延迟和高传输速度向全球用户提供数据、视频、应用程序和 API？
+  cache: 哪种 AWS 服务能够以低延迟和高传输速度向全球用户提供数据、视频、应用程序和API？
+
+- CCP-S489 q538
+  en   : How many Availability Zones should compute resources be provisioned across to achieve high availabil
+  file : 应配置多少个 Availability Zones 才能实现 High Availability 性？
+  cache: 应配置多少个Availability Zones才能实现高可用性？
+
+- CCP-S494 q546
+  en   : A user is planning to launch two additional Amazon EC2 instances to increase availability. Which act
+  file : 用户计划启动两个额外的 Amazon EC2 实例以提 High Availability 性。用户应该采取什么行动？
+  cache: 用户计划启动两个额外的 Amazon EC2 实例以提高可用性。用户应该采取什么行动？
+
+- CCP-S497 q558
+  en   : A company has deployed several relational databases on Amazon EC2 instances. Every month the databas
+  file : 某公司在 Amazon EC2 实例上部署了多个关系数据库。数据库软件供应商每个月都会发布需要应用于数据库的新安全补丁。应用安全补丁最有效的方法是什么？
+  cache: 某公司在Amazon EC2实例上部署了多个关系数据库。数据库软件供应商每个月都会发布需要应用于数据库的新安全补丁。应用安全补丁最有效的方法是什么？
+
+- CCP-S498 q559
+  en   : Which mechanism allows developers to access AWS services from application code?
+  file : 哪种机制允许开发人员从应用程序代码访问 AWS 服务？
+  cache: 哪种机制允许开发人员从应用程序代码访问AWS服务？
+
+- CCP-S499 q563
+  en   : What is Amazon CloudWatch?
+  file : 什么是 Amazon CloudWatch？
+  cache: 什么是Amazon CloudWatch？
+
+- CCP-S500 q570
+  en   : Which of the following services will automatically scale with an expected increase in web traffic?
+  file : 以下哪项服务会随着网络流量的预期增长而 Auto Scaling？
+  cache: 以下哪项服务会随着网络流量的预期增长而自动扩展？
+
+- CCP-S501 q571
+  en   : Which service provides a virtually unlimited amount of online highly durable object storage?
+  file : 哪种服务提供几乎无限量的在线高持久 Amazon S3？
+  cache: 哪种服务提供几乎无限量的在线高持久对象存储？
+
+- CCP-S504 q586
+  en   : Which of the following is a fast and reliable NoSQL database service?
+  file : 以下哪项是快速可靠的 Amazon DynamoDB 服务？
+  cache: 以下哪项是快速可靠的 NoSQL 数据库服务？
+
+- CCP-S507 q636
+  en   : What are the multiple, isolated locations within an AWS Region that are connected by low-latency net
+  file : AWS Region 内通过低延迟网络连接的多个隔离位置称为什么？
+  cache: AWS 区域内通过低延迟网络连接的多个隔离位置称为什么？
+
+- CCP-S508 q650
+  en   : A company is designing an application hosted in a single AWS Region serving end-users spread across 
+  file : 一家公司正在设计一个托管在单个 AWS Region 中的应用程序，为世界各地的最终用户提供服务。该公司希望为最终用户提供对应用程序数据的低延迟访问。以下哪项服务将有助于满足此要求？
+  cache: 一家公司正在设计一个托管在单个 AWS 区域中的应用程序，为世界各地的最终用户提供服务。该公司希望为最终用户提供对应用程序数据的低延迟访问。以下哪项服务将有助于满足此要求？
+
+- CCP-S509 q653
+  en   : What feature of Amazon RDS helps to create globally redundant databases?
+  file : Amazon RDS 的哪些功能有助于创建全局冗余数据库？
+  cache: Amazon RDS的哪些功能有助于创建全局冗余数据库？
+
+- CCP-S511 q660
+  en   : Which AWS hybrid storage service enables on-premises applications to seamlessly use AWS Cloud storag
+  file : 哪种 AWS 混合存储服务使本地应用程序能够通过标准 Amazon EFS 协议无缝使用 AWS cloud storage？
+  cache: 哪种 AWS 混合存储服务使本地应用程序能够通过标准文件存储协议无缝使用 AWS 云存储？
+
+- CCP-S512 q664
+  en   : What is a benefit of loose coupling as a principle of cloud architecture design?
+  file : Loose Coupling 作为云架构设计的原则有什么好处？
+  cache: 松耦合作为云架构设计的原则有什么好处？
+
+- CCP-S517 q682
+  en   : Which solution provides the FASTEST application response times to frequently accessed data to users 
+  file : 哪种解决方案可以为多个 AWS Region 中的用户提供对频繁访问的数据最快的应用程序响应时间？
+  cache: 哪种解决方案可以为多个 AWS 区域中的用户提供对频繁访问的数据最快的应用程序响应时间？
+
+- CCP-S521 q709
+  en   : Which AWS service enables users to deploy infrastructure as code by automating the process of provis
+  file : 哪种 AWS 服务使用户能够通过自动化资源配置过程来部署 AWS CloudFormation？
+  cache: 哪种 AWS 服务使用户能够通过自动化资源配置过程来部署基础设施即代码？
+
+- CCP-S524 q720
+  en   : Which AWS service is a content delivery network that securely delivers data, video, and applications
+  file : 哪项 AWS 服务是 content delivery network，能够以低延迟和高速度安全地向全球用户交付数据、视频和应用程序？
+  cache: 哪项 AWS 服务是内容交付网络，能够以低延迟和高速度安全地向全球用户交付数据、视频和应用程序？
+
+- CCP-S527 q743
+  en   : AWS CloudFormation is designed to help the user:
+  file : AWS CloudFormation 旨在帮助用户：
+  cache: AWS CloudFormation旨在帮助用户：
+
+- CCP-S531 q754
+  en   : A Cloud Practitioner needs a consistent and dedicated connection between AWS resources and an on-pre
+  file : 云从业者需要在 AWS 资源和本地系统之间建立一致且专用的连接。哪种 AWS 服务可以满足这个要求？
+  cache: 云从业者需要在 AWS 资源和本地系统之间建立一致且专用的连接。哪种AWS服务可以满足这个要求？
+
+- CCP-S533 q769
+  en   : Which Amazon RDS feature can be used to achieve high availability?
+  file : 可以使用哪些 Amazon RDS 功能来实现 High Availability 性？
+  cache: 可以使用哪些Amazon RDS功能来实现高可用性？
+
+- CCP-S538 q795
+  en   : Which AWS service or resource is serverless?
+  file : 哪些 AWS 服务或资源是 Serverless 的？
+  cache: 哪些 AWS 服务或资源是无服务器的？
+
+- CCP-S539 q807
+  en   : A company wants to migrate a MySQL database to AWS but does not have the budget for Database Adminis
+  file : 一家公司希望将 MySQL DMS 到 AWS，但没有数据库管理员的预算来处理日常任务，包括预置、修补和执行备份。哪种 AWS 服务将支持此用例？
+  cache: 一家公司希望将 MySQL 数据库迁移到 AWS，但没有数据库管理员的预算来处理日常任务，包括预置、修补和执行备份。哪种 AWS 服务将支持此用例？
+
+- CCP-S540 q813
+  en   : Which AWS service is suitable for an event-driven workload?
+  file : 哪种 AWS 服务适合 Event-Driven 的工作负载？
+  cache: 哪种 AWS 服务适合事件驱动的工作负载？
+
+- CCP-S541 q814
+  en   : What is a characteristic of Amazon S3 cross-region replication?
+  file : Amazon S3CRR 有什么特点？
+  cache: Amazon S3跨区域复制有什么特点？
+
+- CCP-S544 q826
+  en   : A company wants to use an AWS service to monitor the health of application endpoints, with the abili
+  file : 一家公司希望使用 AWS 服务来监控应用程序端点的运行状况，并能够将流量路由到健康的 Regional Endpoint 以提高应用程序可用性。哪些服务将支持这些要求？
+  cache: 一家公司希望使用 AWS 服务来监控应用程序端点的运行状况，并能够将流量路由到健康的区域端点以提高应用程序可用性。哪些服务将支持这些要求？
+
+- CCP-S549 q842
+  en   : An application runs on multiple Amazon EC2 instances that access a shared file system simultaneously
+  file : 应用程序在同时访问共享 Amazon FSx 的多个 Amazon EC2 实例上运行。应使用哪种 AWS 存储服务？
+  cache: 应用程序在同时访问共享文件系统的多个Amazon EC2实例上运行。应使用哪种AWS存储服务？
+
+- CCP-S552 q866
+  en   : A user needs to quickly deploy a non-relational database on AWS. The user does not want to manage th
+  file : 用户需要在 AWS 上快速部署非 Amazon RDS。用户不想管理底层硬件或数据库软件。可以使用哪种 AWS 服务来完成此任务？
+  cache: 用户需要在AWS上快速部署非关系型数据库。用户不想管理底层硬件或数据库软件。可以使用哪种 AWS 服务来完成此任务？
+
+- CCP-S554 q879
+  en   : Which AWS hybrid storage service enables a user's on-premises applications to seamlessly use AWS Clo
+  file : 哪种 AWS 混合存储服务使用户的本地应用程序能够无缝使用 AWS cloud storage？
+  cache: 哪种 AWS 混合存储服务使用户的本地应用程序能够无缝使用 AWS 云存储？
+
+- CCP-S555 q881
+  en   : What is the most efficient way to establish network connectivity from on-premises to multiple VPCs i
+  file : 建立从本地到不同 AWS Region 中的多个 VPC 的网络连接的最有效方法是什么？
+  cache: 建立从本地到不同 AWS 区域中的多个VPC的网络连接的最有效方法是什么？
+
+- CCP-S556 q885
+  en   : Which Amazon S3 storage class is optimized to provide access to data with lower resiliency requireme
+  file : 哪种 Amazon S3 存储类别经过优化，可以提供对弹性要求较低的数据访问，但在需要时（例如重复备份）可以快速访问？
+  cache: 哪种Amazon S3存储类别经过优化，可以提供对弹性要求较低的数据访问，但在需要时（例如重复备份）可以快速访问？
+
+- CCP-S557 q888
+  en   : Which AWS service enables users to create copies of resources across AWS Regions?
+  file : 哪种 AWS 服务允许用户跨 AWS Region 创建资源副本？
+  cache: 哪种 AWS 服务允许用户跨 AWS 区域创建资源副本？
+
+- CCP-S559 q899
+  en   : What can be used to automate and manage secure, well-architected, multi-account AWS environments?
+  file : 可以使用什么来自动化和管理安全、Well-Architected 的多账户 AWS 环境？
+  cache: 可以使用什么来自动化和管理安全、架构良好的多账户 AWS 环境？
+
+- CCP-S560 q905
+  en   : Which AWS container service will help a user install, operate, and scale the cluster management infr
+  file : 哪种 AWS Amazon ECS 将帮助用户安装、操作和扩展集群管理基础设施？
+  cache: 哪种 AWS 容器服务将帮助用户安装、操作和扩展集群管理基础设施？
+
+- CCP-S561 q908
+  en   : What is the purpose of having an internet gateway within a VPC?
+  file : 在 VPC 中设置 Internet Gateway 的目的是什么？
+  cache: 在 VPC 中设置互联网网关的目的是什么？
+
+- CCP-S564 q915
+  en   : Which AWS service can be used in the application deployment process?
+  file : 应用程序部署过程中可以使用哪些 AWS 服务？
+  cache: 应用程序部署过程中可以使用哪些AWS服务？
+
+- CCP-S565 q918
+  en   : Which AWS service or feature allows the user to manage cross-region application traffic?
+  file : 哪些 AWS 服务或功能允许用户管理 Cross-Region 应用程序流量？
+  cache: 哪些 AWS 服务或功能允许用户管理跨区域应用程序流量？
+
+- CCP-S566 q921
+  en   : A company must store critical business data in Amazon S3 with a backup to another AWS Region. How ca
+  file : 公司必须将关键业务数据存储在 Amazon S3 中，并备份到另一个 AWS Region。如何才能实现这一目标？
+  cache: 公司必须将关键业务数据存储在 Amazon S3 中，并备份到另一个 AWS 区域。如何才能实现这一目标？
+
+- CCP-S567 q929
+  en   : Which AWS service offers persistent storage for a file system?
+  file : 哪种 AWS 服务为 Amazon FSx 提供持久存储？
+  cache: 哪种 AWS 服务为文件系统提供持久存储？
+
+- CCP-S570 q952
+  en   : What does the Amazon S3 Intelligent-Tiering storage class offer?
+  file : Amazon S3 Intelligent-Tiering 存储类别提供什么？
+  cache: Amazon S3 智能分层存储类别提供什么？
+
+- CCP-S571 q953
+  en   : A company has multiple data sources across the organization and wants to consolidate data into one d
+  file : 一家公司在整个组织内拥有多个数据源，并且希望将数据整合到一个 Amazon Redshift 中。可以使用哪种 AWS 服务来满足这个要求？
+  cache: 一家公司在整个组织内拥有多个数据源，并且希望将数据整合到一个数据仓库中。可以使用哪种AWS服务来满足这个要求？
+
+- CCP-S574 q964
+  en   : Which AWS service can be used to provide an on-demand, cloud-based contact center?
+  file : 哪种 AWS 服务可用于提供 On-Demand、基于云的联络中心？
+  cache: 哪种 AWS 服务可用于提供按需、基于云的联络中心？
+
+- CCP-S581 q993
+  en   : A company wants to ensure its infrastructure is designed for fault tolerance and business continuity
+  file : 一家公司希望确保其基础设施的设计能够在环境中断时实现 Fault Tolerance 和业务连续性。公司应该在哪个 AWS 基础设施组件上进行复制？
+  cache: 一家公司希望确保其基础设施的设计能够在环境中断时实现容错和业务连续性。公司应该在哪个 AWS 基础设施组件上进行复制？
+
+- CCP-S584 q999
+  en   : How should a web application be deployed to ensure high availability in the AWS Cloud?
+  file : 应如何部署 Web 应用程序以确保 AWS 云中的 High Availability 性？
+  cache: 应如何部署 Web 应用程序以确保 AWS 云中的高可用性？
+
+- CCP-S586 q1008
+  en   : A pharmaceutical company operates its infrastructure in a single AWS Region. The company has thousan
+  file : 一家制药公司在单个 AWS Region 中运营其基础设施。该公司在各个 AWS 账户中拥有数千个 VPC 想要互连。公司应使用哪些 AWS 服务或功能来帮助简化管理并降低运营成本？
+  cache: 一家制药公司在单个 AWS 区域中运营其基础设施。该公司在各个 AWS 账户中拥有数千个 VPC 想要互连。公司应使用哪些 AWS 服务或功能来帮助简化管理并降低运营成本？
+
+- CCP-S587 q1011
+  en   : A company has users across multiple geographic regions experiencing high latency when accessing its 
+  file : 一家公司的多个地理区域的用户在访问其在单个 AWS Region 中托管的应用程序时遇到高延迟。哪种 AWS 服务可以通过 AWS 全球网络引导流量来提高全球应用程序可用性和性能？
+  cache: 一家公司的多个地理区域的用户在访问其在单个 AWS 区域中托管的应用程序时遇到高延迟。哪种 AWS 服务可以通过 AWS 全球网络引导流量来提高全球应用程序可用性和性能？
+
+- CCP-S588 q1012
+  en   : Which AWS service provides static Anycast IP addresses that act as a fixed entry point to applicatio
+  file : 哪项 AWS 服务提供静态任播 IP 地址作为一个或多个 AWS Region 中的应用程序终端节点的固定入口点？
+  cache: 哪项 AWS 服务提供静态任播 IP 地址作为一个或多个 AWS 区域中的应用程序终端节点的固定入口点？
+
+- CCP-S591 q1016
+  en   : A media company needs to run latency-sensitive applications closer to end users in a specific metrop
+  file : 媒体公司需要在附近没有 AWS Region 的特定大都市区中更靠近最终用户的地方运行对延迟敏感的应用程序。他们应该考虑哪种 AWS 基础设施选项？
+  cache: 媒体公司需要在附近没有 AWS 区域的特定大都市区中更靠近最终用户的地方运行对延迟敏感的应用程序。他们应该考虑哪种 AWS 基础设施选项？
+
+- CCP-S592 q1017
+  en   : A company wants to build an event-driven architecture where multiple AWS services and SaaS applicati
+  file : 一家公司希望构建一个 Event-Driven 的架构，其中多个 AWS 服务和 SaaS 应用程序可以实时对事件做出反应。哪种 AWS 服务为此目的提供 ServerlessAmazon Event
+  cache: 一家公司希望构建一个事件驱动的架构，其中多个 AWS 服务和 SaaS 应用程序可以实时对事件做出反应。哪种 AWS 服务为此目的提供无服务器事件总线？
+
+- CCP-S593 q1018
+  en   : Which AWS service enables applications to respond to state changes in AWS resources by routing event
+  file : 哪种 AWS 服务使应用程序能够通过将事件路由到 Lambda 函数、SQS 队列或 SNS 主题等目标来响应 AWS 资源中的状态更改？
+  cache: 哪种 AWS 服务使应用程序能够通过将事件路由到Lambda函数、SQS队列或SNS主题等目标来响应 AWS 资源中的状态更改？
+
+- CCP-S605 q1042
+  en   : A company needs to automate the transfer of data between its on-premises storage systems and Amazon 
+  file : 公司需要在其本地存储系统和 Amazon S3 之间自动传输数据。哪项 AWS 服务可以简化并加速此数据传输？
+  cache: 公司需要在其本地存储系统和Amazon S3之间自动传输数据。哪项 AWS 服务可以简化并加速此数据传输？
+
+- CCP-S607 q1044
+  en   : A company needs a cloud-native business intelligence (BI) service to create interactive dashboards a
+  file : 公司需要云原生 Amazon QuickSight (BI) 服务来从多个数据源创建交互式仪表板和可视化。他们应该使用哪种 AWS 服务？
+  cache: 公司需要云原生商业智能 (BI) 服务来从多个数据源创建交互式仪表板和可视化。他们应该使用哪种 AWS 服务？
+
+- CCP-S608 q1045
+  en   : Which AWS service provides serverless business intelligence with pay-per-session pricing and machine
+  file : 哪种 AWS 服务提供 ServerlessAmazon QuickSight 以及按会话付费的定价和机器学习驱动的见解？
+  cache: 哪种 AWS 服务提供无服务器商业智能以及按会话付费的定价和机器学习驱动的见解？
+
+- CCP-S613 q1050
+  en   : A company needs to collect, process, and analyze real-time streaming data from IoT devices. Which AW
+  file : 公司需要收集、处理和分析来自物联网设备的实时 Kinesis。哪种 AWS 服务专为实时数据流而设计？
+  cache: 公司需要收集、处理和分析来自物联网设备的实时流数据。哪种 AWS 服务专为实时数据流而设计？
+
+- CCP-S615 q1052
+  en   : A company wants to migrate its on-premises Oracle database to Amazon Aurora with minimal downtime. W
+  file : 一家公司希望以最短的停机时间将其本地 Oracle DMS 到 Amazon Aurora。哪种 AWS 服务有助于此 DMS？
+  cache: 一家公司希望以最短的停机时间将其本地 Oracle 数据库迁移到 Amazon Aurora。哪种 AWS 服务有助于此数据库迁移？
+
+- CCP-S616 q1053
+  en   : Which AWS service supports both homogeneous (e.g., Oracle to Oracle) and heterogeneous (e.g., Oracle
+  file : 哪种 AWS 服务支持同构（例如，Oracle 到 Oracle）和异构（例如，Oracle 到 Aurora）DMS？
+  cache: 哪种 AWS 服务支持同构（例如，Oracle 到 Oracle）和异构（例如，Oracle 到 Aurora）数据库迁移？
+
+- CCP-S617 q1054
+  en   : A company wants to continuously replicate data from an on-premises database to an AWS database for d
+  file : 一家公司希望将数据从本地数据库持续复制到 AWS 数据库以实现 DR。哪些 AWS 服务支持连续数据复制？
+  cache: 一家公司希望将数据从本地数据库持续复制到 AWS 数据库以实现灾难恢复。哪些 AWS 服务支持连续数据复制？
+
+- CCP-S621 q1071
+  en   : A developer needs to build a serverless order processing workflow that involves calling multiple AWS
+  file : 开发人员需要构建一个 Serverless 订单处理工作流程，其中包括按顺序调用多个 AWS Lambda 函数、处理每个步骤的错误、自动重试失败的步骤以及根据订单类型进行分支。哪种 AWS 服务是为
+  cache: 开发人员需要构建一个无服务器订单处理工作流程，其中包括按顺序调用多个 AWS Lambda 函数、处理每个步骤的错误、自动重试失败的步骤以及根据订单类型进行分支。哪种 AWS 服务是为此目的而设计的？
+
+- CCP-S626 q1077
+  en   : A frontend developer wants to build and deploy a full-stack web application on AWS that includes use
+  file : 前端开发人员希望在 AWS 上构建和部署全栈 Web 应用程序，其中包括用户身份验证、数据 API 和静态托管，而无需配置或管理任何底层云基础设施。哪种 AWS 服务为此用例提供集成开发和部署平台？
+  cache: 前端开发人员希望在 AWS 上构建和部署全栈 Web 应用程序，其中包括用户身份验证、数据API 和静态托管，而无需配置或管理任何底层云基础设施。哪种 AWS 服务为此用例提供集成开发和部署平台？
+
+- CCP-S630 q1085
+  en   : A development team is building a collaborative mobile application where multiple users need to see r
+  file : 开发团队正在构建一个协作移动应用程序，其中多个用户需要查看共享数据的实时更新。该团队希望使用 GraphQL 并使后端自动将数据更改推送到所有连接的客户端。哪种 AWS 服务提供具有内置实时 AWS 
+  cache: 开发团队正在构建一个协作移动应用程序，其中多个用户需要查看共享数据的实时更新。该团队希望使用 GraphQL 并使后端自动将数据更改推送到所有连接的客户端。哪种 AWS 服务提供具有内置实时数据同步功
+
+- CCP-S631 q1106
+  en   : A company needs a fully managed file system that is compatible with the Windows Server Message Block
+  file : 公司需要一个与 Windows Server 消息块 (SMB) 协议兼容的完全托管 Amazon FSx，以便将基于 Windows 的工作负载迁移到 AWS。他们应该使用哪种 AWS 服务？
+  cache: 公司需要一个与 Windows Server 消息块 (SMB) 协议兼容的完全托管文件系统，以便将基于 Windows 的工作负载迁移到 AWS。他们应该使用哪种 AWS 服务？
+
+- CCP-S632 q1107
+  en   : Which AWS service provides fully managed third-party file systems optimized for workloads such as hi
+  file : 哪项 AWS 服务提供针对 High Performance Computing、机器学习和基于 Windows 的应用程序等工作负载进行优化的完全托管的第三方 Amazon FSx？
+  cache: 哪项 AWS 服务提供针对高性能计算、机器学习和基于 Windows 的应用程序等工作负载进行优化的完全托管的第三方文件系统？
+
+- CCP-S637 q1112
+  en   : A company runs containerised applications on Amazon ECS and needs a fully managed registry to store,
+  file : 一家公司在 Amazon ECS 上运行容器化应用程序，需要一个完全托管的注册表来存储、管理和部署 Docker 容器镜像。他们应该使用哪种 AWS 服务？
+  cache: 一家公司在Amazon ECS上运行容器化应用程序，需要一个完全托管的注册表来存储、管理和部署 Docker 容器镜像。他们应该使用哪种 AWS 服务？
+
+- CCP-S638 q1113
+  en   : A company wants to set up a low-cost disaster recovery solution that can automatically recover on-pr
+  file : 一家公司希望建立一种低成本 DR 解决方案，能够在发生站点故障时自动恢复 AWS 上的本地服务器。他们应该使用哪种 AWS 服务？
+  cache: 一家公司希望建立一种低成本灾难恢复解决方案，能够在发生站点故障时自动恢复 AWS 上的本地服务器。他们应该使用哪种 AWS 服务？
+
+- CCP-S640 q1141
+  en   : A company wants to provide employees with a generative AI-powered assistant that can answer question
+  file : 一家公司希望为员工提供由 Artificial Intelligence 驱动的生成助手，可以回答有关公司数据的问题、生成内容并使用企业知识源自动执行任务。他们应该使用哪种 AWS 服务？
+  cache: 一家公司希望为员工提供由人工智能驱动的生成助手，可以回答有关公司数据的问题、生成内容并使用企业知识源自动执行任务。他们应该使用哪种 AWS 服务？
+
+- CCP-S641 q006
+  en   : You have set up consolidated billing for several AWS accounts. One of the accounts has purchased a n
+  file : 您已为多个 AWS 账户设置 Consolidated Billing。其中一个账户购买了一定数量的 Reserved Instances，期限为3 年。关于此场景，以下哪项描述是正确的？
+  cache: 您已为多个 AWS 账户设置合并账单。其中一个账户购买了一定数量的预留实例，期限为3年。关于此场景，以下哪项描述是正确的？
+
+- CCP-S644 q017
+  en   : What do you gain from setting up consolidated billing for five different AWS accounts under another 
+  file : 通过在另一个主账户下为五个不同的 AWS 账户设置 Consolidated Billing，您可以获得什么好处？
+  cache: 通过在另一个主账户下为五个不同的 AWS 账户设置合并账单，您可以获得什么好处？
+
+- CCP-S645 q028
+  en   : You want to run a questionnaire application for only one day (without interruption), which Amazon EC
+  file : 您只想运行一天的问卷申请（不间断），您应该使用哪种 Amazon EC2 购买选项？
+  cache: 您只想运行一天的问卷申请（不间断），您应该使用哪种Amazon EC2购买选项？
+
+- CCP-S646 q029
+  en   : You are working on a project that involves creating thumbnails of millions of images. Consistent upt
+  file : 您正在开发一个涉及创建数百万张图像缩略图的项目。一致的正常运行时间不是问题，并且不需要连续处理。购买哪种 EC2 最划算？
+  cache: 您正在开发一个涉及创建数百万张图像缩略图的项目。一致的正常运行时间不是问题，并且不需要连续处理。购买哪种EC2最划算？
+
+- CCP-S650 q050
+  en   : An organization has decided to purchase an Amazon EC2 Reserved Instance (RI) for three years in orde
+  file : 为了降低成本，某个组织决定购买 Amazon EC2 Reserved Instances (RI)，为期三年。在预订期间，应用程序工作负载可能会发生变化。什么是 EC2Reserved Instan
+  cache: 为了降低成本，某个组织决定购买 Amazon EC2 预留实例 (RI)，为期三年。在预订期间，应用程序工作负载可能会发生变化。什么是EC2预留实例 (RI) 类型，允许公司在需要时将购买的预留实例交
+
+- CCP-S651 q052
+  en   : Which of the following Reserved Instance (RI) pricing models provides the highest average savings co
+  file : 与 On-Demand 定价相比，以下哪种 Reserved Instances (RI) 定价模型可提供最高的平均节省？
+  cache: 与按需定价相比，以下哪种预留实例 (RI) 定价模型可提供最高的平均节省？
+
+- CCP-S653 q062
+  en   : Which Amazon EC2 pricing model offers the MOST significant discount when compared to On-Demand insta
+  file : 与 On-Demand 实例相比，哪种 Amazon EC2 定价模型提供最显着的折扣？
+  cache: 与On-Demand 实例相比，哪种 Amazon EC2 定价模型提供最显着的折扣？
+
+- CCP-S655 q069
+  en   : Which of the Reserved Instance (RI) pricing models can change the attributes of the RI as long as th
+  file : 只要交换导致创建同等或更高价值的 RI，哪种 Reserved Instances (RI) 定价模型就可以改变 RI 的属性？
+  cache: 只要交换导致创建同等或更高价值的 RI，哪种预留实例 (RI) 定价模型就可以改变 RI 的属性？
+
+- CCP-S656 q074
+  en   : Which is the minimum AWS Support plan that includes Infrastructure Event Management without addition
+  file : 包含基础设施事件管理且无需额外费用的最低 AWS Support 计划是什么？
+  cache: 包含基础设施事件管理且无需额外费用的最低 AWS 支持计划是什么？
+
+- CCP-S660 q092
+  en   : Which AWS support plan includes a dedicated Technical Account Manager?
+  file : 哪种 AWS Support 计划包含专门的 Technical Account Manager？
+  cache: 哪种 AWS 支持计划包含专门的技术客户经理？
+
+- CCP-S664 q110
+  en   : Which is the MINIMUM AWS Support plan that allows for one-hour target response time for support case
+  file : 哪一个最低 AWS Support 计划可以为支持案例提供一小时的目标响应时间？
+  cache: 哪一个最低 AWS 支持计划可以为支持案例提供一小时的目标响应时间？
+
+- CCP-S671 q135
+  en   : Which is the MINIMUM AWS Support plan that provides technical support through phone calls?
+  file : 通过电话提供技术支持的最低 AWS Support 计划是什么？
+  cache: 通过电话提供技术支持的最低 AWS 支持计划是什么？
+
+- CCP-S672 q136
+  en   : Which Amazon EC2 instance pricing model can provide discounts of up to 90%?
+  file : 哪种 Amazon EC2 实例定价模型可以提供高达90%的折扣？
+  cache: 哪种Amazon EC2实例定价模型可以提供高达90%的折扣？
+
+- CCP-S676 q152
+  en   : One benefit of On-Demand Amazon Elastic Compute Cloud (Amazon EC2) pricing is:
+  file : On-Demand Amazon Elastic Compute Cloud (Amazon EC2) 定价的优势之一是：
+  cache: 按需 Amazon Elastic Compute Cloud (Amazon EC2) 定价的优势之一是：
+
+- CCP-S680 q167
+  en   : Which Amazon EC2 pricing model adjusts based on supply and demand of EC2 instances?
+  file : 哪种 Amazon EC2 定价模型会根据 Amazon EC2 instances 的供需情况进行调整？
+  cache: 哪种Amazon EC2定价模型会根据EC2实例的供需情况进行调整？
+
+- CCP-S681 q176
+  en   : Compared with costs in traditional and virtualized data centers, AWS has:
+  file : 与传统数据中心和虚拟化数据中心的成本相比，AWS 具有：
+  cache: 与传统数据中心和虚拟化数据中心的成本相比，AWS具有：
+
+- CCP-S686 q214
+  en   : Which of the following EC2 instance purchasing options supports the Bring Your Own License (BYOL) mo
+  file : 以下哪些 Amazon EC2 instances 购买选项支持几乎所有 BYOL 场景的自带许可证 (BYOL) 模型？
+  cache: 以下哪些 EC2 实例购买选项支持几乎所有 BYOL 场景的自带许可证 (BYOL) 模型？
+
+- CCP-S690 q246
+  en   : A company is migrating its on-premises database to Amazon RDS. What should the company do to ensure 
+  file : 一家公司正在将其本地 DMS 到 Amazon RDS。公司应该如何确保 Amazon RDS 成本保持在最低限度？
+  cache: 一家公司正在将其本地数据库迁移到Amazon RDS。公司应该如何确保Amazon RDS成本保持在最低限度？
+
+- CCP-S691 q260
+  en   : A company needs to host a database in Amazon RDS for at least three years. Which of the following op
+  file : 一家公司需要在 Amazon RDS 托管数据库至少三年。以下哪一个选项是最具成本效益的解决方案？
+  cache: 一家公司需要在Amazon RDS托管数据库至少三年。以下哪一个选项是最具成本效益的解决方案？
+
+- CCP-S694 q279
+  en   : What is the minimum level of AWS support that provides 24/7 access to technical support engineers vi
+  file : 通过电话和聊天方式提供 24/7 全天候技术支持工程师访问的 AWS Support 的最低级别是多少？
+  cache: 通过电话和聊天方式提供 24/7 全天候技术支持工程师访问的 AWS 支持的最低级别是多少？
+
+- CCP-S696 q286
+  en   : Which AWS service provides cost-optimization recommendations?
+  file : 哪些 AWS 服务提供 Cost Optimization 建议？
+  cache: 哪些 AWS 服务提供成本优化建议？
+
+- CCP-S697 q290
+  en   : What is the most cost-effective purchasing option for running a set of EC2 instances that must alway
+  file : 对于运行一组必须始终可用两个月的 Amazon EC2 instances，最经济高效的购买选项是什么？
+  cache: 对于运行一组必须始终可用两个月的 EC2 实例，最经济高效的购买选项是什么？
+
+- CCP-S698 q297
+  en   : A company needs to migrate their website from on-premises to AWS. Security is a major concern for th
+  file : 一家公司需要将其网站从本地迁移到 AWS。安全性是他们最关心的问题，因此他们需要将网站托管在不与其他 AWS 客户共享的硬件上。以下哪些 Amazon EC2 instances 选项满足此要求？
+  cache: 一家公司需要将其网站从本地迁移到 AWS。安全性是他们最关心的问题，因此他们需要将网站托管在不与其他 AWS 客户共享的硬件上。以下哪些EC2实例选项满足此要求？
+
+- CCP-S700 q309
+  en   : How can AWS customers track and avoid over-spending on underutilized reserved instances?
+  file : AWS 客户如何跟踪并避免在未充分利用的 Reserved Instances 上过度支出？
+  cache: AWS 客户如何跟踪并避免在未充分利用的预留实例上过度支出？
+
+- CCP-S707 q344
+  en   : You decide to buy a reserved instance for a term of one year. Which option provides the largest tota
+  file : 您决定购买为期一年的 Reserved Instances。哪个选项提供最大的总折扣？
+  cache: 您决定购买为期一年的预留实例。哪个选项提供最大的总折扣？
+
+- CCP-S708 q346
+  en   : An AWS customer has used one Amazon Linux instance for 2 hours, 5 minutes and 9 seconds, and one Cen
+  file : 某 AWS 客户使用一台 Amazon Linux 实例2 小时5 分9 秒，一台 CentOS 实例4 小时23 分7 秒。客户需要支付多少时间的费用？
+  cache: 某AWS客户使用一台Amazon Linux实例2小时5分9秒，一台CentOS实例4小时23分7秒。客户需要支付多少时间的费用？
+
+- CCP-S713 q373
+  en   : Your company requires a response time of less than 15 minutes from support interactions about their 
+  file : 如果 AWS 上托管的关键业务系统发生故障，您的公司要求支持交互的响应时间少于 15 分钟。该公司应使用哪种 AWS Support 计划？
+  cache: 如果 AWS 上托管的关键业务系统发生故障，您的公司要求支持交互的响应时间少于 15 分钟。该公司应使用哪种 AWS 支持计划？
+
+- CCP-S716 q386
+  en   : A company is planning to use Amazon S3 and Amazon CloudFront to distribute its video courses globall
+  file : 一家公司计划使用 Amazon S3 和 Amazon CloudFront 在全球分发其视频课程。公司可以使用什么工具来估算这些服务的成本？
+  cache: 一家公司计划使用Amazon S3和Amazon CloudFront在全球分发其视频课程。公司可以使用什么工具来估算这些服务的成本？
+
+- CCP-S717 q402
+  en   : A company's AWS workflow requires that it periodically perform large-scale image and video processin
+  file : 公司的 AWS 工作流程要求定期执行大规模图像和视频处理作业。客户正在寻求最大限度地降低成本，并表示处理这些作业所需的时间并不重要，但成本最小化是设计解决方案时最重要的因素。哪个 Amazon EC2
+  cache: 公司的AWS工作流程要求定期执行大规模图像和视频处理作业。客户正在寻求最大限度地降低成本，并表示处理这些作业所需的时间并不重要，但成本最小化是设计解决方案时最重要的因素。哪个EC2实例类最适合此处理？
+
+- CCP-S719 q413
+  en   : You are using several on-demand EC2 Instances to run your development environment. What is the best 
+  file : 您正在使用多个 On-Demand Amazon EC2 instances 来运行您的开发环境。当这些实例不使用时，减少费用的最佳方法是什么？
+  cache: 您正在使用多个按需 EC2 实例来运行您的开发环境。当这些实例不使用时，减少费用的最佳方法是什么？
+
+- CCP-S723 q430
+  en   : Your CTO has asked you to contact AWS support using the chat feature to ask for guidance related to 
+  file : 您的 CTO 已要求您使用聊天功能联系 AWS Support，以寻求与 EBS 相关的指导。但是，当您打开 AWS Support Center 时，您看不到通过聊天联系支持人员的方式。你应该做什么
+  cache: 您的 CTO 已要求您使用聊天功能联系 AWS 支持，以寻求与 EBS 相关的指导。但是，当您打开 AWS 支持中心时，您看不到通过聊天联系支持人员的方式。你应该做什么？
+
+- CCP-S724 q432
+  en   : Which statement best describes the AWS Pay-As-You-Go pricing model?
+  file : 哪项陈述最准确地描述了 AWS pay-as-you-go pricing 模式？
+  cache: 哪项陈述最准确地描述了 AWS 按量付费定价模式？
+
+- CCP-S728 q477
+  en   : Which of the following AWS support plans provides access to only the seven core AWS Trusted Advisor 
+  file : 以下哪项 AWS Support 计划仅提供对七个核心 AWS Trusted Advisor 检查的访问权限？
+  cache: 以下哪项 AWS 支持计划仅提供对七个核心 AWS Trusted Advisor 检查的访问权限？
+
+- CCP-S734 q522
+  en   : You are planning to launch an advertising campaign over the coming weekend to promote a new digital 
+  file : 您计划在下周末发起一项广告活动来推广新的数字产品。预计活动期间负载会出现严重峰值，您无法承受任何停机时间。您需要额外的计算资源来处理额外的负载。对于这项工作来说，最具成本效益的 Amazon EC2 
+  cache: 您计划在下周末发起一项广告活动来推广新的数字产品。预计活动期间负载会出现严重峰值，您无法承受任何停机时间。您需要额外的计算资源来处理额外的负载。对于这项工作来说，最具成本效益的EC2实例购买选项是什么
+
+- CCP-S740 q582
+  en   : If each department within a company has its own AWS account, what is one way to enable consolidated 
+  file : 如果公司内的每个部门都有自己的 AWS 账户，那么启用 Consolidated Billing 的一种方法是什么？
+  cache: 如果公司内的每个部门都有自己的 AWS 账户，那么启用合并计费的一种方法是什么？
+
+- CCP-S750 q670
+  en   : Which is the MINIMUM AWS Support plan that provides designated Technical Account Managers?
+  file : 提供指定 Technical Account Manager 的最低 AWS Support 计划是什么？
+  cache: 提供指定技术客户经理的最低 AWS 支持计划是什么？
+
+- CCP-S757 q707
+  en   : A customer runs an On-Demand Amazon Linux EC2 instance for 3 hours, 5 minutes, and 6 seconds. For ho
+  file : 客户运行 On-Demand Amazon Linux Amazon EC2 instances 3 小时 5 分 6 秒。客户需要支付多少时间的费用？
+  cache: 客户运行按需 Amazon Linux EC2 实例 3 小时 5 分 6 秒。客户需要支付多少时间的费用？
+
+- CCP-S759 q725
+  en   : What is AWS Trusted Advisor?
+  file : 什么是 AWS Trusted Advisor？
+  cache: 什么是AWS Trusted Advisor？
+
+- CCP-S763 q737
+  en   : After selecting an Amazon EC2 Dedicated Host reservation, which pricing option would provide the lar
+  file : 选择 Amazon EC2Dedicated Hosts 预订后，哪种定价选项可以提供最大的折扣？
+  cache: 选择Amazon EC2专用主机预订后，哪种定价选项可以提供最大的折扣？
+
+- CCP-S774 q832
+  en   : Each department within a company has its own independent AWS account and its own payment method. New
+  file : 公司内的每个部门都有自己独立的 AWS 账户和自己的付款方式。新公司领导层希望集中部门治理并整合支付。如何使用 AWS 服务或功能来实现这一目标？
+  cache: 公司内的每个部门都有自己独立的AWS账户和自己的付款方式。新公司领导层希望集中部门治理并整合支付。如何使用 AWS 服务或功能来实现这一目标？
+
+- CCP-S776 q847
+  en   : A Cloud Practitioner identifies a billing issue after examining the AWS Cost and Usage report in the
+  file : 云从业者在检查 AWS Management Console 中的 AWS Cost and Usage Report 后发现了计费问题。可以采取什么措施来解决这个问题？
+  cache: 云从业者在检查 AWS 管理控制台中的 AWS 成本和使用情况报告后发现了计费问题。可以采取什么措施来解决这个问题？
+
+- CCP-S777 q848
+  en   : What does the AWS Pricing Calculator do?
+  file : AWS Pricing Calculator 有什么作用？
+  cache: AWS 定价计算器有什么作用？
+
+- CCP-S781 q871
+  en   : The AWS Pricing Calculator is used to:
+  file : AWS Pricing Calculator 用于：
+  cache: AWS 定价计算器用于：
+
+- CCP-S782 q874
+  en   : What is the MINIMUM AWS Support plan level that will provide users with access to the AWS Support AP
+  file : 为用户提供访问 AWS Support API 的最低 AWS Support 计划级别是多少？
+  cache: 为用户提供访问 AWS 支持 API 的最低 AWS 支持计划级别是多少？
+
+- CCP-S789 q896
+  en   : Which tool can be used to monitor AWS service limits?
+  file : 哪个工具可以用来监控 AWS 服务限制？
+  cache: 哪个工具可以用来监控AWS服务限制？
+
+- CCP-S790 q902
+  en   : A company's application has flexible start and end times. Which Amazon EC2 pricing model will be the
+  file : 公司的申请具有灵活的开始和结束时间。 Amazon EC2 哪种定价模式最划算？
+  cache: 公司的申请具有灵活的开始和结束时间。 Amazon EC2哪种定价模式最划算？
+
+- CCP-S791 q904
+  en   : A cloud practitioner has a data analysis workload that is infrequently executed and can be interrupt
+  file : 云从业者的数据分析工作负载不经常执行，并且可以被中断而不会造成损害。为了优化成本，应使用哪种 Amazon EC2 购买选项？
+  cache: 云从业者的数据分析工作负载不经常执行，并且可以被中断而不会造成损害。为了优化成本，应使用哪种Amazon EC2购买选项？
+
+- CCP-S792 q907
+  en   : A company with a Developer-level AWS Support plan provisioned an Amazon RDS database and cannot conn
+  file : 一家拥有开发人员级 AWS Support 计划的公司配置了 Amazon RDS 数据库，但无法连接到该数据库。开发人员应该联系谁以获得这种级别的支持？
+  cache: 一家拥有开发人员级 AWS 支持计划的公司配置了 Amazon RDS 数据库，但无法连接到该数据库。开发人员应该联系谁以获得这种级别的支持？
+
+- CCP-S797 q934
+  en   : Which requirement must be met for a member account to be unlinked from an AWS Organizations account?
+  file : 会员账户与 AWS Organizations 账户解除关联必须满足什么要求？
+  cache: 会员账户与AWS Organizations账户解除关联必须满足什么要求？
+
+- CCP-S803 q950
+  en   : An architecture design includes Amazon EC2, an Elastic Load Balancer, and Amazon RDS. What is the BE
+  file : 架构设计包括 Amazon EC2、Elastic Load Balancer 和 Amazon RDS。获得该架构每月成本估算的最佳方法是什么？
+  cache: 架构设计包括Amazon EC2、弹性负载均衡器和Amazon RDS。获得该架构每月成本估算的最佳方法是什么？
+
+- CCP-S805 q957
+  en   : A cloud practitioner needs an Amazon EC2 instance to launch and run for 7 hours without interruption
+  file : 云从业者需要一个 Amazon EC2 实例来启动并不间断地运行7 个小时。这项任务最合适且最具成本效益的选择是什么？
+  cache: 云从业者需要一个Amazon EC2实例来启动并不间断地运行7个小时。这项任务最合适且最具成本效益的选择是什么？
+
+- CCP-S827 q1091
+  en   : A company runs a business-critical application on AWS and requires a support plan that guarantees a 
+  file : A company runs a business-critical application on AWS and requires a support plan that guarantees a 
+  cache: A company runs a business-critical application on AWS and requires a support plan that guarantees a 
+
+- CCP-S828 q1115
+  en   : Which AWS service provides a central location to view and manage the default limits on AWS resources
+  file : 哪项 AWS 服务提供了一个中心位置来查看和 Management Account 的 AWS 资源的默认限制并在需要时请求增加？
+  cache: 哪项 AWS 服务提供了一个中心位置来查看和管理账户的 AWS 资源的默认限制并在需要时请求增加？
+
+- CCP-S829 q1116
+  en   : A company is approaching the maximum number of Amazon VPCs allowed in a Region and needs to request 
+  file : 一家公司正在接近某个区域允许的最大 Amazon VPC 数量，需要请求增加。他们应该使用哪种 AWS 服务？
+  cache: 一家公司正在接近某个区域允许的最大Amazon VPC数量，需要请求增加。他们应该使用哪种 AWS 服务？
+
+- CCP-M001 q004
+  en   : Which of the following options are related to the reliability of AWS?
+  file : 以下哪些选项与 AWS 的 Reliability 相关？（选择两项）
+  cache: 以下哪些选项与 AWS 的可靠性相关？
+
+- CCP-M002 q014
+  en   : What are the benefits of having infrastructure hosted in AWS?
+  file : 在 AWS 中托管基础设施有哪些好处？（选择两项）
+  cache: 在 AWS 中托管基础设施有哪些好处？
+
+- CCP-M003 q146
+  en   : A customer is deploying a new application and needs to choose an AWS Region. Which of the following 
+  file : 客户正在部署新应用程序，需要选择 AWS Region。以下哪些因素会影响客户的决定？
+  cache: 客户正在部署新应用程序，需要选择 AWS 区域。以下哪些因素会影响客户的决定？
+
+- CCP-M004 q153
+  en   : What can assist in evaluating an application for migration to the cloud?
+  file : 什么可以帮助评估应用程序迁移到云？（选择两项）
+  cache: 什么可以帮助评估应用程序迁移到云？
+
+- CCP-M005 q161
+  en   : What are the benefits of developing and running a new application in the AWS Cloud compared to on-pr
+  file : 与 AWS Outposts 相比，在 AWS 云中开发和运行新应用程序有哪些优势？（选择两项）
+  cache: 与本地部署相比，在 AWS 云中开发和运行新应用程序有哪些优势？
+
+- CCP-M006 q206
+  en   : The principle “design for failure and nothing will fail” is very important when designing your AWS C
+  file : 在设计 AWS 云架构时，“design for failure，万无一失”的原则非常重要。以下哪一项有助于遵守这一原则？（选择两项）
+  cache: 在设计 AWS 云架构时，“为失败而设计，万无一失”的原则非常重要。以下哪一项有助于遵守这一原则？
+
+- CCP-M007 q216
+  en   : Which of the following are important design principles you should adopt when designing systems on AW
+  file : 在 AWS 上设计系统时应采用以下哪些重要设计原则？（选择两项）
+  cache: 在 AWS 上设计系统时应采用以下哪些重要设计原则？
+
+- CCP-M008 q225
+  en   : What are two advantages of using Cloud Computing over using traditional data centers?
+  file : 与使用传统数据中心相比，使用云计算有哪两个优势？（选择两项）
+  cache: 与使用传统数据中心相比，使用云计算有哪两个优势？
+
+- CCP-M009 q303
+  en   : What are the benefits of using an AWS-managed service?
+  file : 使用 AWS 托管服务有哪些好处？（选择两项）
+  cache: 使用 AWS 托管服务有哪些好处？
+
+- CCP-M010 q320
+  en   : Which design principles relate to performance efficiency in AWS?
+  file : 哪些设计原则与 AWS 的 Performance Efficiency 相关？（选择两项）
+  cache: 哪些设计原则与 AWS 的性能效率相关？
+
+- CCP-M011 q322
+  en   : Why would an organization decide to use AWS over an on-premises data center?
+  file : 为什么组织会决定使用 AWS 而不是本地数据中心？（选择两项）
+  cache: 为什么组织会决定使用 AWS 而不是本地数据中心？
+
+- CCP-M012 q330
+  en   : Why do many startup companies prefer AWS over traditional on-premises solutions?
+  file : 为什么许多初创公司更喜欢 AWS 而不是传统的本地解决方案？（选择两项）
+  cache: 为什么许多初创公司更喜欢 AWS 而不是传统的本地解决方案？
+
+- CCP-M013 q333
+  en   : As part of the AWS Migration Acceleration Program (MAP), what does AWS provide to accelerate Enterpr
+  file : 作为 AWS 迁移加速计划 (MAP) 的一部分，AWS 提供哪些服务来加速企业采用 AWS？（选择两项）
+  cache: 作为 AWS 迁移加速计划 (MAP) 的一部分，AWS 提供哪些服务来加速企业采用 AWS？
+
+- CCP-M014 q372
+  en   : Which of the following should be taken into account when performing a TCO analysis regarding the cos
+  file : 在对 AWS 上运行应用程序的成本与本地运行应用程序的成本进行 TCO 分析时，应考虑以下哪项？（选择两项）
+  cache: 在对 AWS 上运行应用程序的成本与本地运行应用程序的成本进行 TCO 分析时，应考虑以下哪项？
+
+- CCP-M015 q397
+  en   : Which of the following are advantages of using AWS as a cloud computing provider?
+  file : 使用 AWS 作为云计算提供商有以下哪些优势？（选择两项）
+  cache: 使用 AWS 作为云计算提供商有以下哪些优势？
+
+- CCP-M016 q467
+  en   : Which of the following are AWS cloud design principles?
+  file : 以下哪些是 AWS 云设计原则？（选择两项）
+  cache: 以下哪些是 AWS 云设计原则？
+
+- CCP-M017 q542
+  en   : Which AWS characteristics make AWS cost effective for a workload with dynamic user demand?
+  file : 哪些 AWS 特征使 AWS 对于具有动态用户需求的工作负载具有成本效益？（选择两项）
+  cache: 哪些 AWS 特征使 AWS 对于具有动态用户需求的工作负载具有成本效益？
+
+- CCP-M018 q577
+  en   : The financial benefits of using AWS are:
+  file : 使用 AWS 的经济效益是：（选择两项）
+  cache: 使用 AWS 的经济效益是：
+
+- CCP-M019 q614
+  en   : Which design principles for cloud architecture are recommended when re-architecting a large monolith
+  file : 重新构建大型单体应用程序时，建议采用哪些云架构设计原则？（选择两项）
+  cache: 重新构建大型单体应用程序时，建议采用哪些云架构设计原则？
+
+- CCP-M020 q634
+  en   : Which of the following are benefits of the AWS Cloud?
+  file : 以下哪些是 AWS 云的优势？（选择两项）
+  cache: 以下哪些是 AWS 云的优势？
+
+- CCP-M021 q640
+  en   : When comparing AWS Cloud with on-premises Total Cost of Ownership, which expenses must be considered
+  file : 在比较 AWS 云与本地总拥有成本时，必须考虑哪些费用？（选择两项）
+  cache: 在比较 AWS 云与本地总拥有成本时，必须考虑哪些费用？
+
+- CCP-M022 q642
+  en   : Which scenarios represent the concept of elasticity on AWS?
+  file : 哪些场景代表了 AWS 上的弹性概念？（选择两项）
+  cache: 哪些场景代表了 AWS 上的弹性概念？
+
+- CCP-M023 q644
+  en   : A company is considering moving its on-premises data center to AWS. What factors should be included 
+  file : 一家公司正在考虑将其本地数据中心迁移到 AWS。进行总拥有成本 (TCO) 分析时应包括哪些因素？（选择两项）
+  cache: 一家公司正在考虑将其本地数据中心迁移到 AWS。进行总拥有成本 (TCO) 分析时应包括哪些因素？
+
+- CCP-M024 q701
+  en   : Which principles are used to architect applications for reliability on the AWS Cloud?
+  file : 使用哪些原则来构建应用程序以确保 AWS 云上的 Reliability？（选择两项）
+  cache: 使用哪些原则来构建应用程序以确保 AWS 云上的可靠性？
+
+- CCP-M025 q723
+  en   : Which of the following are benefits of hosting infrastructure in the AWS Cloud?
+  file : 以下哪些是在 AWS 云中托管基础设施的好处？（选择两项）
+  cache: 以下哪些是在 AWS 云中托管基础设施的好处？
+
+- CCP-M026 q728
+  en   : What are the benefits of using the AWS Cloud for companies with customers in many countries around t
+  file : 对于客户遍布全球多个国家的公司来说，使用 AWS 云有哪些好处？（选择两项）
+  cache: 对于客户遍布全球多个国家的公司来说，使用 AWS 云有哪些好处？
+
+- CCP-M027 q736
+  en   : Which of the following are pillars of the AWS Well-Architected Framework?
+  file : 以下哪些是 AWS Well-Architected Framework 的支柱？（选择两项）
+  cache: 以下哪些是 AWS Well-Architected Framework 的支柱？
+
+- CCP-M028 q750
+  en   : What are the immediate benefits of using the AWS Cloud?
+  file : 使用 AWS 云有哪些直接好处？（选择两项）
+  cache: 使用 AWS 云有哪些直接好处？
+
+- CCP-M029 q764
+  en   : What are the advantages of the AWS Cloud?
+  file : AWS 云有哪些优势？（选择两项）
+  cache: AWS云有哪些优势？
+
+- CCP-M030 q765
+  en   : When comparing the total cost of ownership (TCO) of an on-premises infrastructure to a cloud archite
+  file : 在比较本地基础设施与云架构的总拥有成本 (TCO) 时，应考虑哪些成本？（选择两项）
+  cache: 在比较本地基础设施与云架构的总拥有成本 (TCO) 时，应考虑哪些成本？
+
+- CCP-M031 q802
+  en   : Which of the following are advantages of the AWS Cloud?
+  file : 以下哪些是 AWS 云的优势？（选择两项）
+  cache: 以下哪些是 AWS 云的优势？
+
+- CCP-M032 q827
+  en   : According to the AWS Well-Architected Framework, what change management steps should be taken to ach
+  file : 根据 AWS Well-Architected Framework，应采取哪些变更管理步骤来实现 AWS 云的 Reliability？（选择两项）
+  cache: 根据 AWS Well-Architected Framework，应采取哪些变更管理步骤来实现 AWS 云的可靠性？
+
+- CCP-M033 q981
+  en   : What are the advantages of deploying an application with Amazon EC2 instances in multiple Availabili
+  file : 在多个 Availability Zones 中部署具有 Amazon EC2 实例的应用程序有哪些优势？（选择两项）
+  cache: 在多个 Availability Zones 中部署具有 Amazon EC2 实例的应用程序有哪些优势？
+
+- CCP-M034 q995
+  en   : Which AWS Cloud design principles can help increase reliability?
+  file : 哪些 AWS 云设计原则可以帮助提高 Reliability？（选择两项）
+  cache: 哪些 AWS 云设计原则可以帮助提高可靠性？
+
+- CCP-M035 q1060
+  en   : Which TWO of the following are perspectives of the AWS Cloud Adoption Framework (AWS CAF)?
+  file : 以下哪两项是 AWS Cloud Adoption Framework (AWS CAF) 的视角？（选择两项）
+  cache: 以下哪两项是 AWS 云采用框架 (AWS CAF) 的观点？
+
+- CCP-M036 q1061
+  en   : According to the AWS Cloud Adoption Framework (AWS CAF), which TWO of the following are benefits tha
+  file : 根据 AWS Cloud Adoption Framework (AWS CAF)，组织通过成功的云采用可以实现以下哪两项优势？（选择两项）
+  cache: 根据 AWS 云采用框架 (AWS CAF)，组织通过成功的云采用可以实现以下哪两项优势？
+
+- CCP-M037 q1094
+  en   : Which perspectives of the AWS Cloud Adoption Framework (AWS CAF) are categorized as technical capabi
+  file : AWS Cloud Adoption Framework (AWS CAF) 的哪些方面被归类为技术能力？ （选择两项）
+  cache: AWS 云采用框架 (AWS CAF) 的哪些方面被归类为技术能力？ （选择两项）
+
+- CCP-M038 q1121
+  en   : Which AWS Cloud Adoption Framework (AWS CAF) perspectives are categorized as business capabilities? 
+  file : 哪些 AWS Cloud Adoption Framework (AWS CAF) 视角被归类为业务能力？ （选择两项）
+  cache: 哪些 AWS 云采用框架 (AWS CAF) 视角被归类为业务能力？ （选择两项）
+
+- CCP-M039 q1125
+  en   : Which transformation domains are defined by the AWS Cloud Adoption Framework (AWS CAF)? (Select TWO)
+  file : AWS Cloud Adoption Framework (AWS CAF) 定义了哪些转换域？ （选择两项）
+  cache: AWS 云采用框架 (AWS CAF) 定义了哪些转换域？ （选择两项）
+
+- CCP-M040 q1103
+  en   : Which of the following are valid migration strategies defined in the AWS Cloud Adoption Framework (A
+  file : 以下哪些是 AWS Cloud Adoption Framework (AWS CAF) 中定义的有效迁移策略？ （选择两项）
+  cache: 以下哪些是 AWS 云采用框架 (AWS CAF) 中定义的有效迁移策略？ （选择两项）
+
+- CCP-M042 q026
+  en   : Hundreds of thousands of DDoS attacks are recorded every month worldwide. What service does AWS prov
+  file : 全球每个月都会记录数十万次 DDoS 攻击。 AWS 提供哪些服务来帮助保护 AWS 客户免受这些攻击？（选择两项）
+  cache: 全球每个月都会记录数十万次 DDoS 攻击。 AWS 提供哪些服务来帮助保护 AWS 客户免受这些攻击？
+
+- CCP-M043 q032
+  en   : Which of the following are examples of AWS-managed services, where AWS is responsible for the operat
+  file : 以下哪些是 AWS 托管服务的示例，其中 AWS 负责运行该服务的运营和维护负担？（选择两项）
+  cache: 以下哪些是 AWS 托管服务的示例，其中 AWS 负责运行该服务的运营和维护负担？
+
+- CCP-M044 q038
+  en   : Which of the following are examples of AWS shared controls?
+  file : 以下哪些是 AWS 共享控件的示例？（选择两项）
+  cache: 以下哪些是 AWS 共享控件的示例？
+
+- CCP-M045 q048
+  en   : In the AWS Shared responsibility Model, which of the following are the responsibility of the custome
+  file : 在 AWS Shared Responsibility Model 中，以下哪些是客户的责任？（选择两项）
+  cache: 在 AWS 责任共担模型中，以下哪些是客户的责任？
+
+- CCP-M046 q060
+  en   : Under the shared responsibility model, which of the following tasks are the responsibility of the AW
+  file : 在共担责任模型下，以下哪些任务是 AWS 客户的责任？（选择两项）
+  cache: 在共担责任模型下，以下哪些任务是 AWS 客户的责任？
+
+- CCP-M047 q078
+  en   : Which AWS services can be used to gather information about AWS account activity?
+  file : 哪些 AWS 服务可用于收集有关 AWS 账户活动的信息？（选择两项）
+  cache: 哪些 AWS 服务可用于收集有关 AWS 账户活动的信息？
+
+- CCP-M048 q103
+  en   : Which of the following will enhance the security of access to the AWS Management Console?
+  file : 以下哪一项将增强访问 AWS Management Console 的安全性？（选择两项）
+  cache: 以下哪一项将增强访问 AWS 管理控制台的安全性？
+
+- CCP-M049 q107
+  en   : Which of the following common IT tasks can AWS cover to free up company IT resources?
+  file : AWS 可以承担以下哪些常见 IT 任务以释放公司 IT 资源？（选择两项）
+  cache: AWS 可以承担以下哪些常见 IT 任务以释放公司 IT 资源？
+
+- CCP-M050 q120
+  en   : What credential components are required to gain programmatic access to an AWS account?
+  file : 需要哪些凭证组件才能以编程方式访问 AWS 账户？（选择两项）
+  cache: 需要哪些凭证组件才能以编程方式访问 AWS 账户？
+
+- CCP-M051 q126
+  en   : Which of the following security measures protect access to an AWS account?
+  file : 以下哪些安全措施可以保护对 AWS 账户的访问？（选择两项）
+  cache: 以下哪些安全措施可以保护对 AWS 账户的访问？
+
+- CCP-M052 q150
+  en   : How can a customer increase security to AWS account logons?
+  file : 客户如何提高 AWS 账户登录的安全性？（选择两项）
+  cache: 客户如何提高 AWS 账户登录的安全性？
+
+- CCP-M053 q163
+  en   : AWS supports which of the following methods to add security to Identity and Access Management (IAM) 
+  file : AWS Support 以下哪种方法来增强身份和访问管理 (IAM) 用户的安全性？（选择两项）
+  cache: AWS 支持以下哪种方法来增强身份和访问管理 (IAM) 用户的安全性？
+
+- CCP-M054 q170
+  en   : Which of the following security-related services does AWS offer?
+  file : AWS 提供以下哪些与安全相关的服务？（选择两项）
+  cache: AWS 提供以下哪些与安全相关的服务？
+
+- CCP-M055 q171
+  en   : Which of the following services have Distributed Denial of Service (DDoS) mitigation features?
+  file : 以下哪些服务具有分布式拒绝服务 (DDoS) 缓解功能？（选择两项）
+  cache: 以下哪些服务具有分布式拒绝服务 (DDoS) 缓解功能？
+
+- CCP-M056 q183
+  en   : Under the shared responsibility model which of the following areas are the customer's responsibility
+  file : 在共担责任模式下，以下哪些领域是客户的责任？（选择两项）
+  cache: 在共担责任模式下，以下哪些领域是客户的责任？
+
+- CCP-M057 q199
+  en   : A company has moved to AWS recently. Which of the following AWS Services will help ensure that they 
+  file : 一家公司最近迁移到了 AWS。以下哪些 AWS 服务将有助于确保他们拥有正确的安全设置？（选择两项）
+  cache: 一家公司最近迁移到了 AWS。以下哪些 AWS 服务将有助于确保他们拥有正确的安全设置？
+
+- CCP-M058 q208
+  en   : According to the AWS Shared responsibility model, which of the following are the responsibility of t
+  file : 根据 AWS Shared Responsibility Model，以下哪些是客户的责任？（选择两项）
+  cache: 根据 AWS 责任共担模型，以下哪些是客户的责任？
+
+- CCP-M059 q221
+  en   : Based on the AWS Shared Responsibility Model, which of the following are the sole responsibility of 
+  file : 根据 AWSShared Responsibility Model，以下哪些是 AWS 的唯一责任？（选择两项）
+  cache: 根据AWSShared Responsibility Model，以下哪些是AWS的唯一责任？
+
+- CCP-M060 q226
+  en   : Which of the following aspects of security are managed by AWS?
+  file : AWS 管理以下哪些方面的安全？（选择两项）
+  cache: AWS 管理以下哪些方面的安全？
+
+- CCP-M061 q229
+  en   : What are the change management tools that helps AWS customers audit and monitor all resource changes
+  file : 有哪些变更管理工具可以帮助 AWS 客户审核和监控其 AWS 环境中的所有资源变更？（选择两项）
+  cache: 有哪些变更管理工具可以帮助 AWS 客户审核和监控其 AWS 环境中的所有资源变更？
+
+- CCP-M062 q238
+  en   : Using Amazon RDS falls under the shared responsibility model. Which of the following are customer re
+  file : 使用 Amazon RDS 属于共享责任模型。以下哪些是客户的责任？（选择两项）
+  cache: 使用Amazon RDS属于共享责任模型。以下哪些是客户的责任？
+
+- CCP-M063 q259
+  en   : Under the Shared Responsibility Model, which of the following controls do customers fully inherit fr
+  file : 在 Shared Responsibility Model 下，客户完全从 AWS 继承了以下哪些控制权？（选择两项）
+  cache: 在Shared Responsibility Model下，客户完全从AWS继承了以下哪些控制权？
+
+- CCP-M064 q269
+  en   : Which of the following can help protect your EC2 instances from DDoS attacks?
+  file : 以下哪一项可以帮助保护您的 Amazon EC2 instances 免受 DDoS 攻击？（选择两项）
+  cache: 以下哪一项可以帮助保护您的 EC2 实例免受 DDoS 攻击？
+
+- CCP-M065 q280
+  en   : Which of the following is used to control network traffic in AWS?
+  file : 以下哪项用于控制 AWS 中的网络流量？（选择两项）
+  cache: 以下哪项用于控制 AWS 中的网络流量？
+
+- CCP-M066 q293
+  en   : A developer needs to set up an SSL security certificate for a client's eCommerce website in order to
+  file : 开发人员需要为客户的电子商务网站设置 SSL 安全证书才能使用 HTTPS 协议。以下哪些 AWS 服务可用于部署所需的 SSL 服务器证书？（选择两项）
+  cache: 开发人员需要为客户的电子商务网站设置SSL安全证书才能使用HTTPS协议。以下哪些 AWS 服务可用于部署所需的 SSL 服务器证书？
+
+- CCP-M067 q295
+  en   : A company is planning to migrate an application from Amazon EC2 to AWS Lambda to use a serverless ar
+  file : 一家公司计划将应用程序从 Amazon EC2 迁移到 AWS Lambda 以使用 Serverless architecture。迁移后 AWS 将承担以下哪项责任？（选择两项）
+  cache: 一家公司计划将应用程序从 Amazon EC2 迁移到 AWS Lambda 以使用无服务器架构。迁移后 AWS 将承担以下哪项责任？
+
+- CCP-M068 q312
+  en   : For managed services like Amazon DynamoDB, which of the below is AWS responsible for?
+  file : 对于像 Amazon DynamoDB 这样的托管服务，AWS 负责以下哪项？（选择两项）
+  cache: 对于像Amazon DynamoDB这样的托管服务，AWS 负责以下哪项？
+
+- CCP-M069 q321
+  en   : Which of the below are responsibilities of the customer when using Amazon EC2?
+  file : 使用 Amazon EC2 时，客户应承担以下哪些责任？（选择两项）
+  cache: 使用Amazon EC2时，客户应承担以下哪些责任？
+
+- CCP-M070 q323
+  en   : Which of the following AWS services can help you perform security analysis and regulatory compliance
+  file : 以下哪些 AWS 服务可以帮助您执行安全分析和合规性审计？（选择两项）
+  cache: 以下哪些 AWS 服务可以帮助您执行安全分析和合规性审计？
+
+- CCP-M071 q332
+  en   : Which of the following can be used to protect data at rest on Amazon S3?
+  file : 以下哪一项可用于保护 Amazon S3 上的静态数据？（选择两项）
+  cache: 以下哪一项可用于保护 Amazon S3 上的静态数据？
+
+- CCP-M072 q336
+  en   : When running a workload in AWS, the customer is NOT responsible for:
+  file : 在 AWS 中运行工作负载时，客户不负责：（选择两项）
+  cache: 在 AWS 中运行工作负载时，客户不负责：
+
+- CCP-M073 q345
+  en   : What features does AWS offer to help protect your data in the Cloud?
+  file : AWS 提供哪些功能来帮助保护您在云中的数据？（选择两项）
+  cache: AWS 提供哪些功能来帮助保护您在云中的数据？
+
+- CCP-M074 q348
+  en   : Which methods can be used by customers to interact with AWS Identity and Access Management (IAM)?
+  file : 客户可以使用哪些方法与 AWS Identity and Access Management (IAM) 交互？（选择两项）
+  cache: 客户可以使用哪些方法与 AWS Identity and Access Management (IAM) 交互？
+
+- CCP-M075 q349
+  en   : Which of the following are types of AWS Identity and Access Management (IAM) identities?
+  file : 以下哪些是 AWS Identity and Access Management (IAM) 身份类型？（选择两项）
+  cache: 以下哪些是 AWS Identity and Access Management (IAM) 身份类型？
+
+- CCP-M076 q361
+  en   : Which of the following are examples of the customer's responsibility to implement security IN the cl
+  file : 以下哪些是客户在云中实施安全性的责任的示例？（选择两项）
+  cache: 以下哪些是客户在云中实施安全性的责任的示例？
+
+- CCP-M077 q384
+  en   : Which of the following can be used to enable the Virtual Multi-Factor Authentication?
+  file : 以下哪一项可用于启用虚拟 Multi-Factor Authentication？（选择两项）
+  cache: 以下哪一项可用于启用虚拟Multi-Factor Authentication？
+
+- CCP-M078 q387
+  en   : What should you do if you see resources, which you don't remember creating, in the AWS Management Co
+  file : 如果您在 AWS Management Console 中看到您不记得创建过的资源，该怎么办？（选择两项）
+  cache: 如果您在 AWS 管理控制台中看到您不记得创建过的资源，该怎么办？
+
+- CCP-M079 q424
+  en   : Which of the following services provide real-time auditing for compliance and vulnerabilities?
+  file : 以下哪些服务提供合规性和漏洞的实时审核？（选择两项）
+  cache: 以下哪些服务提供合规性和漏洞的实时审核？
+
+- CCP-M080 q443
+  en   : Which of the following can help secure your sensitive data in Amazon S3?
+  file : 以下哪项可以帮助保护 Amazon S3 中的敏感数据？（选择两项）
+  cache: 以下哪项可以帮助保护 Amazon S3 中的敏感数据？
+
+- CCP-M081 q463
+  en   : Which of the following would you use to manage your encryption keys in the AWS Cloud?
+  file : 您将使用以下哪项来管理 AWS 云中的加密密钥？（选择两项）
+  cache: 您将使用以下哪项来管理 AWS 云中的加密密钥？
+
+- CCP-M082 q474
+  en   : Which of the following security resources are available to any user for free?
+  file : 以下哪些安全资源可供任何用户免费使用？（选择两项）
+  cache: 以下哪些安全资源可供任何用户免费使用？
+
+- CCP-M083 q488
+  en   : According to the AWS shared responsibility model, what are the controls that customers fully inherit
+  file : 根据 AWSShared Responsibility Model，客户完全从 AWS 继承了哪些控制权？（选择两项）
+  cache: 根据AWS责任共担模型，客户完全从AWS继承了哪些控制权？
+
+- CCP-M084 q491
+  en   : Which of the following are part of the seven design principles for security in the cloud?
+  file : 以下哪些是云安全七大设计原则的一部分？（选择两项）
+  cache: 以下哪些是云安全七大设计原则的一部分？
+
+- CCP-M085 q507
+  en   : What are the main differences between an IAM user and an IAM role in AWS?
+  file : AWS 中的 IAM User 和 IAM Role 之间的主要区别是什么？（选择两项）
+  cache: AWS 中的 IAM 用户和 IAM 角色之间的主要区别是什么？
+
+- CCP-M086 q516
+  en   : Which of the following requires an access key ID and a secret access key to get long-lived programma
+  file : 以下哪项需要 Access Key ID 和秘密 Access Key 才能获得对 AWS 资源的长期编程访问？（选择两项）
+  cache: 以下哪项需要访问密钥 ID 和秘密访问密钥才能获得对 AWS 资源的长期编程访问？
+
+- CCP-M087 q525
+  en   : The AWS account administrator of your company has been fired. With the permissions granted to him as
+  file : 贵公司的 AWS 账户管理员已被解雇。通过授予他作为管理员的权限，他能够创建多个 IAM 用户帐户和 Access Key。此外，您不确定他是否有权访问 AWS 根帐户。您应该立即采取什么措施来保护您
+  cache: 贵公司的 AWS 账户管理员已被解雇。通过授予他作为管理员的权限，他能够创建多个IAM用户帐户和访问密钥。此外，您不确定他是否有权访问AWS根帐户。您应该立即采取什么措施来保护您的 AWS 基础设施？
+
+- CCP-M088 q531
+  en   : A financial services company decides to migrate one of its applications to AWS. The application deal
+  file : 一家金融服务公司决定将其一个应用程序迁移到 AWS。该应用程序处理敏感数据，例如信用卡信息，并且必须在符合 PCI 的环境中运行。在 AWS 中构建符合 PCI 要求的环境时，以下哪项是公司的责任？（
+  cache: 一家金融服务公司决定将其一个应用程序迁移到 AWS。该应用程序处理敏感数据，例如信用卡信息，并且必须在符合 PCI 的环境中运行。在 AWS 中构建符合 PCI 要求的环境时，以下哪项是公司的责任？
+
+- CCP-M089 q564
+  en   : Under the AWS shared responsibility model, which of the following activities are the customer's resp
+  file : 在 AWS Shared Responsibility Model 下，以下哪些活动是客户的责任？（选择两项）
+  cache: 在 AWS 责任共担模型下，以下哪些活动是客户的责任？
+
+- CCP-M090 q573
+  en   : Which AWS service or feature can enhance network security by blocking requests from a particular net
+  file : 哪些 AWS 服务或功能可以通过阻止来自特定网络对 AWS 上的 Web 应用程序的请求来增强网络安全性？（选择两项）
+  cache: 哪些 AWS 服务或功能可以通过阻止来自特定网络对 AWS 上的 Web 应用程序的请求来增强网络安全性？
+
+- CCP-M091 q637
+  en   : Which of the following benefits does the AWS Compliance program provide to AWS customers?
+  file : AWS 合规性计划为 AWS 客户提供以下哪些好处？（选择两项）
+  cache: AWS 合规性计划为 AWS 客户提供以下哪些好处？
+
+- CCP-M092 q641
+  en   : Under the shared responsibility model, which of the following tasks are the responsibility of the cu
+  file : 在共担责任模式下，以下哪些任务是客户的责任？（选择两项）
+  cache: 在共担责任模式下，以下哪些任务是客户的责任？
+
+- CCP-M093 q659
+  en   : Under the AWS shared responsibility model, customers are responsible for which aspects of security i
+  file : 在 AWS 共享责任模型下，客户负责云中哪些方面的安全？（选择两项）
+  cache: 在AWS共享责任模型下，客户负责云中哪些方面的安全？
+
+- CCP-M094 q702
+  en   : What tasks should a customer perform when that customer suspects an AWS account has been compromised
+  file : 当客户怀疑 AWS 账户已被盗用时，客户应该执行哪些任务？（选择两项）
+  cache: 当客户怀疑 AWS 账户已被盗用时，客户应该执行哪些任务？
+
+- CCP-M095 q786
+  en   : Which of the following are recommended practices for managing IAM users?
+  file : 以下哪些是管理 IAM User 的推荐做法？（选择两项）
+  cache: 以下哪些是管理 IAM 用户的推荐做法？
+
+- CCP-M096 q796
+  en   : Which of the following are components of Amazon VPC?
+  file : 以下哪些是 Amazon VPC 的组成部分？（选择两项）
+  cache: 以下哪些是Amazon VPC的组成部分？
+
+- CCP-M097 q808
+  en   : Which AWS service will provide a way to generate encryption keys that can be used to encrypt data?
+  file : 哪种 AWS 服务将提供生成可用于加密数据的加密密钥的方法？（选择两项）
+  cache: 哪种 AWS 服务将提供生成可用于加密数据的加密密钥的方法？
+
+- CCP-M098 q812
+  en   : Under the AWS shared responsibility model, the customer manages which of the following?
+  file : 在 AWS Shared Responsibility Model 下，客户管理以下哪一项？（选择两项）
+  cache: 在 AWS 责任共担模型下，客户管理以下哪一项？
+
+- CCP-M099 q824
+  en   : Which actions represent best practices for using AWS IAM?
+  file : 哪些操作代表使用 AWS IAM 的最佳实践？（选择两项）
+  cache: 哪些操作代表使用AWS IAM的最佳实践？
+
+- CCP-M100 q839
+  en   : Which tasks are the customer's responsibility in the AWS shared responsibility model?
+  file : 在 AWS Shared Responsibility Model 中，哪些任务是客户的责任？（选择两项）
+  cache: 在 AWS 责任共担模型中，哪些任务是客户的责任？
+
+- CCP-M101 q843
+  en   : A web application is hosted on AWS using an Elastic Load Balancer, multiple Amazon EC2 instances, an
+  file : Web 应用程序使用 Elastic Load Balancer、多个 Amazon EC2 实例和 Amazon RDS 托管在 AWS 上。哪些安全措施属于 AWS 的责任？（选择两项）
+  cache: Web 应用程序使用弹性负载均衡器、多个 Amazon EC2 实例和 Amazon RDS 托管在 AWS 上。哪些安全措施属于 AWS 的责任？
+
+- CCP-M102 q873
+  en   : Under the AWS shared responsibility model, which of the following are customer responsibilities?
+  file : 在 AWS Shared Responsibility Model 下，以下哪些是客户责任？（选择两项）
+  cache: 在 AWS 责任共担模型下，以下哪些是客户责任？
+
+- CCP-M103 q903
+  en   : Under the AWS shared responsibility model, what are the customer's responsibilities?
+  file : 在 AWSShared Responsibility Model 下，客户的责任是什么？（选择两项）
+  cache: 在AWS责任共担模型下，客户的责任是什么？
+
+- CCP-M104 q912
+  en   : Which of the following tasks can only be performed after signing in with AWS account root user crede
+  file : 以下哪些任务只能在使用 AWS 账户 Root User 凭证登录后才能执行？（选择两项）
+  cache: 以下哪些任务只能在使用 AWS 账户根用户凭证登录后才能执行？
+
+- CCP-M105 q959
+  en   : A developer has been hired by a large company and needs AWS credentials. Which are security best pra
+  file : 一位开发人员已被一家大公司聘用，并且需要 AWS 凭证。应遵循哪些安全最佳实践？（选择两项）
+  cache: 一位开发人员已被一家大公司聘用，并且需要 AWS 凭证。应遵循哪些安全最佳实践？
+
+- CCP-M106 q977
+  en   : A web developer is concerned that a DDoS attack could target an application. Which AWS services or f
+  file : Web 开发人员担心 DDoS 攻击可能会针对应用程序。哪些 AWS 服务或功能可以帮助防范此类攻击？（选择两项）
+  cache: Web 开发人员担心 DDoS 攻击可能会针对应用程序。哪些 AWS 服务或功能可以帮助防范此类攻击？
+
+- CCP-M107 q979
+  en   : A company wants to provide one of its employees with access to Amazon RDS. The company also wants to
+  file : 一家公司希望为其一名员工提供 Amazon RDS 的访问权限。该公司还希望将交互限制为仅与 AWS CLI 和 AWS 软件开发套件 (SDKs)。公司应采取哪种行动组合来满足这些要求，同时遵循最小
+  cache: 一家公司希望为其一名员工提供Amazon RDS 的访问权限。该公司还希望将交互限制为仅与 AWS CLI 和 AWS 软件开发套件 (SDKs)。公司应采取哪种行动组合来满足这些要求，同时遵循最小特
+
+- CCP-M108 q008
+  en   : What does AWS Snowball Edge provide?
+  file : AWS Snowball Edge 提供什么？（选择两项）
+  cache: AWS Snowball Edge 提供什么？
+
+- CCP-M109 q018
+  en   : What should you do in order to keep the data on EBS volumes safe?
+  file : 为了确保 EBS 卷上的数据安全，您应该做什么？（选择两项）
+  cache: 为了确保 EBS 卷上的数据安全，您应该做什么？
+
+- CCP-M110 q039
+  en   : In order to implement best practices when dealing with a “Single Point of Failure,” you should attem
+  file : 为了在处理“单点故障”时实施最佳实践，您应该尝试在检测和响应故障方面建立尽可能多的自动化。以下哪些 AWS 服务会有帮助？（选择两项）
+  cache: 为了在处理“单点故障”时实施最佳实践，您应该尝试在检测和响应故障方面建立尽可能多的自动化。以下哪些 AWS 服务会有帮助？
+
+- CCP-M111 q044
+  en   : What does the AWS Health Dashboard provide?
+  file : AWS Health Dashboard 提供什么？（选择两项）
+  cache: AWS Health Dashboard 提供什么？
+
+- CCP-M112 q047
+  en   : Which of the following is not a benefit of Amazon S3?
+  file : 以下哪项不是 Amazon S3 的好处？（选择两项）
+  cache: 以下哪项不是Amazon S3的好处？
+
+- CCP-M113 q053
+  en   : Which of the following are features of Amazon CloudWatch Logs?
+  file : Amazon CloudWatch 日志有以下哪些特点？（选择两项）
+  cache: Amazon CloudWatch日志有以下哪些特点？
+
+- CCP-M114 q063
+  en   : Which AWS services should be used for read/write of constantly changing data?
+  file : 应使用哪些 AWS 服务来读取/写入不断变化的数据？（选择两项）
+  cache: 应使用哪些 AWS 服务来读取/写入不断变化的数据？
+
+- CCP-M115 q089
+  en   : Which AWS services can host a Microsoft SQL Server database?
+  file : 哪些 AWS 服务可以托管 Microsoft SQL Server 数据库？（选择两项）
+  cache: 哪些 AWS 服务可以托管 Microsoft SQL Server 数据库？
+
+- CCP-M116 q138
+  en   : What can AWS edge locations be used for?
+  file : AWS Edge Locations 可以用来做什么？（选择两项）
+  cache: AWS 边缘站点可以用来做什么？
+
+- CCP-M117 q168
+  en   : A company wants to migrate its applications to a VPC on AWS. These applications will need to access 
+  file : 一家公司希望将其应用程序迁移到 AWS 上的 VPC。这些应用程序需要访问本地资源。什么样的行动组合将使公司能够实现这一目标？（选择两项）
+  cache: 一家公司希望将其应用程序迁移到 AWS 上的VPC。这些应用程序需要访问本地资源。什么样的行动组合将使公司能够实现这一目标？
+
+- CCP-M118 q185
+  en   : Which AWS services provide a way to extend an on-premises architecture to the AWS Cloud?
+  file : 哪些 AWS 服务提供了将本地架构扩展到 AWS 云的方法？（选择两项）
+  cache: 哪些 AWS 服务提供了将本地架构扩展到 AWS 云的方法？
+
+- CCP-M119 q209
+  en   : Which of the following AWS services can be used as a compute resource?
+  file : 以下哪些 AWS 服务可以用作计算资源？（选择两项）
+  cache: 以下哪些 AWS 服务可以用作计算资源？
+
+- CCP-M120 q233
+  en   : What are the AWS services/features that can help you maintain a highly available and fault-tolerant 
+  file : 有哪些 AWS 服务/功能可以帮助您在 AWS 中维护 High Availability 且 Fault Tolerance 的架构？（选择两项）
+  cache: 有哪些 AWS 服务/功能可以帮助您在 AWS 中维护高可用且容错的架构？
+
+- CCP-M121 q237
+  en   : Which AWS services can be used to improve the performance of a global application and reduce latency
+  file : 哪些 AWS 服务可用于提高全球应用程序的性能并减少用户的延迟？（选择两项）
+  cache: 哪些 AWS 服务可用于提高全球应用程序的性能并减少用户的延迟？
+
+- CCP-M122 q243
+  en   : Where can you store files in AWS?
+  file : 您可以在 AWS 中的哪里存储文件？（选择两项）
+  cache: 您可以在 AWS 中的哪里存储文件？
+
+- CCP-M123 q249
+  en   : Which of the following AWS services is designed with native Multi-AZ fault tolerance in mind?
+  file : 以下哪些 AWS 服务在设计时考虑了本机 Multi-AZFault Tolerance 能力？（选择两项）
+  cache: 以下哪些 AWS 服务在设计时考虑了本机多可用区容错能力？
+
+- CCP-M124 q250
+  en   : What are the Amazon RDS features that can be used to improve the availability of your database?
+  file : 有哪些 Amazon RDS 功能可用于提高数据库的可用性？（选择两项）
+  cache: 有哪些 Amazon RDS 功能可用于提高数据库的可用性？
+
+- CCP-M125 q256
+  en   : Amazon S3 Glacier is an Amazon S3 storage class that is suitable for storing which types of data?
+  file : Amazon S3 Glacier 是 Amazon S3 存储类，适合存储哪些类型的数据？（选择两项）
+  cache: Amazon S3 Glacier 是Amazon S3 存储类，适合存储哪些类型的数据？
+
+- CCP-M126 q266
+  en   : What are the connectivity options that can be used to build hybrid cloud architectures?
+  file : 可用于构建混合云架构的连接选项有哪些？（选择两项）
+  cache: 可用于构建混合云架构的连接选项有哪些？
+
+- CCP-M127 q277
+  en   : What are the benefits of using the Amazon Relational Database Service?
+  file : 使用 Amazon Relational Database Service 有哪些好处？（选择两项）
+  cache: 使用 Amazon Relational Database Service 有哪些好处？
+
+- CCP-M128 q285
+  en   : App development companies move their business to AWS to reduce time-to-market and improve customer s
+  file : 应用程序开发公司将其业务转移到 AWS 以缩短上市时间并提高客户满意度，有哪些 AWS 自动化工具可以帮助他们更快地部署应用程序？（选择两项）
+  cache: 应用程序开发公司将其业务转移到 AWS 以缩短上市时间并提高客户满意度，有哪些 AWS 自动化工具可以帮助他们更快地部署应用程序？
+
+- CCP-M129 q294
+  en   : Which of the following AWS services scale automatically without your intervention?
+  file : 以下哪些 AWS 服务无需您干预即可 Auto Scaling？（选择两项）
+  cache: 以下哪些 AWS 服务无需您干预即可自动扩展？
+
+- CCP-M130 q304
+  en   : Which of the following are use cases for Amazon S3?
+  file : 以下哪些是 Amazon S3 的用例？（选择两项）
+  cache: 以下哪些是 Amazon S3 的用例？
+
+- CCP-M131 q317
+  en   : Which of the following are factors in determining the appropriate database technology to use for a s
+  file : 以下哪些是确定用于特定工作负载的适当数据库技术的因素？（选择两项）
+  cache: 以下哪些是确定用于特定工作负载的适当数据库技术的因素？
+
+- CCP-M132 q331
+  en   : What are the benefits of using DynamoDB?
+  file : 使用 DynamoDB 有什么好处？（选择两项）
+  cache: 使用DynamoDB有什么好处？
+
+- CCP-M133 q338
+  en   : Which of the following allows you to create new RDS instances?
+  file : 以下哪一项允许您创建新的 RDS 实例？（选择两项）
+  cache: 以下哪一项允许您创建新的 RDS 实例？
+
+- CCP-M134 q357
+  en   : Which of the following factors should be considered when determining the region in which AWS Resourc
+  file : 在确定 AWS 资源部署区域时应考虑以下哪些因素？（选择两项）
+  cache: 在确定 AWS 资源部署区域时应考虑以下哪些因素？
+
+- CCP-M135 q374
+  en   : Which of the following AWS offerings are serverless services?
+  file : 以下哪些 AWS 产品是 serverless services？（选择两项）
+  cache: 以下哪些 AWS 产品是无服务器服务？
+
+- CCP-M136 q391
+  en   : Which of the following are true regarding the languages that are supported on AWS Lambda?
+  file : 关于 AWS Lambda 支持的语言，以下哪些说法是正确的？（选择两项）
+  cache: 关于 AWS Lambda 支持的语言，以下哪些说法是正确的？
+
+- CCP-M137 q392
+  en   : What are the capabilities of AWS X-Ray?
+  file : AWS X-Ray 有哪些功能？（选择两项）
+  cache: AWS X-Ray 有哪些功能？
+
+- CCP-M138 q398
+  en   : A customer is planning to migrate their Microsoft SQL Server databases to AWS. Which AWS Services ca
+  file : 客户计划将其 Microsoft SQL Server DMS 到 AWS。客户可以使用哪些 AWS 服务在 AWS 上运行 Microsoft SQL Server 数据库？（选择两项）
+  cache: 客户计划将其 Microsoft SQL Server 数据库迁移到 AWS。客户可以使用哪些 AWS 服务在 AWS 上运行 Microsoft SQL Server 数据库？
+
+- CCP-M139 q401
+  en   : Which of the following are examples of AWS-managed databases?
+  file : 以下哪些是 AWS 托管数据库的示例？（选择两项）
+  cache: 以下哪些是 AWS 托管数据库的示例？
+
+- CCP-M140 q405
+  en   : What are some key benefits of using AWS CloudFormation?
+  file : 使用 AWS CloudFormation 有哪些主要好处？（选择两项）
+  cache: 使用 AWS CloudFormation 有哪些主要好处？
+
+- CCP-M142 q429
+  en   : Which of the following are use cases for Amazon EMR?
+  file : 以下哪些是 Amazon EMR 的用例？（选择两项）
+  cache: 以下哪些是 Amazon EMR 的用例？
+
+- CCP-M143 q433
+  en   : For Amazon RDS databases, what does AWS perform on your behalf?
+  file : 对于 Amazon RDS 数据库，AWS 代表您执行什么操作？（选择两项）
+  cache: 对于 Amazon RDS 数据库，AWS 代表您执行什么操作？
+
+- CCP-M144 q440
+  en   : Which of the below options are use cases of the Amazon Route 53 service?
+  file : 以下哪些选项是 Amazon Route 53 服务的用例？（选择两项）
+  cache: 以下哪些选项是 Amazon Route 53 服务的用例？
+
+- CCP-M145 q446
+  en   : What does the Amazon CloudFront service provide?
+  file : Amazon CloudFront 服务提供什么？（选择两项）
+  cache: Amazon CloudFront服务提供什么？
+
+- CCP-M146 q454
+  en   : Which of the following compute resources are serverless?
+  file : 以下哪些计算资源是 Serverless 的？（选择两项）
+  cache: 以下哪些计算资源是无服务器的？
+
+- CCP-M147 q471
+  en   : For some services, AWS automatically replicates data across multiple Availability Zones to provide f
+  file : 对于某些服务，AWS 会自动跨多个 Availability Zones 复制数据，以便在服务器发生故障或 Availability Zone 中断时提供 Fault Tolerance 能力。哪些服
+  cache: 对于某些服务，AWS 会自动跨多个 Availability Zones 复制数据，以便在服务器发生故障或 Availability Zone 中断时提供容错能力。哪些服务自动跨Availabilit
+
+- CCP-M148 q490
+  en   : Which of the following procedures can reduce latency when your end users are retrieving data?
+  file : 当您的最终用户检索数据时，以下哪些过程可以减少延迟？（选择两项）
+  cache: 当您的最终用户检索数据时，以下哪些过程可以减少延迟？
+
+- CCP-M149 q500
+  en   : Amazon EC2 instances are conceptually very similar to traditional servers. However, using Amazon EC2
+  file : Amazon EC2 实例在概念上与传统服务器非常相似。然而，以与传统硬件服务器实例相同的方式使用 Amazon EC2 服务器实例只是一个起点。使用 AWS Amazon EC2 instances
+  cache: Amazon EC2 实例在概念上与传统服务器非常相似。然而，以与传统硬件服务器实例相同的方式使用Amazon EC2服务器实例只是一个起点。使用 AWS EC2 实例代替传统服务器的主要好处是什么？
+
+- CCP-M150 q526
+  en   : What is the Amazon ElastiCache service used for?
+  file : Amazon ElastiCache 服务有何用途？（选择两项）
+  cache: Amazon ElastiCache服务有何用途？
+
+- CCP-M151 q527
+  en   : The elasticity of the AWS Cloud enables customers to save costs when compared to traditional hosting
+  file : 与传统托管提供商相比，AWS 云的弹性使客户能够节省成本。 AWS 客户可以做什么来从 AWS 云的弹性中受益？（选择两项）
+  cache: 与传统托管提供商相比，AWS 云的弹性使客户能够节省成本。 AWS 客户可以做什么来从 AWS 云的弹性中受益？
+
+- CCP-M152 q548
+  en   : Which AWS services allow companies to connect an Amazon VPC to an on-premises data center?
+  file : 哪些 AWS 服务允许公司将 Amazon VPC 连接到本地数据中心？（选择两项）
+  cache: 哪些 AWS 服务允许公司将 Amazon VPC 连接到本地数据中心？
+
+- CCP-M153 q580
+  en   : Which of the following are main components of the AWS global infrastructure?
+  file : 以下哪些是 AWS 全球基础设施的主要组成部分？（选择两项）
+  cache: 以下哪些是AWS全球基础设施的主要组成部分？
+
+- CCP-M154 q584
+  en   : Which services can be used across hybrid AWS Cloud architectures?
+  file : 哪些服务可以跨混合 AWS 云架构使用？（选择两项）
+  cache: 哪些服务可以跨混合 AWS 云架构使用？
+
+- CCP-M155 q596
+  en   : Which of the following are characteristics of Amazon S3?
+  file : 以下哪些是 Amazon S3 的特点？（选择两项）
+  cache: 以下哪些是Amazon S3的特点？
+
+- CCP-M156 q609
+  en   : Which of the following are valid ways for a customer to interact with AWS services?
+  file : 以下哪些是客户与 AWS 服务交互的有效方式？（选择两项）
+  cache: 以下哪些是客户与 AWS 服务交互的有效方式？
+
+- CCP-M157 q611
+  en   : Which of the following AWS services can be used to serve large amounts of online video content with 
+  file : 以下哪些 AWS 服务可用于以尽可能低的延迟提供大量在线视频内容？（选择两项）
+  cache: 以下哪些 AWS 服务可用于以尽可能低的延迟提供大量在线视频内容？
+
+- CCP-M158 q616
+  en   : Which of the following can an AWS customer use to launch a new Amazon Relational Database Service (A
+  file : AWS 客户可以使用以下哪项来启动新的 Amazon Relational Database Service (Amazon RDS) 集群？（选择两项）
+  cache: AWS 客户可以使用以下哪项来启动新的 Amazon Relational Database Service (Amazon RDS) 集群？
+
+- CCP-M159 q620
+  en   : Which of the following features can be configured through the Amazon Virtual Private Cloud (Amazon V
+  file : 可以通过 Amazon Virtual Private Cloud (Amazon VPC) 控制面板配置以下哪些功能？（选择两项）
+  cache: 可以通过 Amazon Virtual Private Cloud (Amazon VPC) 控制面板配置以下哪些功能？
+
+- CCP-M160 q625
+  en   : Which AWS services are defined as global instead of regional?
+  file : 哪些 AWS 服务被定义为 Global service 而不是区域服务？（选择两项）
+  cache: 哪些 AWS 服务被定义为全球服务而不是区域服务？
+
+- CCP-M161 q680
+  en   : Which load balancer types are available with Elastic Load Balancing (ELB)?
+  file : Elastic Load Balancing (ELB) 提供哪些 Load Balancer 类型？（选择两项）
+  cache: Elastic Load Balancing (ELB) 提供哪些负载均衡器类型？
+
+- CCP-M162 q700
+  en   : Which services manage and automate application deployments on AWS?
+  file : 哪些服务可以管理和自动化 AWS 上的应用程序部署？（选择两项）
+  cache: 哪些服务可以管理和自动化 AWS 上的应用程序部署？
+
+- CCP-M163 q708
+  en   : Which of the following AWS services provide compute resources?
+  file : 以下哪些 AWS 服务提供计算资源？（选择两项）
+  cache: 以下哪些 AWS 服务提供计算资源？
+
+- CCP-M164 q712
+  en   : Which services use AWS edge locations?
+  file : 哪些服务使用 AWS Edge Locations？（选择两项）
+  cache: 哪些服务使用 AWS 边缘站点？
+
+- CCP-M165 q759
+  en   : Which of the following describes the relationships among AWS Regions, Availability Zones, and edge l
+  file : 以下哪项描述了 AWS Region、Availability Zones 和 Edge Locations 之间的关系？（选择两项）
+  cache: 以下哪项描述了 AWS 区域、Availability Zones 和边缘站点之间的关系？
+
+- CCP-M166 q784
+  en   : When designing a typical three-tier web application, which AWS services and/or features improve avai
+  file : 在设计典型的三层 Web 应用程序时，哪些 AWS 服务和/或功能可以提 High Availability 性并减少故障的影响？（选择两项）
+  cache: 在设计典型的三层 Web 应用程序时，哪些 AWS 服务和/或功能可以提高可用性并减少故障的影响？
+
+- CCP-M167 q794
+  en   : A company is planning to launch an ecommerce site in a single AWS Region to a worldwide user base. W
+  file : 一家公司计划在单个 AWS Region 向全球用户群推出电子商务网站。哪些 AWS 服务将使公司能够接触到用户并提供低延迟和高传输速度？（选择两项）
+  cache: 一家公司计划在单个 AWS 区域向全球用户群推出电子商务网站。哪些 AWS 服务将使公司能够接触到用户并提供低延迟和高传输速度？
+
+- CCP-M168 q804
+  en   : Which AWS services provide a user with connectivity between the AWS Cloud and on-premises resources?
+  file : 哪些 AWS 服务为用户提供 AWS 云和本地资源之间的连接？（选择两项）
+  cache: 哪些 AWS 服务为用户提供 AWS 云和本地资源之间的连接？
+
+- CCP-M169 q830
+  en   : Which AWS services can be used to move data from on-premises data centers to AWS?
+  file : 哪些 AWS 服务可用于将数据从本地数据中心移动到 AWS？（选择两项）
+  cache: 哪些 AWS 服务可用于将数据从本地数据中心移动到 AWS？
+
+- CCP-M170 q850
+  en   : Which AWS services may be scaled using AWS Auto Scaling?
+  file : 哪些 AWS 服务可以使用 AWS Auto Scaling 进行扩展？（选择两项）
+  cache: 哪些 AWS 服务可以使用 AWS Auto Scaling 进行扩展？
+
+- CCP-M171 q851
+  en   : Which of the following are benefits of AWS Global Accelerator?
+  file : 以下哪些是 AWS Global Accelerator 的好处？（选择两项）
+  cache: 以下哪些是AWS Global Accelerator的好处？
+
+- CCP-M172 q872
+  en   : Which AWS services can be used to provide network connectivity between an on-premises network and a 
+  file : 哪些 AWS 服务可用于提供本地网络和 VPC 之间的网络连接？（选择两项）
+  cache: 哪些 AWS 服务可用于提供本地网络和 VPC 之间的网络连接？
+
+- CCP-M173 q891
+  en   : Which of the following are AWS compute services?
+  file : 以下哪些是 AWS 计算服务？（选择两项）
+  cache: 以下哪些是 AWS 计算服务？
+
+- CCP-M174 q925
+  en   : Which components are required to build a successful site-to-site VPN connection on AWS?
+  file : 在 AWS 上构建成功的 Site-to-Site VPN 连接需要哪些组件？（选择两项）
+  cache: 在 AWS 上构建成功的站点到站点 VPN 连接需要哪些组件？
+
+- CCP-M175 q932
+  en   : Which of the following AWS services are serverless?
+  file : 以下哪些 AWS 服务是 Serverless 的？（选择两项）
+  cache: 以下哪些 AWS 服务是无服务器的？
+
+- CCP-M176 q933
+  en   : Which AWS managed services can be used to extend an on-premises data center to the AWS network?
+  file : 哪些 AWS 托管服务可用于将本地数据中心扩展到 AWS 网络？（选择两项）
+  cache: 哪些 AWS 托管服务可用于将本地数据中心扩展到 AWS 网络？
+
+- CCP-M177 q951
+  en   : Which are benefits of using Amazon RDS over Amazon EC2 when running relational databases on AWS?
+  file : 在 AWS 上运行关系数据库时，使用 Amazon RDS 相对于 Amazon EC2 有哪些优势？（选择两项）
+  cache: 在 AWS 上运行关系数据库时，使用 Amazon RDS 相对于 Amazon EC2 有哪些优势？
+
+- CCP-M178 q990
+  en   : Which AWS services offer compute capabilities?
+  file : 哪些 AWS 服务提供计算功能？（选择两项）
+  cache: 哪些 AWS 服务提供计算功能？
+
+- CCP-M179 q020
+  en   : A startup company is operating on limited funds and is extremely concerned about cost overruns. Whic
+  file : 一家初创公司的运营资金有限，并且非常担心成本超支。当每月 AWS 账单超过 2000 美元时，可以使用以下哪个选项来通知公司？（选择两项）
+  cache: 一家初创公司的运营资金有限，并且非常担心成本超支。当每月 AWS 账单超过 2000 美元时，可以使用以下哪个选项来通知公司？
+
+- CCP-M180 q059
+  en   : Which of the following BEST describe the AWS pricing model?
+  file : 以下哪项最能描述 AWS 定价模型？（选择两项）
+  cache: 以下哪项最能描述 AWS 定价模型？
+
+- CCP-M181 q066
+  en   : Which benefits are included with the AWS Business Support plan?
+  file : AWS 业务支持计划包含哪些权益？（选择两项）
+  cache: AWS 业务支持计划包含哪些权益？
+
+- CCP-M182 q071
+  en   : When should a company consider using Amazon EC2 Spot Instances?
+  file : 公司什么时候应该考虑使用 Amazon EC2Spot Instances？（选择两项）
+  cache: 公司什么时候应该考虑使用Amazon EC2Spot Instances？
+
+- CCP-M183 q102
+  en   : Which options does AWS make available for customers who want to learn about security in the cloud in
+  file : AWS 为想要在讲师指导的环境中了解云安全性的客户提供哪些选项？（选择两项）
+  cache: AWS 为想要在讲师指导的环境中了解云安全性的客户提供哪些选项？
+
+- CCP-M184 q106
+  en   : Which of the following are advantages of AWS consolidated billing?
+  file : 以下哪些是 AWS Consolidated Billing 的优势？（选择两项）
+  cache: 以下哪些是 AWS 合并计费的优势？
+
+- CCP-M185 q115
+  en   : How does AWS Trusted Advisor provide guidance to users of the AWS Cloud?
+  file : AWS Trusted Advisor 如何为 AWS 云用户提供指导？（选择两项）
+  cache: AWS Trusted Advisor 如何为 AWS 云用户提供指导？
+
+- CCP-M186 q262
+  en   : Savings Plans are available for which of the following AWS compute services?
+  file : Savings Plans 可用于以下哪些 AWS 计算服务？（选择两项）
+  cache: Savings Plans 可用于以下哪些 AWS 计算服务？
+
+- CCP-M187 q264
+  en   : Which statement is correct with regards to AWS service limits?
+  file : 关于 AWS 服务限制，哪种说法是正确的？（选择两项）
+  cache: 关于 AWS 服务限制，哪种说法是正确的？
+
+- CCP-M188 q273
+  en   : Which of the following will impact the price paid for an EC2 instance?
+  file : 以下哪项会影响 Amazon EC2 instances 的价格？（选择两项）
+  cache: 以下哪项会影响 EC2 实例的价格？
+
+- CCP-M189 q288
+  en   : What is one benefit and one drawback of buying a reserved EC2 instance?
+  file : 购买预留 Amazon EC2 instances 的优点和缺点分别是什么？（选择两项）
+  cache: 购买预留 EC2 实例的优点和缺点分别是什么？
+
+- CCP-M190 q318
+  en   : What are the benefits of implementing a tagging strategy for AWS resources?
+  file : 为 AWS 资源实施标记策略有哪些好处？（选择两项）
+  cache: 为 AWS 资源实施标记策略有哪些好处？
+
+- CCP-M191 q364
+  en   : Which of the following is NOT a factor when estimating the costs of Amazon EC2?
+  file : 在估算 Amazon EC2 成本时，以下哪一项不是考虑因素？（选择两项）
+  cache: 在估算 Amazon EC2 成本时，以下哪一项不是考虑因素？
+
+- CCP-M192 q394
+  en   : Which features are included in the AWS Business Support Plan?
+  file : AWS 业务支持计划包含哪些功能？（选择两项）
+  cache: AWS 业务支持计划包含哪些功能？
+
+- CCP-M193 q415
+  en   : Which of the following factors should be considered for Amazon EBS pricing?
+  file : Amazon EBS 定价应考虑以下哪些因素？（选择两项）
+  cache: Amazon EBS 定价应考虑以下哪些因素？
+
+- CCP-M194 q417
+  en   : Which of the following has the greatest impact on cost?
+  file : 以下哪项对成本影响最大？（选择两项）
+  cache: 以下哪项对成本影响最大？
+
+- CCP-M195 q445
+  en   : Which of the following will affect how much you are charged for storing objects in S3?
+  file : 以下哪一项会影响您在 S3 中存储对象的费用？（选择两项）
+  cache: 以下哪一项会影响您在 S3 中存储对象的费用？
+
+- CCP-M196 q449
+  en   : Which of the following are valid Amazon EC2 Reserved Instance types?
+  file : 以下哪些是有效的 Amazon EC2 Reserved Instances 类型？（选择两项）
+  cache: 以下哪些是有效的 Amazon EC2 预留实例类型？
+
+- CCP-M197 q472
+  en   : Which of the following factors affect Amazon CloudFront cost?
+  file : 以下哪些因素影响 Amazon CloudFront 成本？（选择两项）
+  cache: 以下哪些因素影响Amazon CloudFront成本？
+
+- CCP-M198 q482
+  en   : What are the benefits of the AWS Organizations service?
+  file : AWS Organizations 服务有什么好处？（选择两项）
+  cache: AWS Organizations服务有什么好处？
+
+- CCP-M199 q497
+  en   : What does the AWS "Business" support plan provide?
+  file : AWS“商业”支持计划提供什么？（选择两项）
+  cache: AWS“商业”支持计划提供什么？
+
+- CCP-M200 q501
+  en   : Which statement is true regarding AWS pricing?
+  file : 关于 AWS 定价，哪种说法是正确的？（选择两项）
+  cache: 关于 AWS 定价，哪种说法是正确的？
+
+- CCP-M201 q506
+  en   : What factors determine how you are charged when using AWS Lambda?
+  file : 使用 AWS Lambda 时，哪些因素决定了您的收费方式？（选择两项）
+  cache: 使用 AWS Lambda 时，哪些因素决定了您的收费方式？
+
+- CCP-M202 q508
+  en   : Which of the following actions may reduce Amazon EBS costs?
+  file : 以下哪项行动可以降低 Amazon EBS 成本？（选择两项）
+  cache: 以下哪项行动可以降低 Amazon EBS 成本？
+
+- CCP-M203 q515
+  en   : Which of the following AWS Support Plans gives you 24/7 access to Cloud Support Engineers via email 
+  file : 以下哪项 AWS Support 计划可让您通过电子邮件和电话全天候 (24/7) 联系云支持工程师？（选择两项）
+  cache: 以下哪项 AWS 支持计划可让您通过电子邮件和电话全天候 (24/7) 联系云支持工程师？
+
+- CCP-M204 q520
+  en   : What are the benefits of the AWS Marketplace service?
+  file : AWS Marketplace 服务有哪些优势？（选择两项）
+  cache: AWS Marketplace 服务有哪些优势？
+
+- CCP-M205 q528
+  en   : What are some of the benefits of using On-Demand EC2 instances?
+  file : 使用 On-Demand Amazon EC2 instances 有哪些好处？（选择两项）
+  cache: 使用按需 EC2 实例有哪些好处？
+
+- CCP-M206 q630
+  en   : Which of the following are categories of AWS Trusted Advisor?
+  file : 以下哪些是 AWS Trusted Advisor 的类别？（选择两项）
+  cache: 以下哪些是AWS Trusted Advisor的类别？
+
+- CCP-M207 q655
+  en   : Which methods can be used to identify AWS costs by departments?
+  file : 可以使用哪些方法来确定各部门的 AWS 成本？（选择两项）
+  cache: 可以使用哪些方法来确定各部门的 AWS 成本？
+
+- CCP-M208 q706
+  en   : What are the advantages of Reserved Instances?
+  file : Reserved Instances 有什么优势？（选择两项）
+  cache: Reserved Instances有什么优势？
+
+- CCP-M209 q715
+  en   : What is the value of using third-party software from AWS Marketplace instead of installing third-par
+  file : 使用 AWS Marketplace 中的第三方软件而不是在 Amazon EC2 上安装第三方软件有什么价值？（选择两项）
+  cache: 使用 AWS Marketplace 中的第三方软件而不是在 Amazon EC2 上安装第三方软件有什么价值？
+
+- CCP-M210 q758
+  en   : How does AWS charge for AWS Lambda usage once the free tier has been exceeded?
+  file : 一旦超出 AWS Free Tier，AWS 如何对 AWS Lambda 使用收费？（选择两项）
+  cache: 一旦超出免费套餐，AWS 如何对 AWS Lambda 使用收费？
+
+- CCP-M211 q762
+  en   : What does AWS Marketplace allow users to do?
+  file : AWS Marketplace 允许用户执行哪些操作？（选择两项）
+  cache: AWS Marketplace 允许用户执行哪些操作？
+
+- CCP-M212 q787
+  en   : A company is migrating from on-premises data centers to the AWS Cloud and is looking for hands-on he
+  file : 一家公司正在从本地数据中心迁移到 AWS 云，并正在寻求该项目的实际帮助。公司如何才能获得这种支持？（选择两项）
+  cache: 一家公司正在从本地数据中心迁移到 AWS 云，并正在寻求该项目的实际帮助。公司如何才能获得这种支持？
+
+- CCP-M213 q799
+  en   : The AWS Trusted Advisor checks include recommendations regarding which of the following?
+  file : AWS Trusted Advisor 检查包括有关以下哪项的建议？（选择两项）
+  cache: AWS Trusted Advisor 检查包括有关以下哪项的建议？
+
+- CCP-M214 q817
+  en   : Which features or services can be used to monitor costs and expenses for an AWS account?
+  file : 哪些功能或服务可用于监控 AWS 账户的成本和费用？（选择两项）
+  cache: 哪些功能或服务可用于监控 AWS 账户的成本和费用？
+
+- CCP-M215 q856
+  en   : The AWS Cost Management tools give users the ability to do which of the following?
+  file : AWS 成本管理工具使用户能够执行以下哪项操作？（选择两项）
+  cache: AWS 成本管理工具使用户能够执行以下哪项操作？
+
+- CCP-M216 q868
+  en   : Which features and benefits does the AWS Organizations service provide?
+  file : AWS Organizations 服务提供哪些功能和优势？（选择两项）
+  cache: AWS Organizations服务提供哪些功能和优势？
+
+- CCP-M217 q911
+  en   : AWS Trusted Advisor provides recommendations on which of the following?
+  file : AWS Trusted Advisor 提供以下哪项建议？（选择两项）
+  cache: AWS Trusted Advisor 提供以下哪项建议？
+
+- CCP-M218 q916
+  en   : What can be used to reduce the cost of running Amazon EC2 instances?
+  file : 可以用什么来降低运行 Amazon EC2 实例的成本？（选择两项）
+  cache: 可以用什么来降低运行Amazon EC2实例的成本？
+
+- CCP-M219 q940
+  en   : Which of the following assist in identifying costs by department?
+  file : 以下哪一项有助于按部门确定成本？（选择两项）
+  cache: 以下哪一项有助于按部门确定成本？
+
+- CCP-M220 q958
+  en   : Which of the following are benefits of using AWS Trusted Advisor?
+  file : 使用 AWS Trusted Advisor 有以下哪些好处？（选择两项）
+  cache: 使用AWS Trusted Advisor有以下哪些好处？
+
+- CCP-M221 q1002
+  en   : What are the benefits of consolidated billing for AWS Cloud services?
+  file : AWS 云服务整合计费有哪些优势？（选择两项）
+  cache: AWS 云服务整合计费有哪些优势？
+
+circular 16
+- CCP-S336 q030 | Amazon CloudFront
+- CCP-S337 q033 | Amazon DynamoDB
+- CCP-S350 q086 | Amazon DynamoDB
+- CCP-S361 q119 | Amazon EFS
+- CCP-S364 q127 | AWS CloudFormation
+- CCP-S374 q184 | Amazon Redshift
+- CCP-S427 q358 | Amazon ElastiCache
+- CCP-S471 q483 | Amazon Redshift
+- CCP-S501 q571 | Amazon S3
+- CCP-S504 q586 | Amazon DynamoDB
+- CCP-S521 q709 | AWS CloudFormation
+- CCP-S571 q953 | Amazon Redshift
+- CCP-S592 q1017 | Amazon EventBridge
+- CCP-S607 q1044 | Amazon QuickSight
+- CCP-S608 q1045 | Amazon QuickSight
+- CCP-S632 q1107 | Amazon FSx
+bad_managed 1
+- CCP-S350 q086
+  zh: 哪项 AWS 服务是托管 Amazon DynamoDB？
+  en: Which AWS service is a managed NoSQL database?

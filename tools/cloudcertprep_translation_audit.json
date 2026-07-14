@@ -1,0 +1,949 @@
+{
+  "total": 1050,
+  "answer_in_stem": [
+    {
+      "id": "CCP-S221",
+      "source_id": "q480",
+      "question_en": "Who is responsible for scaling a DynamoDB database in the AWS Shared Responsibility Model?",
+      "question_zh": "谁负责扩展 AWS Shared Responsibility Model 中的 DynamoDB 数据库？",
+      "type": "answer_in_stem_exact",
+      "letter": "C",
+      "option": "AWS",
+      "detail": "正确选项全文出现在题干"
+    },
+    {
+      "id": "CCP-S348",
+      "source_id": "q081",
+      "question_en": "Which of the following services is in the category of AWS serverless platform?",
+      "question_zh": "以下哪些服务属于 AWS Serverless 平台类别？",
+      "type": "answer_service_pollution",
+      "letter": "C",
+      "option": "AWS Lambda",
+      "service": "AWS Serverless",
+      "detail": "题干出现正确答案服务名，但英文原题未提及"
+    },
+    {
+      "id": "CCP-S363",
+      "source_id": "q124",
+      "question_en": "Which services are parts of the AWS serverless platform?",
+      "question_zh": "哪些服务是 AWS Serverless 平台的一部分？",
+      "type": "answer_service_pollution",
+      "letter": "C",
+      "option": "AWS Step Functions, Amazon DynamoDB, Amazon SNS",
+      "service": "AWS Serverless",
+      "detail": "题干出现正确答案服务名，但英文原题未提及"
+    },
+    {
+      "id": "CCP-M098",
+      "source_id": "q812",
+      "question_en": "Under the AWS shared responsibility model, the customer manages which of the following?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，客户管理以下哪一项？（选择两项）",
+      "type": "answer_service_pollution",
+      "letter": "E",
+      "option": "Amazon EC2 实例操作系统的补丁管理",
+      "service": "AWS Shared Responsibility Model",
+      "detail": "题干出现正确答案服务名，但英文原题未提及"
+    }
+  ],
+  "cache_mismatch_semantic": [
+    {
+      "id": "CCP-S024",
+      "source_id": "q242",
+      "question_en": "Jessica is managing an e-commerce web application in AWS. The application is hosted on six EC2 instances. One day, three of the instances crashed; but none of her customers were affected. What has Jessica done correctly in this scenario?",
+      "question_zh": "Jessica 正在 AWS 中管理一个电子商务 Web 应用程序。该应用程序托管在六个 Amazon EC2 instances 上。有一天，其中三个实例崩溃了；但她的顾客都没有受到影响。在这种情况下，杰西卡做对了什么？",
+      "expected_zh": "Jessica 正在 AWS 中管理一个电子商务 Web 应用程序。该应用程序托管在六个 EC2 实例上。有一天，其中三个实例崩溃了；但她的顾客都没有受到影响。在这种情况下，杰西卡做对了什么？"
+    },
+    {
+      "id": "CCP-S033",
+      "source_id": "q327",
+      "question_en": "What is the framework created by AWS Professional Services that helps organizations design a road map to successful cloud adoption?",
+      "question_zh": "AWS Professional Services 创建的可帮助组织设计成功采用云的路线图的框架是什么？",
+      "expected_zh": "AWS 专业服务创建的可帮助组织设计成功采用云的路线图的框架是什么？"
+    },
+    {
+      "id": "CCP-S035",
+      "source_id": "q343",
+      "question_en": "A company is using EC2 Instances to run their e-commerce site on the AWS platform. If the site becomes unavailable, the company will lose a significant amount of money for each minute the site is unavailable. Which design principle should the company use to minimize the risk of an outage?",
+      "question_zh": "一家公司正在使用 Amazon EC2 instances 在 AWS 平台上运行其电子商务网站。如果该网站不可用，该网站每不可用一分钟，公司就会损失大量资金。公司应使用哪种设计原则来最大程度地降低停电风险？",
+      "expected_zh": "一家公司正在使用 EC2 实例在 AWS 平台上运行其电子商务网站。如果该网站不可用，该网站每不可用一分钟，公司就会损失大量资金。公司应使用哪种设计原则来最大程度地降低停电风险？"
+    },
+    {
+      "id": "CCP-S036",
+      "source_id": "q371",
+      "question_en": "Which of the following is a best practice for making your application on AWS highly available?",
+      "question_zh": "以下哪项是使您的应用程序在 AWS 上实现高可用的最佳实践？",
+      "expected_zh": "以下哪项是使您的应用程序在 AWS 上实现高可用性的最佳实践？"
+    },
+    {
+      "id": "CCP-S040",
+      "source_id": "q439",
+      "question_en": "Why are Serverless Architectures more economical than Server-based Architectures?",
+      "question_zh": "为什么 Serverless 架构比基于服务器的架构更经济？",
+      "expected_zh": "为什么无服务器架构比基于服务器的架构更经济？"
+    },
+    {
+      "id": "CCP-S042",
+      "source_id": "q470",
+      "question_en": "You have developed a web application targeting a global audience. Which of the following will help you achieve the highest redundancy and fault tolerance from an infrastructure perspective?",
+      "question_zh": "您开发了一个面向全球受众的 Web 应用程序。从基础设施的角度来看，以下哪一项将帮助您实现最高的冗余和容错？",
+      "expected_zh": "您开发了一个面向全球受众的 Web 应用程序。从基础设施的角度来看，以下哪一项将帮助您实现最高的冗余和容错能力？"
+    },
+    {
+      "id": "CCP-S043",
+      "source_id": "q514",
+      "question_en": "How can you increase your application's fault-tolerance while it is being hosted in AWS?",
+      "question_zh": "当应用程序托管在 AWS 中时，如何提高其容错？",
+      "expected_zh": "当应用程序托管在 AWS 中时，如何提高其容错能力？"
+    },
+    {
+      "id": "CCP-S051",
+      "source_id": "q572",
+      "question_en": "Which AWS feature should a customer leverage to achieve high availability of an application?",
+      "question_zh": "客户应该利用哪些 AWS 功能来实现应用程序的高可用？",
+      "expected_zh": "客户应该利用哪些 AWS 功能来实现应用程序的高可用性？"
+    },
+    {
+      "id": "CCP-S068",
+      "source_id": "q703",
+      "question_en": "What is an example of high availability in the AWS Cloud?",
+      "question_zh": "AWS 云中高可用的示例是什么？",
+      "expected_zh": "AWS 云中高可用性的示例是什么？"
+    },
+    {
+      "id": "CCP-S081",
+      "source_id": "q790",
+      "question_en": "A new service using AWS must be highly available. Yet, due to regulatory requirements, all of its Amazon EC2 instances must be located in a single geographic area. According to best practices, to meet these requirements, the EC2 instances must be placed in at least two:",
+      "question_zh": "使用 AWS 的新服务必须具有高可用。然而，由于监管要求，其所有 Amazon EC2 实例必须位于单个地理区域。根据最佳实践，为了满足这些要求，Amazon EC2 instances 必须放置在至少两个中：",
+      "expected_zh": "使用 AWS 的新服务必须具有高可用性。然而，由于监管要求，其所有 Amazon EC2 实例必须位于单个地理区域。根据最佳实践，为了满足这些要求，EC2实例必须放置在至少两个中："
+    },
+    {
+      "id": "CCP-S094",
+      "source_id": "q875",
+      "question_en": "A company wants to use Amazon Elastic Compute Cloud (Amazon EC2) to deploy a global commercial application. The deployment solution should be built with the highest redundancy and fault tolerance. Based on this situation, the Amazon EC2 instances should be deployed:",
+      "question_zh": "一家公司希望使用 Amazon Elastic Compute Cloud (Amazon EC2) 部署全球商业应用程序。部署解决方案应具有最高的冗余和容错。根据这种情况，需要部署 Amazon EC2 实例：",
+      "expected_zh": "一家公司希望使用 Amazon Elastic Compute Cloud (Amazon EC2) 部署全球商业应用程序。部署解决方案应具有最高的冗余和容错能力。根据这种情况，需要部署Amazon EC2实例："
+    },
+    {
+      "id": "CCP-S117",
+      "source_id": "q1093",
+      "question_en": "A company is planning a cloud migration and needs to assess the readiness of its workforce and identify skill gaps. Which AWS Cloud Adoption Framework (AWS CAF) perspective addresses this need?",
+      "question_zh": "一家公司正在计划云迁移，需要评估其员工的准备情况并确定技能差距。哪种 AWS Cloud Adoption Framework (AWS CAF) 视角可以满足这一需求？",
+      "expected_zh": "一家公司正在计划云迁移，需要评估其员工的准备情况并确定技能差距。哪种 AWS 云采用框架 (AWS CAF) 视角可以满足这一需求？"
+    },
+    {
+      "id": "CCP-S118",
+      "source_id": "q1095",
+      "question_en": "A company wants to ensure its cloud adoption minimizes transformation-related risks and aligns with regulatory requirements. Which AWS Cloud Adoption Framework (AWS CAF) perspective is MOST relevant?",
+      "question_zh": "一家公司希望确保其云采用最大限度地减少与转型相关的风险并符合监管要求。哪个 AWS Cloud Adoption Framework (AWS CAF) 观点最相关？",
+      "expected_zh": "一家公司希望确保其云采用最大限度地减少与转型相关的风险并符合监管要求。哪个 AWS 云采用框架 (AWS CAF) 观点最相关？"
+    },
+    {
+      "id": "CCP-S119",
+      "source_id": "q1096",
+      "question_en": "Which AWS Cloud Adoption Framework (AWS CAF) perspective helps ensure that cloud workloads achieve the confidentiality, integrity, and availability of data?",
+      "question_zh": "哪个 AWS Cloud Adoption Framework (AWS CAF) 视角有助于确保云工作负载实现数据的机密性、完整性和可用性？",
+      "expected_zh": "哪个 AWS 云采用框架 (AWS CAF) 视角有助于确保云工作负载实现数据的机密性、完整性和可用性？"
+    },
+    {
+      "id": "CCP-S120",
+      "source_id": "q1117",
+      "question_en": "A company wants to use the AWS Cloud Adoption Framework (AWS CAF) to build a business case for cloud migration. Which CAF perspective should they focus on?",
+      "question_zh": "一家公司希望使用 AWS Cloud Adoption Framework (AWS CAF) 构建云迁移的业务案例。他们应该关注哪个 CAF 视角？",
+      "expected_zh": "一家公司希望使用 AWS 云采用框架 (AWS CAF) 构建云迁移的业务案例。他们应该关注哪个 CAF 观点？"
+    },
+    {
+      "id": "CCP-S121",
+      "source_id": "q1118",
+      "question_en": "Which AWS Cloud Adoption Framework (AWS CAF) perspective focuses on designing and implementing new cloud environments with enterprise-grade scalability?",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 的哪个角度侧重于设计和实施具有企业级可扩展性的新云环境？",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 的哪个角度侧重于设计和实施具有企业级可扩展性的新云环境？"
+    },
+    {
+      "id": "CCP-S122",
+      "source_id": "q1119",
+      "question_en": "A company needs to define how it will manage and monitor cloud workloads on a day-to-day basis after migration. Which AWS Cloud Adoption Framework (AWS CAF) perspective addresses this?",
+      "question_zh": "公司需要定义迁移后如何日常管理和监控云工作负载。哪个 AWS Cloud Adoption Framework (AWS CAF) 视角可以解决此问题？",
+      "expected_zh": "公司需要定义迁移后如何日常管理和监控云工作负载。哪个 AWS 云采用框架 (AWS CAF) 视角可以解决此问题？"
+    },
+    {
+      "id": "CCP-S123",
+      "source_id": "q1120",
+      "question_en": "How many perspectives does the AWS Cloud Adoption Framework (AWS CAF) define?",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 定义了多少个视角？",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 定义了多少个视角？"
+    },
+    {
+      "id": "CCP-S124",
+      "source_id": "q1122",
+      "question_en": "A company is evaluating its cloud readiness and discovers that its IT staff lacks experience with AWS services. According to the AWS Cloud Adoption Framework (AWS CAF), which action should the company take?",
+      "question_zh": "一家公司正在评估其云准备情况，发现其 IT 员工缺乏 AWS 服务的经验。根据 AWS Cloud Adoption Framework (AWS CAF)，公司应采取哪些行动？",
+      "expected_zh": "一家公司正在评估其云准备情况，发现其 IT 员工缺乏 AWS 服务的经验。根据 AWS 云采用框架 (AWS CAF)，公司应采取哪些行动？"
+    },
+    {
+      "id": "CCP-S125",
+      "source_id": "q1123",
+      "question_en": "Which of the following is a key focus area of the Governance perspective in the AWS Cloud Adoption Framework (AWS CAF)?",
+      "question_zh": "以下哪项是 AWS Cloud Adoption Framework (AWS CAF) 中治理视角的重点关注领域？",
+      "expected_zh": "以下哪项是 AWS 云采用框架 (AWS CAF) 中治理视角的重点关注领域？"
+    },
+    {
+      "id": "CCP-S126",
+      "source_id": "q1124",
+      "question_en": "The AWS Cloud Adoption Framework (AWS CAF) identifies four transformation domains. Which of the following is one of those domains?",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 确定了四个转换域。以下哪一个是这些域之一？",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 确定了四个转换域。以下哪一个是这些域之一？"
+    },
+    {
+      "id": "CCP-S127",
+      "source_id": "q1126",
+      "question_en": "A company wants to use the AWS Cloud Adoption Framework (AWS CAF) to assess which of its applications are ready to move to AWS. Which CAF activity does this describe?",
+      "question_zh": "一家公司希望使用 AWS Cloud Adoption Framework (AWS CAF) 来评估其哪些应用程序已准备好迁移到 AWS。这描述了哪项 CAF 活动？",
+      "expected_zh": "一家公司希望使用 AWS 云采用框架 (AWS CAF) 来评估其哪些应用程序已准备好迁移到 AWS。这描述了哪项 CAF 活动？"
+    },
+    {
+      "id": "CCP-S128",
+      "source_id": "q1127",
+      "question_en": "What is the correct order of the AWS Cloud Adoption Framework (AWS CAF) phases for cloud transformation?",
+      "question_zh": "云转型的 AWS Cloud Adoption Framework (AWS CAF) 阶段的正确顺序是什么？",
+      "expected_zh": "云转型的 AWS 云采用框架 (AWS CAF) 阶段的正确顺序是什么？"
+    },
+    {
+      "id": "CCP-S129",
+      "source_id": "q1128",
+      "question_en": "A company is using the AWS Cloud Adoption Framework (AWS CAF) and wants to establish a Cloud Center of Excellence (CCoE). Which phase of the CAF transformation journey typically involves this activity?",
+      "question_zh": "一家公司正在使用 AWS Cloud Adoption Framework (AWS CAF)，并希望建立云卓越中心 (CCoE)。 CAF 转型之旅的哪个阶段通常涉及此活动？",
+      "expected_zh": "一家公司正在使用 AWS 云采用框架 (AWS CAF)，并希望建立云卓越中心 (CCoE)。 CAF 转型之旅的哪个阶段通常涉及此活动？"
+    },
+    {
+      "id": "CCP-S134",
+      "source_id": "q1101",
+      "question_en": "Which migration strategy involves redesigning an application to take full advantage of cloud-native features such as serverless computing and microservices?",
+      "question_zh": "哪种迁移策略涉及重新设计应用程序以充分利用 Serverless 计算和微服务等云原生功能？",
+      "expected_zh": "哪种迁移策略涉及重新设计应用程序以充分利用无服务器计算和微服务等云原生功能？"
+    },
+    {
+      "id": "CCP-S137",
+      "source_id": "q1130",
+      "question_en": "How many migration strategies (Rs) are defined in the AWS Cloud Adoption Framework (AWS CAF)?",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 中定义了多少迁移策略 (R)？",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 中定义了多少迁移策略 (R)？"
+    },
+    {
+      "id": "CCP-S156",
+      "source_id": "q056",
+      "question_en": "Which of the following is the customer's responsibility under the AWS shared responsibility model?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，以下哪项是客户的责任？",
+      "expected_zh": "在 AWS 责任共担模型下，以下哪项是客户的责任？"
+    },
+    {
+      "id": "CCP-S168",
+      "source_id": "q144",
+      "question_en": "Which activity is a customer responsibility in the AWS Cloud according to the AWS shared responsibility model?",
+      "question_zh": "根据 AWS Shared Responsibility Model，AWS 云中的哪些活动是客户的责任？",
+      "expected_zh": "根据 AWS 责任共担模型，AWS 云中的哪些活动是客户的责任？"
+    },
+    {
+      "id": "CCP-S178",
+      "source_id": "q204",
+      "question_en": "According to the AWS Acceptable Use Policy, which of the following statements is true regarding penetration testing of EC2 instances?",
+      "question_zh": "根据 AWS 可接受使用政策，关于 Amazon EC2 instances 的渗透测试，以下哪项陈述是正确的？",
+      "expected_zh": "根据 AWS 可接受使用政策，关于 EC2 实例的渗透测试，以下哪项陈述是正确的？"
+    },
+    {
+      "id": "CCP-S182",
+      "source_id": "q223",
+      "question_en": "What are the default security credentials that are required to access the AWS management console for an IAM user account?",
+      "question_zh": "IAM 用户账户访问 AWS Management Console 需要哪些默认安全凭证？",
+      "expected_zh": "IAM 用户账户访问 AWS 管理控制台需要哪些默认安全凭证？"
+    },
+    {
+      "id": "CCP-S184",
+      "source_id": "q236",
+      "question_en": "Which of the following AWS security features is associated with an EC2 instance and functions to filter incoming traffic requests?",
+      "question_zh": "以下哪些 AWS 安全功能与 Amazon EC2 instances 和过滤传入流量请求的功能相关？",
+      "expected_zh": "以下哪些 AWS 安全功能与 EC2 实例和过滤传入流量请求的功能相关？"
+    },
+    {
+      "id": "CCP-S224",
+      "source_id": "q496",
+      "question_en": "You have been tasked with auditing the security of your VPC. As part of this process, you need to start by analyzing what inbound and outbound traffic is allowed on your EC2 instances. What two parts of the VPC do you need to check to accomplish this task?",
+      "question_zh": "您的任务是审核您的 VPC 的安全性。在此过程中，您需要首先分析 Amazon EC2 instances 上允许哪些入站和出站流量。为了完成这项任务，您需要检查 VPC 的哪两个部分？",
+      "expected_zh": "您的任务是审核您的 VPC 的安全性。在此过程中，您需要首先分析 EC2 实例上允许哪些入站和出站流量。为了完成这项任务，您需要检查 VPC 的哪两个部分？"
+    },
+    {
+      "id": "CCP-S234",
+      "source_id": "q575",
+      "question_en": "Which service enables risk auditing by continuously monitoring and logging account activity, including user actions in the AWS Management Console and AWS SDKs?",
+      "question_zh": "哪种服务可以通过持续监控和记录账户活动（包括 AWS Management Console 和 AWS SDKs 中的用户操作）来实现风险审核？",
+      "expected_zh": "哪种服务可以通过持续监控和记录账户活动（包括 AWS 管理控制台和 AWS SDKs 中的用户操作）来实现风险审核？"
+    },
+    {
+      "id": "CCP-S236",
+      "source_id": "q581",
+      "question_en": "What is the AWS customer responsible for according to the AWS shared responsibility model?",
+      "question_zh": "根据 AWS Shared Responsibility Model，AWS 客户负责什么？",
+      "expected_zh": "根据 AWS 责任共担模型，AWS 客户负责什么？"
+    },
+    {
+      "id": "CCP-S240",
+      "source_id": "q628",
+      "question_en": "Which of the following is entirely the responsibility of AWS, according to the AWS shared responsibility model?",
+      "question_zh": "根据 AWS Shared Responsibility Model，以下哪项完全由 AWS 负责？",
+      "expected_zh": "根据 AWS 责任共担模型，以下哪项完全由 AWS 负责？"
+    },
+    {
+      "id": "CCP-S242",
+      "source_id": "q635",
+      "question_en": "Which of the following can a customer use to enable single sign-on (SSO) to the AWS Management Console?",
+      "question_zh": "客户可以使用以下哪项来启用 AWS Management Console 的单点登录 (SSO)？",
+      "expected_zh": "客户可以使用以下哪项来启用 AWS 管理控制台的单点登录 (SSO)？"
+    },
+    {
+      "id": "CCP-S244",
+      "source_id": "q639",
+      "question_en": "As part of the AWS shared responsibility model, which of the following operational controls do users fully inherit from AWS?",
+      "question_zh": "作为 AWS Shared Responsibility Model 的一部分，用户完全从 AWS 继承了以下哪些操作控制权？",
+      "expected_zh": "作为 AWS 责任共担模型的一部分，用户完全从 AWS 继承了以下哪些操作控制权？"
+    },
+    {
+      "id": "CCP-S248",
+      "source_id": "q656",
+      "question_en": "Under the AWS shared responsibility model, customer responsibilities include which one of the following?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，客户责任包括以下哪一项？",
+      "expected_zh": "在 AWS 责任共担模型下，客户责任包括以下哪一项？"
+    },
+    {
+      "id": "CCP-S260",
+      "source_id": "q730",
+      "question_en": "Which AWS service provides inbound and outbound network ACLs to harden external connectivity to Amazon EC2?",
+      "question_zh": "哪种 AWS 服务提供入站和出站 Network ACL 来强化与 Amazon EC2 的外部连接？",
+      "expected_zh": "哪种 AWS 服务提供入站和出站网络 ACL 来强化与 Amazon EC2 的外部连接？"
+    },
+    {
+      "id": "CCP-S266",
+      "source_id": "q755",
+      "question_en": "Within the AWS shared responsibility model, who is responsible for security and compliance?",
+      "question_zh": "在 AWS Shared Responsibility Model 中，谁负责安全性和合规性？",
+      "expected_zh": "在 AWS 责任共担模型中，谁负责安全性和合规性？"
+    },
+    {
+      "id": "CCP-S269",
+      "source_id": "q766",
+      "question_en": "What is one of the customer's responsibilities according to the AWS shared responsibility model?",
+      "question_zh": "根据 AWS Shared Responsibility Model，客户的责任之一是什么？",
+      "expected_zh": "根据 AWS 责任共担模型，客户的责任之一是什么？"
+    },
+    {
+      "id": "CCP-S271",
+      "source_id": "q771",
+      "question_en": "Which AWS service needs to be enabled to track all user account changes within the AWS Management Console?",
+      "question_zh": "需要启用哪个 AWS 服务才能跟踪 AWS Management Console 中的所有用户账户更改？",
+      "expected_zh": "需要启用哪个 AWS 服务才能跟踪 AWS 管理控制台中的所有用户账户更改？"
+    },
+    {
+      "id": "CCP-S272",
+      "source_id": "q777",
+      "question_en": "Which of the following is AWS's responsibility under the AWS shared responsibility model?",
+      "question_zh": "以下哪项是 AWS 在 AWS Shared Responsibility Model 下的责任？",
+      "expected_zh": "以下哪项是 AWS 在 AWS 责任共担模型下的责任？"
+    },
+    {
+      "id": "CCP-S273",
+      "source_id": "q779",
+      "question_en": "How would a system administrator add an additional layer of login security to a user's AWS Management Console?",
+      "question_zh": "系统管理员如何向用户的 AWS Management Console 添加额外的登录安全层？",
+      "expected_zh": "系统管理员如何向用户的 AWS 管理控制台添加额外的登录安全层？"
+    },
+    {
+      "id": "CCP-S284",
+      "source_id": "q828",
+      "question_en": "Which service can be used to monitor and receive alerts for AWS account root user AWS Management Console sign-in events?",
+      "question_zh": "哪种服务可用于监控 AWS 账户根用户 AWS Management Console 登录事件并接收警报？",
+      "expected_zh": "哪种服务可用于监控 AWS 账户根用户 AWS 管理控制台登录事件并接收警报？"
+    },
+    {
+      "id": "CCP-S291",
+      "source_id": "q862",
+      "question_en": "A user needs to generate a report that outlines the status of key security checks in an AWS account. The report must include the status of Amazon S3 bucket permissions, whether multi-factor authentication is enabled for the AWS account root user, if any security groups are configured to allow unrestricted access. Where can all this information be found in one location?",
+      "question_zh": "用户需要生成一份报告，概述 AWS 账户中关键安全检查的状态。该报告必须包含 Amazon S3 存储桶权限的状态、是否为 AWS 账户根用户启用 Multi-Factor Authentication、是否将任何安全组配置为允许无限制访问。在哪里可以在一处找到所有这些信息？",
+      "expected_zh": "用户需要生成一份报告，概述 AWS 账户中关键安全检查的状态。该报告必须包含 Amazon S3 存储桶权限的状态、是否为 AWS 账户根用户启用多重身份验证、是否将任何安全组配置为允许无限制访问。在哪里可以在一处找到所有这些信息？"
+    },
+    {
+      "id": "CCP-S309",
+      "source_id": "q945",
+      "question_en": "Under the AWS shared responsibility model, which of the following is a responsibility of AWS?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，以下哪项是 AWS 的责任？",
+      "expected_zh": "在 AWS 责任共担模型下，以下哪项是 AWS 的责任？"
+    },
+    {
+      "id": "CCP-S312",
+      "source_id": "q969",
+      "question_en": "A company wants to ensure that AWS Management Console users are meeting password complexity requirements. How can the company configure password complexity?",
+      "question_zh": "一家公司希望确保 AWS Management Console 用户满足密码复杂性要求。公司如何配置密码复杂度？",
+      "expected_zh": "一家公司希望确保 AWS 管理控制台用户满足密码复杂性要求。公司如何配置密码复杂度？"
+    },
+    {
+      "id": "CCP-S313",
+      "source_id": "q970",
+      "question_en": "Under the AWS shared responsibility model, which of the following is the customer's responsibility?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，以下哪项是客户的责任？",
+      "expected_zh": "在 AWS 责任共担模型下，以下哪项是客户的责任？"
+    },
+    {
+      "id": "CCP-S321",
+      "source_id": "q998",
+      "question_en": "A company has an AWS-hosted website located behind an Application Load Balancer. The company wants to safeguard the website from SQL injection or cross-site scripting. Which AWS service should the company use?",
+      "question_zh": "一家公司有一个位于 Application Load Balancer 后面的 AWS 托管网站。该公司希望保护网站免受 SQL 注入或跨站点脚本攻击。公司应该使用哪种 AWS 服务？",
+      "expected_zh": "一家公司有一个位于应用程序负载均衡器后面的 AWS 托管网站。该公司希望保护网站免受 SQL 注入或跨站点脚本攻击。公司应该使用哪种 AWS 服务？"
+    },
+    {
+      "id": "CCP-S341",
+      "source_id": "q045",
+      "question_en": "You have deployed your application on multiple Amazon EC2 instances. Your customers complain that sometimes they can't reach your application. Which AWS service allows you to monitor the performance of your EC2 instances to assist in troubleshooting these issues?",
+      "question_zh": "您已将应用程序部署在多个 Amazon EC2 实例上。您的客户抱怨有时他们无法访问您的应用程序。哪种 AWS 服务允许您监控 Amazon EC2 instances 的性能以帮助解决这些问题？",
+      "expected_zh": "您已将应用程序部署在多个 Amazon EC2 实例上。您的客户抱怨有时他们无法访问您的应用程序。哪种 AWS 服务允许您监控 EC2 实例的性能以帮助解决这些问题？"
+    },
+    {
+      "id": "CCP-S343",
+      "source_id": "q055",
+      "question_en": "A company wants to reduce the physical compute footprint that developers use to run code. Which service would meet that need by enabling serverless architectures?",
+      "question_zh": "一家公司希望减少开发人员用于运行代码的物理计算占用量。哪种服务可以通过启用 Serverless 架构来满足该需求？",
+      "expected_zh": "一家公司希望减少开发人员用于运行代码的物理计算占用量。哪种服务可以通过启用无服务器架构来满足该需求？"
+    },
+    {
+      "id": "CCP-S348",
+      "source_id": "q081",
+      "question_en": "Which of the following services is in the category of AWS serverless platform?",
+      "question_zh": "以下哪些服务属于 AWS Serverless 平台类别？",
+      "expected_zh": "以下哪些服务属于 AWS 无服务器平台类别？"
+    },
+    {
+      "id": "CCP-S358",
+      "source_id": "q109",
+      "question_en": "Why is it beneficial to use Elastic Load Balancers with applications?",
+      "question_zh": "为什么在应用程序中使用 Elastic Load Balancer 是有益的？",
+      "expected_zh": "为什么在应用程序中使用弹性负载均衡器是有益的？"
+    },
+    {
+      "id": "CCP-S363",
+      "source_id": "q124",
+      "question_en": "Which services are parts of the AWS serverless platform?",
+      "question_zh": "哪些服务是 AWS Serverless 平台的一部分？",
+      "expected_zh": "哪些服务是 AWS 无服务器平台的一部分？"
+    },
+    {
+      "id": "CCP-S391",
+      "source_id": "q230",
+      "question_en": "Which of the following services allows you to run containerized applications on a cluster of EC2 instances?",
+      "question_zh": "以下哪项服务允许您在 Amazon EC2 instances 集群上运行容器化应用程序？",
+      "expected_zh": "以下哪项服务允许您在 EC2 实例集群上运行容器化应用程序？"
+    },
+    {
+      "id": "CCP-S395",
+      "source_id": "q241",
+      "question_en": "What is the AWS serverless service that allows you to run your applications without any administrative burden?",
+      "question_zh": "什么是 AWS Serverless 服务，可以让您在没有任何管理负担的情况下运行应用程序？",
+      "expected_zh": "什么是 AWS 无服务器服务，可以让您在没有任何管理负担的情况下运行应用程序？"
+    },
+    {
+      "id": "CCP-S405",
+      "source_id": "q274",
+      "question_en": "A customer spent a lot of time configuring a newly deployed Amazon EC2 instance. After the workload increases, the customer decides to provision another EC2 instance with an identical configuration. How can the customer achieve this?",
+      "question_zh": "客户花费了大量时间来配置新部署的 Amazon EC2 实例。工作负载增加后，客户决定配置另一个具有相同配置的 Amazon EC2 instances。客户如何才能实现这一目标？",
+      "expected_zh": "客户花费了大量时间来配置新部署的 Amazon EC2 实例。工作负载增加后，客户决定配置另一个具有相同配置的EC2实例。客户如何才能实现这一目标？"
+    },
+    {
+      "id": "CCP-S425",
+      "source_id": "q353",
+      "question_en": "A company has a web application that is hosted on a single EC2 instance and is approaching 100 percent CPU utilization during peak loads. Rather than scaling the server vertically, the company has decided to deploy three Amazon EC2 instances in parallel and to distribute traffic across the three servers. What AWS service should the company use to distribute the traffic evenly?",
+      "question_zh": "一家公司有一个 Web 应用程序托管在单个 Amazon EC2 instances 上，并且在峰值负载期间 CPU 利用率接近 100%。该公司决定并行部署三个 Amazon EC2 实例，并在三个服务器之间分配流量，而不是垂直扩展服务器。公司应该使用什么 AWS 服务来均匀分配流量？",
+      "expected_zh": "一家公司有一个 Web 应用程序托管在单个 EC2 实例上，并且在峰值负载期间 CPU 利用率接近 100%。该公司决定并行部署三个Amazon EC2实例，并在三个服务器之间分配流量，而不是垂直扩展服务器。公司应该使用什么AWS服务来均匀分配流量？"
+    },
+    {
+      "id": "CCP-S428",
+      "source_id": "q359",
+      "question_en": "What are the advantages of using Auto Scaling Groups for EC2 instances?",
+      "question_zh": "对 Amazon EC2 instances 使用 Auto Scaling 组有哪些优势？",
+      "expected_zh": "对 EC2 实例使用 Auto Scaling 组有哪些优势？"
+    },
+    {
+      "id": "CCP-S432",
+      "source_id": "q376",
+      "question_en": "Which AWS service provides the ability to automate the configuration, management, and patching of EC2 instances at scale?",
+      "question_zh": "哪种 AWS 服务能够大规模自动配置、管理和修补 Amazon EC2 instances？",
+      "expected_zh": "哪种 AWS 服务能够大规模自动配置、管理和修补 EC2 实例？"
+    },
+    {
+      "id": "CCP-S437",
+      "source_id": "q389",
+      "question_en": "Which AWS Service offers an NFS file system that can be mounted concurrently from multiple EC2 instances?",
+      "question_zh": "哪种 AWS 服务提供可以从多个 Amazon EC2 instances 同时挂载的 NFS 文件系统？",
+      "expected_zh": "哪种 AWS 服务提供可以从多个 EC2 实例同时挂载的 NFS 文件系统？"
+    },
+    {
+      "id": "CCP-S450",
+      "source_id": "q425",
+      "question_en": "Which AWS service can be used to automate the configuration and management of EC2 instances?",
+      "question_zh": "哪种 AWS 服务可用于自动配置和管理 Amazon EC2 instances？",
+      "expected_zh": "哪种 AWS 服务可用于自动配置和管理 EC2 实例？"
+    },
+    {
+      "id": "CCP-S461",
+      "source_id": "q452",
+      "question_en": "Which AWS service collects metrics from running EC2 instances?",
+      "question_zh": "哪个 AWS 服务从运行的 Amazon EC2 instances 收集指标？",
+      "expected_zh": "哪个 AWS 服务从运行的 EC2 实例收集指标？"
+    },
+    {
+      "id": "CCP-S477",
+      "source_id": "q503",
+      "question_en": "A company is running a large web application that needs to always be available. The application tends to slow down when CPU usage is greater than 60%. How can they track when CPU usage goes above 60% for any of the EC2 instances in their account?",
+      "question_zh": "一家公司正在运行一个需要始终可用的大型 Web 应用程序。当 CPU 使用率超过 60% 时，应用程序往往会变慢。他们如何跟踪账户中任何 Amazon EC2 instances 的 CPU 使用率何时超过 60%？",
+      "expected_zh": "一家公司正在运行一个需要始终可用的大型 Web 应用程序。当 CPU 使用率超过 60% 时，应用程序往往会变慢。他们如何跟踪账户中任何 EC2 实例的 CPU 使用率何时超过 60%？"
+    },
+    {
+      "id": "CCP-S483",
+      "source_id": "q518",
+      "question_en": "A company needs to host a big data application on AWS using EC2 instances. Which of the following AWS Storage services would they choose to automatically get high throughput to multiple compute nodes?",
+      "question_zh": "一家公司需要使用 Amazon EC2 instances 在 AWS 上托管大数据应用程序。他们会选择以下哪种 AWS 存储服务来自动为多个计算节点获得高吞吐量？",
+      "expected_zh": "一家公司需要使用 EC2 实例在 AWS 上托管大数据应用程序。他们会选择以下哪种 AWS 存储服务来自动为多个计算节点获得高吞吐量？"
+    },
+    {
+      "id": "CCP-S538",
+      "source_id": "q795",
+      "question_en": "Which AWS service or resource is serverless?",
+      "question_zh": "哪些 AWS 服务或资源是 Serverless 的？",
+      "expected_zh": "哪些 AWS 服务或资源是无服务器的？"
+    },
+    {
+      "id": "CCP-S561",
+      "source_id": "q908",
+      "question_en": "What is the purpose of having an internet gateway within a VPC?",
+      "question_zh": "在 VPC 中设置 Internet Gateway 的目的是什么？",
+      "expected_zh": "在 VPC 中设置互联网网关的目的是什么？"
+    },
+    {
+      "id": "CCP-S592",
+      "source_id": "q1017",
+      "question_en": "A company wants to build an event-driven architecture where multiple AWS services and SaaS applications can react to events in real time. Which AWS service provides a serverless event bus for this purpose?",
+      "question_zh": "一家公司希望构建一个事件驱动的架构，其中多个 AWS 服务和 SaaS 应用程序可以实时对事件做出反应。哪种 AWS 服务为此目的提供 Serverless 事件总线？",
+      "expected_zh": "一家公司希望构建一个事件驱动的架构，其中多个 AWS 服务和 SaaS 应用程序可以实时对事件做出反应。哪种 AWS 服务为此目的提供无服务器事件总线？"
+    },
+    {
+      "id": "CCP-S608",
+      "source_id": "q1045",
+      "question_en": "Which AWS service provides serverless business intelligence with pay-per-session pricing and machine learning-powered insights?",
+      "question_zh": "哪种 AWS 服务提供 Serverless 商业智能以及按会话付费的定价和机器学习驱动的见解？",
+      "expected_zh": "哪种 AWS 服务提供无服务器商业智能以及按会话付费的定价和机器学习驱动的见解？"
+    },
+    {
+      "id": "CCP-S621",
+      "source_id": "q1071",
+      "question_en": "A developer needs to build a serverless order processing workflow that involves calling multiple AWS Lambda functions in sequence, handling errors at each step, automatically retrying failed steps, and branching based on order type. Which AWS service is designed for this purpose?",
+      "question_zh": "开发人员需要构建一个 Serverless 订单处理工作流程，其中包括按顺序调用多个 AWS Lambda 函数、处理每个步骤的错误、自动重试失败的步骤以及根据订单类型进行分支。哪种 AWS 服务是为此目的而设计的？",
+      "expected_zh": "开发人员需要构建一个无服务器订单处理工作流程，其中包括按顺序调用多个 AWS Lambda 函数、处理每个步骤的错误、自动重试失败的步骤以及根据订单类型进行分支。哪种 AWS 服务是为此目的而设计的？"
+    },
+    {
+      "id": "CCP-S641",
+      "source_id": "q006",
+      "question_en": "You have set up consolidated billing for several AWS accounts. One of the accounts has purchased a number of reserved instances for 3 years. Which of the following is true regarding this scenario?",
+      "question_zh": "您已为多个 AWS 账户设置合并账单。其中一个账户购买了一定数量的 Reserved Instances，期限为3 年。关于此场景，以下哪项描述是正确的？",
+      "expected_zh": "您已为多个 AWS 账户设置合并账单。其中一个账户购买了一定数量的预留实例，期限为3年。关于此场景，以下哪项描述是正确的？"
+    },
+    {
+      "id": "CCP-S650",
+      "source_id": "q050",
+      "question_en": "An organization has decided to purchase an Amazon EC2 Reserved Instance (RI) for three years in order to reduce costs. It is possible that the application workloads could change during the reservation period. What is the EC2 Reserved Instance (RI) type that will allow the company to exchange the purchased reserved instance for another reserved instance with higher computing power if they need to?",
+      "question_zh": "为了降低成本，某个组织决定购买 Amazon EC2 Reserved Instances (RI)，为期三年。在预订期间，应用程序工作负载可能会发生变化。什么是 EC2Reserved Instances (RI) 类型，允许公司在需要时将购买的 Reserved Instances 交换为具有更高计算能力的另一个 Reserved Instances？",
+      "expected_zh": "为了降低成本，某个组织决定购买 Amazon EC2 预留实例 (RI)，为期三年。在预订期间，应用程序工作负载可能会发生变化。什么是EC2预留实例 (RI) 类型，允许公司在需要时将购买的预留实例交换为具有更高计算能力的另一个预留实例？"
+    },
+    {
+      "id": "CCP-S651",
+      "source_id": "q052",
+      "question_en": "Which of the following Reserved Instance (RI) pricing models provides the highest average savings compared to On-Demand pricing?",
+      "question_zh": "与按需定价相比，以下哪种 Reserved Instances (RI) 定价模型可提供最高的平均节省？",
+      "expected_zh": "与按需定价相比，以下哪种预留实例 (RI) 定价模型可提供最高的平均节省？"
+    },
+    {
+      "id": "CCP-S655",
+      "source_id": "q069",
+      "question_en": "Which of the Reserved Instance (RI) pricing models can change the attributes of the RI as long as the exchange results in the creation of RIs of equal or greater value?",
+      "question_zh": "只要交换导致创建同等或更高价值的 RI，哪种 Reserved Instances (RI) 定价模型就可以改变 RI 的属性？",
+      "expected_zh": "只要交换导致创建同等或更高价值的 RI，哪种预留实例 (RI) 定价模型就可以改变 RI 的属性？"
+    },
+    {
+      "id": "CCP-S680",
+      "source_id": "q167",
+      "question_en": "Which Amazon EC2 pricing model adjusts based on supply and demand of EC2 instances?",
+      "question_zh": "哪种 Amazon EC2 定价模型会根据 Amazon EC2 instances 的供需情况进行调整？",
+      "expected_zh": "哪种Amazon EC2定价模型会根据EC2实例的供需情况进行调整？"
+    },
+    {
+      "id": "CCP-S686",
+      "source_id": "q214",
+      "question_en": "Which of the following EC2 instance purchasing options supports the Bring Your Own License (BYOL) model for almost every BYOL scenario?",
+      "question_zh": "以下哪些 Amazon EC2 instances 购买选项支持几乎所有 BYOL 场景的自带许可证 (BYOL) 模型？",
+      "expected_zh": "以下哪些 EC2 实例购买选项支持几乎所有 BYOL 场景的自带许可证 (BYOL) 模型？"
+    },
+    {
+      "id": "CCP-S697",
+      "source_id": "q290",
+      "question_en": "What is the most cost-effective purchasing option for running a set of EC2 instances that must always be available for a period of two months?",
+      "question_zh": "对于运行一组必须始终可用两个月的 Amazon EC2 instances，最经济高效的购买选项是什么？",
+      "expected_zh": "对于运行一组必须始终可用两个月的 EC2 实例，最经济高效的购买选项是什么？"
+    },
+    {
+      "id": "CCP-S698",
+      "source_id": "q297",
+      "question_en": "A company needs to migrate their website from on-premises to AWS. Security is a major concern for them, so they need to host their website on hardware that is NOT shared with other AWS customers. Which of the following EC2 instance options meets this requirement?",
+      "question_zh": "一家公司需要将其网站从本地迁移到 AWS。安全性是他们最关心的问题，因此他们需要将网站托管在不与其他 AWS 客户共享的硬件上。以下哪些 Amazon EC2 instances 选项满足此要求？",
+      "expected_zh": "一家公司需要将其网站从本地迁移到 AWS。安全性是他们最关心的问题，因此他们需要将网站托管在不与其他 AWS 客户共享的硬件上。以下哪些EC2实例选项满足此要求？"
+    },
+    {
+      "id": "CCP-S700",
+      "source_id": "q309",
+      "question_en": "How can AWS customers track and avoid over-spending on underutilized reserved instances?",
+      "question_zh": "AWS 客户如何跟踪并避免在未充分利用的 Reserved Instances 上过度支出？",
+      "expected_zh": "AWS 客户如何跟踪并避免在未充分利用的预留实例上过度支出？"
+    },
+    {
+      "id": "CCP-S707",
+      "source_id": "q344",
+      "question_en": "You decide to buy a reserved instance for a term of one year. Which option provides the largest total discount?",
+      "question_zh": "您决定购买为期一年的 Reserved Instances。哪个选项提供最大的总折扣？",
+      "expected_zh": "您决定购买为期一年的预留实例。哪个选项提供最大的总折扣？"
+    },
+    {
+      "id": "CCP-S717",
+      "source_id": "q402",
+      "question_en": "A company's AWS workflow requires that it periodically perform large-scale image and video processing jobs. The customer is seeking to minimize cost and has stated that the amount of time it takes to process these jobs is not critical, but that cost minimization is the most important factor in designing the solution. Which EC2 instance class is best suited for this processing?",
+      "question_zh": "公司的 AWS 工作流程要求定期执行大规模图像和视频处理作业。客户正在寻求最大限度地降低成本，并表示处理这些作业所需的时间并不重要，但成本最小化是设计解决方案时最重要的因素。哪个 Amazon EC2 instances 类最适合此处理？",
+      "expected_zh": "公司的AWS工作流程要求定期执行大规模图像和视频处理作业。客户正在寻求最大限度地降低成本，并表示处理这些作业所需的时间并不重要，但成本最小化是设计解决方案时最重要的因素。哪个EC2实例类最适合此处理？"
+    },
+    {
+      "id": "CCP-S719",
+      "source_id": "q413",
+      "question_en": "You are using several on-demand EC2 Instances to run your development environment. What is the best way to reduce your charges when these instances are not in use?",
+      "question_zh": "您正在使用多个按需 Amazon EC2 instances 来运行您的开发环境。当这些实例不使用时，减少费用的最佳方法是什么？",
+      "expected_zh": "您正在使用多个按需 EC2 实例来运行您的开发环境。当这些实例不使用时，减少费用的最佳方法是什么？"
+    },
+    {
+      "id": "CCP-S723",
+      "source_id": "q430",
+      "question_en": "Your CTO has asked you to contact AWS support using the chat feature to ask for guidance related to EBS. However, when you open the AWS support center you can't see a way to contact support via Chat. What should you do?",
+      "question_zh": "您的 CTO 已要求您使用聊天功能联系 AWS 支持，以寻求与 EBS 相关的指导。但是，当您打开 AWS Support Center 时，您看不到通过聊天联系支持人员的方式。你应该做什么？",
+      "expected_zh": "您的 CTO 已要求您使用聊天功能联系 AWS 支持，以寻求与 EBS 相关的指导。但是，当您打开 AWS 支持中心时，您看不到通过聊天联系支持人员的方式。你应该做什么？"
+    },
+    {
+      "id": "CCP-S734",
+      "source_id": "q522",
+      "question_en": "You are planning to launch an advertising campaign over the coming weekend to promote a new digital product. It is expected that there will be heavy spikes in load during the campaign period, and you can't afford any downtime. You need additional compute resources to handle the additional load. What is the most cost-effective EC2 instance purchasing option for this job?",
+      "question_zh": "您计划在下周末发起一项广告活动来推广新的数字产品。预计活动期间负载会出现严重峰值，您无法承受任何停机时间。您需要额外的计算资源来处理额外的负载。对于这项工作来说，最具成本效益的 Amazon EC2 instances 购买选项是什么？",
+      "expected_zh": "您计划在下周末发起一项广告活动来推广新的数字产品。预计活动期间负载会出现严重峰值，您无法承受任何停机时间。您需要额外的计算资源来处理额外的负载。对于这项工作来说，最具成本效益的EC2实例购买选项是什么？"
+    },
+    {
+      "id": "CCP-S740",
+      "source_id": "q582",
+      "question_en": "If each department within a company has its own AWS account, what is one way to enable consolidated billing?",
+      "question_zh": "如果公司内的每个部门都有自己的 AWS 账户，那么启用 Consolidated Billing 的一种方法是什么？",
+      "expected_zh": "如果公司内的每个部门都有自己的 AWS 账户，那么启用合并计费的一种方法是什么？"
+    },
+    {
+      "id": "CCP-S757",
+      "source_id": "q707",
+      "question_en": "A customer runs an On-Demand Amazon Linux EC2 instance for 3 hours, 5 minutes, and 6 seconds. For how much time will the customer be billed?",
+      "question_zh": "客户运行按需 Amazon Linux Amazon EC2 instances 3 小时 5 分 6 秒。客户需要支付多少时间的费用？",
+      "expected_zh": "客户运行按需 Amazon Linux EC2 实例 3 小时 5 分 6 秒。客户需要支付多少时间的费用？"
+    },
+    {
+      "id": "CCP-S763",
+      "source_id": "q737",
+      "question_en": "After selecting an Amazon EC2 Dedicated Host reservation, which pricing option would provide the largest discount?",
+      "question_zh": "选择 Amazon EC2Dedicated Hosts 预订后，哪种定价选项可以提供最大的折扣？",
+      "expected_zh": "选择Amazon EC2专用主机预订后，哪种定价选项可以提供最大的折扣？"
+    },
+    {
+      "id": "CCP-S776",
+      "source_id": "q847",
+      "question_en": "A Cloud Practitioner identifies a billing issue after examining the AWS Cost and Usage report in the AWS Management Console. Which action can be taken to resolve this?",
+      "question_zh": "云从业者在检查 AWS Management Console 中的 AWS Cost and Usage Report 后发现了计费问题。可以采取什么措施来解决这个问题？",
+      "expected_zh": "云从业者在检查 AWS 管理控制台中的 AWS 成本和使用情况报告后发现了计费问题。可以采取什么措施来解决这个问题？"
+    },
+    {
+      "id": "CCP-S777",
+      "source_id": "q848",
+      "question_en": "What does the AWS Pricing Calculator do?",
+      "question_zh": "AWS Pricing Calculator 有什么作用？",
+      "expected_zh": "AWS 定价计算器有什么作用？"
+    },
+    {
+      "id": "CCP-S781",
+      "source_id": "q871",
+      "question_en": "The AWS Pricing Calculator is used to:",
+      "question_zh": "AWS Pricing Calculator 用于：",
+      "expected_zh": "AWS 定价计算器用于："
+    },
+    {
+      "id": "CCP-S803",
+      "source_id": "q950",
+      "question_en": "An architecture design includes Amazon EC2, an Elastic Load Balancer, and Amazon RDS. What is the BEST way to get a monthly cost estimation for this architecture?",
+      "question_zh": "架构设计包括 Amazon EC2、Elastic Load Balancer 和 Amazon RDS。获得该架构每月成本估算的最佳方法是什么？",
+      "expected_zh": "架构设计包括Amazon EC2、弹性负载均衡器和Amazon RDS。获得该架构每月成本估算的最佳方法是什么？"
+    },
+    {
+      "id": "CCP-M035",
+      "source_id": "q1060",
+      "question_en": "Which TWO of the following are perspectives of the AWS Cloud Adoption Framework (AWS CAF)?",
+      "question_zh": "以下哪两项是 AWS Cloud Adoption Framework (AWS CAF) 的视角？（选择两项）",
+      "expected_zh": "以下哪两项是 AWS 云采用框架 (AWS CAF) 的观点？（选择两项）"
+    },
+    {
+      "id": "CCP-M036",
+      "source_id": "q1061",
+      "question_en": "According to the AWS Cloud Adoption Framework (AWS CAF), which TWO of the following are benefits that organizations can achieve through successful cloud adoption?",
+      "question_zh": "根据 AWS Cloud Adoption Framework (AWS CAF)，组织通过成功的云采用可以实现以下哪两项优势？（选择两项）",
+      "expected_zh": "根据 AWS 云采用框架 (AWS CAF)，组织通过成功的云采用可以实现以下哪两项优势？（选择两项）"
+    },
+    {
+      "id": "CCP-M037",
+      "source_id": "q1094",
+      "question_en": "Which perspectives of the AWS Cloud Adoption Framework (AWS CAF) are categorized as technical capabilities? (Select TWO)",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 的哪些方面被归类为技术能力？ （选择两项）",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 的哪些方面被归类为技术能力？ （选择两项）"
+    },
+    {
+      "id": "CCP-M038",
+      "source_id": "q1121",
+      "question_en": "Which AWS Cloud Adoption Framework (AWS CAF) perspectives are categorized as business capabilities? (Select TWO)",
+      "question_zh": "哪些 AWS Cloud Adoption Framework (AWS CAF) 视角被归类为业务能力？ （选择两项）",
+      "expected_zh": "哪些 AWS 云采用框架 (AWS CAF) 视角被归类为业务能力？ （选择两项）"
+    },
+    {
+      "id": "CCP-M039",
+      "source_id": "q1125",
+      "question_en": "Which transformation domains are defined by the AWS Cloud Adoption Framework (AWS CAF)? (Select TWO)",
+      "question_zh": "AWS Cloud Adoption Framework (AWS CAF) 定义了哪些转换域？ （选择两项）",
+      "expected_zh": "AWS 云采用框架 (AWS CAF) 定义了哪些转换域？ （选择两项）"
+    },
+    {
+      "id": "CCP-M040",
+      "source_id": "q1103",
+      "question_en": "Which of the following are valid migration strategies defined in the AWS Cloud Adoption Framework (AWS CAF)? (Select TWO)",
+      "question_zh": "以下哪些是 AWS Cloud Adoption Framework (AWS CAF) 中定义的有效迁移策略？ （选择两项）",
+      "expected_zh": "以下哪些是 AWS 云采用框架 (AWS CAF) 中定义的有效迁移策略？ （选择两项）"
+    },
+    {
+      "id": "CCP-M045",
+      "source_id": "q048",
+      "question_en": "In the AWS Shared responsibility Model, which of the following are the responsibility of the customer?",
+      "question_zh": "在 AWS Shared Responsibility Model 中，以下哪些是客户的责任？（选择两项）",
+      "expected_zh": "在 AWS 责任共担模型中，以下哪些是客户的责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M048",
+      "source_id": "q103",
+      "question_en": "Which of the following will enhance the security of access to the AWS Management Console?",
+      "question_zh": "以下哪一项将增强访问 AWS Management Console 的安全性？（选择两项）",
+      "expected_zh": "以下哪一项将增强访问 AWS 管理控制台的安全性？（选择两项）"
+    },
+    {
+      "id": "CCP-M058",
+      "source_id": "q208",
+      "question_en": "According to the AWS Shared responsibility model, which of the following are the responsibility of the customer?",
+      "question_zh": "根据 AWS Shared Responsibility Model，以下哪些是客户的责任？（选择两项）",
+      "expected_zh": "根据 AWS 责任共担模型，以下哪些是客户的责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M064",
+      "source_id": "q269",
+      "question_en": "Which of the following can help protect your EC2 instances from DDoS attacks?",
+      "question_zh": "以下哪一项可以帮助保护您的 Amazon EC2 instances 免受 DDoS 攻击？（选择两项）",
+      "expected_zh": "以下哪一项可以帮助保护您的 EC2 实例免受 DDoS 攻击？（选择两项）"
+    },
+    {
+      "id": "CCP-M067",
+      "source_id": "q295",
+      "question_en": "A company is planning to migrate an application from Amazon EC2 to AWS Lambda to use a serverless architecture. Which of the following will be the responsibility of AWS after migration?",
+      "question_zh": "一家公司计划将应用程序从 Amazon EC2 迁移到 AWS Lambda 以使用 Serverless 架构。迁移后 AWS 将承担以下哪项责任？（选择两项）",
+      "expected_zh": "一家公司计划将应用程序从 Amazon EC2 迁移到 AWS Lambda 以使用无服务器架构。迁移后 AWS 将承担以下哪项责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M078",
+      "source_id": "q387",
+      "question_en": "What should you do if you see resources, which you don't remember creating, in the AWS Management Console?",
+      "question_zh": "如果您在 AWS Management Console 中看到您不记得创建过的资源，该怎么办？（选择两项）",
+      "expected_zh": "如果您在 AWS 管理控制台中看到您不记得创建过的资源，该怎么办？（选择两项）"
+    },
+    {
+      "id": "CCP-M089",
+      "source_id": "q564",
+      "question_en": "Under the AWS shared responsibility model, which of the following activities are the customer's responsibility?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，以下哪些活动是客户的责任？（选择两项）",
+      "expected_zh": "在 AWS 责任共担模型下，以下哪些活动是客户的责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M098",
+      "source_id": "q812",
+      "question_en": "Under the AWS shared responsibility model, the customer manages which of the following?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，客户管理以下哪一项？（选择两项）",
+      "expected_zh": "在 AWS 责任共担模型下，客户管理以下哪一项？（选择两项）"
+    },
+    {
+      "id": "CCP-M100",
+      "source_id": "q839",
+      "question_en": "Which tasks are the customer's responsibility in the AWS shared responsibility model?",
+      "question_zh": "在 AWS Shared Responsibility Model 中，哪些任务是客户的责任？（选择两项）",
+      "expected_zh": "在 AWS 责任共担模型中，哪些任务是客户的责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M101",
+      "source_id": "q843",
+      "question_en": "A web application is hosted on AWS using an Elastic Load Balancer, multiple Amazon EC2 instances, and Amazon RDS. Which security measures fall under the responsibility of AWS?",
+      "question_zh": "Web 应用程序使用 Elastic Load Balancer、多个 Amazon EC2 实例和 Amazon RDS 托管在 AWS 上。哪些安全措施属于 AWS 的责任？（选择两项）",
+      "expected_zh": "Web 应用程序使用弹性负载均衡器、多个 Amazon EC2 实例和 Amazon RDS 托管在 AWS 上。哪些安全措施属于 AWS 的责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M102",
+      "source_id": "q873",
+      "question_en": "Under the AWS shared responsibility model, which of the following are customer responsibilities?",
+      "question_zh": "在 AWS Shared Responsibility Model 下，以下哪些是客户责任？（选择两项）",
+      "expected_zh": "在 AWS 责任共担模型下，以下哪些是客户责任？（选择两项）"
+    },
+    {
+      "id": "CCP-M135",
+      "source_id": "q374",
+      "question_en": "Which of the following AWS offerings are serverless services?",
+      "question_zh": "以下哪些 AWS 产品是 Serverless 服务？（选择两项）",
+      "expected_zh": "以下哪些 AWS 产品是无服务器服务？（选择两项）"
+    },
+    {
+      "id": "CCP-M146",
+      "source_id": "q454",
+      "question_en": "Which of the following compute resources are serverless?",
+      "question_zh": "以下哪些计算资源是 Serverless 的？（选择两项）",
+      "expected_zh": "以下哪些计算资源是无服务器的？（选择两项）"
+    },
+    {
+      "id": "CCP-M149",
+      "source_id": "q500",
+      "question_en": "Amazon EC2 instances are conceptually very similar to traditional servers. However, using Amazon EC2 server instances in the same manner as traditional hardware server instances is only a starting point. What are the main benefits of using the AWS EC2 instances instead of traditional servers?",
+      "question_zh": "Amazon EC2 实例在概念上与传统服务器非常相似。然而，以与传统硬件服务器实例相同的方式使用 Amazon EC2 服务器实例只是一个起点。使用 AWS Amazon EC2 instances 代替传统服务器的主要好处是什么？（选择两项）",
+      "expected_zh": "Amazon EC2 实例在概念上与传统服务器非常相似。然而，以与传统硬件服务器实例相同的方式使用Amazon EC2服务器实例只是一个起点。使用 AWS EC2 实例代替传统服务器的主要好处是什么？（选择两项）"
+    },
+    {
+      "id": "CCP-M175",
+      "source_id": "q932",
+      "question_en": "Which of the following AWS services are serverless?",
+      "question_zh": "以下哪些 AWS 服务是 Serverless 的？（选择两项）",
+      "expected_zh": "以下哪些 AWS 服务是无服务器的？（选择两项）"
+    },
+    {
+      "id": "CCP-M184",
+      "source_id": "q106",
+      "question_en": "Which of the following are advantages of AWS consolidated billing?",
+      "question_zh": "以下哪些是 AWS Consolidated Billing 的优势？（选择两项）",
+      "expected_zh": "以下哪些是 AWS 合并计费的优势？（选择两项）"
+    },
+    {
+      "id": "CCP-M188",
+      "source_id": "q273",
+      "question_en": "Which of the following will impact the price paid for an EC2 instance?",
+      "question_zh": "以下哪项会影响 Amazon EC2 instances 的价格？（选择两项）",
+      "expected_zh": "以下哪项会影响 EC2 实例的价格？（选择两项）"
+    },
+    {
+      "id": "CCP-M189",
+      "source_id": "q288",
+      "question_en": "What is one benefit and one drawback of buying a reserved EC2 instance?",
+      "question_zh": "购买预留 Amazon EC2 instances 的优点和缺点分别是什么？（选择两项）",
+      "expected_zh": "购买预留 EC2 实例的优点和缺点分别是什么？（选择两项）"
+    },
+    {
+      "id": "CCP-M196",
+      "source_id": "q449",
+      "question_en": "Which of the following are valid Amazon EC2 Reserved Instance types?",
+      "question_zh": "以下哪些是有效的 Amazon EC2 Reserved Instances 类型？（选择两项）",
+      "expected_zh": "以下哪些是有效的 Amazon EC2 预留实例类型？（选择两项）"
+    },
+    {
+      "id": "CCP-M205",
+      "source_id": "q528",
+      "question_en": "What are some of the benefits of using On-Demand EC2 instances?",
+      "question_zh": "使用按需 Amazon EC2 instances 有哪些好处？（选择两项）",
+      "expected_zh": "使用按需 EC2 实例有哪些好处？（选择两项）"
+    }
+  ],
+  "glossary_pollution": [
+    {
+      "id": "CCP-S354",
+      "source_id": "q094",
+      "question_en": "Which AWS service can be used to automatically scale an application up and down without making capacity planning decisions?",
+      "question_zh": "哪种 AWS 服务可用于自动扩展和缩减应用程序，而无需做出容量规划决策？",
+      "type": "glossary_pollution",
+      "zh_term": "自动扩展",
+      "en_service": "Auto Scaling",
+      "option": "AWS Auto Scaling",
+      "detail": "英文无「Auto Scaling」，题干含「自动扩展」且正确答案为该服务"
+    },
+    {
+      "id": "CCP-S560",
+      "source_id": "q905",
+      "question_en": "Which AWS container service will help a user install, operate, and scale the cluster management infrastructure?",
+      "question_zh": "哪种 AWS 容器服务将帮助用户安装、操作和扩展集群管理基础设施？",
+      "type": "glossary_pollution",
+      "zh_term": "容器服务",
+      "en_service": "Amazon ECS",
+      "option": "Amazon Elastic Container Service (Amazon ECS)",
+      "detail": "英文无「Amazon ECS」，题干含「容器服务」且正确答案为该服务"
+    },
+    {
+      "id": "CCP-S592",
+      "source_id": "q1017",
+      "question_en": "A company wants to build an event-driven architecture where multiple AWS services and SaaS applications can react to events in real time. Which AWS service provides a serverless event bus for this purpose?",
+      "question_zh": "一家公司希望构建一个事件驱动的架构，其中多个 AWS 服务和 SaaS 应用程序可以实时对事件做出反应。哪种 AWS 服务为此目的提供 Serverless 事件总线？",
+      "type": "glossary_pollution",
+      "zh_term": "事件总线",
+      "en_service": "Amazon EventBridge",
+      "option": "Amazon EventBridge",
+      "detail": "英文无「Amazon EventBridge」，题干含「事件总线」且正确答案为该服务"
+    },
+    {
+      "id": "CCP-S613",
+      "source_id": "q1050",
+      "question_en": "A company needs to collect, process, and analyze real-time streaming data from IoT devices. Which AWS service is designed for real-time data streaming?",
+      "question_zh": "公司需要收集、处理和分析来自物联网设备的实时流数据。哪种 AWS 服务专为实时数据流而设计？",
+      "type": "glossary_pollution",
+      "zh_term": "流数据",
+      "en_service": "Kinesis",
+      "option": "Amazon Kinesis",
+      "detail": "英文无「Kinesis」，题干含「流数据」且正确答案为该服务"
+    },
+    {
+      "id": "CCP-S630",
+      "source_id": "q1085",
+      "question_en": "A development team is building a collaborative mobile application where multiple users need to see real-time updates to shared data. The team wants to use GraphQL and have the backend automatically push data changes to all connected clients. Which AWS service provides managed GraphQL APIs with built-in real-time data synchronisation?",
+      "question_zh": "开发团队正在构建一个协作移动应用程序，其中多个用户需要查看共享数据的实时更新。该团队希望使用 GraphQL 并使后端自动将数据更改推送到所有连接的客户端。哪种 AWS 服务提供具有内置实时数据同步功能的托管 GraphQL API？",
+      "type": "glossary_pollution",
+      "zh_term": "数据同步",
+      "en_service": "AWS DataSync",
+      "option": "AWS AppSync",
+      "detail": "英文无「AWS DataSync」，题干含「数据同步」且正确答案为该服务"
+    },
+    {
+      "id": "CCP-M005",
+      "source_id": "q161",
+      "question_en": "What are the benefits of developing and running a new application in the AWS Cloud compared to on-premises?",
+      "question_zh": "与本地部署相比，在 AWS 云中开发和运行新应用程序有哪些优势？（选择两项）",
+      "type": "glossary_pollution",
+      "zh_term": "本地部署",
+      "en_service": "AWS Outposts",
+      "option": "AWS makes it easy to architect for high availability",
+      "detail": "英文无「AWS Outposts」，题干含「本地部署」且正确答案为该服务"
+    }
+  ],
+  "summary": {
+    "answer_in_stem": 4,
+    "cache_mismatch_semantic": 118,
+    "glossary_pollution": 6
+  }
+}

@@ -43,6 +43,14 @@
 - Microservices
 - CI/CD 基础概念
 
+### 1.6 AWS Cloud Adoption Framework（AWS CAF）
+- 六大视角（Perspectives，选项保留英文）：Business、People、Governance、Platform、Security、Operations
+- 业务能力视角：Business（业务）、People（人员）、Governance（治理）
+- 技术能力视角：Platform（平台）、Security（安全）、Operations（运营）
+- 四大转型域（Transformation Domains）：Technology、Process、Organization、Product
+- 云采用阶段（Phases）：Envision → Align → Launch → Scale
+- 七种迁移策略（7 Rs）：Rehost、Relocate、Replatform、Refactor、Repurchase、Retire、Retain
+
 ---
 
 ## 2. Security and Compliance（安全与合规） - 30%
