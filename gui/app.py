@@ -16,7 +16,9 @@ from typing import Dict, List, Any
 
 import customtkinter as ctk
 
+from gui.bank_context import BankContextMixin
 from gui.menu import MenuMixin
+from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
 from gui.quiz_view import QuizMixin
 from gui.stats_view import StatsMixin
 from gui.mock_exam import MockExamMixin
@@ -25,7 +27,9 @@ from gui.custom_practice_view import CustomPracticeMixin
 
 
 class CLFQuizApp(
+    BankContextMixin,
     MenuMixin,
+    CloudCertPrepMenuMixin,
     QuizMixin,
     StatsMixin,
     MockExamMixin,
@@ -77,6 +81,7 @@ class CLFQuizApp(
         self._mock_timer_remaining = 0
         self._mock_timer_job = None
 
+        self._init_bank_context()
         self._build_menu_ui()
 
 

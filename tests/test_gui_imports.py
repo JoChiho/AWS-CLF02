@@ -21,6 +21,8 @@ class TestGuiImports(unittest.TestCase):
         from gui.mock_exam import MockExamMixin
         from gui.wrong_book_view import WrongBookMixin
         from gui.custom_practice_view import CustomPracticeMixin
+        from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
+        from gui.bank_context import BankContextMixin
         from gui.constants import DOMAIN_DISPLAY_NAMES
 
         self.assertTrue(hasattr(MenuMixin, "_build_menu_ui"))
@@ -33,6 +35,8 @@ class TestGuiImports(unittest.TestCase):
         self.assertTrue(hasattr(MockExamMixin, "_start_mock_exam"))
         self.assertTrue(hasattr(WrongBookMixin, "_show_wrong_book"))
         self.assertTrue(hasattr(CustomPracticeMixin, "_show_custom_practice_dialog"))
+        self.assertTrue(hasattr(CloudCertPrepMenuMixin, "_open_cloudcertprep_menu"))
+        self.assertTrue(hasattr(BankContextMixin, "_get_bank"))
         self.assertIn("Cloud Concepts", DOMAIN_DISPLAY_NAMES)
 
     def test_app_composes_mixins(self):
@@ -43,7 +47,11 @@ class TestGuiImports(unittest.TestCase):
         from gui.mock_exam import MockExamMixin
         from gui.wrong_book_view import WrongBookMixin
         from gui.custom_practice_view import CustomPracticeMixin
+        from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
+        from gui.bank_context import BankContextMixin
 
+        self.assertTrue(issubclass(CLFQuizApp, BankContextMixin))
+        self.assertTrue(issubclass(CLFQuizApp, CloudCertPrepMenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, MenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, QuizMixin))
         self.assertTrue(issubclass(CLFQuizApp, StatsMixin))

@@ -3,7 +3,7 @@
 
 import customtkinter as ctk
 
-from data import DOMAINS, get_wrong_book_questions
+
 from data.progress import (
     get_wrong_book_entries,
     set_question_mastered,
@@ -22,7 +22,9 @@ class WrongBookMixin:
     def _show_wrong_book(self):
         """打开增强版错题本"""
         win = ctk.CTkToplevel(self)
-        win.title("错题本")
+        bank = self._get_bank()
+        title_suffix = " · CloudCertPrep" if self._is_cloudcertprep() else ""
+        win.title(f"错题本{title_suffix}")
         win.geometry("920x640")
         win.minsize(780, 520)
         win.grab_set()
@@ -53,7 +55,7 @@ class WrongBookMixin:
             side="left", padx=(0, 4)
         )
         domain_options = ["全部"] + [
-            DOMAIN_DISPLAY_NAMES.get(d, d) for d in DOMAINS
+            DOMAIN_DISPLAY_NAMES.get(d, d) for d in bank.DOMAINS
         ]
         domain_var = ctk.StringVar(value="全部")
         domain_menu = ctk.CTkOptionMenu(
@@ -140,11 +142,12 @@ class WrongBookMixin:
                 sort_by=state["sort_by"],
                 domain=state["domain"],
                 include_mastered=state["include_mastered"],
+                bank_id=self.current_bank_id,
             )
             current_ids.clear()
             current_ids.extend(e["id"] for e in entries)
 
-            mastered_n = count_mastered_wrong_questions()
+            mastered_n = count_mastered_wrong_questions(bank_id=self.current_bank_id)
             domain_note = (
                 f" · 领域：{domain_var.get()}"
                 if state["domain"]
@@ -200,7 +203,7 @@ class WrongBookMixin:
             if not ids:
                 return
             win.destroy()
-            questions = get_wrong_book_questions(ids)
+            questions = bank.get_wrong_book_questions(ids)
             if not questions:
                 return
             self._start_wrong_book_quiz(ids, mode=f"wrong_book:{mode_suffix}")
@@ -336,7 +339,9 @@ class WrongBookMixin:
         master_color = "#7f8c8d" if mastered else "#27ae60"
 
         def toggle_master():
-            set_question_mastered(qid, mastered=not mastered)
+            set_question_mastered(
+                qid, mastered=not mastered, bank_id=self.current_bank_id
+            )
             refresh_callback()
 
         ctk.CTkButton(

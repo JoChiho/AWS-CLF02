@@ -1,3 +1,4 @@
 # 开发与打包依赖（运行程序只需 requirements.txt）
 -r requirements.txt
 pyinstaller>=6.0.0
+deep-translator>=1.11.4

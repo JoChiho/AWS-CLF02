@@ -6,12 +6,7 @@ from typing import List, Dict, Any
 
 import customtkinter as ctk
 
-from data import (
-    get_questions_by_domain,
-    get_wrong_book_questions,
-    shuffle_question_options,
-    get_shuffled_questions,
-)
+
 from data.progress import (
     get_practice_font_scale,
     record_session,
@@ -43,7 +38,8 @@ class QuizMixin:
         """获取（或生成）当前题目的打乱信息，缓存以保证同一会话内稳定"""
         if quiz_idx in self._question_shuffles:
             return self._question_shuffles[quiz_idx]
-        info = shuffle_question_options(q)
+        bank = self._get_bank()
+        info = bank.shuffle_question_options(q)
         self._question_shuffles[quiz_idx] = info
         return info
 
@@ -52,7 +48,8 @@ class QuizMixin:
         if getattr(self, "menu_frame", None) and self.menu_frame.winfo_exists():
             self.menu_frame.destroy()
 
-        self.questions = get_shuffled_questions(question_list)
+        bank = self._get_bank()
+        self.questions = bank.get_shuffled_questions(question_list)
         self.total = len(self.questions)
         self.user_answers = {}
         self.current_index = 0
@@ -65,7 +62,9 @@ class QuizMixin:
         self._question_shuffles.clear()
         self._explain_expanded = False
         self._explanation_full_visible = False
-        self._user_font_scale = self._clamp_user_font_scale(get_practice_font_scale())
+        self._user_font_scale = self._clamp_user_font_scale(
+            get_practice_font_scale(bank_id=self.current_bank_id)
+        )
 
         self._build_quiz_ui()
         self._load_question(0)
@@ -81,7 +80,8 @@ class QuizMixin:
 
     def _start_domain_quiz(self, domain: str):
         """按考试领域启动分类练习"""
-        questions = get_questions_by_domain(domain)
+        bank = self._get_bank()
+        questions = bank.get_questions_by_domain(domain)
         if not questions:
             print(f"警告：领域 '{domain}' 没有题目")
             return
@@ -89,7 +89,8 @@ class QuizMixin:
 
     def _start_wrong_book_quiz(self, wrong_ids: List[str], mode: str = "wrong_book"):
         """从错题本启动针对性练习"""
-        questions = get_wrong_book_questions(wrong_ids)
+        bank = self._get_bank()
+        questions = bank.get_wrong_book_questions(wrong_ids)
         if not questions:
             print("错题本为空，无法开始练习")
             return
@@ -506,7 +507,7 @@ class QuizMixin:
         if new_scale == self._user_font_scale:
             return
         self._user_font_scale = new_scale
-        set_practice_font_scale(new_scale)
+        set_practice_font_scale(new_scale, bank_id=self.current_bank_id)
         self._refresh_quiz_typography()
 
     def _decrease_quiz_font(self) -> None:
@@ -713,7 +714,10 @@ class QuizMixin:
 
         explanation = self._annotated_explanation(q.get("explanation", "暂无解析"))
         render_explanation_body(
-            self.explain_text, explanation, scale=self._combined_font_scale(),
+            self.explain_text,
+            explanation,
+            scale=self._combined_font_scale(),
+            question=q,
         )
 
         self._explanation_full_visible = True
@@ -797,7 +801,12 @@ class QuizMixin:
 
         try:
             record_session(
-                self.current_mode, self.total, correct_count, duration, answered=answered_count
+                self.current_mode,
+                self.total,
+                correct_count,
+                duration,
+                answered=answered_count,
+                bank_id=self.current_bank_id,
             )
             for i, q in enumerate(self.questions):
                 user_ans = self.user_answers.get(i, [])
@@ -807,7 +816,9 @@ class QuizMixin:
                 if not qid:
                     continue
                 is_correct = set(user_ans) == set(q.get("correct_answers", []))
-                update_question_stat(qid, is_correct, user_ans)
+                update_question_stat(
+                    qid, is_correct, user_ans, bank_id=self.current_bank_id
+                )
         except Exception as e:
             print(f"[进度保存警告] {e}")
 
@@ -901,4 +912,7 @@ class QuizMixin:
         self.main_frame = None
         self.nav_frame = None
 
-        self._build_menu_ui()
+        if self._is_cloudcertprep():
+            self._build_cloudcertprep_menu_ui()
+        else:
+            self._build_menu_ui()

@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Optional
+
+from data.explanation_utils import structure_wrong_option_analysis
 
 
 @dataclass
@@ -67,7 +69,12 @@ def _extract_correct_items(opening: str) -> tuple[list[str], str]:
     return blocks, ""
 
 
-def parse_explanation(text: str) -> ExplanationSections:
+def parse_explanation(
+    text: str,
+    *,
+    options: Optional[list[str]] = None,
+    correct_answers: Optional[list[str]] = None,
+) -> ExplanationSections:
     """把原始解析拆成：正确说明 / 错误选项 / 重点考点。"""
     raw = _normalize_explanation_text(text)
     if not raw:
@@ -89,10 +96,22 @@ def parse_explanation(text: str) -> ExplanationSections:
 
     correct_items, opening = _extract_correct_items(opening.strip())
 
+    wrong_blocks = _split_blocks(wrong_part)
+    if (
+        wrong_part
+        and options
+        and (len(wrong_blocks) <= 1 or (len(wrong_blocks) == 1 and len(wrong_blocks[0]) > 60))
+    ):
+        structured = structure_wrong_option_analysis(
+            wrong_part, options, correct_answers or [],
+        )
+        if len(structured) > 1:
+            wrong_blocks = structured
+
     return ExplanationSections(
         opening=opening.strip(),
         correct_items=correct_items,
-        wrong_options=_split_blocks(wrong_part),
+        wrong_options=wrong_blocks,
         key_points=[
             _BULLET.sub("", line).strip()
             for line in key_part.splitlines()
@@ -193,6 +212,7 @@ def render_explanation_body(
     explanation: str,
     *,
     scale: float = 1.0,
+    question: Optional[dict[str, Any]] = None,
 ) -> None:
     """
     将解析正文渲染到 CTkTextbox（仅内容区，不含正误状态行）。
@@ -203,7 +223,11 @@ def render_explanation_body(
     inner.delete("1.0", "end")
     _configure_tags(inner, scale)
 
-    sections = parse_explanation(explanation)
+    sections = parse_explanation(
+        explanation,
+        options=question.get("options") if question else None,
+        correct_answers=question.get("correct_answers") if question else None,
+    )
     if not any([
         sections.opening,
         sections.correct_items,

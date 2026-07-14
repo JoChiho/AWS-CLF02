@@ -6,7 +6,7 @@ from __future__ import annotations
 import customtkinter as ctk
 from tkinter import messagebox
 
-from data import DOMAINS
+
 from data.custom_practice import (
     FILTER_ALL,
     FILTER_LOW_ACCURACY,
@@ -28,8 +28,10 @@ class CustomPracticeMixin:
     """自定义练习：题量 + 范围 + 筛选"""
 
     def _show_custom_practice_dialog(self) -> None:
+        bank = self._get_bank()
+        bank_label = self._bank_label()
         win = ctk.CTkToplevel(self)
-        win.title("自定义练习")
+        win.title(f"自定义练习 · {bank_label}")
         win.geometry("520x560")
         win.minsize(480, 520)
         win.grab_set()
@@ -57,7 +59,7 @@ class CustomPracticeMixin:
             ("仅单选题", SCOPE_SINGLE),
             ("仅多选题", SCOPE_MULTI),
         ]
-        for domain in DOMAINS:
+        for domain in bank.DOMAINS:
             label = DOMAIN_DISPLAY_NAMES.get(domain, domain)
             scope_options.append((label, f"domain:{domain}"))
         scope_labels = [label for label, _ in scope_options]
@@ -89,6 +91,7 @@ class CustomPracticeMixin:
                 scope=_scope_value(),
                 filter_mode=filter_var.get(),
                 accuracy_threshold=float(threshold_var.get()),
+                bank_id=self.current_bank_id,
             )
             req = int(count_var.get())
             avail = len(pool)
@@ -212,6 +215,7 @@ class CustomPracticeMixin:
                 scope=scope,
                 filter_mode=filter_mode,
                 accuracy_threshold=threshold,
+                bank_id=self.current_bank_id,
             )
             if not pool:
                 messagebox.showwarning(
@@ -226,6 +230,7 @@ class CustomPracticeMixin:
                 scope=scope,
                 filter_mode=filter_mode,
                 accuracy_threshold=threshold,
+                bank_id=self.current_bank_id,
             )
             win.destroy()
 

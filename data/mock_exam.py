@@ -8,7 +8,7 @@ CLF-C02 模拟考试抽题逻辑
 import random
 from typing import Dict, List, Any
 
-from data import DOMAINS, ALL_QUESTIONS, get_questions_by_domain, get_shuffled_questions
+from data.banks import BANK_NATIVE, get_bank
 
 MOCK_EXAM_QUESTION_COUNT = 65
 MOCK_EXAM_DURATION_SEC = 90 * 60
@@ -31,7 +31,7 @@ def allocate_domain_counts(
     按权重分配各领域题目数量（最大余数法），保证总和恰好等于 total。
     """
     weights = weights or MOCK_EXAM_DOMAIN_WEIGHTS
-    domains = [d for d in DOMAINS if d in weights]
+    domains = [d for d in weights]
     total_weight = sum(weights[d] for d in domains)
 
     exact = {d: total * weights[d] / total_weight for d in domains}
@@ -49,23 +49,29 @@ def allocate_domain_counts(
 def select_mock_exam_questions(
     count: int = MOCK_EXAM_QUESTION_COUNT,
     weights: Dict[str, int] | None = None,
+    bank_id: str = BANK_NATIVE,
 ) -> List[Dict[str, Any]]:
     """
     按领域权重随机抽题，最终顺序随机打乱。
 
     若某领域题库不足，先取尽该领域全部题目，再从其余未选中题目中补足。
     """
-    weights = weights or MOCK_EXAM_DOMAIN_WEIGHTS
+    bank = get_bank(bank_id)
+    domains = bank.DOMAINS
+    weights = weights or getattr(bank, "MOCK_EXAM_DOMAIN_WEIGHTS", MOCK_EXAM_DOMAIN_WEIGHTS)
     allocation = allocate_domain_counts(count, weights)
     selected: List[Dict[str, Any]] = []
     selected_ids: set[str] = set()
 
-    for domain in DOMAINS:
+    for domain in domains:
         need = allocation.get(domain, 0)
         if need <= 0:
             continue
 
-        pool = [q for q in get_questions_by_domain(domain) if q["id"] not in selected_ids]
+        pool = [
+            q for q in bank.get_questions_by_domain(domain)
+            if q["id"] not in selected_ids
+        ]
         take = min(need, len(pool))
         if take > 0:
             picked = random.sample(pool, take)
@@ -73,14 +79,16 @@ def select_mock_exam_questions(
             selected_ids.update(q["id"] for q in picked)
 
     if len(selected) < count:
-        remaining_pool = [q for q in ALL_QUESTIONS if q["id"] not in selected_ids]
+        remaining_pool = [
+            q for q in bank.ALL_QUESTIONS if q["id"] not in selected_ids
+        ]
         extra = min(count - len(selected), len(remaining_pool))
         if extra > 0:
             picked = random.sample(remaining_pool, extra)
             selected.extend(picked)
             selected_ids.update(q["id"] for q in picked)
 
-    return get_shuffled_questions(selected[:count])
+    return bank.get_shuffled_questions(selected[:count])
 
 
 def score_mock_exam(
@@ -97,8 +105,9 @@ def score_mock_exam(
     answered_count = 0
     wrong_items: List[Dict[str, Any]] = []
 
+    domain_keys = sorted({q.get("domain", "") for q in questions if q.get("domain")})
     domain_stats: Dict[str, Dict[str, int]] = {
-        d: {"total": 0, "correct": 0, "answered": 0} for d in DOMAINS
+        d: {"total": 0, "correct": 0, "answered": 0} for d in domain_keys
     }
 
     for i, q in enumerate(questions):

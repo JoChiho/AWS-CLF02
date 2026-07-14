@@ -1,0 +1,13 @@
+CloudCertPrep CLF-C02 导入报告
+========================================
+总题数: 1050
+单选: 829
+多选: 221
+翻译: 是
+耗时: 4349.4s
+
+领域分布:
+  Billing, Pricing, and Support: 232 (22.1%)
+  Cloud Concepts: 187 (17.8%)
+  Security and Compliance: 247 (23.5%)
+  Technology and Services: 384 (36.6%)

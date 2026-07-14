@@ -7,7 +7,7 @@ from typing import List, Dict, Any
 import customtkinter as ctk
 from tkinter import messagebox
 
-from data import shuffle_question_options
+
 from data.mock_exam import (
     MOCK_EXAM_DURATION_SEC,
     MOCK_EXAM_PASS_PERCENT,
@@ -83,7 +83,7 @@ class MockExamMixin:
 
     def _start_mock_exam(self):
         """启动一场新的模拟考试"""
-        questions = select_mock_exam_questions()
+        questions = select_mock_exam_questions(bank_id=self.current_bank_id)
         if len(questions) < MOCK_EXAM_QUESTION_COUNT:
             messagebox.showerror(
                 "无法开始",
@@ -250,7 +250,7 @@ class MockExamMixin:
     def _mock_get_shuffle_info(self, quiz_idx: int, q: Dict[str, Any]) -> Dict[str, Any]:
         if quiz_idx in self._question_shuffles:
             return self._question_shuffles[quiz_idx]
-        info = shuffle_question_options(q)
+        info = self._get_bank().shuffle_question_options(q)
         self._question_shuffles[quiz_idx] = info
         return info
 
@@ -444,6 +444,7 @@ class MockExamMixin:
                 result["correct_count"],
                 duration,
                 answered=result["answered_count"],
+                bank_id=self.current_bank_id,
             )
             for i, q in enumerate(self.questions):
                 user_ans = self.user_answers.get(i, [])
@@ -453,7 +454,9 @@ class MockExamMixin:
                 if not qid:
                     continue
                 is_correct = set(user_ans) == set(q.get("correct_answers", []))
-                update_question_stat(qid, is_correct, user_ans)
+                update_question_stat(
+                    qid, is_correct, user_ans, bank_id=self.current_bank_id
+                )
             saved = True
         except Exception as e:
             print(f"[进度保存警告] {e}")
@@ -601,7 +604,10 @@ class MockExamMixin:
         self.nav_frame = None
 
         self.title("AWS CLF-C02 认证考试刷题系统 - 练习模式")
-        self._build_menu_ui()
+        if self._is_cloudcertprep():
+            self._build_cloudcertprep_menu_ui()
+        else:
+            self._build_menu_ui()
 
     def _mock_on_window_resize(self, event):
         if event.widget != self or not getattr(self, "_mock_exam_active", False):

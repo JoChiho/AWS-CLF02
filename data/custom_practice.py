@@ -54,26 +54,24 @@ def get_practice_pool(
     filter_mode: str = FILTER_ALL,
     accuracy_threshold: float = 70.0,
     stats: Optional[Dict[str, Dict[str, Any]]] = None,
+    bank_id: str = "native",
 ) -> List[Dict[str, Any]]:
     """返回符合范围与筛选条件的题目池（不打乱、不截断）。"""
-    from data import (
-        ALL_QUESTIONS,
-        MULTI_CHOICE_QUESTIONS,
-        SINGLE_CHOICE_QUESTIONS,
-        get_questions_by_domain,
-    )
+    from data.banks import get_bank
+
+    bank = get_bank(bank_id)
 
     if scope == SCOPE_SINGLE:
-        pool = list(SINGLE_CHOICE_QUESTIONS)
+        pool = list(bank.SINGLE_CHOICE_QUESTIONS)
     elif scope == SCOPE_MULTI:
-        pool = list(MULTI_CHOICE_QUESTIONS)
+        pool = list(bank.MULTI_CHOICE_QUESTIONS)
     elif scope.startswith("domain:"):
         domain = scope.split(":", 1)[1]
-        pool = list(get_questions_by_domain(domain))
+        pool = list(bank.get_questions_by_domain(domain))
     else:
-        pool = list(ALL_QUESTIONS)
+        pool = list(bank.ALL_QUESTIONS)
 
-    stats = stats if stats is not None else get_all_question_stats()
+    stats = stats if stats is not None else get_all_question_stats(bank_id=bank_id)
 
     if filter_mode == FILTER_NEVER:
         pool = [q for q in pool if _attempt_count(q["id"], stats) == 0]
@@ -111,12 +109,14 @@ def select_custom_practice_questions(
     scope: str = SCOPE_ALL,
     filter_mode: str = FILTER_ALL,
     accuracy_threshold: float = 70.0,
+    bank_id: str = "native",
 ) -> CustomPracticeResult:
     """从符合条件的题目池中随机抽取至多 count 道题。"""
     pool = get_practice_pool(
         scope=scope,
         filter_mode=filter_mode,
         accuracy_threshold=accuracy_threshold,
+        bank_id=bank_id,
     )
     pool_size = len(pool)
     actual_count = min(max(0, count), pool_size)

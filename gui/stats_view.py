@@ -15,10 +15,11 @@ class StatsMixin:
 
     def _show_history(self):
         """显示最近 10 次练习历史"""
-        sessions = get_recent_sessions(10)
+        bank_label = self._bank_label()
+        sessions = get_recent_sessions(10, bank_id=self.current_bank_id)
 
         win = ctk.CTkToplevel(self)
-        win.title("历史作答记录（最近10次）")
+        win.title(f"历史作答记录（最近10次）· {bank_label}")
         win.geometry("820x520")
         win.grab_set()
 
@@ -62,10 +63,11 @@ class StatsMixin:
 
     def _show_my_stats(self):
         """显示个人正确率趋势与总体统计"""
-        trend = get_accuracy_trend()
+        bank_label = self._bank_label()
+        trend = get_accuracy_trend(bank_id=self.current_bank_id)
 
         win = ctk.CTkToplevel(self)
-        win.title("我的统计与趋势")
+        win.title(f"我的统计与趋势 · {bank_label}")
         win.geometry("620x480")
         win.grab_set()
 

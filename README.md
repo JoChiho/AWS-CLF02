@@ -1,16 +1,17 @@
 # AWS CLF-C02 认证考试刷题系统
 
 > **高效备考 AWS Certified Cloud Practitioner (CLF-C02) 的中文练习工具**  
-> 320 道高质量题目（181 单选 + 139 多选）+ 领域分类练习 + 自定义练习 + 模拟考试 + 完整持久化进度追踪
+> 自建 320 题 + CloudCertPrep 1050+ 题（独立板块）+ 领域分类练习 + 自定义练习 + 模拟考试 + 完整持久化进度追踪
 
 ---
 
 ## ✨ 功能亮点
 
-- **320 道精选题目**（181 单选 + 139 多选），全部配有详细解析和「重点考点」补充；Cloud / Security 领域已针对性补题
+- **自建 320 道精选题目**（181 单选 + 139 多选），全部配有详细解析和「重点考点」补充
+- **CloudCertPrep 独立板块**（约 1050 题，MIT 开源），完整中文化；进度与自建题库完全隔离
 - **模拟考试模式**（65 题 / 90 分钟 / 按官方领域权重抽题 / 严格无解析 / 70% 及格线）
 - **自定义练习**：随机抽 10 / 20 / 30 / 50 题；可按全部/单选/多选/领域练习；支持「从未做过」「正确率低于阈值」筛选
-- **解析区术语标注**：仅在「答案解析」中为 AWS 英文术语追加中文（如 `Cost Explorer（成本分析器）`）；题干、选项与模拟考试保持纯英文
+- **解析区术语标注**：仅在「答案解析」中为 AWS 英文术语追加中文（如 `Cost Explorer（成本分析器）`）；自建题库题干/选项保持纯英文；CloudCertPrep 题干/选项为中文（术语保留英文）
 - **解析富文本 UI**：分区显示（正确答案 / 错误选项分析 / 重点考点）；`**关键词**` 蓝色加粗；支持展开/收起与 A−/A+ 字体调节（偏好写入 `user_data.json`）
 - **按官方四大领域分类练习**（云概念、安全与合规、技术与服务、账单定价与支持）
 - **知识点覆盖审计**：关键词覆盖率 **100%**（202/202），报告见 `docs/keyword_coverage_gap_report.txt`
@@ -50,7 +51,7 @@ python -m pytest tests/ -v
 python -m unittest discover -s tests -v
 ```
 
-当前 **76** 项自动化回归测试。
+当前 **89** 项自动化回归测试（含 CloudCertPrep 板块）。
 
 ### 命令行模式
 
@@ -97,7 +98,13 @@ python build/build_windows.py
 
 ### 主菜单结构
 
-1. **模拟考试**（主菜单置顶入口）
+0. **CloudCertPrep 题库（1050+ 题）**（主菜单醒目入口，独立子菜单）
+   - 来源：[nastaso/cloudcertprep](https://github.com/nastaso/cloudcertprep)（MIT）
+   - 模拟考试 / 自定义练习 / 领域练习 / 单选·多选·全部
+   - 历史、错题本、统计与自建题库**完全隔离**（`user_data.json` → `cloudcertprep` 键）
+   - 更新题库：`python tools/import_cloudcertprep.py`（详见 `docs/CloudCertPrep集成说明.md`）
+
+1. **模拟考试**（自建 320 题板块）
    - 65 题随机抽题（云 24% / 安全 30% / 技术 34% / 账单 12%）
    - 90 分钟倒计时，到时自动交卷
    - 答题期间不显示解析；交卷后查看得分、领域分项与错题
@@ -150,6 +157,8 @@ aws-clf02-sim/
 │   ├── stats_view.py       # 历史 / 统计
 │   ├── mock_exam.py        # 模拟考试 UI
 │   ├── wrong_book_view.py  # 增强错题本
+│   ├── cloudcertprep_menu.py # CloudCertPrep 独立子菜单
+│   ├── bank_context.py     # 多题库上下文切换
 │   ├── term_glossary.py    # 解析区术语中文标注
 │   └── constants.py        # GUI 共享常量
 ├── core/
@@ -161,9 +170,12 @@ aws-clf02-sim/
 │   ├── multi_choice.py     # 139 道多选题
 │   ├── custom_practice.py  # 自定义练习抽题与筛选
 │   ├── mock_exam.py        # 模拟考试抽题与计分逻辑
+│   ├── banks.py            # 题库注册表（native / cloudcertprep）
+│   ├── cloudcertprep/      # CloudCertPrep 独立题库（1050 题）
 │   └── progress.py         # 持久化（user_data.json）
-├── tests/                  # 自动化回归测试（76 项）
+├── tests/                  # 自动化回归测试（86 项）
 ├── tools/                  # 题库审计与维护脚本
+│   └── import_cloudcertprep.py  # CloudCertPrep 下载与中文化
 └── docs/                   # 知识点清单、审计报告、路线图
 ```
 
@@ -175,6 +187,7 @@ aws-clf02-sim/
 |------|------|
 | `audit_keyword_coverage.py` | 关键词覆盖率审计 |
 | `audit_term_glossary.py` | 术语表覆盖缺口扫描 |
+| `import_cloudcertprep.py` | 从 GitHub 导入并中文化 CloudCertPrep 题库 |
 | `analyze_option_lengths.py` | 选项长度均衡性审计 |
 | `audit_question_bank.py` | 题库 ID / 领域一致性检查 |
 | `check_explanations.py` | 解析格式与字母依赖检查 |
