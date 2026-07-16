@@ -41,6 +41,20 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
             "A. Multi-Factor Authentication",
         )
 
+    def test_aws_sentence_option_needs_chinese_not_keyword(self):
+        sentence = (
+            "AWS automatically distributes the data globally for higher durability"
+        )
+        self.assertFalse(is_english_keyword_only_option(sentence))
+        self.assertTrue(option_body_needs_chinese_restore(sentence))
+        self.assertFalse(should_force_english_option(sentence))
+        self.assertTrue(should_force_english_option("Amazon S3"))
+        self.assertTrue(
+            should_force_english_option(
+                "Amazon Elastic Compute Cloud (Amazon EC2)",
+            ),
+        )
+
     def test_semantic_option_needs_chinese_restore(self):
         self.assertTrue(option_body_needs_chinese_restore("implement elasticity"))
         self.assertTrue(
@@ -145,6 +159,13 @@ class TestCloudCertPrepEnglishTermsInBank(unittest.TestCase):
                 if option_body_needs_chinese_restore(body):
                     bad.append((q["id"], opt[:70]))
         self.assertEqual(bad, [], f"语意选项仍为整段英文: {bad[:5]}")
+
+    def test_q161_options_translated_to_chinese(self):
+        q = next(x for x in self.bank.ALL_QUESTIONS if x.get("source_id") == "q161")
+        bodies = [o.split(". ", 1)[1] for o in q["options"]]
+        self.assertTrue(all(re.search(r"[\u4e00-\u9fff]", b) for b in bodies))
+        self.assertIn("高可用", bodies[2])
+        self.assertIn("耐用性", bodies[0])
 
     def test_hybrid_deployment_question_options(self):
         bank = get_bank(BANK_CLOUDCERTPREP)

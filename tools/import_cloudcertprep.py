@@ -28,6 +28,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from data.aws_english_terms import (  # noqa: E402
+    option_body_needs_chinese_restore,
     restore_aws_english_terms,
     restore_option,
     should_force_english_option,
@@ -314,7 +315,10 @@ def convert_question(
         sorted(options_en.keys()), opt_zh_list, opt_texts,
     ):
         en_stripped = (opt_en or "").strip()
-        if should_force_english_option(en_stripped):
+        if (
+            should_force_english_option(en_stripped)
+            and not option_body_needs_chinese_restore(en_stripped)
+        ):
             options_zh.append(f"{letter}. {en_stripped}")
         else:
             options_zh.append(restore_option(f"{letter}. {opt_zh}"))

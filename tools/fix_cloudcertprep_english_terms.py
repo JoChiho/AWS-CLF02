@@ -29,6 +29,7 @@ from data.aws_english_terms import (  # noqa: E402
     fix_explanation_phrases,
     is_english_keyword_only_option,
     normalize_ec2_terms,
+    option_body_needs_chinese_restore,
     restore_aws_english_terms,
     restore_option,
     should_force_english_option,
@@ -147,7 +148,10 @@ def _rebuild_options(
         )
 
         cached = _cached_zh(en_body, cache)
-        if should_force_english_option(en_body):
+        if (
+            should_force_english_option(en_body)
+            and not option_body_needs_chinese_restore(en_body)
+        ):
             zh_body = en_body
         elif cached and re.search(r"[\u4e00-\u9fff]", cached):
             zh_body = cached

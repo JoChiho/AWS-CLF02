@@ -290,9 +290,19 @@ _SEMANTIC_EN_RE = re.compile(
     r"eliminates?|increases?|decreases?|improves?|responsible|"
     r"design|backup|restore|development|coupling|scaling|pricing|testing|"
     r"hosting|provision|reduce|minimize|maximize|operate|run(?:s|ning)?|"
-    r"pay(?:s|ing)?|build(?:s|ing)?|create(?:s|ing)?|use(?:s|ing)?"
+    r"pay(?:s|ing)?|build(?:s|ing)?|create(?:s|ing)?|use(?:s|ing)?|"
+    r"makes?|distributes?|automatically|(?<!Instance )stores?|bills?|scales?|destroys?|"
+    r"sells?|performs?|offers?|removes?|generates?|launched?|continues?|"
+    r"shares?|checks?|accepts?|predicts?|called|architect(?:s|ing)?|"
+    r"notifies?|encrypts?|resiz(?:e|es|able|ing)"
     r")\b",
     re.IGNORECASE,
+)
+
+# 带括号缩写的完整产品名，如 Amazon Elastic Compute Cloud (Amazon EC2)
+_SERVICE_PAREN_NAME_RE = re.compile(
+    r"^(?:Amazon|AWS)\s+[\w][\w\s-]*\((?:Amazon|AWS)\s+[\w][\w\s.-]*\)"
+    r"(?:\s+[\w]+)?$",
 )
 
 # 真题中常以英文出现的纯考点词（整项为关键词，无中文叙述）
@@ -307,7 +317,7 @@ _ENGLISH_KEYWORD_ONLY: set[str] = {
     "Edge locations", "Multi-Factor Authentication", "Multi-factor authentication",
     "Serverless", "Availability Zones", "Availability Zone",
     "Multi-Factor Authentication (MFA)", "Virtual Private Gateway",
-    "Lambda@Edge", "Savings Plans", "PostgreSQL",
+    "Lambda@Edge", "Savings Plans", "PostgreSQL", "Instance Store",
     "EC2 On-Demand Instances", "EC2 Spot Instances", "EC2 Reserved Instances",
     "EC2 Dedicated Instances",
     "AWS Auto Scaling", "AWS Pricing Calculator", "AWS Support Center",
@@ -327,6 +337,10 @@ _ENGLISH_KEYWORD_ONLY: set[str] = {
 _AWS_SENTENCE_VERBS = {
     "is", "are", "was", "were", "allows", "provides", "manages", "takes",
     "holds", "will", "can", "has", "have", "should", "would", "could",
+    "makes", "automatically", "distributes", "stores", "bills", "scales",
+    "eliminates", "destroys", "sells", "performs", "offers", "removes",
+    "generates", "continues", "shares", "checks", "accepts", "predicts",
+    "runs", "helps", "enables", "requires", "reduces", "supports",
 }
 
 
@@ -364,10 +378,21 @@ def is_english_keyword_only_option(en: str) -> bool:
     if "," in en:
         parts = [p.strip() for p in en.split(",") if p.strip()]
         if parts and all(p.startswith(("Amazon ", "AWS ")) for p in parts):
-            return True
+            if all(
+                not _SEMANTIC_EN_RE.search(p) and len(p.split()) <= 5
+                for p in parts
+            ):
+                return True
+        return False
+    if _SERVICE_PAREN_NAME_RE.fullmatch(en):
+        return True
     if en.startswith(_SERVICE_NAME_PREFIXES):
+        if _SEMANTIC_EN_RE.search(en):
+            return False
         parts = en.split()
         if len(parts) >= 2 and parts[1].lower() in _AWS_SENTENCE_VERBS:
+            return False
+        if len(parts) >= 6:
             return False
         return True
     if _is_service_glossary_entry(en):
