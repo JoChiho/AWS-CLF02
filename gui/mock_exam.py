@@ -537,16 +537,26 @@ class MockExamMixin:
         detail = ctk.CTkTextbox(win, font=ctk.CTkFont(size=12), wrap="word")
         detail.pack(fill="both", expand=True, padx=20, pady=(0, 8))
 
+        from gui.explanation_formatter import format_answer_labels_with_text
+
         for item in result["wrong_items"]:
             qid = item.get("id") or "?"
+            opts = item.get("options") or []
             if item.get("unanswered"):
                 ua = "未作答"
             else:
-                ua = ", ".join(item["user_answer"])
-            ca = ", ".join(item["correct_answers"])
+                ua = format_answer_labels_with_text(
+                    item.get("user_answer") or [],
+                    options=opts,
+                )
+            ca = format_answer_labels_with_text(
+                item.get("correct_answers") or [],
+                options=opts,
+            )
             detail.insert("end", f"【第{item['index']}题 · {qid}】\n")
             detail.insert("end", f"{item['question'][:120]}...\n" if len(item["question"]) > 120 else f"{item['question']}\n")
-            detail.insert("end", f"你的答案：{ua}  |  正确答案：{ca}\n")
+            detail.insert("end", f"你的答案：{ua}\n")
+            detail.insert("end", f"正确答案：{ca}\n")
             exp = item.get("explanation", "")
             if exp:
                 detail.insert("end", f"解析：{exp[:300]}{'...' if len(exp) > 300 else ''}\n")

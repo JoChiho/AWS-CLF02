@@ -18,7 +18,11 @@ from gui.constants import (
     PRACTICE_FONT_SCALE_MIN,
     PRACTICE_FONT_SCALE_STEP,
 )
-from gui.explanation_formatter import render_explanation_body
+from gui.explanation_formatter import (
+    format_answer_labels_with_text,
+    remap_explanation_option_letters,
+    render_explanation_body,
+)
 from gui.term_glossary import annotate_text
 from gui.wrapped_label import (
     apply_wraplength,
@@ -234,6 +238,17 @@ class QuizMixin:
         )
         self.explain_meta_frame.pack(fill="x", padx=12, pady=(0, 8))
 
+        self.explain_question = ctk.CTkLabel(
+            self.explain_meta_frame,
+            text="",
+            font=ctk.CTkFont(size=13, weight="bold"),
+            text_color="#e8eef8",
+            anchor="w",
+            justify="left",
+            wraplength=400,
+        )
+        self.explain_question.pack(fill="x", padx=12, pady=(10, 6))
+
         self.explain_your_answer = ctk.CTkLabel(
             self.explain_meta_frame,
             text="",
@@ -243,7 +258,7 @@ class QuizMixin:
             justify="left",
             wraplength=400,
         )
-        self.explain_your_answer.pack(fill="x", padx=12, pady=(8, 2))
+        self.explain_your_answer.pack(fill="x", padx=12, pady=(0, 2))
 
         self.explain_correct_answer = ctk.CTkLabel(
             self.explain_meta_frame,
@@ -541,6 +556,10 @@ class QuizMixin:
                 )
             if hasattr(self, "explain_status_badge") and self.explain_status_badge.winfo_exists():
                 self.explain_status_badge.configure(font=ctk.CTkFont(size=badge_size, weight="bold"))
+            if hasattr(self, "explain_question") and self.explain_question.winfo_exists():
+                self.explain_question.configure(
+                    font=ctk.CTkFont(size=meta_size, weight="bold"),
+                )
             if hasattr(self, "explain_your_answer") and self.explain_your_answer.winfo_exists():
                 self.explain_your_answer.configure(font=ctk.CTkFont(size=meta_size))
             if hasattr(self, "explain_correct_answer") and self.explain_correct_answer.winfo_exists():
@@ -635,6 +654,8 @@ class QuizMixin:
         self.explain_status_badge.configure(
             text=badge_text, fg_color=badge_fg, text_color=badge_text_color,
         )
+        if hasattr(self, "explain_question"):
+            self.explain_question.configure(text="")
         self.explain_your_answer.configure(text="")
         self.explain_correct_answer.configure(text="")
         self.explain_meta_frame.pack_forget()
@@ -678,10 +699,27 @@ class QuizMixin:
 
         shuffle_info = self._question_shuffles.get(self.current_index, {})
         original_to_display = shuffle_info.get("original_to_display", {})
+        display_to_original = shuffle_info.get("display_to_original", {})
+        options = q.get("options", [])
 
-        user_ans_display = [original_to_display.get(c, c) for c in user_ans_original]
+        user_ans_display = sorted(
+            original_to_display.get(c, c) for c in user_ans_original
+        )
         correct_original = q.get("correct_answers", [])
-        correct_display = [original_to_display.get(c, c) for c in correct_original]
+        correct_display = sorted(
+            original_to_display.get(c, c) for c in correct_original
+        )
+
+        user_label = format_answer_labels_with_text(
+            user_ans_display,
+            options=options,
+            display_to_original=display_to_original,
+        )
+        correct_label = format_answer_labels_with_text(
+            correct_display,
+            options=options,
+            display_to_original=display_to_original,
+        )
 
         show_full = force_full_explanation or self._explanation_full_visible
         if self.is_multi and not show_full:
@@ -689,7 +727,7 @@ class QuizMixin:
                 "待提交",
                 "#3d3420",
                 "#ffd966",
-                f"已选：{', '.join(user_ans_display)}\n\n"
+                f"已选：{user_label}\n\n"
                 "点击「提交答案」或「更新答案」后，将显示正误与详细解析。",
                 preserve_layout=preserve_layout,
             )
@@ -705,19 +743,24 @@ class QuizMixin:
             text=badge_text, fg_color=badge_fg, text_color=badge_color,
         )
         self.explain_meta_frame.pack(fill="x", padx=12, pady=(0, 8), before=self.explain_text)
-        self.explain_your_answer.configure(
-            text=f"你的答案：{', '.join(user_ans_display)}",
-        )
-        self.explain_correct_answer.configure(
-            text=f"正确答案：{', '.join(correct_display)}",
-        )
+        self.explain_question.configure(text=q.get("question", "") or "")
+        self.explain_your_answer.configure(text=f"你的答案：{user_label}")
+        self.explain_correct_answer.configure(text=f"正确答案：{correct_label}")
 
         explanation = self._annotated_explanation(q.get("explanation", "暂无解析"))
+        explanation = remap_explanation_option_letters(
+            explanation, original_to_display,
+        )
+        display_question = {
+            **q,
+            "options": shuffle_info.get("shuffled_options") or options,
+            "correct_answers": correct_display,
+        }
         render_explanation_body(
             self.explain_text,
             explanation,
             scale=self._combined_font_scale(),
-            question=q,
+            question=display_question,
         )
 
         self._explanation_full_visible = True
@@ -739,6 +782,8 @@ class QuizMixin:
 
             width = self.winfo_width()
             meta_wrap = max(260, int(width - 180))
+            if hasattr(self, "explain_question") and self.explain_question.winfo_exists():
+                self.explain_question.configure(wraplength=meta_wrap)
             if hasattr(self, "explain_your_answer") and self.explain_your_answer.winfo_exists():
                 self.explain_your_answer.configure(wraplength=meta_wrap)
             if hasattr(self, "explain_correct_answer") and self.explain_correct_answer.winfo_exists():

@@ -32,6 +32,66 @@ _SECTION_CORRECT_HEADER = re.compile(r"^正确答案[：:]\s*\n\n", re.MULTILINE
 _BULLET = re.compile(r"^[-•*]\s*", re.MULTILINE)
 _MD_BOLD = re.compile(r"\*\*(.+?)\*\*")
 _KEY_PREFIX = re.compile(r"^([^：:\n]+)([：:])(.*)$", re.DOTALL)
+# 解析中的「A. 选项正文」引用（题库原始字母）
+_OPTION_QUOTE_LETTER = re.compile(r"「([A-E])\.\s*")
+
+
+def option_bodies_by_letter(options: Optional[list[str]]) -> dict[str, str]:
+    """从题库 options（A. 正文）提取 letter → 正文。"""
+    bodies: dict[str, str] = {}
+    for opt in options or []:
+        match = re.match(r"^([A-E])\.\s*(.+)$", (opt or "").strip())
+        if match:
+            bodies[match.group(1)] = match.group(2).strip()
+    return bodies
+
+
+def format_answer_labels_with_text(
+    letters: list[str],
+    *,
+    options: Optional[list[str]] = None,
+    display_to_original: Optional[dict[str, str]] = None,
+) -> str:
+    """
+    将显示字母列表格式化为「B. 选项正文；D. 选项正文」。
+
+    letters 为界面上的显示字母；通过 display_to_original 映射回题库字母取正文。
+    """
+    if not letters:
+        return "（未作答）"
+    bodies = option_bodies_by_letter(options)
+    d2o = display_to_original or {}
+    parts: list[str] = []
+    for letter in letters:
+        orig = d2o.get(letter, letter)
+        body = bodies.get(orig, "")
+        if body:
+            parts.append(f"{letter}. {body}")
+        else:
+            parts.append(letter)
+    return "；".join(parts)
+
+
+def remap_explanation_option_letters(
+    text: str,
+    original_to_display: Optional[dict[str, str]] = None,
+) -> str:
+    """
+    将解析正文中「A. …」的字母替换为打乱后的显示字母，
+    使解析编号与答题时选项顺序一致。
+    """
+    raw = text or ""
+    mapping = original_to_display or {}
+    if not raw or not mapping:
+        return raw
+    if all(src == dst for src, dst in mapping.items()):
+        return raw
+
+    def _repl(match: re.Match[str]) -> str:
+        letter = match.group(1)
+        return f"「{mapping.get(letter, letter)}. "
+
+    return _OPTION_QUOTE_LETTER.sub(_repl, raw)
 
 
 def _normalize_explanation_text(text: str) -> str:

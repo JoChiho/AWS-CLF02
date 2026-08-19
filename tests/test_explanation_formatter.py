@@ -11,7 +11,9 @@ from gui.explanation_formatter import (
     _MD_BOLD,
     _configure_tags,
     _render_key_point,
+    format_answer_labels_with_text,
     parse_explanation,
+    remap_explanation_option_letters,
     render_explanation_body,
 )
 
@@ -65,6 +67,33 @@ class TestExplanationFormatter(unittest.TestCase):
         self.assertEqual(sec.opening, "")
         self.assertEqual(sec.wrong_options, [])
         self.assertEqual(sec.key_points, [])
+
+    def test_format_answer_labels_with_text(self):
+        options = [
+            "A. Amazon S3",
+            "B. Amazon DynamoDB",
+            "C. Amazon RDS",
+        ]
+        # 打乱后显示 B 对应原题 A
+        text = format_answer_labels_with_text(
+            ["B"],
+            options=options,
+            display_to_original={"B": "A", "A": "B", "C": "C"},
+        )
+        self.assertEqual(text, "B. Amazon S3")
+
+    def test_remap_explanation_option_letters(self):
+        raw = (
+            "「A. Amazon Redshift」是错误的：不是 NoSQL。\n\n"
+            "「C. Amazon Aurora」是错误的：是关系型。"
+        )
+        # 原 A→显示 C，原 C→显示 A
+        remapped = remap_explanation_option_letters(
+            raw, {"A": "C", "B": "B", "C": "A"},
+        )
+        self.assertIn("「C. Amazon Redshift」", remapped)
+        self.assertIn("「A. Amazon Aurora」", remapped)
+        self.assertNotIn("「A. Amazon Redshift」", remapped)
 
     def test_parse_plain_text_fallback(self):
         sec = parse_explanation("这是一段没有分节的普通解析。")
