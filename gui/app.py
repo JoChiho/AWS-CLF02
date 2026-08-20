@@ -10,6 +10,7 @@ AWS CLF-C02 图形界面刷题系统（练习模式）
     mock_exam.py     - 模拟考试（65 题 / 90 分钟）
     wrong_book_view.py - 增强错题本
     custom_practice_view.py - 自定义练习
+    keyword_drill_menu.py - 服务定义辨识子菜单
 """
 
 from typing import Dict, List, Any
@@ -19,6 +20,7 @@ import customtkinter as ctk
 from gui.bank_context import BankContextMixin
 from gui.menu import MenuMixin
 from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
+from gui.keyword_drill_menu import KeywordDrillMenuMixin
 from gui.quiz_view import QuizMixin
 from gui.stats_view import StatsMixin
 from gui.mock_exam import MockExamMixin
@@ -30,6 +32,7 @@ class CLFQuizApp(
     BankContextMixin,
     MenuMixin,
     CloudCertPrepMenuMixin,
+    KeywordDrillMenuMixin,
     QuizMixin,
     StatsMixin,
     MockExamMixin,

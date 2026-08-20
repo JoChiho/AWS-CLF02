@@ -1,7 +1,7 @@
 # AWS CLF-C02 认证考试刷题系统
 
 > **高效备考 AWS Certified Cloud Practitioner (CLF-C02) 的中文练习工具**  
-> 自建 320 题 + CloudCertPrep 1050+ 题（独立板块）+ 领域分类练习 + 自定义练习 + 模拟考试 + 完整持久化进度追踪
+> 自建 320 题 + CloudCertPrep 1050+ 题（独立板块）+ 服务定义辨识（看定义选服务）+ 领域分类练习 + 自定义练习 + 模拟考试 + 完整持久化进度追踪
 
 ---
 
@@ -9,9 +9,10 @@
 
 - **自建 320 道精选题目**（181 单选 + 139 多选），全部配有详细解析和「重点考点」补充
 - **CloudCertPrep 独立板块**（约 1050 题，MIT 开源），完整中文化；进度与自建题库完全隔离
+- **服务定义辨识**（关键词闪卡）：题干给定义，选项为 4 个易混服务/概念名；适合做真题前先对号入座；进度独立
 - **模拟考试模式**（65 题 / 90 分钟 / 按官方领域权重抽题 / 严格无解析 / 70% 及格线）
 - **自定义练习**：随机抽 10 / 20 / 30 / 50 题；可按全部/单选/多选/领域练习；支持「从未做过」「正确率低于阈值」筛选
-- **解析区术语标注**：仅在「答案解析」中为 AWS 英文术语追加中文（如 `Cost Explorer（成本分析器）`）；自建题库题干/选项保持纯英文；CloudCertPrep 题干/选项为中文（术语保留英文）
+- **解析区术语标注**：仅在「答案解析」中为 AWS 英文术语追加中文（如 `Cost Explorer（成本分析器）`）；自建题库题干/选项保持纯英文；CloudCertPrep 题干/选项为中文（服务品牌名保留英文；官方中文考试会翻译的考点词如可用区、按需型实例、安全组使用中文）
 - **解析富文本 UI**：分区显示（正确答案 / 错误选项分析 / 重点考点）；`**关键词**` 蓝色加粗；支持展开/收起与 A−/A+ 字体调节（偏好写入 `user_data.json`）
 - **按官方四大领域分类练习**（云概念、安全与合规、技术与服务、账单定价与支持）
 - **知识点覆盖审计**：关键词覆盖率 **100%**（202/202），报告见 `docs/keyword_coverage_gap_report.txt`
@@ -104,6 +105,11 @@ python build/build_windows.py
    - 历史、错题本、统计与自建题库**完全隔离**（`user_data.json` → `cloudcertprep` 键）
    - 更新题库：`python tools/import_cloudcertprep.py`（详见 `docs/CloudCertPrep集成说明.md`）
 
+0b. **服务定义辨识**（看定义选服务名，独立进度）
+   - 依据知识点清单，覆盖全球基础设施、易混安全服务、存储/数据库/网络对照、账单工具等
+   - 全部练习 / 按四大领域 / 自定义抽题 / 错题本
+   - 进度写入 `user_data.json` → `keyword_drill` 键
+
 1. **模拟考试**（自建 320 题板块）
    - 65 题随机抽题（云 24% / 安全 30% / 技术 34% / 账单 12%）
    - 90 分钟倒计时，到时自动交卷
@@ -158,6 +164,7 @@ aws-clf02-sim/
 │   ├── mock_exam.py        # 模拟考试 UI
 │   ├── wrong_book_view.py  # 增强错题本
 │   ├── cloudcertprep_menu.py # CloudCertPrep 独立子菜单
+│   ├── keyword_drill_menu.py # 服务定义辨识子菜单
 │   ├── bank_context.py     # 多题库上下文切换
 │   ├── term_glossary.py    # 解析区术语中文标注
 │   └── constants.py        # GUI 共享常量
@@ -170,8 +177,9 @@ aws-clf02-sim/
 │   ├── multi_choice.py     # 139 道多选题
 │   ├── custom_practice.py  # 自定义练习抽题与筛选
 │   ├── mock_exam.py        # 模拟考试抽题与计分逻辑
-│   ├── banks.py            # 题库注册表（native / cloudcertprep）
+│   ├── banks.py            # 题库注册表（native / cloudcertprep / keyword_drill）
 │   ├── cloudcertprep/      # CloudCertPrep 独立题库（1050 题）
+│   ├── keyword_drill/      # 服务定义辨识（看定义选服务名）
 │   └── progress.py         # 持久化（user_data.json）
 ├── tests/                  # 自动化回归测试（86 项）
 ├── tools/                  # 题库审计与维护脚本

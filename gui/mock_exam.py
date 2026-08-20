@@ -616,6 +616,8 @@ class MockExamMixin:
         self.title("AWS CLF-C02 认证考试刷题系统 - 练习模式")
         if self._is_cloudcertprep():
             self._build_cloudcertprep_menu_ui()
+        elif self._is_keyword_drill():
+            self._build_keyword_drill_menu_ui()
         else:
             self._build_menu_ui()
 

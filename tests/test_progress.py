@@ -28,6 +28,7 @@ class TestProgressPersistence(unittest.TestCase):
         self.assertEqual(data["question_stats"], {})
         self.assertEqual(data["preferences"], {})
         self.assertIn("cloudcertprep", data)
+        self.assertIn("keyword_drill", data)
 
     def test_practice_font_scale_persistence(self):
         self.assertEqual(progress.get_practice_font_scale(), 1.0)

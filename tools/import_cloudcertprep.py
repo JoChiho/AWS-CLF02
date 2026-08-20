@@ -31,6 +31,7 @@ from data.aws_english_terms import (  # noqa: E402
     option_body_needs_chinese_restore,
     restore_aws_english_terms,
     restore_option,
+    restore_question_fields,
     should_force_english_option,
 )
 from data.cloudcertprep.domains import DOMAIN_FILE_MAP, SOURCE_RAW_BASE  # noqa: E402
@@ -354,6 +355,7 @@ def convert_question(
     if raw.get("services"):
         item["services"] = raw["services"]
 
+    restore_question_fields(item)
     return item, seq_single, seq_multi
 
 

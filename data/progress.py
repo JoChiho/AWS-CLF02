@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 from app_paths import get_app_root
-from data.banks import BANK_CLOUDCERTPREP, BANK_NATIVE
+from data.banks import BANK_CLOUDCERTPREP, BANK_KEYWORD_DRILL, BANK_NATIVE
 
 # 进度文件位置（开发模式：项目根；打包后：exe 同级目录）
 PROGRESS_FILE = get_app_root() / "user_data.json"
@@ -51,6 +51,7 @@ def _default_progress() -> Dict[str, Any]:
         "question_stats": {},     # 自建题库：qid -> 统计
         "preferences": {},        # 自建题库：UI 偏好
         CLOUDCERTPREP_PROGRESS_KEY: _default_bank_section(),
+        BANK_KEYWORD_DRILL: _default_bank_section(),
     }
 
 
@@ -66,9 +67,10 @@ def _normalize_loaded_progress(data: Dict[str, Any]) -> Dict[str, Any]:
         data["last_updated"] = _now_iso()
     if "preferences" not in data:
         data["preferences"] = {}
-    ccp = data.setdefault(CLOUDCERTPREP_PROGRESS_KEY, _default_bank_section())
-    for key in ("sessions", "question_stats", "preferences"):
-        ccp.setdefault(key, [] if key == "sessions" else {})
+    for bank_key in (CLOUDCERTPREP_PROGRESS_KEY, BANK_KEYWORD_DRILL):
+        section = data.setdefault(bank_key, _default_bank_section())
+        for key in ("sessions", "question_stats", "preferences"):
+            section.setdefault(key, [] if key == "sessions" else {})
     return data
 
 
@@ -82,7 +84,7 @@ def _get_bank_section(progress: Dict[str, Any], bank_id: str = BANK_NATIVE) -> D
         progress.setdefault("question_stats", {})
         progress.setdefault("preferences", {})
         return progress
-    section = progress.setdefault(CLOUDCERTPREP_PROGRESS_KEY, _default_bank_section())
+    section = progress.setdefault(bank_id, _default_bank_section())
     section.setdefault("sessions", [])
     section.setdefault("question_stats", {})
     section.setdefault("preferences", {})
@@ -134,10 +136,11 @@ def save_progress(data: Dict[str, Any]) -> bool:
     try:
         data["last_updated"] = _now_iso()
         # 保证各板块 sessions 只保留最近 10 次（最新在前）
-        for section in (
-            data,
-            data.get(CLOUDCERTPREP_PROGRESS_KEY, {}),
-        ):
+        sections = [data]
+        for value in data.values():
+            if isinstance(value, dict) and "sessions" in value:
+                sections.append(value)
+        for section in sections:
             if isinstance(section, dict) and len(section.get("sessions", [])) > 10:
                 section["sessions"] = section["sessions"][:10]
 

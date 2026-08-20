@@ -32,7 +32,7 @@ class TestCloudConceptsTerms(unittest.TestCase):
         bodies = [o.split(". ", 1)[1] for o in q["options"]]
         self.assertEqual(
             bodies,
-            ["Governance", "Financial", "People", "Infrastructure", "Agility"],
+            ["Governance", "Financial", "People", "Infrastructure", "敏捷性"],
         )
         self.assertIn("人员", q["explanation"])
         self.assertNotIn("人们", q["explanation"])

@@ -40,10 +40,11 @@ python tools/reformat_cloudcertprep_explanations.py
 ## 中文化规则
 
 - 题干、选项、`explanation` 全文翻译为考试级中文
-- AWS 服务名、技术术语保留英文（如 Amazon S3、IAM、Cost Explorer）
+- **服务品牌名保留英文**（如 Amazon S3、Amazon EC2、AWS Lambda、IAM、Amazon CloudWatch）
+- **官方简体中文考试会翻译的考点词用中文**，与考试指南一致，例如：按需型实例、预留实例、竞价型实例、可用区、边缘站点、安全组、网络 ACL、责任共担模式、AWS 管理控制台、服务配额、多重身份验证
 - 解析保留「正确答案 / 错误选项分析」两段结构
 - 错误选项按选项分段：`「A. 选项文字」是错误的：原因说明`（与自建题库一致）
-- 解析区可通过 `term_glossary` 追加术语中文括号；题干/选项不追加
+- 解析区可通过 `term_glossary` 追加术语中文括号；题干/选项不追加服务品牌的中文释义
 
 ## 功能对齐
 

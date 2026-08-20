@@ -959,5 +959,7 @@ class QuizMixin:
 
         if self._is_cloudcertprep():
             self._build_cloudcertprep_menu_ui()
+        elif self._is_keyword_drill():
+            self._build_keyword_drill_menu_ui()
         else:
             self._build_menu_ui()

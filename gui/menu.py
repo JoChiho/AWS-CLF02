@@ -54,6 +54,22 @@ class MenuMixin:
             fg_color="#16a085",
             hover_color="#1abc9c",
             command=self._open_cloudcertprep_menu,
+        ).pack(pady=(0, 8), fill="x", padx=60)
+
+        try:
+            from data.keyword_drill import ALL_QUESTIONS as KD_ALL
+            kd_count = len(KD_ALL)
+        except Exception:
+            kd_count = 0
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"服务定义辨识（{kd_count} 题 · 看定义选服务名）",
+            height=56,
+            font=ctk.CTkFont(size=17, weight="bold"),
+            fg_color="#d35400",
+            hover_color="#e67e22",
+            command=self._open_keyword_drill_menu,
         ).pack(pady=(0, 16), fill="x", padx=60)
 
         ctk.CTkLabel(

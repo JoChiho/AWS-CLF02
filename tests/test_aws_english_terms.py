@@ -20,7 +20,7 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
     def test_restore_option_embeds_service_name_in_chinese(self):
         self.assertEqual(
             restore_option("B. 通过使用弹性负载均衡器自动扩展您的 AWS 资源"),
-            "B. 通过使用 Elastic Load Balancer 自动扩展您的 AWS 资源",
+            "B. 通过使用弹性负载均衡器自动扩展您的 AWS 资源",
         )
         self.assertEqual(
             restore_option("C. Amazon简单存储服务"),
@@ -31,14 +31,18 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
             "D. AWS Elastic Beanstalk",
         )
 
-    def test_pure_service_name_option_stays_english(self):
+    def test_official_exam_terms_use_chinese(self):
         self.assertEqual(
             restore_option("C. Elastic Load Balancing"),
-            "C. Elastic Load Balancing",
+            "C. 弹性负载均衡",
         )
         self.assertEqual(
             restore_option("A. Multi-Factor Authentication"),
-            "A. Multi-Factor Authentication",
+            "A. 多重身份验证",
+        )
+        self.assertEqual(
+            restore_option("B. Availability Zones"),
+            "B. 可用区",
         )
 
     def test_aws_sentence_option_needs_chinese_not_keyword(self):
@@ -62,7 +66,6 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
                 "AWS allows you to host your applications in multiple regions",
             ),
         )
-        self.assertFalse(option_body_needs_chinese_restore("Elastic Load Balancing"))
         self.assertFalse(option_body_needs_chinese_restore("Amazon S3"))
 
     def test_restore_mistranslated_amazon_service(self):
@@ -74,8 +77,8 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
     def test_restore_explanation_serverless(self):
         text = "Amazon Athena 是一种无服务器查询服务"
         restored = restore_aws_english_terms(text)
-        self.assertIn("Serverless interactive query service", restored)
-        self.assertNotIn("无服务器查询服务", restored)
+        self.assertIn("无服务器", restored)
+        self.assertNotIn("Serverless interactive query service", restored)
 
     def test_generic_nosql_not_replaced_with_dynamodb(self):
         text = "哪项 AWS 服务是托管 NoSQL 数据库？"
@@ -90,12 +93,12 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
         self.assertNotIn("对象存储", reverse)
 
     def test_deployment_model_and_service_quotas(self):
-        self.assertTrue(should_force_english_option("Hybrid"))
+        self.assertFalse(should_force_english_option("Hybrid"))
         self.assertTrue(should_force_english_option("Mixed"))
-        self.assertTrue(should_force_english_option("On-premises"))
-        self.assertTrue(should_force_english_option("Service Quotas"))
-        self.assertEqual(restore_option("C. 杂交种"), "C. Hybrid")
-        self.assertEqual(restore_option("C. 服务配额"), "C. Service Quotas")
+        self.assertFalse(should_force_english_option("On-premises"))
+        self.assertFalse(should_force_english_option("Service Quotas"))
+        self.assertEqual(restore_option("C. 杂交种"), "C. 混合")
+        self.assertEqual(restore_option("C. 服务配额"), "C. 服务配额")
         self.assertEqual(
             restore_aws_english_terms("六个 EC2 实例上运行"),
             "六个 Amazon EC2 instances 上运行",
@@ -107,7 +110,7 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
             "并且不会与本地、混合和云一起出现在 AWS 框架中。"
         )
         self.assertIn("Mixed", expl)
-        self.assertNotIn("「B. 混合」", expl)
+        self.assertIn("本地部署、混合和云", expl)
 
     def test_restore_question_fields_keeps_chinese_semantics(self):
         q = {
@@ -119,9 +122,9 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
             "explanation": "AWS 法门适用于容器",
         }
         restore_question_fields(q)
-        self.assertIn("Elastic Load Balancer", q["question"])
+        self.assertIn("弹性负载均衡器", q["question"])
         self.assertEqual(q["options"][0], "A. 实施弹性")
-        self.assertIn("Elastic Load Balancing", q["options"][1])
+        self.assertIn("弹性负载均衡", q["options"][1])
         self.assertIn("AWS Fargate", q["explanation"])
 
 
@@ -134,14 +137,11 @@ class TestCloudCertPrepEnglishTermsInBank(unittest.TestCase):
 
     def test_no_common_mistranslations_in_options(self):
         bad_fragments = [
-            "弹性负载均衡",
             "Amazon简单存储服务",
             "AWS 弹性豆茎",
             "Amazon精确定位",
             "AWS 法门",
-            "多重身份验证",
             "杂交种",
-            "服务配额",
         ]
         hits = []
         for q in self.bank.ALL_QUESTIONS:
@@ -173,10 +173,10 @@ class TestCloudCertPrepEnglishTermsInBank(unittest.TestCase):
         bodies = [o.split(". ", 1)[1] for o in q["options"]]
         self.assertEqual(
             bodies,
-            ["On-premises", "Mixed", "Hybrid", "Cloud"],
+            ["本地部署", "Mixed", "混合", "云"],
         )
         self.assertIn("Mixed", q["explanation"])
-        self.assertIn("Hybrid", q["explanation"])
+        self.assertIn("混合", q["explanation"])
 
     def test_no_glossary_polluted_service_questions(self):
         polluted = []

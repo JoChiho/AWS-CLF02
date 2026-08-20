@@ -13,6 +13,11 @@ from data.cloud_concepts_terms import (
     normalize_cloud_concepts_text,
     should_force_cloud_concepts_english,
 )
+from data.official_zh_exam_terms import (
+    apply_official_zh_exam_terms,
+    apply_official_zh_to_question,
+    is_official_zh_exam_term,
+)
 from gui.term_glossary import _RAW_TERMS
 
 # 机器翻译误译 / 音译（仅服务名与产品名）
@@ -78,7 +83,6 @@ _SERVICE_MISTRANSLATIONS: list[tuple[str, str]] = [
     ("AWS 密钥管理服务 (AWS KMS)", "AWS Key Management Service (KMS)"),
     ("AWS 密钥管理服务", "AWS Key Management Service"),
     ("AWS 存储网关", "AWS Storage Gateway"),
-    ("AWS 定价计算器", "AWS Pricing Calculator"),
     ("AWS 雪球", "AWS Snowball"),
     ("AWS 弹性豆茎", "AWS Elastic Beanstalk"),
     ("AWS 健康仪表板", "AWS Health Dashboard"),
@@ -89,27 +93,21 @@ _SERVICE_MISTRANSLATIONS: list[tuple[str, str]] = [
     ("AWS 代码提交", "AWS CodeCommit"),
     ("AWS 市场", "AWS Marketplace"),
     ("AWS 代码管道", "AWS CodePipeline"),
-    ("AWS 管理控制台", "AWS Management Console"),
     ("AWS 自动扩展", "AWS Auto Scaling"),
     ("AWS 数据管道", "AWS Data Pipeline"),
     ("AWS 数据同步", "AWS DataSync"),
     ("AWS 雪地车", "AWS Snowmobile"),
-    ("AWS 专业服务", "AWS Professional Services"),
     ("AWS 应用程序发现服务", "AWS Application Discovery Service"),
     ("AWS 前哨站", "AWS Outposts"),
     ("AWS 代码构建", "AWS CodeBuild"),
     ("AWS 步骤函数", "AWS Step Functions"),
-    ("AWS 支持中心", "AWS Support Center"),
     ("AWS 架构转换工具", "AWS Transform"),
     ("AWS 架构完善的工具", "AWS Well-Architected Tool"),
     ("AWS 传输系列", "AWS Snow Family"),
     ("AWS 资源组", "AWS Resource Groups"),
     ("AWS 应用程序同步", "AWS AppSync"),
-    ("AWS 成本和使用情况报告", "AWS Cost and Usage Report"),
     ("AWS 代码部署", "AWS CodeDeploy"),
     ("AWS 云采用框架", "AWS Cloud Adoption Framework"),
-    ("AWS 合作伙伴网络", "AWS Partner Network"),
-    ("AWS 责任共担模型", "AWS Shared Responsibility Model"),
     ("AWS 客户端 VPN", "AWS Client VPN"),
     ("AWSLambda", "AWS Lambda"),
     ("CloudWatch器", "CloudWatch"),
@@ -117,44 +115,19 @@ _SERVICE_MISTRANSLATIONS: list[tuple[str, str]] = [
     ("Amazon CloudWatch器", "Amazon CloudWatch"),
     ("亚马逊简单存储服务", "Amazon S3"),
     ("杂交种", "Hybrid"),
-    ("服务配额", "Service Quotas"),
 ]
 
-# 考点关键词（非完整句子时可单独出现在选项中）
+# 仅保留「中文考试仍用英文」的考点词反向还原。
+# 购买选项 / 可用区 / 安全组等已改为官方中文，见 official_zh_exam_terms。
 _EXAM_KEYWORDS: list[tuple[str, str]] = [
-    ("弹性负载均衡器", "Elastic Load Balancer"),
-    ("弹性负载均衡", "Elastic Load Balancing"),
-    ("弹性负载平衡", "Elastic Load Balancing"),
-    ("应用程序负载均衡器", "Application Load Balancer"),
-    ("网络负载均衡器", "Network Load Balancer"),
-    ("多重身份验证", "Multi-Factor Authentication"),
-    ("多因素认证", "Multi-Factor Authentication"),
-    ("无服务器查询服务", "Serverless interactive query service"),
-    ("无服务器架构", "Serverless 架构"),
-    ("无服务器计算", "Serverless 计算"),
-    ("无服务器函数", "Serverless 函数"),
-    ("无服务器", "Serverless"),
-    ("互联网网关", "Internet Gateway"),
-    ("虚拟专用网关", "Virtual Private Gateway"),
-    ("合并计费", "Consolidated Billing"),
-    ("网络ACLs", "Network ACLs"),
-    ("网络 ACL", "Network ACL"),
     ("服务控制策略", "Service Control Policies"),
-    ("节省计划", "Savings Plans"),
-    ("按需实例", "On-Demand Instances"),
-    ("预留实例", "Reserved Instances"),
-    ("现货实例", "Spot Instances"),
-    ("竞价实例", "Spot Instances"),
-    ("专用主机", "Dedicated Hosts"),
-    ("专用实例", "Dedicated Instances"),
     ("放置群组", "Placement Groups"),
     ("归置组", "Placement Groups"),
 ]
 
 # 真题选项中保留英文的部署模型 / 云服务模型 / 标准考点词
 _FORCE_ENGLISH_OPTION_TERMS: set[str] = {
-    "On-premises", "Hybrid", "Cloud", "Mixed",
-    "Service Quotas",
+    "Mixed",
     "Cloud-native", "Partner network", "Hybrid architecture",
     "IaaS", "SaaS", "PaaS", "IaaS & SaaS",
     "Platform as a Service (PaaS)",
@@ -264,21 +237,17 @@ _EXPLANATION_PHRASE_FIXES: list[tuple[str, str]] = [
     (
         "「B. 混合」是错误的：混合不是公认的云计算部署模型，并且不会与本地、混合和云一起出现在 AWS 框架中。",
         "「B. Mixed」是错误的：Mixed 不是 AWS 认可的云计算部署模型；"
-        "CLF 考试中的三种部署模型为 On-premises、Hybrid 和 Cloud。",
+        "CLF 考试中的三种部署模型为本地部署、混合和云。",
     ),
     (
         "「B. 杂交种」是错误的：混合部署将本地基础设施与云资源相结合",
-        "「B. Hybrid」是错误的：Hybrid 部署将本地基础设施与云资源相结合",
+        "「B. 混合」是错误的：混合部署将本地基础设施与云资源相结合",
     ),
     (
         "「E. 杂交种」是错误的：混合是指将本地基础设施与云资源相结合的架构",
-        "「E. Hybrid」是错误的：Hybrid 是指将本地基础设施与云资源相结合的架构",
+        "「E. 混合」是错误的：混合是指将本地基础设施与云资源相结合的架构",
     ),
-    ("服务配额允许客户", "Service Quotas 允许客户"),
-    ("Service Quotas 是一项集中式服务", "Service Quotas 是一项集中式服务"),
-    ("混合部署模型将基于云的资源", "Hybrid 部署模型将基于云的资源"),
-    ("混合不是公认的", "Mixed 不是公认的"),
-    ("不会与本地、混合和云一起出现", "不会与 On-premises、Hybrid 和 Cloud 一起出现"),
+    ("不会与本地、混合和云一起出现", "不会与本地部署、混合和云一起出现"),
 ]
 
 # 整句英文选项（被误替换为英文）需恢复中文语意
@@ -307,26 +276,16 @@ _SERVICE_PAREN_NAME_RE = re.compile(
 
 # 真题中常以英文出现的纯考点词（整项为关键词，无中文叙述）
 _ENGLISH_KEYWORD_ONLY: set[str] = {
-    "Operational Excellence", "Security", "Performance Efficiency", "Reliability",
-    "Cost Optimization", "Pilot Light", "Pilot light", "Warm Standby", "Warm standby",
+    "Pilot Light", "Pilot light", "Warm Standby", "Warm standby",
     "Multi-site active-active", "Multi-Site Active-Active",
-    "Elastic Load Balancing", "Application Load Balancer", "Network Load Balancer",
-    "Load Balancer", "Auto Scaling", "Internet Gateway", "Consolidated Billing",
-    "Dedicated Hosts", "Dedicated Instances", "Reserved Instances", "Spot Instances",
-    "Security Groups", "Placement Groups", "Network ACLs", "Edge Locations",
-    "Edge locations", "Multi-Factor Authentication", "Multi-factor authentication",
-    "Serverless", "Availability Zones", "Availability Zone",
-    "Multi-Factor Authentication (MFA)", "Virtual Private Gateway",
-    "Lambda@Edge", "Savings Plans", "PostgreSQL", "Instance Store",
-    "EC2 On-Demand Instances", "EC2 Spot Instances", "EC2 Reserved Instances",
-    "EC2 Dedicated Instances",
-    "AWS Auto Scaling", "AWS Pricing Calculator", "AWS Support Center",
+    "Placement Groups",
+    "Lambda@Edge", "PostgreSQL",
+    "AWS Auto Scaling",
     "AWS Cloud Adoption Framework (AWS CAF)",
     "AWS Identity and Access Management (IAM)",
     "AWS Identity and Access Management (AWS IAM)",
-    "MFA", "SDK", "ACL", "SSH", "API",
-    "On-premises", "Hybrid", "Cloud", "Mixed",
-    "Service Quotas",
+    "SDK", "ACL", "SSH", "API",
+    "Mixed",
     "IaaS", "SaaS", "PaaS", "IaaS & SaaS",
     "Platform as a Service (PaaS)",
     "Infrastructure as a Service (IaaS)",
@@ -348,6 +307,8 @@ def should_force_english_option(en: str) -> bool:
     """选项正文应保留英文原文（部署模型、服务名、标准考点词）。"""
     en = (en or "").strip()
     if not en:
+        return False
+    if is_official_zh_exam_term(en):
         return False
     if should_force_cloud_concepts_english(en):
         return True
@@ -458,31 +419,39 @@ def _apply_replacements(text: str, replacements: Iterable[tuple[str, str]]) -> s
 
 
 def restore_option(option: str) -> str:
-    """在中文选项内嵌还原 AWS 服务名/关键词，不将整段选项换成英文。"""
+    """还原误译服务名，再把官方中文考试术语写成考试指南用词。"""
     if not option or ". " not in option:
-        return _apply_replacements(option, _REPLACEMENTS)
+        text = _apply_replacements(option, _REPLACEMENTS)
+        text = normalize_ec2_terms(text)
+        return apply_official_zh_exam_terms(text, whole_option=True)
     letter, body = option.split(". ", 1)
     body = _apply_replacements(body, _REPLACEMENTS)
     body = normalize_ec2_terms(body)
-    return f"{letter}. {body}"
+    return apply_official_zh_exam_terms(f"{letter}. {body}", whole_option=True)
 
 
 def restore_aws_english_terms(text: str, *, domain: str = "") -> str:
-    """在题干/解析中将误译的服务名与考点关键词还原为英文。"""
+    """还原误译服务名，再套用官方中文考试术语。"""
     text = _apply_replacements(text, _REPLACEMENTS)
     text = normalize_ec2_terms(text)
     text = fix_explanation_phrases(text)
     if domain == "Cloud Concepts":
         text = normalize_cloud_concepts_text(text)
-    return text
+    return apply_official_zh_exam_terms(text)
 
 
 def restore_question_fields(question: dict) -> dict:
     """就地修复题目 dict 的 question / options / explanation。"""
+    domain = question.get("domain", "")
     if question.get("question"):
-        question["question"] = restore_aws_english_terms(question["question"])
+        question["question"] = restore_aws_english_terms(
+            question["question"], domain=domain,
+        )
     if question.get("options"):
         question["options"] = [restore_option(o) for o in question["options"]]
     if question.get("explanation"):
-        question["explanation"] = restore_aws_english_terms(question["explanation"])
+        question["explanation"] = restore_aws_english_terms(
+            question["explanation"], domain=domain,
+        )
+    apply_official_zh_to_question(question)
     return question
