@@ -15,6 +15,9 @@ block_cipher = None
 
 ctk_datas = collect_data_files("customtkinter")
 ctk_hidden = collect_submodules("customtkinter")
+data_hidden = collect_submodules("data")
+gui_hidden = collect_submodules("gui")
+core_hidden = collect_submodules("core")
 
 a = Analysis(
     [str(ROOT / "main.py")],
@@ -23,23 +26,10 @@ a = Analysis(
     datas=ctk_datas,
     hiddenimports=[
         *ctk_hidden,
-        "data",
-        "data.single_choice",
-        "data.multi_choice",
-        "data.mock_exam",
-        "data.progress",
-        "core",
-        "core.engine",
-        "core.parser",
+        *data_hidden,
+        *gui_hidden,
+        *core_hidden,
         "app_paths",
-        "gui",
-        "gui.app",
-        "gui.menu",
-        "gui.quiz_view",
-        "gui.stats_view",
-        "gui.mock_exam",
-        "gui.wrong_book_view",
-        "gui.constants",
     ],
     hookspath=[],
     hooksconfig={},

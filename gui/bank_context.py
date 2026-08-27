@@ -3,7 +3,14 @@
 
 from __future__ import annotations
 
-from data.banks import BANK_CLOUDCERTPREP, BANK_KEYWORD_DRILL, BANK_NATIVE, get_bank, get_bank_label
+from data.banks import (
+    BANK_CLOUDCERTPREP,
+    BANK_CONCEPT_DRILL,
+    BANK_KEYWORD_DRILL,
+    BANK_NATIVE,
+    get_bank,
+    get_bank_label,
+)
 
 
 class BankContextMixin:
@@ -23,3 +30,6 @@ class BankContextMixin:
 
     def _is_keyword_drill(self) -> bool:
         return self.current_bank_id == BANK_KEYWORD_DRILL
+
+    def _is_concept_drill(self) -> bool:
+        return self.current_bank_id == BANK_CONCEPT_DRILL

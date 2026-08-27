@@ -9,13 +9,19 @@ from tkinter import messagebox
 
 
 from data.mock_exam import (
+    AWS_SCALED_PASS_SCORE,
+    AWS_SCALED_SCORE_MAX,
+    AWS_SCALED_SCORE_MIN,
     MOCK_EXAM_DURATION_SEC,
-    MOCK_EXAM_PASS_PERCENT,
     MOCK_EXAM_QUESTION_COUNT,
     score_mock_exam,
     select_mock_exam_questions,
 )
-from data.progress import record_session, update_question_stat
+from data.progress import (
+    get_practice_font_scale,
+    record_session,
+    update_question_stat,
+)
 from gui.constants import DOMAIN_DISPLAY_NAMES, MOCK_EXAM_DURATION_MIN
 from gui.wrapped_label import (
     apply_wraplength,
@@ -31,7 +37,7 @@ class MockExamMixin:
         """模拟考试规则说明与确认"""
         win = ctk.CTkToplevel(self)
         win.title("模拟考试说明")
-        win.geometry("560x420")
+        win.geometry("560x470")
         win.grab_set()
         win.transient(self)
 
@@ -45,8 +51,10 @@ class MockExamMixin:
             f"• 题量：{MOCK_EXAM_QUESTION_COUNT} 题（按官方四大领域权重随机抽题）\n"
             f"• 时限：{MOCK_EXAM_DURATION_MIN} 分钟倒计时，到时自动交卷\n"
             f"• 严格模式：答题期间不显示解析与正误\n"
-            f"• 及格线：{MOCK_EXAM_PASS_PERCENT:.0f}%（{int(MOCK_EXAM_QUESTION_COUNT * MOCK_EXAM_PASS_PERCENT / 100)} 题以上）\n"
-            "• 交卷后：统一查看得分、领域分项与错题解析\n"
+            f"• 计分：{AWS_SCALED_SCORE_MIN}–{AWS_SCALED_SCORE_MAX} 分（与 AWS 认证考试相同区间）\n"
+            f"• 及格线：{AWS_SCALED_PASS_SCORE} 分（原始正确率 70% 映射为 700）\n"
+            "• 答题中可用顶栏 A− / A+ 调节字体\n"
+            "• 交卷后：查看分数、领域分项与错题解析\n"
             "• 进度将写入历史记录（mode = mock_exam）"
         )
         ctk.CTkLabel(
@@ -109,10 +117,14 @@ class MockExamMixin:
         self._mock_timer_remaining = MOCK_EXAM_DURATION_SEC
         self._mock_timer_job = None
         self._mock_submitted = False
+        self._user_font_scale = self._clamp_user_font_scale(
+            get_practice_font_scale(bank_id=self.current_bank_id)
+        )
 
         self.title("AWS CLF-C02 认证考试刷题系统 - 模拟考试")
         self._build_mock_exam_ui()
         self._load_mock_question(0)
+        self._refresh_mock_typography()
         self._mock_start_timer()
 
         self.bind("<Configure>", self._mock_on_window_resize)
@@ -164,6 +176,43 @@ class MockExamMixin:
             font=ctk.CTkFont(size=18, weight="bold"),
             text_color="#e67e22",
         ).pack(side="left", padx=15, pady=8)
+
+        font_ctrl = ctk.CTkFrame(top_frame, fg_color="transparent")
+        font_ctrl.pack(side="left", padx=(0, 8))
+
+        self.font_decrease_btn = ctk.CTkButton(
+            font_ctrl,
+            text="A−",
+            width=38,
+            height=28,
+            fg_color="#2d3a52",
+            hover_color="#3d4f6f",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            command=self._decrease_quiz_font,
+        )
+        self.font_decrease_btn.pack(side="left", padx=(0, 4))
+
+        self.font_scale_label = ctk.CTkLabel(
+            font_ctrl,
+            text="100%",
+            width=52,
+            font=ctk.CTkFont(size=13),
+            text_color="#b8c0d0",
+        )
+        self.font_scale_label.pack(side="left", padx=2)
+
+        self.font_increase_btn = ctk.CTkButton(
+            font_ctrl,
+            text="A+",
+            width=38,
+            height=28,
+            fg_color="#2d3a52",
+            hover_color="#3d4f6f",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            command=self._increase_quiz_font,
+        )
+        self.font_increase_btn.pack(side="left", padx=(4, 0))
+        self._update_font_scale_label()
 
         self._mock_timer_label = ctk.CTkLabel(
             top_frame,
@@ -319,8 +368,8 @@ class MockExamMixin:
         stored_original = self.user_answers.get(index, [])
         current_display = [original_to_display.get(c, c) for c in stored_original]
 
-        scale = max(0.7, min(1.1, self.winfo_width() / 1000.0))
-        opt_font_size = int(13 * scale)
+        scale = self._combined_font_scale()
+        opt_font_size = max(12, int(13 * scale))
         init_wrap = measure_option_wraplength(self)
 
         if self.is_multi:
@@ -407,6 +456,7 @@ class MockExamMixin:
 
         self.prev_btn.configure(state="normal" if index > 0 else "disabled")
         self.next_btn.configure(state="normal" if index < self.total - 1 else "disabled")
+        self._refresh_mock_typography()
 
     def _mock_go_previous(self):
         if self.current_index > 0:
@@ -445,6 +495,7 @@ class MockExamMixin:
                 duration,
                 answered=result["answered_count"],
                 bank_id=self.current_bank_id,
+                scaled_score=result.get("scaled_score"),
             )
             for i, q in enumerate(self.questions):
                 user_ans = self.user_answers.get(i, [])
@@ -473,7 +524,7 @@ class MockExamMixin:
     ):
         win = ctk.CTkToplevel(self)
         win.title("模拟考试成绩")
-        win.geometry("720x640")
+        win.geometry("720x700")
         win.grab_set()
 
         title = "考试时间到，已自动交卷" if auto else "模拟考试结束"
@@ -481,11 +532,20 @@ class MockExamMixin:
             pady=(14, 6)
         )
 
-        pass_text = "✅ 及格" if result["passed"] else "❌ 未及格"
+        scaled = result.get("scaled_score", 0)
+        pass_score = result.get("pass_score", AWS_SCALED_PASS_SCORE)
+        score_max = result.get("score_max", AWS_SCALED_SCORE_MAX)
+        pass_text = "PASS 及格" if result["passed"] else "FAIL 未及格"
         pass_color = "#2ecc71" if result["passed"] else "#e74c3c"
         ctk.CTkLabel(
             win,
-            text=f"{pass_text}（及格线 {MOCK_EXAM_PASS_PERCENT:.0f}%）",
+            text=f"{scaled} / {score_max}",
+            font=ctk.CTkFont(size=36, weight="bold"),
+            text_color=pass_color,
+        ).pack(pady=(4, 0))
+        ctk.CTkLabel(
+            win,
+            text=f"{pass_text}（及格线 {pass_score} 分）",
             font=ctk.CTkFont(size=18, weight="bold"),
             text_color=pass_color,
         ).pack(pady=4)
@@ -493,12 +553,14 @@ class MockExamMixin:
         ctk.CTkLabel(
             win,
             text=(
-                f"得分：{result['correct_count']} / {result['total']}  "
-                f"正确率：{result['percentage']:.1f}%\n"
+                f"答对 {result['correct_count']} / {result['total']} 题"
+                f"（原始正确率 {result['percentage']:.1f}%）\n"
                 f"已作答：{result['answered_count']} 题  "
-                f"用时：{duration // 60}分{duration % 60}秒"
+                f"用时：{duration // 60}分{duration % 60}秒\n"
+                f"分数区间 {AWS_SCALED_SCORE_MIN}–{AWS_SCALED_SCORE_MAX}，"
+                f"70% 正确率对应 {AWS_SCALED_PASS_SCORE} 分"
             ),
-            font=ctk.CTkFont(size=15),
+            font=ctk.CTkFont(size=14),
         ).pack(pady=6)
 
         if saved:
@@ -522,9 +584,10 @@ class MockExamMixin:
                 continue
             name = DOMAIN_DISPLAY_NAMES.get(domain, domain)
             acc = st["correct"] / st["total"] * 100
+            band = "达标" if acc >= 70 else "待加强"
             domain_box.insert(
                 "end",
-                f"  {name:<12}  {st['correct']}/{st['total']}  ({acc:.0f}%)\n",
+                f"  {name:<12}  {st['correct']}/{st['total']}  ({acc:.0f}%)  {band}\n",
             )
         domain_box.configure(state="disabled")
 
@@ -618,6 +681,8 @@ class MockExamMixin:
             self._build_cloudcertprep_menu_ui()
         elif self._is_keyword_drill():
             self._build_keyword_drill_menu_ui()
+        elif self._is_concept_drill():
+            self._build_concept_drill_menu_ui()
         else:
             self._build_menu_ui()
 
@@ -625,33 +690,57 @@ class MockExamMixin:
         if event.widget != self or not getattr(self, "_mock_exam_active", False):
             return
 
-        scale = max(0.65, min(1.15, self.winfo_width() / 1000.0))
+        self._refresh_mock_typography()
+
+    def _refresh_mock_typography(self) -> None:
+        """按窗口与用户字体偏好刷新模拟考试题干/选项字号。"""
+        scale = self._combined_font_scale()
+        self._update_font_scale_label()
         try:
-            question_size = int(15 * scale)
-            option_size = int(13 * scale)
-            button_font_size = int(13 * scale)
-            btn_height = int(34 * scale)
-            nav_btn_width = int(105 * scale)
+            domain_size = max(11, int(12 * scale))
+            question_size = max(13, int(15 * scale))
+            option_size = max(12, int(13 * scale))
+            button_font_size = max(12, int(13 * scale))
+            small_size = max(11, int(12 * scale))
+            timer_size = max(13, int(15 * scale))
+            btn_height = max(30, int(34 * scale))
+            nav_btn_width = max(80, int(105 * scale))
 
-            self.question_label.configure(font=ctk.CTkFont(size=question_size, weight="bold"))
-            self.after(5, self._mock_update_wraplength)
-            self.after(40, self._mock_update_wraplength)
+            if hasattr(self, "domain_label") and self.domain_label.winfo_exists():
+                self.domain_label.configure(font=ctk.CTkFont(size=domain_size))
+            if hasattr(self, "question_label") and self.question_label.winfo_exists():
+                self.question_label.configure(
+                    font=ctk.CTkFont(size=question_size, weight="bold"),
+                )
+            if hasattr(self, "_mock_hint_label") and self._mock_hint_label.winfo_exists():
+                self._mock_hint_label.configure(font=ctk.CTkFont(size=small_size))
+            if hasattr(self, "_mock_timer_label") and self._mock_timer_label.winfo_exists():
+                self._mock_timer_label.configure(
+                    font=ctk.CTkFont(size=timer_size, weight="bold"),
+                )
+            if hasattr(self, "progress_label") and self.progress_label.winfo_exists():
+                self.progress_label.configure(font=ctk.CTkFont(size=small_size))
+            if hasattr(self, "question_counter") and self.question_counter.winfo_exists():
+                self.question_counter.configure(font=ctk.CTkFont(size=small_size))
 
-            self.prev_btn.configure(
-                width=max(80, nav_btn_width),
-                height=btn_height,
-                font=ctk.CTkFont(size=button_font_size),
-            )
-            self.next_btn.configure(
-                width=max(80, nav_btn_width),
-                height=btn_height,
-                font=ctk.CTkFont(size=button_font_size),
-            )
-            self.finish_btn.configure(
-                width=max(75, int(95 * scale)),
-                height=btn_height,
-                font=ctk.CTkFont(size=button_font_size),
-            )
+            if hasattr(self, "prev_btn") and self.prev_btn.winfo_exists():
+                self.prev_btn.configure(
+                    width=nav_btn_width,
+                    height=btn_height,
+                    font=ctk.CTkFont(size=button_font_size),
+                )
+            if hasattr(self, "next_btn") and self.next_btn.winfo_exists():
+                self.next_btn.configure(
+                    width=nav_btn_width,
+                    height=btn_height,
+                    font=ctk.CTkFont(size=button_font_size),
+                )
+            if hasattr(self, "finish_btn") and self.finish_btn.winfo_exists():
+                self.finish_btn.configure(
+                    width=max(75, int(95 * scale)),
+                    height=btn_height,
+                    font=ctk.CTkFont(size=button_font_size),
+                )
 
             opt_font = ctk.CTkFont(size=option_size)
             for lbl in getattr(self, "_option_text_labels", []):
@@ -666,6 +755,9 @@ class MockExamMixin:
                         w.configure(font=opt_font)
                 except Exception:
                     pass
+
+            self.after(5, self._mock_update_wraplength)
+            self.after(40, self._mock_update_wraplength)
         except Exception:
             pass
 

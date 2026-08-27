@@ -523,7 +523,10 @@ class QuizMixin:
             return
         self._user_font_scale = new_scale
         set_practice_font_scale(new_scale, bank_id=self.current_bank_id)
-        self._refresh_quiz_typography()
+        if getattr(self, "_mock_exam_active", False):
+            self._refresh_mock_typography()
+        else:
+            self._refresh_quiz_typography()
 
     def _decrease_quiz_font(self) -> None:
         self._change_quiz_font(-PRACTICE_FONT_SCALE_STEP)
@@ -961,5 +964,7 @@ class QuizMixin:
             self._build_cloudcertprep_menu_ui()
         elif self._is_keyword_drill():
             self._build_keyword_drill_menu_ui()
+        elif self._is_concept_drill():
+            self._build_concept_drill_menu_ui()
         else:
             self._build_menu_ui()

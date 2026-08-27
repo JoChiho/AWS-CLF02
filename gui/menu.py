@@ -70,6 +70,22 @@ class MenuMixin:
             fg_color="#d35400",
             hover_color="#e67e22",
             command=self._open_keyword_drill_menu,
+        ).pack(pady=(0, 8), fill="x", padx=60)
+
+        try:
+            from data.concept_drill import ALL_QUESTIONS as CD_ALL
+            cd_count = len(CD_ALL)
+        except Exception:
+            cd_count = 0
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"策略与准则辨识（{cd_count} 题 · 迁移/CAF/场景术语）",
+            height=56,
+            font=ctk.CTkFont(size=17, weight="bold"),
+            fg_color="#1a5276",
+            hover_color="#2874a6",
+            command=self._open_concept_drill_menu,
         ).pack(pady=(0, 16), fill="x", padx=60)
 
         ctk.CTkLabel(

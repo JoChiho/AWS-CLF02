@@ -14,6 +14,28 @@ MOCK_EXAM_QUESTION_COUNT = 65
 MOCK_EXAM_DURATION_SEC = 90 * 60
 MOCK_EXAM_PASS_PERCENT = 70.0
 
+# 与 AWS 认证考试相同的分数区间。官方用 IRT 量尺，不公开逐题分值；
+# 本模拟把原始正确率 70% 映射为及格分 700，0%→100，100%→1000。
+AWS_SCALED_SCORE_MIN = 100
+AWS_SCALED_SCORE_MAX = 1000
+AWS_SCALED_PASS_SCORE = 700
+
+
+def raw_percent_to_scaled_score(percent: float) -> int:
+    """把原始正确率映射为 100–1000 的 AWS 式分数。70% → 700。"""
+    pct = max(0.0, min(100.0, float(percent)))
+    pass_pct = MOCK_EXAM_PASS_PERCENT
+    if pct <= pass_pct:
+        scaled = AWS_SCALED_SCORE_MIN + pct / pass_pct * (
+            AWS_SCALED_PASS_SCORE - AWS_SCALED_SCORE_MIN
+        )
+    else:
+        remain = 100.0 - pass_pct
+        scaled = AWS_SCALED_PASS_SCORE + (pct - pass_pct) / remain * (
+            AWS_SCALED_SCORE_MAX - AWS_SCALED_PASS_SCORE
+        )
+    return int(round(min(AWS_SCALED_SCORE_MAX, max(AWS_SCALED_SCORE_MIN, scaled))))
+
 # CLF-C02 官方考试领域权重（%）
 MOCK_EXAM_DOMAIN_WEIGHTS: Dict[str, int] = {
     "Cloud Concepts": 24,
@@ -155,13 +177,18 @@ def score_mock_exam(
 
     wrong_items.sort(key=lambda x: x["index"])
     percentage = (correct_count / total * 100.0) if total > 0 else 0.0
-    passed = percentage >= MOCK_EXAM_PASS_PERCENT
+    scaled_score = raw_percent_to_scaled_score(percentage)
+    passed = scaled_score >= AWS_SCALED_PASS_SCORE
 
     return {
         "total": total,
         "correct_count": correct_count,
         "answered_count": answered_count,
         "percentage": round(percentage, 1),
+        "scaled_score": scaled_score,
+        "pass_score": AWS_SCALED_PASS_SCORE,
+        "score_min": AWS_SCALED_SCORE_MIN,
+        "score_max": AWS_SCALED_SCORE_MAX,
         "passed": passed,
         "domain_stats": domain_stats,
         "wrong_items": wrong_items,

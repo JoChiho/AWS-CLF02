@@ -41,8 +41,8 @@ class StatsMixin:
         textbox = ctk.CTkTextbox(win, font=ctk.CTkFont(size=13), wrap="none")
         textbox.pack(fill="both", expand=True, padx=20, pady=10)
 
-        header = f"{'时间':<20} {'模式':<28} {'已答/总':>9} {'正确':>5} {'正确率':>8} {'用时':>8}\n"
-        header += "-" * 98 + "\n"
+        header = f"{'时间':<20} {'模式':<28} {'已答/总':>9} {'正确':>5} {'成绩':>10} {'用时':>8}\n"
+        header += "-" * 102 + "\n"
         textbox.insert("end", header)
 
         for s in sessions:
@@ -55,7 +55,14 @@ class StatsMixin:
             dur = s.get("duration_sec", 0)
             dur_str = f"{dur//60}m{dur%60:02d}s" if dur else "-"
             quiz_str = f"{answered}/{total}" if total else str(answered)
-            line = f"{ts:<20} {mode:<28} {quiz_str:>9} {correct:>5} {acc:>7.1f}% {dur_str:>8}\n"
+            if s.get("scaled_score") is not None:
+                result_str = f"{int(s['scaled_score']):>4}分"
+            else:
+                result_str = f"{acc:>6.1f}%"
+            line = (
+                f"{ts:<20} {mode:<28} {quiz_str:>9} {correct:>5} "
+                f"{result_str:>10} {dur_str:>8}\n"
+            )
             textbox.insert("end", line)
 
         textbox.configure(state="disabled")

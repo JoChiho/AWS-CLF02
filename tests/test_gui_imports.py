@@ -23,6 +23,7 @@ class TestGuiImports(unittest.TestCase):
         from gui.custom_practice_view import CustomPracticeMixin
         from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
         from gui.keyword_drill_menu import KeywordDrillMenuMixin
+        from gui.concept_drill_menu import ConceptDrillMenuMixin
         from gui.bank_context import BankContextMixin
         from gui.constants import DOMAIN_DISPLAY_NAMES
 
@@ -38,8 +39,10 @@ class TestGuiImports(unittest.TestCase):
         self.assertTrue(hasattr(CustomPracticeMixin, "_show_custom_practice_dialog"))
         self.assertTrue(hasattr(CloudCertPrepMenuMixin, "_open_cloudcertprep_menu"))
         self.assertTrue(hasattr(KeywordDrillMenuMixin, "_open_keyword_drill_menu"))
+        self.assertTrue(hasattr(ConceptDrillMenuMixin, "_open_concept_drill_menu"))
         self.assertTrue(hasattr(BankContextMixin, "_get_bank"))
         self.assertTrue(hasattr(BankContextMixin, "_is_keyword_drill"))
+        self.assertTrue(hasattr(BankContextMixin, "_is_concept_drill"))
         self.assertIn("Cloud Concepts", DOMAIN_DISPLAY_NAMES)
 
     def test_app_composes_mixins(self):
@@ -52,11 +55,13 @@ class TestGuiImports(unittest.TestCase):
         from gui.custom_practice_view import CustomPracticeMixin
         from gui.cloudcertprep_menu import CloudCertPrepMenuMixin
         from gui.keyword_drill_menu import KeywordDrillMenuMixin
+        from gui.concept_drill_menu import ConceptDrillMenuMixin
         from gui.bank_context import BankContextMixin
 
         self.assertTrue(issubclass(CLFQuizApp, BankContextMixin))
         self.assertTrue(issubclass(CLFQuizApp, CloudCertPrepMenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, KeywordDrillMenuMixin))
+        self.assertTrue(issubclass(CLFQuizApp, ConceptDrillMenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, MenuMixin))
         self.assertTrue(issubclass(CLFQuizApp, QuizMixin))
         self.assertTrue(issubclass(CLFQuizApp, StatsMixin))

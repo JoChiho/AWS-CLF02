@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 from app_paths import get_app_root
-from data.banks import BANK_CLOUDCERTPREP, BANK_KEYWORD_DRILL, BANK_NATIVE
+from data.banks import BANK_CLOUDCERTPREP, BANK_CONCEPT_DRILL, BANK_KEYWORD_DRILL, BANK_NATIVE
 
 # 进度文件位置（开发模式：项目根；打包后：exe 同级目录）
 PROGRESS_FILE = get_app_root() / "user_data.json"
@@ -52,6 +52,7 @@ def _default_progress() -> Dict[str, Any]:
         "preferences": {},        # 自建题库：UI 偏好
         CLOUDCERTPREP_PROGRESS_KEY: _default_bank_section(),
         BANK_KEYWORD_DRILL: _default_bank_section(),
+        BANK_CONCEPT_DRILL: _default_bank_section(),
     }
 
 
@@ -67,7 +68,11 @@ def _normalize_loaded_progress(data: Dict[str, Any]) -> Dict[str, Any]:
         data["last_updated"] = _now_iso()
     if "preferences" not in data:
         data["preferences"] = {}
-    for bank_key in (CLOUDCERTPREP_PROGRESS_KEY, BANK_KEYWORD_DRILL):
+    for bank_key in (
+        CLOUDCERTPREP_PROGRESS_KEY,
+        BANK_KEYWORD_DRILL,
+        BANK_CONCEPT_DRILL,
+    ):
         section = data.setdefault(bank_key, _default_bank_section())
         for key in ("sessions", "question_stats", "preferences"):
             section.setdefault(key, [] if key == "sessions" else {})
@@ -159,6 +164,7 @@ def record_session(
     duration_sec: int = 0,
     answered: Optional[int] = None,
     bank_id: str = BANK_NATIVE,
+    scaled_score: Optional[int] = None,
 ) -> Dict[str, Any]:
     """
     记录一次练习会话（在用户点击“完成测试”时调用）。
@@ -191,6 +197,8 @@ def record_session(
         "accuracy": round(accuracy, 1),
         "duration_sec": int(duration_sec),
     }
+    if scaled_score is not None:
+        session["scaled_score"] = int(scaled_score)
 
     section.setdefault("sessions", []).insert(0, session)
     section["sessions"] = section["sessions"][:10]
