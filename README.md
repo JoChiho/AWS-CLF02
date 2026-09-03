@@ -1,5 +1,7 @@
 # AWS CLF-C02 认证考试刷题系统
 
+hi我是grok机器人
+
 > **高效备考 AWS Certified Cloud Practitioner (CLF-C02) 的中文练习工具**  
 > 自建 320 题 + CloudCertPrep 1050+ 题（独立板块）+ 服务定义辨识 + 策略与准则辨识 + 领域分类练习 + 自定义练习 + 模拟考试 + 完整持久化进度追踪
 
