@@ -9,12 +9,14 @@ BANK_NATIVE = "native"
 BANK_CLOUDCERTPREP = "cloudcertprep"
 BANK_KEYWORD_DRILL = "keyword_drill"
 BANK_CONCEPT_DRILL = "concept_drill"
+BANK_WEAK_POINT_DRILL = "weak_point_drill"
 
 BANK_LABELS = {
     BANK_NATIVE: "自建题库（320 题）",
     BANK_CLOUDCERTPREP: "CloudCertPrep 题库",
     BANK_KEYWORD_DRILL: "服务定义辨识",
     BANK_CONCEPT_DRILL: "策略与准则辨识",
+    BANK_WEAK_POINT_DRILL: "薄弱点突击",
 }
 
 
@@ -45,6 +47,10 @@ def get_bank(bank_id: str = BANK_NATIVE) -> Any:
         from data import concept_drill
 
         return concept_drill
+    if bank_id == BANK_WEAK_POINT_DRILL:
+        from data import weak_point_drill
+
+        return weak_point_drill
     import data
 
     return data
