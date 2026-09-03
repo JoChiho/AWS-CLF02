@@ -8,6 +8,7 @@ from data.banks import (
     BANK_CONCEPT_DRILL,
     BANK_KEYWORD_DRILL,
     BANK_NATIVE,
+    BANK_WEAK_POINT_DRILL,
     get_bank,
     get_bank_label,
 )
@@ -33,3 +34,6 @@ class BankContextMixin:
 
     def _is_concept_drill(self) -> bool:
         return self.current_bank_id == BANK_CONCEPT_DRILL
+
+    def _is_weak_point_drill(self) -> bool:
+        return self.current_bank_id == BANK_WEAK_POINT_DRILL

@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 from app_paths import get_app_root
-from data.banks import BANK_CLOUDCERTPREP, BANK_CONCEPT_DRILL, BANK_KEYWORD_DRILL, BANK_NATIVE
+from data.banks import BANK_CLOUDCERTPREP, BANK_CONCEPT_DRILL, BANK_KEYWORD_DRILL, BANK_NATIVE, BANK_WEAK_POINT_DRILL
 
 # 进度文件位置（开发模式：项目根；打包后：exe 同级目录）
 PROGRESS_FILE = get_app_root() / "user_data.json"
@@ -53,6 +53,7 @@ def _default_progress() -> Dict[str, Any]:
         CLOUDCERTPREP_PROGRESS_KEY: _default_bank_section(),
         BANK_KEYWORD_DRILL: _default_bank_section(),
         BANK_CONCEPT_DRILL: _default_bank_section(),
+        BANK_WEAK_POINT_DRILL: _default_bank_section(),
     }
 
 
@@ -72,6 +73,7 @@ def _normalize_loaded_progress(data: Dict[str, Any]) -> Dict[str, Any]:
         CLOUDCERTPREP_PROGRESS_KEY,
         BANK_KEYWORD_DRILL,
         BANK_CONCEPT_DRILL,
+        BANK_WEAK_POINT_DRILL,
     ):
         section = data.setdefault(bank_key, _default_bank_section())
         for key in ("sessions", "question_stats", "preferences"):

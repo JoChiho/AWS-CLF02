@@ -11,6 +11,7 @@
 - **CloudCertPrep 独立板块**（约 1050 题，MIT 开源），完整中文化；进度与自建题库完全隔离
 - **服务定义辨识**（关键词闪卡）：题干给定义，选项为 4 个易混服务/概念名；适合做真题前先对号入座；进度独立
 - **策略与准则辨识**：迁移 7 R、CAF 视角/阶段、Well-Architected、灾难恢复、责任共担落地与路由/存储类等场景术语；进度独立
+- **薄弱点突击**：针对错 ≥4 次且正确率 ≤25% 的考点重出新题（Direct Connect、Service Catalog、Audit Manager、Inspector/Config、迁云评估、Compute Optimizer、性能效率）；进度独立
 - **模拟考试模式**（65 题 / 90 分钟 / 按官方领域权重抽题 / 严格无解析 / 100–1000 分、700 及格；顶栏 A−/A+ 调字体）
 - **自定义练习**：随机抽 10 / 20 / 30 / 50 题；可按全部/单选/多选/领域练习；支持「从未做过」「正确率低于阈值」筛选
 - **解析区术语标注**：仅在「答案解析」中为 AWS 英文术语追加中文（如 `Cost Explorer（成本分析器）`）；自建题库题干/选项保持纯英文；CloudCertPrep 题干/选项为中文（服务品牌名保留英文；官方中文考试会翻译的考点词如可用区、按需型实例、安全组使用中文）
@@ -116,6 +117,10 @@ python build/build_windows.py
    - 7 R 与 CAF 选项保留英文（与中文考试常见写法一致）
    - 进度写入 `user_data.json` → `concept_drill` 键
 
+0d. **薄弱点突击**（反复错题考点重练，独立进度）
+   - 新题覆盖 Direct Connect、Service Catalog、Audit Manager、Inspector/Config、迁云评估、Compute Optimizer、性能效率
+   - 进度写入 `user_data.json` → `weak_point_drill` 键
+
 1. **模拟考试**（自建 320 题板块）
    - 65 题随机抽题（云 24% / 安全 30% / 技术 34% / 账单 12%）
    - 90 分钟倒计时，到时自动交卷
@@ -173,6 +178,7 @@ aws-clf02-sim/
 │   ├── cloudcertprep_menu.py # CloudCertPrep 独立子菜单
 │   ├── keyword_drill_menu.py # 服务定义辨识子菜单
 │   ├── concept_drill_menu.py # 策略与准则辨识子菜单
+│   ├── weak_point_menu.py  # 薄弱点突击子菜单
 │   ├── bank_context.py     # 多题库上下文切换
 │   ├── term_glossary.py    # 解析区术语中文标注
 │   └── constants.py        # GUI 共享常量
@@ -189,6 +195,7 @@ aws-clf02-sim/
 │   ├── cloudcertprep/      # CloudCertPrep 独立题库（1050 题）
 │   ├── keyword_drill/      # 服务定义辨识（看定义选服务名）
 │   ├── concept_drill/      # 策略与准则辨识（7 R / CAF / 场景术语）
+│   ├── weak_point_drill/   # 薄弱点突击（反复错题考点新题）
 │   └── progress.py         # 持久化（user_data.json）
 ├── tests/                  # 自动化回归测试（86 项）
 ├── tools/                  # 题库审计与维护脚本

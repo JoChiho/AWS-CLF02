@@ -86,6 +86,22 @@ class MenuMixin:
             fg_color="#1a5276",
             hover_color="#2874a6",
             command=self._open_concept_drill_menu,
+        ).pack(pady=(0, 8), fill="x", padx=60)
+
+        try:
+            from data.weak_point_drill import ALL_QUESTIONS as WP_ALL
+            wp_count = len(WP_ALL)
+        except Exception:
+            wp_count = 0
+
+        ctk.CTkButton(
+            scrollable,
+            text=f"薄弱点突击（{wp_count} 题 · 反复错题考点重练）",
+            height=56,
+            font=ctk.CTkFont(size=17, weight="bold"),
+            fg_color="#922b21",
+            hover_color="#c0392b",
+            command=self._open_weak_point_menu,
         ).pack(pady=(0, 16), fill="x", padx=60)
 
         ctk.CTkLabel(
