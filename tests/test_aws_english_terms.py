@@ -101,7 +101,7 @@ class TestAwsEnglishTermsRestore(unittest.TestCase):
         self.assertEqual(restore_option("C. 服务配额"), "C. 服务配额")
         self.assertEqual(
             restore_aws_english_terms("六个 EC2 实例上运行"),
-            "六个 Amazon EC2 instances 上运行",
+            "六个 Amazon EC2 实例上运行",
         )
 
     def test_hybrid_mixed_explanation_not_confused(self):

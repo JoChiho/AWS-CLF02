@@ -140,7 +140,6 @@ _FORCE_ENGLISH_OPTION_TERMS: set[str] = {
     "Infrastructure as a Service",
     "Software as a Service",
     "Networking as a Service",
-    "EC2 Instances", "EC2 instances",
 }
 
 _DEPLOYMENT_MODEL_RE = re.compile(
@@ -322,8 +321,6 @@ def should_force_english_option(en: str) -> bool:
         return True
     if _IAAS_ACRONYM_RE.fullmatch(en):
         return True
-    if re.fullmatch(r"EC2 [Ii]nstances?", en):
-        return True
     return is_english_keyword_only_option(en)
 
 
@@ -382,18 +379,18 @@ def _fix_en_zh_spacing(text: str) -> str:
 
 
 def normalize_ec2_terms(text: str) -> str:
-    """将孤立出现的 EC2 实例统一为 Amazon EC2 instances。"""
+    """将 EC2 instances 统一为 Amazon EC2 实例。"""
     if not text:
         return text
-    text = re.sub(r"(?<!Amazon )EC2 instances", "Amazon EC2 instances", text, flags=re.IGNORECASE)
-    text = re.sub(r"(?<!Amazon )EC2 Instances", "Amazon EC2 instances", text)
-    text = re.sub(r"(?<!Amazon )EC2 实例", "Amazon EC2 instances", text)
-    text = re.sub(r"(?<!Amazon )EC2实例", "Amazon EC2 instances", text)
-    text = re.sub(
-        r"(Amazon EC2 instances)([\u4e00-\u9fff])",
-        r"\1 \2",
-        text,
-    )
+    text = re.sub(r"Amazon EC2 [Ii]nstances", "Amazon EC2 实例", text)
+    text = re.sub(r"(?<!Amazon )EC2 [Ii]nstances", "Amazon EC2 实例", text)
+    text = re.sub(r"(?<!Amazon )EC2 实例", "Amazon EC2 实例", text)
+    text = re.sub(r"(?<!Amazon )EC2实例", "Amazon EC2 实例", text)
+    text = re.sub(r"Amazon RDS DB [Ii]nstances?", "Amazon RDS 数据库实例", text)
+    text = re.sub(r"Amazon RDS [Ii]nstances?", "Amazon RDS 实例", text)
+    text = re.sub(r"Amazon EBS [Vv]olumes?", "Amazon EBS 卷", text)
+    text = re.sub(r"Amazon EBS [Ss]napshots?", "Amazon EBS 快照", text)
+    text = re.sub(r"(Amazon EC2 实例)([A-Za-z])", r"\1 \2", text)
     return text
 
 
