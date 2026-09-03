@@ -39,6 +39,7 @@ def main() -> None:
                 old,
                 q.get("options", []),
                 q.get("correct_answers", []),
+                question=q.get("question") or "",
             )
             if new != old:
                 q["explanation"] = new

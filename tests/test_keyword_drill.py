@@ -26,7 +26,7 @@ class TestKeywordDrillBank(unittest.TestCase):
 
     def test_question_count_and_ids(self):
         questions = self.bank.ALL_QUESTIONS
-        self.assertGreaterEqual(len(questions), 80)
+        self.assertGreaterEqual(len(questions), 120)
         self.assertEqual(len(self.bank.MULTI_CHOICE_QUESTIONS), 0)
         ids = [q["id"] for q in questions]
         self.assertEqual(len(ids), len(set(ids)))

@@ -62,6 +62,45 @@ class TestCloudCertPrepBank(unittest.TestCase):
     def test_mock_exam_weights(self):
         self.assertEqual(sum(MOCK_EXAM_DOMAIN_WEIGHTS.values()), 100)
 
+    def test_multi_wrong_analysis_never_uses_correct_letter(self):
+        import re
+        from gui.explanation_formatter import parse_explanation
+
+        quote_re = re.compile(r"^「([A-E])\.\s*([^」]*)」")
+        problems = []
+        for q in self.bank.MULTI_CHOICE_QUESTIONS:
+            correct = set(q.get("correct_answers") or [])
+            bodies = {}
+            for opt in q.get("options") or []:
+                m = re.match(r"^([A-E])\.\s*(.+)$", (opt or "").strip())
+                if m:
+                    bodies[m.group(1)] = m.group(2).strip()
+            sec = parse_explanation(
+                q.get("explanation") or "",
+                options=q.get("options"),
+                correct_answers=q.get("correct_answers"),
+                question_text=q.get("question") or "",
+            )
+            covered = set()
+            for block in sec.wrong_options:
+                m = quote_re.match((block or "").strip())
+                if not m:
+                    continue
+                letter, quoted = m.group(1), m.group(2).strip()
+                if letter in correct:
+                    problems.append(f"{q['id']}: 错误分析引用了正确选项 {letter}")
+                    continue
+                covered.add(letter)
+                actual = bodies.get(letter, "")
+                if quoted and actual and quoted[:10] not in actual and actual[:10] not in quoted:
+                    problems.append(
+                        f"{q['id']}: {letter} 解析标题与选项正文不一致"
+                    )
+            missing = sorted(set(bodies) - correct - covered)
+            if missing:
+                problems.append(f"{q['id']}: 缺少错误选项 {missing}")
+        self.assertEqual(problems, [], problems[:12])
+
 
 class TestCloudCertPrepProgressIsolation(unittest.TestCase):
     def setUp(self):

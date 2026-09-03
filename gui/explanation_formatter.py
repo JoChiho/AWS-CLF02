@@ -134,6 +134,7 @@ def parse_explanation(
     *,
     options: Optional[list[str]] = None,
     correct_answers: Optional[list[str]] = None,
+    question_text: str = "",
 ) -> ExplanationSections:
     """把原始解析拆成：正确说明 / 错误选项 / 重点考点。"""
     raw = _normalize_explanation_text(text)
@@ -157,15 +158,14 @@ def parse_explanation(
     correct_items, opening = _extract_correct_items(opening.strip())
 
     wrong_blocks = _split_blocks(wrong_part)
-    if (
-        wrong_part
-        and options
-        and (len(wrong_blocks) <= 1 or (len(wrong_blocks) == 1 and len(wrong_blocks[0]) > 60))
-    ):
+    if wrong_part and options:
         structured = structure_wrong_option_analysis(
-            wrong_part, options, correct_answers or [],
+            wrong_part,
+            options,
+            correct_answers or [],
+            question=question_text,
         )
-        if len(structured) > 1:
+        if structured:
             wrong_blocks = structured
 
     return ExplanationSections(
@@ -287,6 +287,7 @@ def render_explanation_body(
         explanation,
         options=question.get("options") if question else None,
         correct_answers=question.get("correct_answers") if question else None,
+        question_text=(question.get("question") or "") if question else "",
     )
     if not any([
         sections.opening,

@@ -40,8 +40,8 @@ def _normalize_question_stem(question: str) -> str:
 class TestQuestionBankIntegrity(unittest.TestCase):
     def test_total_question_count(self):
         self.assertEqual(len(SINGLE_CHOICE_QUESTIONS), 181)
-        self.assertEqual(len(MULTI_CHOICE_QUESTIONS), 139)
-        self.assertEqual(len(ALL_QUESTIONS), 320)
+        self.assertEqual(len(MULTI_CHOICE_QUESTIONS), 165)
+        self.assertEqual(len(ALL_QUESTIONS), 346)
 
     def test_all_questions_have_required_fields(self):
         for q in ALL_QUESTIONS:
@@ -64,6 +64,13 @@ class TestQuestionBankIntegrity(unittest.TestCase):
                 1,
                 f"{q['id']} in single_choice has {len(q['correct_answers'])} answers",
             )
+
+    def test_weak_point_practice_questions_exist(self):
+        for n in range(140, 166):
+            qid = f"M{n}"
+            self.assertIn(qid, QUESTION_BY_ID, qid)
+            q = QUESTION_BY_ID[qid]
+            self.assertGreaterEqual(len(q["correct_answers"]), 2, qid)
 
     def test_multi_choice_classification(self):
         for q in MULTI_CHOICE_QUESTIONS:
@@ -97,6 +104,42 @@ class TestQuestionBankIntegrity(unittest.TestCase):
     def test_explanations_are_non_empty(self):
         for q in ALL_QUESTIONS:
             self.assertTrue(q["explanation"].strip(), f"{q['id']} has empty explanation")
+
+    def test_multi_wrong_analysis_never_uses_correct_letter(self):
+        from gui.explanation_formatter import parse_explanation
+
+        quote_re = re.compile(r"^「([A-E])\.\s*([^」]*)」")
+        problems = []
+        for q in MULTI_CHOICE_QUESTIONS:
+            correct = set(q.get("correct_answers") or [])
+            bodies = {}
+            for opt in q.get("options") or []:
+                m = re.match(r"^([A-E])\.\s*(.+)$", (opt or "").strip())
+                if m:
+                    bodies[m.group(1)] = m.group(2).strip()
+            sec = parse_explanation(
+                q.get("explanation") or "",
+                options=q.get("options"),
+                correct_answers=q.get("correct_answers"),
+                question_text=q.get("question") or "",
+            )
+            covered = set()
+            for block in sec.wrong_options:
+                m = quote_re.match((block or "").strip())
+                if not m:
+                    continue
+                letter, quoted = m.group(1), m.group(2).strip()
+                if letter in correct:
+                    problems.append(f"{q['id']}: 错误分析引用了正确选项 {letter}")
+                    continue
+                covered.add(letter)
+                actual = bodies.get(letter, "")
+                if quoted and actual and quoted[:10] not in actual and actual[:10] not in quoted:
+                    problems.append(f"{q['id']}: {letter} 解析标题与选项正文不一致")
+            missing = sorted(set(bodies) - correct - covered)
+            if missing:
+                problems.append(f"{q['id']}: 缺少错误选项 {missing}")
+        self.assertEqual(problems, [], problems[:12])
 
     def test_multi_select_count_matches_correct_answers(self):
         mismatches = []
